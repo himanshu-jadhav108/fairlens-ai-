@@ -127,12 +127,12 @@ graph TD
 
 |                                           Bias Detection Dashboard                                           |                                             AI Bias Explanation                                             |
 | :----------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
-| <img src="public/Screenshots/Bias-Detection.png" alt="Bias Detection Dashboard"> | <img src="public/Screenshots/AI-Bias-Explaination.png" alt="AI Bias Explanation"> |
+| <img src="Public/Screenshots/Bias-Detection.png" alt="Bias Detection Dashboard"> | <img src="Public/Screenshots/AI-Bias-Explaination.png" alt="AI Bias Explanation"> |
 |                            _High-level overview of model fairness health._                             |                       _Deep dive into feature contributions driving the bias._                       |
 
 |                                         Mitigation Results & Fixes                                          |                                          Fairness Report Summary                                          |
 | :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
-| <img src="public/Screenshots/Bias-Mitigation-Fix.png" alt="Bias Mitigation Fix"> | <img src="public/Screenshots/Report.png" alt="Fairness Report"> |
+| <img src="Public/Screenshots/Bias-Mitigation-Fix.png" alt="Bias Mitigation Fix"> | <img src="Public/Screenshots/Report.png" alt="Fairness Report"> |
 |                    _Comparing fairness metrics before and after mitigation._                     |                      _Comprehensive audit report for compliance._                       |
 
 ## 🚀 Live Demo
