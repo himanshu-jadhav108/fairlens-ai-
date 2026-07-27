@@ -10,12 +10,12 @@ db = None
 if not firebase_admin._apps:
     try:
         creds_dict = settings.firebase_credentials_dict
-        if creds_dict:
+        if creds_dict and isinstance(creds_dict, dict) and creds_dict.get("type") == "service_account":
             cert = credentials.Certificate(creds_dict)
             firebase_admin.initialize_app(cert)
             db = firestore.client()
         else:
-            print("Warning: Firebase credentials not provided in environment. Firebase features will be disabled.")
+            print("Warning: Firebase credentials not provided or incomplete. Firebase features will be disabled.")
     except Exception as e:
         print(f"Warning: Failed to initialize Firebase Admin. Firebase features will be disabled. Error: {e}")
 

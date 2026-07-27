@@ -22,13 +22,16 @@ class Settings(BaseSettings):
     @property
     def firebase_credentials_dict(self) -> Dict[str, Any]:
         """Parses the JSON string into a dictionary for Firebase Admin."""
-        json_str = self.FIREBASE_SERVICE_ACCOUNT_JSON or self.FIREBASE_CREDENTIALS_JSON
+        json_str = (self.FIREBASE_SERVICE_ACCOUNT_JSON or self.FIREBASE_CREDENTIALS_JSON or "").strip()
         if not json_str:
             return {}
         try:
-            return json.loads(json_str)
-        except json.JSONDecodeError:
-            raise ValueError("Firebase service account credentials JSON is invalid.")
+            if (json_str.startswith("'") and json_str.endswith("'")) or (json_str.startswith('"') and json_str.endswith('"')):
+                json_str = json_str[1:-1].strip()
+            parsed = json.loads(json_str)
+            return parsed if isinstance(parsed, dict) else {}
+        except Exception:
+            return {}
 
     # This tells pydantic to load from the .env file
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")

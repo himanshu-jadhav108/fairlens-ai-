@@ -8,7 +8,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/v1/auth/login")
 
 # SECRET_KEY for JWT
-SECRET_KEY = settings.GEMINI_API_KEY # Re-using gemini key as secret for now, should ideally be its own variable
+SECRET_KEY = settings.GEMINI_API_KEY or "fairlens-secret-jwt-key-2026-production"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7 # 7 days
 
