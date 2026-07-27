@@ -78,3 +78,5 @@ node_modules/
 DEPLOYMENT_AUDIT.md
 DEPLOYMENT_GUIDE.md
 HOSTING_READY_CHECKLIST.md
+logs.txt
+*.log
