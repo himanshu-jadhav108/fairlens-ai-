@@ -178,6 +178,16 @@ fairlens-ai/
 └── README.md                 # Project documentation
 ```
 
+## 🚀 Live Production Deployment
+
+FairLens AI is configured for 100% free production deployment using **Vercel** for the frontend and **Render** for the backend.
+
+- 🌐 **Live Frontend (Vercel):** `https://fairlens-ai.vercel.app` *(Replace with your deployed URL)*
+- ⚡ **Live Backend API (Render):** `https://fairlens-backend.onrender.com` *(Replace with your deployed URL)*
+- 💚 **API Health Check:** `https://fairlens-backend.onrender.com/health`
+
+For complete step-by-step instructions on deploying your own instance on Vercel and Render free tier, see [DEPLOYMENT_GUIDE.md](file:///d:/Projects/fairlens-ai/DEPLOYMENT_GUIDE.md).
+
 ## 🛠️ Installation Guide
 
 Follow these steps to run FairLens AI locally on your machine.

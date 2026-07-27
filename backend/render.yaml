@@ -2,12 +2,18 @@ services:
   - type: web
     name: fairlens-backend
     env: python
+    region: oregon
+    plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:$PORT"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.0
+        value: 3.10.12
       - key: GEMINI_API_KEY
         sync: false
       - key: FRONTEND_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
         sync: false

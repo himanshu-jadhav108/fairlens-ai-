@@ -78,7 +78,8 @@ def explain_model(req: ExplainRequest):
 @router.post("/ai-explain")
 def ai_explain(req: ExplainRequest):
     """
-    Generate a human-readable explanation using Vertex AI Gemini.
+    Generate a human-readable explanation using Gemini AI.
+    Handles quota/API limits gracefully without returning 500 error.
     """
     session_data = get_analysis(req.session_id)
     if not session_data or "analysis" not in session_data:
@@ -90,10 +91,16 @@ def ai_explain(req: ExplainRequest):
     try:
         explanation_data = generate_bias_explanation(metrics, shap_values)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Gemini API failure: {str(e)}")
+        explanation_data = {
+            "available": False,
+            "message": f"AI explanation temporarily unavailable: {str(e)}",
+            "explanation": "## AI Explanation Unavailable\n\nPlease check Gemini API configuration.",
+            "summary": {"verdict": "unknown", "dpd_severity": "unknown", "eod_severity": "unknown"}
+        }
 
     save_analysis(req.session_id, {"ai_explanation": explanation_data})
 
     ret = explanation_data.copy()
     ret["success"] = True
     return JSONResponse(ret)
+

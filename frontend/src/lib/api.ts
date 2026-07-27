@@ -1,23 +1,45 @@
 import axios from "axios";
 import { auth } from "./firebase";
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+export const API_BASE_URL =
+  import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
-  timeout: 60000, // 60s timeout for long-running SHAP tasks
+  timeout: 90000, // 90s timeout for cold starts and long SHAP computation
 });
 
 api.interceptors.request.use(async (config) => {
-  if (auth.currentUser) {
-    const token = await auth.currentUser.getIdToken();
-    config.headers.Authorization = `Bearer ${token}`;
+  if (auth?.currentUser) {
+    try {
+      const token = await auth.currentUser.getIdToken();
+      config.headers.Authorization = `Bearer ${token}`;
+    } catch {
+      // Ignore if auth token fail
+    }
   }
   return config;
 });
+
+// Cold-start retry interceptor for free-tier Render web services
+api.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const config = error.config;
+    if (!config || config._retryCount >= 2) {
+      return Promise.reject(error);
+    }
+    if (!error.response && (error.code === "ECONNABORTED" || error.message?.includes("Network Error"))) {
+      config._retryCount = (config._retryCount || 0) + 1;
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      return api(config);
+    }
+    return Promise.reject(error);
+  }
+);
 
 /**
  * Handle API errors consistently.
@@ -25,11 +47,13 @@ api.interceptors.request.use(async (config) => {
 export const getErrorMessage = (err: unknown): string => {
   const error = err as import("axios").AxiosError;
   if (error.response) {
-    return err.response.data?.detail || `Server error (${err.response.status})`;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = error.response.data as any;
+    return data?.detail || `Server error (${error.response.status})`;
   } else if (err.request) {
-    return "No response from server. Is the backend running?";
+    return "No response from server. Backend may be waking up from cold-start (takes ~30s).";
   } else {
-    return err.message || "An unexpected error occurred";
+    return (err as Error).message || "An unexpected error occurred";
   }
 };
 
@@ -70,6 +94,8 @@ const toAnalysisResult = (payload: any) => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const toAiExplanation = (payload: any) => ({
+  available: payload?.available !== false,
+  message: payload?.message || (payload?.available === false ? "AI explanation temporarily unavailable" : "AI explanation generated"),
   explanation: payload?.explanation || "No explanation available.",
   summary: {
     verdict: payload?.summary?.verdict || "unknown",
