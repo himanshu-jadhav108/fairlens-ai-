@@ -45,16 +45,16 @@ We provide an intuitive, end-to-end platform that allows anyone—from a solo de
 
 ## ✨ Key Features
 
-| Feature                           | Description                                                                                                                   |
-| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
-| 📊 **Automated Fairness Audits**  | Upload your CSV dataset to instantly identify biased outcomes across sensitive attributes (race, gender, age).               |
-| ⚖️ **Comprehensive Bias Metrics** | Calculates standard fairness metrics including Demographic Parity, Equalized Odds, and Disparate Impact Ratio.              |
-| 🧠 **SHAP Explainability**        | Dive deep into model decisions with SHAP (SHapley Additive exPlanations) to reveal exact feature contributions to bias.       |
-| 🤖 **Gemini AI Natural Language** | Get instant, plain-English executive summaries and actionable recommendations powered by Google Gemini 2.5 Flash.              |
+| Feature                           | Description                                                                                                                               |
+| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| 📊 **Automated Fairness Audits**  | Upload your CSV dataset to instantly identify biased outcomes across sensitive attributes (race, gender, age).                            |
+| ⚖️ **Comprehensive Bias Metrics** | Calculates standard fairness metrics including Demographic Parity, Equalized Odds, and Disparate Impact Ratio.                            |
+| 🧠 **SHAP Explainability**        | Dive deep into model decisions with SHAP (SHapley Additive exPlanations) to reveal exact feature contributions to bias.                   |
+| 🤖 **Gemini AI Natural Language** | Get instant, plain-English executive summaries and actionable recommendations powered by Google Gemini 2.5 Flash.                         |
 | 🛠️ **Multi-Strategy Mitigation**  | Automatically apply Pre-processing (CorrelationRemover), In-processing (ExponentiatedGradient), and Post-processing (ThresholdOptimizer). |
-| 📈 **Interactive Dashboards**     | Visualize complex fairness metrics through responsive React/Recharts charts and side-by-side comparisons.                      |
-| 📄 **PDF & CSV Export**           | Export audit reports as clean PDFs or download the mitigated fair dataset for downstream production use.                       |
-| 📂 **Instant Demo Datasets**      | Get started immediately with pre-loaded datasets (Adult Census Income, COMPAS recidivism).                                    |
+| 📈 **Interactive Dashboards**     | Visualize complex fairness metrics through responsive React/Recharts charts and side-by-side comparisons.                                 |
+| 📄 **PDF & CSV Export**           | Export audit reports as clean PDFs or download the mitigated fair dataset for downstream production use.                                  |
+| 📂 **Instant Demo Datasets**      | Get started immediately with pre-loaded datasets (Adult Census Income, COMPAS recidivism).                                                |
 
 ## 🏗️ Architecture Overview
 
@@ -67,7 +67,7 @@ graph TD
     classDef backend fill:#009688,stroke:#333,stroke-width:2px,color:#fff;
     classDef ml fill:#FF6F00,stroke:#333,stroke-width:2px,color:#fff;
     classDef db fill:#FFCA28,stroke:#333,stroke-width:2px,color:#000;
-    
+
     subgraph "Frontend Layer (Vercel)"
         UI_Upload("📤 Dataset Upload & Demo"):::frontend
         UI_Dash("📊 Bias Dashboard & XAI"):::frontend
@@ -77,7 +77,7 @@ graph TD
     subgraph "Backend Layer (Render FastAPI)"
         API("⚡ API Gateway"):::backend
         DP("⚙️ Data Processing Engine"):::backend
-        
+
         subgraph "Machine Learning & AI Core"
             FE("⚖️ Fairness Engine (Fairlearn)"):::ml
             XE("🧠 Explainability Engine (SHAP)"):::ml
@@ -96,15 +96,15 @@ graph TD
     API -- "Processed Features" --> DP
     DP -- "Feature Matrix" --> FE
     DP -- "Feature Matrix" --> XE
-    
+
     FE -- "Disparity Metrics" --> UI_Dash
     XE -- "SHAP Values" --> UI_Dash
     FE & XE -- "Metrics & SHAP Summary" --> GAI
     GAI -- "Natural Language AI Report" --> UI_Dash
-    
+
     FE -- "High Disparity" --> ME
     ME -- "Fair Predictions" --> UI_Report
-    
+
     %% Storage Interactions
     API <-- "Save Audit History" --> DB
     UI_Upload <-- "Bearer Token Auth" --> Auth
@@ -124,23 +124,21 @@ graph TD
 
 FairLens AI is configured for 100% free production deployment using **Vercel** (Frontend) and **Render** (Backend).
 
-- 🌐 **Live Frontend (Vercel):** `https://fairlens-ai.vercel.app`
+- 🌐 **Live Frontend (Vercel):** `https://fairlens-ai-nine.vercel.app/`
 - ⚡ **Live Backend API (Render):** `https://fairlens-ai-backend-skog.onrender.com`
 - 💚 **API Health Check:** `https://fairlens-ai-backend-skog.onrender.com/health`
 - 🎯 **API Ready Check:** `https://fairlens-ai-backend-skog.onrender.com/ready`
 
-For step-by-step instructions on deploying your own instance on free tier platforms, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
-
 ## 💻 Tech Stack
 
-| Category              | Technologies                                               |
-| :-------------------- | :--------------------------------------------------------- |
+| Category              | Technologies                                                  |
+| :-------------------- | :------------------------------------------------------------ |
 | **Frontend**          | React 18, TypeScript, Vite, Tailwind CSS, Shadcn UI, Recharts |
-| **Backend**           | FastAPI, Uvicorn, Python 3.10                              |
-| **Data Science & ML** | Pandas, Scikit-Learn, NumPy                                |
-| **Responsible AI**    | Fairlearn, SHAP                                            |
-| **Generative AI**     | Google Gemini 2.5 Flash API (Tenacity Retry + Fallback)    |
-| **Database & Auth**   | Firebase Firestore, Firebase Authentication                |
+| **Backend**           | FastAPI, Uvicorn, Python 3.10                                 |
+| **Data Science & ML** | Pandas, Scikit-Learn, NumPy                                   |
+| **Responsible AI**    | Fairlearn, SHAP                                               |
+| **Generative AI**     | Google Gemini 2.5 Flash API (Tenacity Retry + Fallback)       |
+| **Database & Auth**   | Firebase Firestore, Firebase Authentication                   |
 
 ## 📁 Project Structure
 
@@ -199,7 +197,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-*Backend API will run at `http://localhost:8000`*
+_Backend API will run at `http://localhost:8000`_
 
 ### 3. Setup the Frontend
 
@@ -214,7 +212,7 @@ npm install
 npm run dev
 ```
 
-*Frontend web app will run at `http://localhost:5173`*
+_Frontend web app will run at `http://localhost:5173`_
 
 ## 📖 Usage Workflow
 
