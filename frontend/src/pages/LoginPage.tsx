@@ -26,7 +26,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-8 bg-background-surface p-8 rounded-xl card-border">
         <div>
           <div className="flex justify-center">
-            <span className="text-5xl">👁️</span>
+            <img src="/fairlens-logo.png" alt="FairLens AI Logo" className="w-16 h-16 object-contain drop-shadow-md" />
           </div>
           <h2 className="mt-6 text-center text-3xl font-display font-bold tracking-tight text-foreground">
             Sign in to FairLens
