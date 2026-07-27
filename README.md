@@ -45,20 +45,20 @@ We provide an intuitive, end-to-end platform that allows anyone—from a solo de
 
 ## ✨ Key Features
 
-| Feature                           | Description                                                                                                                               |
-| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| 📊 **Automated Fairness Audits**  | Upload your CSV dataset to instantly identify biased outcomes across sensitive attributes (race, gender, age).                            |
-| ⚖️ **Comprehensive Bias Metrics** | Calculates standard fairness metrics including Demographic Parity, Equalized Odds, and Disparate Impact Ratio.                            |
-| 🧠 **SHAP Explainability**        | Dive deep into model decisions with SHAP (SHapley Additive exPlanations) to reveal exact feature contributions to bias.                   |
-| 🤖 **Gemini AI Natural Language** | Get instant, plain-English executive summaries and actionable recommendations powered by Google Gemini 2.5 Flash.                         |
+| Feature                           | Description                                                                                                                   |
+| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+| 📊 **Automated Fairness Audits**  | Upload your CSV dataset to instantly identify biased outcomes across sensitive attributes (race, gender, age).               |
+| ⚖️ **Comprehensive Bias Metrics** | Calculates standard fairness metrics including Demographic Parity, Equalized Odds, and Disparate Impact Ratio.              |
+| 🧠 **SHAP Explainability**        | Dive deep into model decisions with SHAP (SHapley Additive exPlanations) to reveal exact feature contributions to bias.       |
+| 🤖 **Gemini AI Natural Language** | Get instant, plain-English executive summaries and actionable recommendations powered by Google Gemini 2.5 Flash.              |
 | 🛠️ **Multi-Strategy Mitigation**  | Automatically apply Pre-processing (CorrelationRemover), In-processing (ExponentiatedGradient), and Post-processing (ThresholdOptimizer). |
-| 📈 **Interactive Dashboards**     | Visualize complex fairness metrics through responsive React/Recharts charts and side-by-side comparisons.                                 |
-| 📄 **PDF & CSV Export**           | Export audit reports as clean PDFs or download the mitigated fair dataset for downstream production use.                                  |
-| 📂 **Instant Demo Datasets**      | Get started immediately with pre-loaded datasets (Adult Census Income, COMPAS recidivism).                                                |
+| 📈 **Interactive Dashboards**     | Visualize complex fairness metrics through responsive React/Recharts charts and side-by-side comparisons.                      |
+| 📄 **PDF & CSV Export**           | Export audit reports as clean PDFs or download the mitigated fair dataset for downstream production use.                       |
+| 📂 **Instant Demo Datasets**      | Get started immediately with pre-loaded datasets (Adult Census Income, COMPAS recidivism).                                    |
 
 ## 🏗️ Architecture Overview
 
-The system uses a decoupled microservices architecture designed for deployment on free tier cloud hosting.
+The system uses a decoupled architecture designed for deployment on 100% free cloud hosting.
 
 ```mermaid
 graph TD
@@ -67,7 +67,7 @@ graph TD
     classDef backend fill:#009688,stroke:#333,stroke-width:2px,color:#fff;
     classDef ml fill:#FF6F00,stroke:#333,stroke-width:2px,color:#fff;
     classDef db fill:#FFCA28,stroke:#333,stroke-width:2px,color:#000;
-
+    
     subgraph "Frontend Layer (Vercel)"
         UI_Upload("📤 Dataset Upload & Demo"):::frontend
         UI_Dash("📊 Bias Dashboard & XAI"):::frontend
@@ -77,8 +77,8 @@ graph TD
     subgraph "Backend Layer (Render FastAPI)"
         API("⚡ API Gateway"):::backend
         DP("⚙️ Data Processing Engine"):::backend
-
-        subgraph "Machine Learning & AI Core"
+        
+        subgraph "Machine Learning Core"
             FE("⚖️ Fairness Engine (Fairlearn)"):::ml
             XE("🧠 Explainability Engine (SHAP)"):::ml
             ME("🛠️ Multi-Strategy Mitigation Engine"):::ml
@@ -96,18 +96,18 @@ graph TD
     API -- "Processed Features" --> DP
     DP -- "Feature Matrix" --> FE
     DP -- "Feature Matrix" --> XE
-
+    
     FE -- "Disparity Metrics" --> UI_Dash
     XE -- "SHAP Values" --> UI_Dash
     FE & XE -- "Metrics & SHAP Summary" --> GAI
     GAI -- "Natural Language AI Report" --> UI_Dash
-
+    
     FE -- "High Disparity" --> ME
     ME -- "Fair Predictions" --> UI_Report
-
+    
     %% Storage Interactions
     API <-- "Save Audit History" --> DB
-    UI_Upload <-- "Bearer Token Auth" --> Auth
+    UI_Upload <-- "Verify User" --> Auth
 ```
 
 ## ⚙️ AI Pipeline: How It Works
@@ -120,6 +120,26 @@ graph TD
 6. **Mitigation:** The Multi-Strategy Engine evaluates CorrelationRemover, ExponentiatedGradient, and ThresholdOptimizer to select the optimal fairness/accuracy tradeoff.
 7. **Export & Persistence:** Reports can be exported to PDF, mitigated datasets downloaded as CSV, and audit sessions saved to Firebase Firestore.
 
+## 🎥 Project Preview
+
+<div align="center">
+  <video src="Public/Videos/Fairlens-AI-Preview.mp4" controls="controls" muted="muted" width="800"></video>
+  <br/>
+  <i>(If the video doesn't load, you can view it on <a href="https://drive.google.com/file/d/1eroNN4jK3YIyA6n6CxAcboKqtZSCM-HE/view?usp=drive_link">Google Drive</a> or <a href="Public/Videos/Fairlens-AI-Preview.mp4">download it here</a>)</i>
+</div>
+
+## 📸 Screenshots
+
+|                                           Bias Detection Dashboard                                           |                                             AI Bias Explanation                                             |
+| :----------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
+| <img src="Public/Screenshots/Bias-Detection.png" alt="Bias Detection Dashboard"> | <img src="Public/Screenshots/AI-Bias-Explaination.png" alt="AI Bias Explanation"> |
+|                            _High-level overview of model fairness health._                             |                       _Deep dive into feature contributions driving the bias._                       |
+
+|                                         Mitigation Results & Fixes                                          |                                          Fairness Report Summary                                          |
+| :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+| <img src="Public/Screenshots/Bias-Mitigation-Fix.png" alt="Bias Mitigation Fix"> | <img src="Public/Screenshots/Report.png" alt="Fairness Report"> |
+|                    _Comparing fairness metrics before and after mitigation._                     |                      _Comprehensive audit report for compliance._                       |
+
 ## 🚀 Live Production Deployment
 
 FairLens AI is configured for 100% free production deployment using **Vercel** (Frontend) and **Render** (Backend).
@@ -129,16 +149,18 @@ FairLens AI is configured for 100% free production deployment using **Vercel** (
 - 💚 **API Health Check:** `https://fairlens-ai-backend-skog.onrender.com/health`
 - 🎯 **API Ready Check:** `https://fairlens-ai-backend-skog.onrender.com/ready`
 
+For step-by-step deployment guide on free hosting platforms, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
+
 ## 💻 Tech Stack
 
-| Category              | Technologies                                                  |
-| :-------------------- | :------------------------------------------------------------ |
+| Category              | Technologies                                               |
+| :-------------------- | :--------------------------------------------------------- |
 | **Frontend**          | React 18, TypeScript, Vite, Tailwind CSS, Shadcn UI, Recharts |
-| **Backend**           | FastAPI, Uvicorn, Python 3.10                                 |
-| **Data Science & ML** | Pandas, Scikit-Learn, NumPy                                   |
-| **Responsible AI**    | Fairlearn, SHAP                                               |
-| **Generative AI**     | Google Gemini 2.5 Flash API (Tenacity Retry + Fallback)       |
-| **Database & Auth**   | Firebase Firestore, Firebase Authentication                   |
+| **Backend**           | FastAPI, Uvicorn, Python 3.10                              |
+| **Data Science & ML** | Pandas, Scikit-Learn, NumPy                                |
+| **Responsible AI**    | Fairlearn, SHAP                                            |
+| **Generative AI**     | Google Gemini 2.5 Flash API (Tenacity Retry + Fallback)    |
+| **Database & Auth**   | Firebase Firestore, Firebase Authentication                |
 
 ## 📁 Project Structure
 
@@ -168,7 +190,9 @@ fairlens-ai/
 └── README.md                 # Project documentation
 ```
 
-## 🛠️ Installation & Local Development
+## 🛠️ Installation Guide
+
+Follow these steps to run FairLens AI locally on your machine.
 
 ### Prerequisites
 
@@ -187,6 +211,7 @@ cd fairlens-ai-
 
 ```bash
 cd backend
+# Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
@@ -197,37 +222,91 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-_Backend API will run at `http://localhost:8000`_
+_The backend API will be available at `http://localhost:8000`_
 
 ### 3. Setup the Frontend
 
 ```bash
-# Open a new terminal and navigate to frontend
+# Open a new terminal and navigate to the frontend directory
 cd frontend
 
 # Install dependencies
 npm install
 
-# Start the Vite dev server
+# Start the Vite development server
 npm run dev
 ```
 
-_Frontend web app will run at `http://localhost:5173`_
+_The frontend application will be available at `http://localhost:5173`_
 
-## 📖 Usage Workflow
+## 📖 Usage Guide & Example Workflow
 
-1. **Upload or Demo Data:** Select a pre-loaded dataset (Adult Census / COMPAS) or upload a custom CSV dataset.
-2. **Configure Audit:** Choose the target column (e.g. `income`) and sensitive attribute (e.g. `race`, `sex`).
-3. **Run Audit:** View interactive fairness dashboards showing Demographic Parity Difference, Equalized Odds, and Disparate Impact Ratio.
-4. **SHAP & Gemini AI:** Explore feature importance impact and read plain-English executive recommendations generated by Gemini AI.
-5. **Mitigate & Download:** Click "Fix Bias" to evaluate multi-strategy mitigation algorithms and download the fair dataset as CSV or export the report as PDF.
+1. **Sign In / Guest Mode:** Launch the application and select a demo dataset to start immediately without uploading data.
+2. **Configure Audit:** Select the sensitive attributes you want to audit for (e.g., `gender`, `race`).
+3. **Run Audit:** Click "Run Fairness Audit". The backend will process the data and return the fairness metrics.
+4. **Analyze Results:** Review the dashboard. Are the Disparate Impact scores below the industry standard of 0.8? Which features are highlighted by SHAP as heavily influencing the bias?
+5. **Mitigate:** Navigate to the Mitigation tab. Select a mitigation strategy (e.g., Correlation Remover or Threshold Optimization).
+6. **Compare:** View the "Before vs. After" comparison to see how the fairness metrics improved and how model accuracy was affected.
 
 ## 🏆 Hackathon Journey
 
 **HackNova Online Challenge 2026**
 
-- 🏆 Awarded **3rd Prize Winner** overall!
-- Developed as a hackathon project to make AI auditing accessible, visual, and actionable for developers worldwide.
+FairLens AI was conceptualized, designed, and fully developed by a solo developer over a rigorous one-week period for the HackNova Online Challenge.
+
+- **May 17, 2026:** Initial idea submission focusing on the critical need for accessible AI auditing tools.
+- **May 20, 2026:** Selected for the Top 30 Development Phase from a highly competitive pool of applicants.
+- **May 21–23, 2026:** 72-hour intensive development sprint. Architected the FastAPI backend, integrated Fairlearn/SHAP, built the React frontend, and connected Firebase.
+- **May 24, 2026:** Final presentation and evaluation.
+- **Result:** 🥉 Awarded **3rd Prize** overall!
+
+## 🚧 Challenges Faced
+
+Building a comprehensive ML platform in 72 hours presented several unique challenges:
+
+- **Mathematical Complexity:** Translating dense fairness mathematics from `Fairlearn` into intuitive, actionable UI components that non-experts can understand.
+- **Performance:** Calculating SHAP values for large datasets is computationally expensive. Optimized the backend to sample data appropriately to ensure the API responds in real-time without timing out.
+- **State Management:** Managing complex, multi-step ML workflows (Upload -> Audit -> Explain -> Mitigate) seamlessly on the frontend.
+
+## 🗺️ Future Roadmap
+
+FairLens AI is evolving from a hackathon prototype into a robust open-source platform.
+
+### Phase 1: Core Enhancements (Completed)
+
+- [x] Export reports as PDF/CSV.
+- [x] Gemini AI-Powered natural language bias explanations.
+- [x] Enterprise Firebase Auth & Firestore session tracking.
+
+### Phase 2: Advanced Intelligence
+
+- [ ] **Multi-Model Benchmarking:** Compare the fairness of multiple models side-by-side.
+- [ ] **Automated Report Generation:** Schedule automated periodic audits.
+
+### Phase 3: Enterprise Scale
+
+- [ ] **Dataset Drift Monitoring:** Continuous monitoring of data streams for emergent biases over time.
+- [ ] **Responsible AI Assistant:** Conversational agent to guide users through the auditing process.
+- [ ] **Enterprise Analytics:** Organizational dashboards for compliance tracking.
+
+## 🌍 Impact
+
+FairLens AI is designed to benefit the entire AI ecosystem:
+
+- 🎓 **Students & Educators:** A practical tool to learn and teach the concepts of AI fairness and ethics.
+- 🔬 **Researchers:** A visual platform to quickly experiment with and benchmark different bias mitigation techniques.
+- 👨‍💻 **Data Scientists:** A streamlined workflow to audit models before deploying them to production.
+- 🚀 **Startups & Enterprises:** A compliance tool to ensure AI systems align with ethical guidelines and emerging regulations (e.g., EU AI Act).
+
+## 🤝 Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📄 License
 
