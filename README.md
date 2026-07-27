@@ -144,12 +144,10 @@ graph TD
 
 FairLens AI is configured for 100% free production deployment using **Vercel** (Frontend) and **Render** (Backend).
 
-- 🌐 **Live Frontend (Vercel):** `https://fairlens-ai-nine.vercel.app/`
-- ⚡ **Live Backend API (Render):** `https://fairlens-ai-backend-skog.onrender.com`
-- 💚 **API Health Check:** `https://fairlens-ai-backend-skog.onrender.com/health`
-- 🎯 **API Ready Check:** `https://fairlens-ai-backend-skog.onrender.com/ready`
-
-For step-by-step deployment guide on free hosting platforms, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
+- 🌐 **Live Frontend (Vercel):** [https://fairlens-ai-nine.vercel.app/](https://fairlens-ai-nine.vercel.app/)
+- ⚡ **Live Backend API (Render):** [https://fairlens-ai-backend-skog.onrender.com](https://fairlens-ai-backend-skog.onrender.com)
+- 💚 **API Health Check:** [https://fairlens-ai-backend-skog.onrender.com/health](https://fairlens-ai-backend-skog.onrender.com/health)
+- 🎯 **API Ready Check:** [https://fairlens-ai-backend-skog.onrender.com/ready](https://fairlens-ai-backend-skog.onrender.com/ready)
 
 ## 💻 Tech Stack
 
