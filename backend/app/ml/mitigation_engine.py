@@ -49,7 +49,7 @@ class MitigationEngine:
             X_train_clean = cr.fit_transform(X_train_corr_imputed)
             X_test_clean = cr.transform(X_test_corr_imputed)
 
-            model = LogisticRegression(max_iter=1000, random_state=42)
+            model = LogisticRegression(max_iter=200, random_state=42, solver='liblinear')
             model.fit(X_train_clean, self.y_train)
             y_pred_test = model.predict(X_test_clean)
 
@@ -69,11 +69,12 @@ class MitigationEngine:
 
     def run_inprocessing_mitigation(self) -> Tuple[Dict[str, Any], np.ndarray]:
         try:
-            base_model = LogisticRegression(max_iter=1000, random_state=42)
+            base_model = LogisticRegression(max_iter=200, random_state=42, solver='liblinear')
             eg = ExponentiatedGradient(
                 estimator=base_model,
                 constraints=DemographicParity(),
-                sample_weight_name="sample_weight"
+                sample_weight_name="sample_weight",
+                max_iter=5
             )
             eg.fit(self.X_train, self.y_train, sensitive_features=self.s_train)
             y_pred_test = eg.predict(self.X_test)
@@ -87,7 +88,7 @@ class MitigationEngine:
 
     def run_postprocessing_mitigation(self) -> Tuple[Dict[str, Any], np.ndarray]:
         try:
-            base_model = LogisticRegression(max_iter=1000, random_state=42)
+            base_model = LogisticRegression(max_iter=200, random_state=42, solver='liblinear')
             base_model.fit(self.X_train, self.y_train)
 
             optimizer = ThresholdOptimizer(
