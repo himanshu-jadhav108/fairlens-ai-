@@ -182,9 +182,10 @@ fairlens-ai/
 
 FairLens AI is configured for 100% free production deployment using **Vercel** for the frontend and **Render** for the backend.
 
-- 🌐 **Live Frontend (Vercel):** `https://fairlens-ai.vercel.app` *(Replace with your deployed URL)*
-- ⚡ **Live Backend API (Render):** `https://fairlens-backend.onrender.com` *(Replace with your deployed URL)*
-- 💚 **API Health Check:** `https://fairlens-backend.onrender.com/health`
+- 🌐 **Live Frontend (Vercel):** `https://fairlens-ai.vercel.app` *(Set VITE_API_URL in Vercel to backend URL below)*
+- ⚡ **Live Backend API (Render):** `https://fairlens-ai-backend-skog.onrender.com`
+- 💚 **API Health Check:** `https://fairlens-ai-backend-skog.onrender.com/health`
+- 🎯 **API Ready Check:** `https://fairlens-ai-backend-skog.onrender.com/ready`
 
 For complete step-by-step instructions on deploying your own instance on Vercel and Render free tier, see [DEPLOYMENT_GUIDE.md](file:///d:/Projects/fairlens-ai/DEPLOYMENT_GUIDE.md).
 
