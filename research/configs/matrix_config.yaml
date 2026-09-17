@@ -1,0 +1,49 @@
+# FairLens AI Research — Experiment Matrix Configuration
+# NOTE: PROVISIONAL SPECIFICATION.
+# The candidate matrix reflects the combinatorial capability of the pipeline.
+# The final subset of experiments required for publication will be determined
+# following the literature survey and formal research gap formulation.
+
+provisional_notice: >
+  This candidate experiment matrix represents the full combinatorial space
+  (3 datasets x 3 models x 3 mitigations x 5 seeds = 135 runs).
+  This matrix is strictly PROVISIONAL and does not constitute a claim that all
+  combinations are required for scientific validity or publication.
+
+candidate_matrix:
+  datasets:
+    - "adult"
+    - "compas"
+    - "german"
+
+  models:
+    - "logistic_regression"
+    - "random_forest"
+    - "xgboost"
+
+  mitigations:
+    - "correlation_remover"
+    - "exponentiated_gradient"
+    - "threshold_optimizer"
+
+  seeds:
+    - 42
+    - 123
+    - 456
+    - 789
+    - 2026
+
+evaluation:
+  split_strategy: "train_val_test"
+  train_ratio: 0.60
+  val_ratio: 0.20
+  test_ratio: 0.20
+  stratify_by: "target"
+
+explainability:
+  eval_samples: 150
+  comparison_metrics:
+    - "cosine_similarity"
+    - "spearman_rank_correlation"
+    - "l1_attribution_difference"
+    - "l2_attribution_difference"

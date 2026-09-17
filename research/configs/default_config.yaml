@@ -1,0 +1,35 @@
+# FairLens AI Research — Single Experiment Default Configuration
+# All paths and parameters are configurable
+
+experiment:
+  name: "fairness_xai_study_default"
+  description: "Baseline vs Mitigated Model Evaluation with SHAP Attribution Stability"
+
+dataset:
+  name: "adult"
+  target_col: null           # Automatically inferred from dataset definition if null
+  sensitive_col: null        # Automatically inferred from dataset definition if null
+  test_size: 0.20
+  val_size: 0.20
+  random_state: 42
+  use_synthetic_benchmark: true  # For fast offline execution/smoke tests
+
+model:
+  family: "logistic_regression"
+  params:
+    max_iter: 500
+    solver: "liblinear"
+
+mitigation:
+  method: "correlation_remover"
+  params:
+    alpha: 1.0
+
+explainability:
+  explainer_type: "auto"     # "auto", "linear", "tree", "kernel"
+  n_eval_samples: 150
+  n_background_samples: 100
+  random_state: 42
+
+seeds:
+  - 42

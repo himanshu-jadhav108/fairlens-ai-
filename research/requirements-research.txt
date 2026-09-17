@@ -1,0 +1,13 @@
+# FairLens AI — Research Pipeline Dependencies
+# Pinned specifications for reproducibility across Python 3.10 - 3.13
+
+scikit-learn>=1.5.0,<=1.8.0
+fairlearn>=0.10.0,<=0.14.0
+shap>=0.46.0,<=0.51.0
+xgboost>=2.0.0,<=3.4.1
+pandas>=2.2.0,<=3.0.5
+numpy>=1.26.0,<=2.3.5
+scipy>=1.14.0,<=1.17.0
+matplotlib>=3.8.0,<=3.11.1
+pyyaml>=6.0.1
+pytest>=8.0.0
