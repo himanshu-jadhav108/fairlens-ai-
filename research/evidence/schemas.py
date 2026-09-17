@@ -138,9 +138,15 @@ class AuditEvidence:
         data_str = json.dumps(self.to_dict(), sort_keys=True, default=str)
         return hashlib.sha256(data_str.encode("utf-8")).hexdigest()
 
+    @property
+    def evidence_hash(self) -> str:
+        """Convenience property returning SHA-256 evidence hash."""
+        return self.compute_evidence_hash()
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert dataclass to dictionary."""
         return asdict(self)
+
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "AuditEvidence":

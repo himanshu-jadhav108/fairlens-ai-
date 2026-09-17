@@ -29,6 +29,7 @@ from research.llm.providers import get_llm_provider
 from research.llm.generator import ExplanationGenerator
 from research.llm.config import get_default_generation_config
 from research.faithfulness.evaluator import FaithfulnessEvaluator
+from research.faithfulness.coverage import EvidenceCoverageEvaluator
 
 
 def parse_args():
@@ -65,18 +66,26 @@ def run_experiment(
     prompt_id: str = "combined_audit_v1",
     temperature: float = 0.2,
     output_dir: str = "research/results",
-    use_synthetic: bool = True
+    use_synthetic: bool = True,
+    is_smoke_test: bool = False
 ) -> Dict[str, Any]:
     """
     Executes the end-to-end fairness audit, explanation generation, and faithfulness evaluation.
+    Isolates smoke test outputs into a dedicated subdirectory with explicit software validation tags.
     """
+    # Isolate smoke test outputs (Section 20)
+    effective_output_dir = os.path.join(output_dir, "smoke") if is_smoke_test else output_dir
+    execution_mode = "SOFTWARE_VALIDATION_ONLY" if is_smoke_test else "EMPIRICAL_RESEARCH_RUN"
+
     print("=" * 70)
     print("FAIRLENS AI RESEARCH: LLM EXPLANATION FAITHFULNESS PIPELINE")
-    print(f"Dataset:    {dataset_name} (Synthetic: {use_synthetic})")
-    print(f"Model:      {model_name}")
-    print(f"Mitigation: {mitigation_name}")
-    print(f"Seed:       {seed}")
-    print(f"LLM:        {provider_name} | Prompt: {prompt_id} | Temp: {temperature}")
+    print(f"Execution Mode: {execution_mode}")
+    print(f"Output Path:    {effective_output_dir}")
+    print(f"Dataset:        {dataset_name} (Synthetic: {use_synthetic})")
+    print(f"Model:          {model_name}")
+    print(f"Mitigation:     {mitigation_name}")
+    print(f"Seed:           {seed}")
+    print(f"LLM:            {provider_name} | Prompt: {prompt_id} | Temp: {temperature}")
     print("=" * 70)
 
     # 1. Run ML Fairness Audit & Mitigation
@@ -92,9 +101,10 @@ def run_experiment(
     )
     raw_result, manifest = run_single_experiment(
         config=config,
-        results_dir=output_dir,
+        results_dir=effective_output_dir,
         save_artifacts=True
     )
+    manifest["execution_mode"] = execution_mode
     print(f"-> Audit completed. Experiment ID: {config.experiment_id}")
 
     # 2. Build Authoritative Structured Audit Evidence
@@ -119,7 +129,7 @@ def run_experiment(
         evidence=evidence,
         prompt_id=prompt_id,
         audit_state="comparison",
-        output_dir=os.path.join(output_dir, "raw")
+        output_dir=os.path.join(effective_output_dir, "raw")
     )
     print(f"-> LLM explanation received ({len(explanation_record.output_text.split())} words).")
 
@@ -130,6 +140,7 @@ def run_experiment(
         relative_tolerance=0.05,
         top_k_features=5
     )
+    coverage_evaluator = EvidenceCoverageEvaluator(top_k_features=5)
 
     # Evaluate LLM explanation
     llm_report = evaluator.evaluate(
@@ -138,8 +149,13 @@ def run_experiment(
         explanation_source=f"{provider_name}_{explanation_record.llm_model}",
         prompt_id=prompt_id,
         save_records=True,
-        output_claims_dir=os.path.join(output_dir, "claims"),
-        output_summaries_dir=os.path.join(output_dir, "summaries")
+        output_claims_dir=os.path.join(effective_output_dir, "claims"),
+        output_summaries_dir=os.path.join(effective_output_dir, "summaries")
+    )
+    llm_coverage = coverage_evaluator.evaluate(
+        evidence=evidence,
+        text=explanation_record.output_text,
+        explanation_source=f"{provider_name}_{explanation_record.llm_model}"
     )
 
     # Evaluate Template baseline explanation (as experimental control)
@@ -149,27 +165,36 @@ def run_experiment(
         explanation_source="template_baseline",
         prompt_id="deterministic_template",
         save_records=True,
-        output_claims_dir=os.path.join(output_dir, "claims"),
-        output_summaries_dir=os.path.join(output_dir, "summaries")
+        output_claims_dir=os.path.join(effective_output_dir, "claims"),
+        output_summaries_dir=os.path.join(effective_output_dir, "summaries")
+    )
+    template_coverage = coverage_evaluator.evaluate(
+        evidence=evidence,
+        text=template_text,
+        explanation_source="template_baseline"
     )
 
-    # 6. Print Faithfulness Summary
+    # 6. Print Faithfulness and Coverage Summary
     print("\n[Step 6/6] Faithfulness Evaluation Complete!")
-    print("-" * 70)
-    print(f"{'Metric':<32} | {'Template Baseline':<18} | {'LLM (' + provider_name + ')':<18}")
-    print("-" * 70)
-    print(f"{'Numerical Faithfulness':<32} | {template_report.numerical_faithfulness * 100:>16.1f}% | {llm_report.numerical_faithfulness * 100:>16.1f}%")
-    print(f"{'Directional Faithfulness':<32} | {template_report.directional_faithfulness * 100:>16.1f}% | {llm_report.directional_faithfulness * 100:>16.1f}%")
-    print(f"{'Attribution Faithfulness':<32} | {template_report.attribution_faithfulness * 100:>16.1f}% | {llm_report.attribution_faithfulness * 100:>16.1f}%")
-    print(f"{'Unsupported Claim Rate':<32} | {template_report.unsupported_claim_rate * 100:>16.1f}% | {llm_report.unsupported_claim_rate * 100:>16.1f}%")
-    print(f"{'Total Extracted Claims':<32} | {template_report.total_claims_count:>17} | {llm_report.total_claims_count:>17}")
-    print("-" * 70)
+    print("-" * 75)
+    print(f"{'Metric':<35} | {'Template Baseline':<17} | {'LLM (' + provider_name + ')':<17}")
+    print("-" * 75)
+    print(f"{'Numerical Faithfulness':<35} | {template_report.numerical_faithfulness * 100:>15.1f}% | {llm_report.numerical_faithfulness * 100:>15.1f}%")
+    print(f"{'Directional Faithfulness':<35} | {template_report.directional_faithfulness * 100:>15.1f}% | {llm_report.directional_faithfulness * 100:>15.1f}%")
+    print(f"{'Attribution Faithfulness':<35} | {template_report.attribution_faithfulness * 100:>15.1f}% | {llm_report.attribution_faithfulness * 100:>15.1f}%")
+    print(f"{'Unsupported Claim Rate':<35} | {template_report.unsupported_claim_rate * 100:>15.1f}% | {llm_report.unsupported_claim_rate * 100:>15.1f}%")
+    print(f"{'Total Extracted Claims':<35} | {template_report.total_claims_count:>16} | {llm_report.total_claims_count:>16}")
+    print(f"{'[Secondary] Evidence Coverage':<35} | {template_coverage.overall_coverage_rate * 100:>15.1f}% | {llm_coverage.overall_coverage_rate * 100:>15.1f}%")
+    print("-" * 75)
 
     return {
         "experiment_id": config.experiment_id,
         "evidence_hash": evidence_hash,
+        "execution_mode": execution_mode,
         "llm_report": llm_report.to_dict(),
-        "template_report": template_report.to_dict()
+        "template_report": template_report.to_dict(),
+        "llm_coverage": llm_coverage.to_dict(),
+        "template_coverage": template_coverage.to_dict()
     }
 
 
@@ -186,7 +211,8 @@ def main():
             prompt_id=args.prompt,
             temperature=args.temperature,
             output_dir=args.output_dir,
-            use_synthetic=True
+            use_synthetic=True,
+            is_smoke_test=True
         )
         print("\n[SUCCESS] Smoke test completed cleanly! Pipeline verified.")
         sys.exit(0)
@@ -200,10 +226,12 @@ def main():
             prompt_id=args.prompt,
             temperature=args.temperature,
             output_dir=args.output_dir,
-            use_synthetic=args.use_synthetic
+            use_synthetic=args.use_synthetic,
+            is_smoke_test=False
         )
         print("\n[SUCCESS] Experiment completed.")
 
 
 if __name__ == "__main__":
     main()
+

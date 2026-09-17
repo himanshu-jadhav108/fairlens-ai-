@@ -18,6 +18,8 @@ from .schemas import (
     Direction,
     SemanticInterpretation
 )
+from .metric_semantics import get_metric_semantics, METRIC_REGISTRY
+
 
 
 def compute_direction_and_interpretation(
@@ -28,9 +30,22 @@ def compute_direction_and_interpretation(
     tolerance: float = 1e-4
 ) -> Dict[str, Any]:
     """
-    Computes mathematical direction and domain-specific semantic interpretation.
-    Enforces strict mathematical definitions rather than simplistic 'lower is better' assumptions.
+    Computes mathematical direction and domain-specific semantic interpretation
+    delegating strictly to the centralized METRIC_REGISTRY.
     """
+    sem = get_metric_semantics(metric_name)
+    if sem:
+        res = sem.evaluate_change(before, after, tolerance)
+        return {
+            "absolute_change": res["absolute_change"],
+            "relative_change": res["relative_change"],
+            "direction": Direction(res["direction"]),
+            "interpretation": SemanticInterpretation(res["interpretation"]),
+            "ideal_target": res["ideal_target"],
+            "semantics_rationale": res["rationale"]
+        }
+
+    # Fallback for unregistered custom metrics
     if before is None or after is None or math.isnan(before) or math.isnan(after):
         return {
             "absolute_change": None,
@@ -43,71 +58,15 @@ def compute_direction_and_interpretation(
 
     abs_change = round(after - before, 4)
     rel_change = round((after - before) / abs(before), 4) if abs(before) > 1e-6 else None
-
-    # Determine mathematical direction
-    if abs(abs_change) < tolerance:
-        direction = Direction.UNCHANGED
-    elif abs_change > 0:
-        direction = Direction.INCREASE
-    else:
-        direction = Direction.DECREASE
-
-    # Metric-specific interpretation logic
-    if metric_name in ["demographic_parity_difference", "equal_opportunity_difference", "equalized_odds_difference"]:
-        # Ideal parity is 0.0. Lower absolute magnitude is better.
-        ideal = 0.0
-        abs_before = abs(before)
-        abs_after = abs(after)
-        if abs(abs_after - abs_before) < tolerance:
-            interpretation = SemanticInterpretation.UNCHANGED
-            rationale = f"{metric_name} remained essentially unchanged (|{before:.4f}| vs |{after:.4f}|)."
-        elif abs_after < abs_before:
-            interpretation = SemanticInterpretation.IMPROVEMENT
-            rationale = f"Absolute {metric_name} decreased from {abs_before:.4f} to {abs_after:.4f}, moving closer to ideal parity (0.0)."
-        else:
-            interpretation = SemanticInterpretation.DEGRADATION
-            rationale = f"Absolute {metric_name} increased from {abs_before:.4f} to {abs_after:.4f}, moving further from ideal parity (0.0)."
-
-    elif metric_name == "disparate_impact":
-        # Ideal parity is 1.0. Distance to 1.0 determines fairness.
-        ideal = 1.0
-        dist_before = abs(before - 1.0)
-        dist_after = abs(after - 1.0)
-        if abs(dist_after - dist_before) < tolerance:
-            interpretation = SemanticInterpretation.UNCHANGED
-            rationale = f"Disparate impact distance to parity remained unchanged (|{before:.4f}-1.0| vs |{after:.4f}-1.0|)."
-        elif dist_after < dist_before:
-            interpretation = SemanticInterpretation.IMPROVEMENT
-            rationale = f"Disparate impact moved from {before:.4f} to {after:.4f} (closer to ideal ratio 1.0)."
-        else:
-            interpretation = SemanticInterpretation.DEGRADATION
-            rationale = f"Disparate impact moved from {before:.4f} to {after:.4f} (further from ideal ratio 1.0)."
-
-    elif metric_type == MetricType.PERFORMANCE:
-        # Standard performance metrics: higher is better (ideal: 1.0)
-        ideal = 1.0
-        if direction == Direction.UNCHANGED:
-            interpretation = SemanticInterpretation.UNCHANGED
-            rationale = f"{metric_name} remained stable ({before:.4f} vs {after:.4f})."
-        elif direction == Direction.INCREASE:
-            interpretation = SemanticInterpretation.IMPROVEMENT
-            rationale = f"{metric_name} increased from {before:.4f} to {after:.4f}."
-        else:
-            interpretation = SemanticInterpretation.DEGRADATION
-            rationale = f"{metric_name} decreased from {before:.4f} to {after:.4f}."
-
-    else:
-        ideal = 0.0
-        interpretation = SemanticInterpretation.AMBIGUOUS
-        rationale = f"No predefined domain interpretation rule for {metric_name}."
+    direction = Direction.UNCHANGED if abs(abs_change) < tolerance else (Direction.INCREASE if abs_change > 0 else Direction.DECREASE)
 
     return {
         "absolute_change": abs_change,
         "relative_change": rel_change,
         "direction": direction,
-        "interpretation": interpretation,
-        "ideal_target": ideal,
-        "semantics_rationale": rationale
+        "interpretation": SemanticInterpretation.AMBIGUOUS,
+        "ideal_target": 0.0,
+        "semantics_rationale": f"Metric '{metric_name}' not in centralized registry."
     }
 
 

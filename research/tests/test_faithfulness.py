@@ -230,3 +230,119 @@ def test_faithfulness_evaluator_orchestrator(sample_evidence, tmp_path):
     assert report.total_claims_count > 0
     assert (tmp_path / "claims").exists()
     assert (tmp_path / "summaries").exists()
+
+
+def test_cross_metric_number_swapping(sample_evidence):
+    """
+    Section 3 & 9: Verify that correct numbers attached to the WRONG metrics
+    are strictly classified as UNSUPPORTED.
+    Evidence: DPD = 0.4200, Accuracy = 0.8500.
+    Explanation erroneously swaps them: "Accuracy was 0.4200 while DPD was 0.8500."
+    """
+    evaluator = NumericalFaithfulnessEvaluator(absolute_tolerance=0.015)
+    swapped_text = "Accuracy was 0.4200 while demographic parity difference was 0.8500."
+    claims = evaluator.evaluate(sample_evidence, swapped_text)
+    
+    assert len(claims) == 2
+    # Both numbers exist in evidence, but are associated with the wrong metric
+    for claim in claims:
+        assert claim.classification == ClaimClassification.UNSUPPORTED
+        assert claim.referenced_evidence is not None
+        assert claim.evidence_hash == sample_evidence.evidence_hash
+
+
+def test_qualitative_magnitude_undeterminable(sample_evidence):
+    """
+    Section 5: Subjective/qualitative magnitude terms ("substantially", "slightly")
+    cannot be deterministically evaluated and MUST be classified as UNDETERMINABLE.
+    """
+    evaluator = DirectionalFaithfulnessEvaluator()
+    text = "Demographic parity difference decreased substantially after mitigation."
+    claims = evaluator.evaluate(sample_evidence, text)
+    
+    # Must have mathematical direction (SUPPORTED) and magnitude (UNDETERMINABLE)
+    mag_claims = [c for c in claims if c.claim_type == ClaimType.MAGNITUDE]
+    assert len(mag_claims) >= 1
+    assert mag_claims[0].classification == ClaimClassification.UNDETERMINABLE
+    assert "substantially" in mag_claims[0].rationale
+
+
+def test_overgeneralization_certainty_and_optimality(sample_evidence):
+    """
+    Section 7: Evaluator must catch overgeneralizations, certainty claims,
+    and ungrounded optimality assertions.
+    """
+    detector = UnsupportedClaimsDetector()
+
+    # 1. Overgeneralization
+    overgen_text = "The machine learning model is now fair for everyone across all demographics."
+    claims_overgen = detector.evaluate(sample_evidence, overgen_text)
+    assert any(c.classification == ClaimClassification.UNSUPPORTED for c in claims_overgen)
+
+    # 2. Certainty guarantee
+    cert_text = "The debiasing procedure guarantees that fairness is preserved."
+    claims_cert = detector.evaluate(sample_evidence, cert_text)
+    assert any(c.classification == ClaimClassification.UNSUPPORTED for c in claims_cert)
+
+    # 3. Optimality claim
+    opt_text = "CorrelationRemover is the best mitigation algorithm for algorithmic fairness."
+    claims_opt = detector.evaluate(sample_evidence, opt_text)
+    assert any(c.classification == ClaimClassification.UNSUPPORTED for c in claims_opt)
+
+
+def test_unsupported_performance_claim_on_degraded_model(sample_evidence):
+    """
+    Section 7: Evaluator must catch claims that performance improved when
+    the empirical evidence shows predictive performance degraded.
+    """
+    detector = UnsupportedClaimsDetector()
+    text = "The mitigation successfully improved model performance."
+    claims = detector.evaluate(sample_evidence, text)
+    
+    assert len(claims) >= 1
+    assert claims[0].claim_type == ClaimType.PERFORMANCE
+    assert claims[0].classification == ClaimClassification.UNSUPPORTED
+
+
+def test_evidence_coverage_decoupled(sample_evidence):
+    """
+    Section 19: Evidence coverage is an orthogonal secondary metric measuring
+    completeness, completely separate from faithfulness (truthfulness).
+    """
+    from research.faithfulness.coverage import EvidenceCoverageEvaluator
+    
+    coverage_eval = EvidenceCoverageEvaluator(top_k_features=4)
+    
+    # Text only mentions DPD and capital_gain (omitting EOD, Accuracy, F1)
+    partial_text = "Demographic parity difference was 0.4200. The top feature was capital_gain."
+    report = coverage_eval.evaluate(sample_evidence, partial_text, explanation_source="test_source")
+    
+    # 1 of 2 fairness metrics (DPD mentioned, EOD omitted) -> 50%
+    assert report.fairness_coverage_rate == 0.5
+    # 0 of 2 performance metrics (Accuracy and F1 omitted) -> 0%
+    assert report.performance_coverage_rate == 0.0
+    # 1 of 4 features (capital_gain mentioned) -> 25%
+    assert report.feature_coverage_rate == 0.25
+    assert report.overall_coverage_rate < 1.0
+
+
+def test_weighted_cohen_kappa():
+    """
+    Section 16: Test unweighted and weighted Cohen's Kappa for ordinal labels.
+    """
+    from research.annotation.agreement import compute_cohen_kappa, compute_weighted_cohen_kappa
+    
+    # Perfect agreement
+    rater_a = ["SUPPORTED", "UNSUPPORTED", "PARTIALLY_SUPPORTED", "SUPPORTED"]
+    rater_b = ["SUPPORTED", "UNSUPPORTED", "PARTIALLY_SUPPORTED", "SUPPORTED"]
+    assert compute_cohen_kappa(rater_a, rater_b)["cohen_kappa"] == 1.0
+    assert compute_weighted_cohen_kappa(rater_a, rater_b)["weighted_kappa"] == 1.0
+
+    # Mild disagreement (SUPPORTED vs PARTIALLY_SUPPORTED) vs Severe (SUPPORTED vs UNSUPPORTED)
+    labels_1 = ["SUPPORTED", "SUPPORTED", "PARTIALLY_SUPPORTED", "UNSUPPORTED"]
+    labels_2 = ["PARTIALLY_SUPPORTED", "SUPPORTED", "PARTIALLY_SUPPORTED", "UNSUPPORTED"]
+    
+    res_weighted = compute_weighted_cohen_kappa(labels_1, labels_2, weight_type="quadratic")
+    assert res_weighted["weighted_kappa"] > 0.0
+    assert res_weighted["weight_type"] == "quadratic"
+

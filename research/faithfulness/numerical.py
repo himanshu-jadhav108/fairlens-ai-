@@ -7,37 +7,14 @@ import re
 from typing import List, Dict, Any, Tuple, Optional
 from .taxonomy import ClaimType, ClaimClassification, ExtractedClaim, split_into_sentences
 from ..evidence.schemas import AuditEvidence
+from ..evidence.metric_semantics import METRIC_REGISTRY
 
-
+# Derive authoritative aliases directly from centralized Metric Registry
 METRIC_ALIASES: Dict[str, List[str]] = {
-    "demographic_parity_difference": [
-        "demographic parity difference", "dpd", "demographic parity", "statistical parity difference"
-    ],
-    "equal_opportunity_difference": [
-        "equal opportunity difference", "equal opportunity", "eodiff"
-    ],
-    "equalized_odds_difference": [
-        "equalized odds difference", "equalized odds", "eod"
-    ],
-    "disparate_impact": [
-        "disparate impact", "disparate impact ratio", "adverse impact ratio"
-    ],
-    "accuracy": [
-        "accuracy", "overall accuracy"
-    ],
-    "f1_score": [
-        "f1 score", "f1", "f-measure"
-    ],
-    "precision": [
-        "precision"
-    ],
-    "recall": [
-        "recall", "true positive rate", "sensitivity"
-    ],
-    "roc_auc": [
-        "roc auc", "roc-auc", "auc"
-    ]
+    canonical_name: sem.aliases
+    for canonical_name, sem in METRIC_REGISTRY.items()
 }
+
 
 
 class NumericalFaithfulnessEvaluator:
@@ -161,6 +138,7 @@ class NumericalFaithfulnessEvaluator:
                         f"(min abs diff: {best_match['abs_diff']} > tol {self.absolute_tolerance})."
                     )
 
+                    ref_path = best_match["candidate"].get("path", f"evidence.{canonical_metric}")
                     claims.append(ExtractedClaim(
                         claim_id=f"num_{claim_idx}",
                         experiment_id=evidence.experiment_id,
@@ -178,6 +156,25 @@ class NumericalFaithfulnessEvaluator:
                         },
                         classification=classification,
                         rationale=rationale,
+                        referenced_evidence=ref_path,
+                        extracted_values={
+                            "value": extracted_val,
+                            "raw_string": num_match.group(0),
+                            "is_percentage": is_pct
+                        },
+                        expected_values={
+                            "matched_value": best_match["candidate"]["value"],
+                            "all_candidate_values": [c["value"] for c in gt_candidates]
+                        },
+                        evidence_hash=getattr(evidence, "evidence_hash", None),
+
+                        provenance={
+                            "experiment_id": evidence.experiment_id,
+                            "dataset": evidence.dataset.dataset_name if evidence.dataset else None,
+                            "model": evidence.model.model_family if evidence.model else None,
+                            "mitigation": evidence.model.mitigation_applied if evidence.model else None
+                        },
+
                         metadata={
                             "abs_diff": best_match["abs_diff"],
                             "rel_diff": best_match["rel_diff"],
@@ -193,31 +190,32 @@ class NumericalFaithfulnessEvaluator:
         """Collects all valid numerical values from baseline, mitigated, and comparisons."""
         gt: Dict[str, List[Dict[str, Any]]] = {}
 
-        def add_gt(metric_name: str, val: Optional[float], state: str):
+        def add_gt(metric_name: str, val: Optional[float], state: str, path: str):
             if val is None:
                 return
             if metric_name not in gt:
                 gt[metric_name] = []
-            gt[metric_name].append({"state": state, "value": val})
+            gt[metric_name].append({"state": state, "value": val, "path": path})
 
         # Baseline
         for k, v in evidence.baseline_state.fairness_metrics.items():
-            add_gt(k, v.value, "baseline")
+            add_gt(k, v.value, "baseline", f"baseline_state.fairness_metrics.{k}.value")
         for k, v in evidence.baseline_state.performance_metrics.items():
-            add_gt(k, v.value, "baseline")
+            add_gt(k, v.value, "baseline", f"baseline_state.performance_metrics.{k}.value")
 
         # Mitigated
         if evidence.mitigated_state:
             for k, v in evidence.mitigated_state.fairness_metrics.items():
-                add_gt(k, v.value, "mitigated")
+                add_gt(k, v.value, "mitigated", f"mitigated_state.fairness_metrics.{k}.value")
             for k, v in evidence.mitigated_state.performance_metrics.items():
-                add_gt(k, v.value, "mitigated")
+                add_gt(k, v.value, "mitigated", f"mitigated_state.performance_metrics.{k}.value")
 
         # Comparisons
         for comp in evidence.metric_comparisons:
-            add_gt(comp.metric_name, comp.before, "comparison_before")
-            add_gt(comp.metric_name, comp.after, "comparison_after")
-            add_gt(comp.metric_name, comp.absolute_change, "absolute_change")
-            add_gt(comp.metric_name, comp.relative_change, "relative_change")
+            add_gt(comp.metric_name, comp.before, "comparison_before", f"metric_comparisons.{comp.metric_name}.before")
+            add_gt(comp.metric_name, comp.after, "comparison_after", f"metric_comparisons.{comp.metric_name}.after")
+            add_gt(comp.metric_name, comp.absolute_change, "absolute_change", f"metric_comparisons.{comp.metric_name}.absolute_change")
+            add_gt(comp.metric_name, comp.relative_change, "relative_change", f"metric_comparisons.{comp.metric_name}.relative_change")
 
         return gt
+

@@ -40,13 +40,14 @@ Empirical Research Findings
 
 ---
 
-## 2. Research Questions (Locked)
+## 2. Research Questions (Permanently Locked)
 
-1. **RQ1 (Numerical Faithfulness):** To what degree do LLM-generated natural-language explanations preserve quantitative fairness metrics, performance figures, and delta values within rigorous scientific error tolerances?
-2. **RQ2 (Directional Faithfulness):** How accurately do LLMs represent the mathematical direction of metric shifts and their domain-specific fairness implications (e.g., distinguishing between a reduction in DPD and an improvement in equity)?
-3. **RQ3 (Attribution Faithfulness):** Do LLM explanations faithfully reflect authoritative SHAP feature importance rankings without promoting ungrounded features or reordering dominant predictors?
-4. **RQ4 (Unsupported Assertions):** How frequently do LLMs introduce unevidenced causal claims (e.g., claiming a feature causally created disparity) or unqualified declarations of complete fairness?
-5. **RQ5 (LLM vs. Deterministic Baseline):** Does natural-language generation by LLMs provide communicative benefits that justify its observed fidelity degradation relative to deterministic rule-based template generation?
+1. **RQ1:** How accurately do LLM-generated explanations reproduce the quantitative results of machine-learning fairness audits?
+2. **RQ2:** How accurately do LLM-generated explanations represent the direction and magnitude of fairness changes following bias-mitigation interventions?
+3. **RQ3:** How faithfully do LLM-generated explanations represent feature-importance information derived from SHAP-based explanations?
+4. **RQ4:** What types of faithfulness errors occur most frequently in LLM-generated explanations of fairness audits?
+5. **RQ5:** How does explanation faithfulness vary across datasets, predictive models, fairness metrics, mitigation methods, and LLM configurations?
+
 
 ---
 

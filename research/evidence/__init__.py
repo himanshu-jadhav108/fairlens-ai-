@@ -19,6 +19,12 @@ from .builder import (
     build_audit_state,
     compute_direction_and_interpretation
 )
+from .metric_semantics import (
+    MetricSemantics,
+    METRIC_REGISTRY,
+    get_metric_semantics
+)
+
 
 __all__ = [
     "AuditEvidence",
@@ -34,5 +40,8 @@ __all__ = [
     "SemanticInterpretation",
     "build_evidence_from_raw_result",
     "build_audit_state",
-    "compute_direction_and_interpretation"
+    "compute_direction_and_interpretation",
+    "MetricSemantics",
+    "METRIC_REGISTRY",
+    "get_metric_semantics"
 ]

@@ -10,6 +10,7 @@ from typing import Dict, Any, Optional, List
 class ClaimType(str, Enum):
     NUMERICAL = "numerical"
     DIRECTIONAL = "directional"
+    MAGNITUDE = "magnitude"
     ATTRIBUTION = "attribution"
     PERFORMANCE = "performance"
     FAIRNESS_INTERPRETATION = "fairness_interpretation"
@@ -26,7 +27,12 @@ class ClaimClassification(str, Enum):
 
 @dataclass
 class ExtractedClaim:
-    """A single atomic factual or semantic claim extracted from an explanation."""
+    """
+    A single atomic factual or semantic claim extracted from an explanation.
+    Supports complete end-to-end evidence traceability:
+    claim -> claim type -> referenced evidence -> extracted value(s) -> expected value(s)
+    -> comparison result -> faithfulness label -> reason -> provenance.
+    """
     claim_id: str
     experiment_id: str
     claim_type: ClaimType
@@ -35,13 +41,19 @@ class ExtractedClaim:
     predicted_claim: Dict[str, Any]
     classification: ClaimClassification
     rationale: str
+    referenced_evidence: Optional[str] = None
+    extracted_values: Dict[str, Any] = field(default_factory=dict)
+    expected_values: Dict[str, Any] = field(default_factory=dict)
+    evidence_hash: Optional[str] = None
+    provenance: Dict[str, Any] = field(default_factory=dict)
     metadata: Dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         d = asdict(self)
-        d["claim_type"] = self.claim_type.value
-        d["classification"] = self.classification.value
+        d["claim_type"] = self.claim_type.value if isinstance(self.claim_type, ClaimType) else str(self.claim_type)
+        d["classification"] = self.classification.value if isinstance(self.classification, ClaimClassification) else str(self.classification)
         return d
+
 
 
 def split_into_sentences(text: str) -> List[str]:

@@ -1,0 +1,3 @@
+# Ignore all generated smoke test artifacts
+*
+!.gitignore

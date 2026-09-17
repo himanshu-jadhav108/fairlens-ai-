@@ -8,6 +8,7 @@ from .directional import DirectionalFaithfulnessEvaluator
 from .attribution import AttributionFaithfulnessEvaluator
 from .unsupported_claims import UnsupportedClaimsDetector
 from .evaluator import FaithfulnessEvaluator
+from .coverage import EvidenceCoverageEvaluator, EvidenceCoverageReport
 
 __all__ = [
     "ClaimType",
@@ -18,5 +19,8 @@ __all__ = [
     "DirectionalFaithfulnessEvaluator",
     "AttributionFaithfulnessEvaluator",
     "UnsupportedClaimsDetector",
-    "FaithfulnessEvaluator"
+    "FaithfulnessEvaluator",
+    "EvidenceCoverageEvaluator",
+    "EvidenceCoverageReport"
 ]
+
