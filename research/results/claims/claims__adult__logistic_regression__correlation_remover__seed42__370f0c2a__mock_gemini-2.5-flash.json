@@ -1,0 +1,199 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "numerical",
+    "claim_text": "The evaluated model exhibited a baseline demographic parity difference of 0.4200 and accuracy of 0.8500",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4222
+      },
+      "all_candidates": [
+        0.4222,
+        0.0123,
+        0.4222,
+        0.0123,
+        -0.4099,
+        -0.9709
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.42,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.4200 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.42 matches ground truth 0.4222 for 'demographic_parity_difference' within tolerance (abs diff: 0.0022).",
+    "metadata": {
+      "abs_diff": 0.0022,
+      "rel_diff": 0.00521,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_2",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "numerical",
+    "claim_text": "The evaluated model exhibited a baseline demographic parity difference of 0.4200 and accuracy of 0.8500",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8267
+      },
+      "all_candidates": [
+        0.91,
+        0.8267,
+        0.91,
+        0.8267,
+        -0.0833,
+        -0.0915
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.85,
+      "metric_alias": "accuracy",
+      "raw_string": "0.8500"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.85 matches ground truth 0.8267 for 'accuracy' within tolerance (abs diff: 0.0233).",
+    "metadata": {
+      "abs_diff": 0.0233,
+      "rel_diff": 0.02818,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_3",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "numerical",
+    "claim_text": "After applying bias mitigation, demographic parity difference decreased to 0.0800, representing a significant fairness improvement toward parity",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.0123
+      },
+      "all_candidates": [
+        0.4222,
+        0.0123,
+        0.4222,
+        0.0123,
+        -0.4099,
+        -0.9709
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.08,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.0800"
+    },
+    "classification": "UNSUPPORTED",
+    "rationale": "Reported value 0.08 contradicts ground truth [0.4222, 0.0123, 0.4222, 0.0123, -0.4099, -0.9709] for 'demographic_parity_difference' (min abs diff: 0.0677 > tol 0.015).",
+    "metadata": {
+      "abs_diff": 0.0677,
+      "rel_diff": 5.50407,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_4",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "numerical",
+    "claim_text": "Model accuracy decreased moderately to 0.8200",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8267
+      },
+      "all_candidates": [
+        0.91,
+        0.8267,
+        0.91,
+        0.8267,
+        -0.0833,
+        -0.0915
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.82,
+      "metric_alias": "accuracy",
+      "raw_string": "0.8200"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.82 matches ground truth 0.8267 for 'accuracy' within tolerance (abs diff: 0.0067).",
+    "metadata": {
+      "abs_diff": 0.0067,
+      "rel_diff": 0.0081,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "dir_math_1",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "directional",
+    "claim_text": "After applying bias mitigation, demographic parity difference decreased to 0.0800, representing a significant fairness improvement toward parity",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "direction": "decrease",
+      "before": 0.4222,
+      "after": 0.0123,
+      "absolute_change": -0.4099
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decreased",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that demographic_parity_difference 'decreased' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_2",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "After applying bias mitigation, demographic parity difference decreased to 0.0800, representing a significant fairness improvement toward parity",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute demographic_parity_difference decreased from 0.4222 to 0.0123, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_3",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+    "claim_type": "directional",
+    "claim_text": "Model accuracy decreased moderately to 0.8200",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "direction": "decrease",
+      "before": 0.91,
+      "after": 0.8267,
+      "absolute_change": -0.0833
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decreased",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that accuracy 'decreased' matches ground truth direction: decrease.",
+    "metadata": {}
+  }
+]

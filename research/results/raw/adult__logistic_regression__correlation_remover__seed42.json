@@ -1,6 +1,6 @@
 {
-  "experiment_id": "adult__logistic_regression__correlation_remover__seed42__ef077342",
-  "manifest_reference": "manifests/adult__logistic_regression__correlation_remover__seed42__ef077342.json",
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed42__370f0c2a",
+  "manifest_reference": "manifests/adult__logistic_regression__correlation_remover__seed42__370f0c2a.json",
   "dataset_name": "adult",
   "model_name": "logistic_regression",
   "mitigation_name": "correlation_remover",
@@ -109,332 +109,332 @@
     "global_shap": [
       {
         "feature": "education_num",
-        "importance": 2.466395
+        "importance": 2.520783
       },
       {
         "feature": "age",
-        "importance": 1.531877
+        "importance": 1.35354
       },
       {
         "feature": "hours_per_week",
-        "importance": 1.047741
+        "importance": 1.071967
       },
       {
         "feature": "sex_Male",
-        "importance": 0.932511
+        "importance": 0.875252
       },
       {
         "feature": "sex_Female",
-        "importance": 0.811378
-      },
-      {
-        "feature": "capital_gain",
-        "importance": 0.162905
+        "importance": 0.761556
       },
       {
         "feature": "marital_status_Never-married",
-        "importance": 0.142459
+        "importance": 0.13344
       },
       {
-        "feature": "occupation_Exec-managerial",
-        "importance": 0.114867
+        "feature": "capital_gain",
+        "importance": 0.120152
       },
       {
         "feature": "relationship_Unmarried",
         "importance": 0.109442
       },
       {
+        "feature": "occupation_Exec-managerial",
+        "importance": 0.104822
+      },
+      {
         "feature": "occupation_Prof-specialty",
-        "importance": 0.106675
-      },
-      {
-        "feature": "relationship_Wife",
-        "importance": 0.100223
-      },
-      {
-        "feature": "occupation_Sales",
-        "importance": 0.07705
-      },
-      {
-        "feature": "occupation_Craft-repair",
-        "importance": 0.071466
+        "importance": 0.092289
       },
       {
         "feature": "relationship_Husband",
-        "importance": 0.065434
+        "importance": 0.082527
+      },
+      {
+        "feature": "occupation_Sales",
+        "importance": 0.080985
+      },
+      {
+        "feature": "occupation_Craft-repair",
+        "importance": 0.080573
+      },
+      {
+        "feature": "relationship_Wife",
+        "importance": 0.070167
       },
       {
         "feature": "workclass_Self-Emp",
-        "importance": 0.05215
-      },
-      {
-        "feature": "relationship_Own-child",
-        "importance": 0.048117
+        "importance": 0.058642
       },
       {
         "feature": "workclass_Private",
-        "importance": 0.047877
+        "importance": 0.05334
       },
       {
-        "feature": "race_Black",
-        "importance": 0.037768
+        "feature": "relationship_Own-child",
+        "importance": 0.05054
       },
       {
         "feature": "occupation_Other",
-        "importance": 0.037116
-      },
-      {
-        "feature": "marital_status_Married",
-        "importance": 0.035714
+        "importance": 0.040653
       },
       {
         "feature": "workclass_Gov",
-        "importance": 0.030235
+        "importance": 0.035817
+      },
+      {
+        "feature": "marital_status_Married",
+        "importance": 0.035516
+      },
+      {
+        "feature": "race_Black",
+        "importance": 0.02926
       },
       {
         "feature": "race_White",
-        "importance": 0.028692
+        "importance": 0.023107
       },
       {
         "feature": "race_Asian-Pac",
-        "importance": 0.027194
+        "importance": 0.022701
       },
       {
         "feature": "capital_loss",
-        "importance": 0.018369
+        "importance": 0.020051
       },
       {
         "feature": "race_Other",
-        "importance": 0.003586
+        "importance": 0.002759
       },
       {
         "feature": "marital_status_Divorced",
-        "importance": 0.002409
+        "importance": 0.002565
       },
       {
         "feature": "relationship_Not-in-family",
-        "importance": 0.001348
+        "importance": 0.001381
       }
     ],
     "subgroup_shap": {
       "Female": [
         {
           "feature": "education_num",
-          "importance": 2.36597
+          "importance": 2.463425
         },
         {
           "feature": "age",
-          "importance": 1.547616
+          "importance": 1.448046
         },
         {
           "feature": "sex_Male",
-          "importance": 1.329238
+          "importance": 1.390587
         },
         {
           "feature": "sex_Female",
-          "importance": 1.156569
+          "importance": 1.209949
         },
         {
           "feature": "hours_per_week",
-          "importance": 1.03278
-        },
-        {
-          "feature": "capital_gain",
-          "importance": 0.164463
+          "importance": 1.182638
         },
         {
           "feature": "marital_status_Never-married",
-          "importance": 0.13741
+          "importance": 0.147099
         },
         {
-          "feature": "occupation_Exec-managerial",
-          "importance": 0.130904
+          "feature": "capital_gain",
+          "importance": 0.12654
         },
         {
           "feature": "relationship_Unmarried",
-          "importance": 0.115449
+          "importance": 0.113706
         },
         {
           "feature": "occupation_Prof-specialty",
-          "importance": 0.10467
+          "importance": 0.108575
         },
         {
-          "feature": "relationship_Wife",
-          "importance": 0.090684
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.091719
         },
         {
           "feature": "occupation_Craft-repair",
-          "importance": 0.077988
-        },
-        {
-          "feature": "occupation_Sales",
-          "importance": 0.069806
-        },
-        {
-          "feature": "relationship_Husband",
-          "importance": 0.068204
+          "importance": 0.085094
         },
         {
           "feature": "workclass_Self-Emp",
-          "importance": 0.052123
+          "importance": 0.083149
+        },
+        {
+          "feature": "occupation_Sales",
+          "importance": 0.080088
+        },
+        {
+          "feature": "relationship_Husband",
+          "importance": 0.073623
         },
         {
           "feature": "relationship_Own-child",
-          "importance": 0.050564
+          "importance": 0.06154
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.060476
         },
         {
           "feature": "workclass_Private",
-          "importance": 0.045635
-        },
-        {
-          "feature": "race_Black",
-          "importance": 0.038873
-        },
-        {
-          "feature": "marital_status_Married",
-          "importance": 0.035717
-        },
-        {
-          "feature": "occupation_Other",
-          "importance": 0.032579
+          "importance": 0.056618
         },
         {
           "feature": "race_Asian-Pac",
-          "importance": 0.029837
+          "importance": 0.048082
+        },
+        {
+          "feature": "race_Black",
+          "importance": 0.043578
+        },
+        {
+          "feature": "occupation_Other",
+          "importance": 0.038514
+        },
+        {
+          "feature": "marital_status_Married",
+          "importance": 0.0358
         },
         {
           "feature": "race_White",
-          "importance": 0.028873
+          "importance": 0.035706
         },
         {
           "feature": "workclass_Gov",
-          "importance": 0.027339
+          "importance": 0.032561
         },
         {
           "feature": "capital_loss",
-          "importance": 0.0143
-        },
-        {
-          "feature": "marital_status_Divorced",
-          "importance": 0.002654
+          "importance": 0.018916
         },
         {
           "feature": "race_Other",
-          "importance": 0.002629
+          "importance": 0.002759
+        },
+        {
+          "feature": "marital_status_Divorced",
+          "importance": 0.002332
         },
         {
           "feature": "relationship_Not-in-family",
-          "importance": 0.001287
+          "importance": 0.00117
         }
       ],
       "Male": [
         {
           "feature": "education_num",
-          "importance": 2.521267
+          "importance": 2.545365
         },
         {
           "feature": "age",
-          "importance": 1.523277
+          "importance": 1.313037
         },
         {
           "feature": "hours_per_week",
-          "importance": 1.055916
+          "importance": 1.024537
         },
         {
           "feature": "sex_Male",
-          "importance": 0.715743
+          "importance": 0.654394
         },
         {
           "feature": "sex_Female",
-          "importance": 0.622768
-        },
-        {
-          "feature": "capital_gain",
-          "importance": 0.162054
+          "importance": 0.569388
         },
         {
           "feature": "marital_status_Never-married",
-          "importance": 0.145217
+          "importance": 0.127586
         },
         {
-          "feature": "occupation_Prof-specialty",
-          "importance": 0.10777
-        },
-        {
-          "feature": "relationship_Unmarried",
-          "importance": 0.10616
+          "feature": "capital_gain",
+          "importance": 0.117414
         },
         {
           "feature": "occupation_Exec-managerial",
-          "importance": 0.106105
+          "importance": 0.110437
         },
         {
-          "feature": "relationship_Wife",
-          "importance": 0.105436
-        },
-        {
-          "feature": "occupation_Sales",
-          "importance": 0.081007
-        },
-        {
-          "feature": "occupation_Craft-repair",
-          "importance": 0.067902
+          "feature": "relationship_Unmarried",
+          "importance": 0.107615
         },
         {
           "feature": "relationship_Husband",
-          "importance": 0.06392
+          "importance": 0.086342
         },
         {
-          "feature": "workclass_Self-Emp",
-          "importance": 0.052165
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.085309
+        },
+        {
+          "feature": "occupation_Sales",
+          "importance": 0.08137
+        },
+        {
+          "feature": "occupation_Craft-repair",
+          "importance": 0.078636
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.07432
         },
         {
           "feature": "workclass_Private",
-          "importance": 0.049101
+          "importance": 0.051935
+        },
+        {
+          "feature": "workclass_Self-Emp",
+          "importance": 0.048139
         },
         {
           "feature": "relationship_Own-child",
-          "importance": 0.04678
+          "importance": 0.045826
         },
         {
           "feature": "occupation_Other",
-          "importance": 0.039595
-        },
-        {
-          "feature": "race_Black",
-          "importance": 0.037164
-        },
-        {
-          "feature": "marital_status_Married",
-          "importance": 0.035713
+          "importance": 0.04157
         },
         {
           "feature": "workclass_Gov",
-          "importance": 0.031818
+          "importance": 0.037213
         },
         {
-          "feature": "race_White",
-          "importance": 0.028594
+          "feature": "marital_status_Married",
+          "importance": 0.035394
         },
         {
-          "feature": "race_Asian-Pac",
-          "importance": 0.025749
+          "feature": "race_Black",
+          "importance": 0.023123
         },
         {
           "feature": "capital_loss",
-          "importance": 0.020593
+          "importance": 0.020537
+        },
+        {
+          "feature": "race_White",
+          "importance": 0.017707
+        },
+        {
+          "feature": "race_Asian-Pac",
+          "importance": 0.011823
         },
         {
           "feature": "race_Other",
-          "importance": 0.00411
+          "importance": 0.002759
         },
         {
           "feature": "marital_status_Divorced",
-          "importance": 0.002274
+          "importance": 0.002665
         },
         {
           "feature": "relationship_Not-in-family",
-          "importance": 0.001381
+          "importance": 0.001472
         }
       ]
     },
@@ -442,8 +442,8 @@
       "explainer_type": "LinearExplainer",
       "explainer_selection_mode": "auto",
       "shap_version": "0.50.0",
-      "background_reference_description": "Random sample of 100 training instances.",
-      "evaluation_sample_description": "Random sample of 150 test instances.",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
       "feature_representation_order": [
         "age",
         "education_num",
@@ -474,8 +474,8 @@
         "sex_Male"
       ],
       "number_of_features": 27,
-      "n_eval_samples": 150,
-      "n_background_samples": 100,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
       "random_seed": 42
     }
   },
@@ -582,332 +582,332 @@
     "global_shap": [
       {
         "feature": "education_num",
-        "importance": 1.689727
+        "importance": 1.726988
       },
       {
         "feature": "age",
-        "importance": 1.007496
+        "importance": 0.890206
       },
       {
         "feature": "hours_per_week",
-        "importance": 0.77081
+        "importance": 0.788632
       },
       {
         "feature": "capital_gain",
-        "importance": 0.176803
-      },
-      {
-        "feature": "relationship_Wife",
-        "importance": 0.1221
-      },
-      {
-        "feature": "sex_Male",
-        "importance": 0.109624
+        "importance": 0.130403
       },
       {
         "feature": "relationship_Unmarried",
         "importance": 0.105113
       },
       {
-        "feature": "marital_status_Never-married",
-        "importance": 0.088662
-      },
-      {
-        "feature": "occupation_Exec-managerial",
-        "importance": 0.086675
-      },
-      {
-        "feature": "occupation_Prof-specialty",
-        "importance": 0.074726
+        "feature": "sex_Male",
+        "importance": 0.102892
       },
       {
         "feature": "relationship_Husband",
-        "importance": 0.074504
+        "importance": 0.093967
       },
       {
-        "feature": "race_White",
-        "importance": 0.065798
+        "feature": "relationship_Wife",
+        "importance": 0.085483
+      },
+      {
+        "feature": "marital_status_Never-married",
+        "importance": 0.083049
+      },
+      {
+        "feature": "occupation_Exec-managerial",
+        "importance": 0.079095
       },
       {
         "feature": "occupation_Craft-repair",
-        "importance": 0.060065
+        "importance": 0.067719
+      },
+      {
+        "feature": "occupation_Prof-specialty",
+        "importance": 0.064648
       },
       {
         "feature": "occupation_Other",
-        "importance": 0.058455
+        "importance": 0.064026
+      },
+      {
+        "feature": "race_White",
+        "importance": 0.05299
       },
       {
         "feature": "relationship_Own-child",
-        "importance": 0.050267
-      },
-      {
-        "feature": "sex_Female",
-        "importance": 0.048996
+        "importance": 0.052799
       },
       {
         "feature": "workclass_Self-Emp",
-        "importance": 0.041586
+        "importance": 0.046762
       },
       {
-        "feature": "marital_status_Divorced",
-        "importance": 0.038688
+        "feature": "sex_Female",
+        "importance": 0.045987
       },
       {
         "feature": "workclass_Gov",
-        "importance": 0.038428
+        "importance": 0.045522
+      },
+      {
+        "feature": "marital_status_Divorced",
+        "importance": 0.041203
       },
       {
         "feature": "occupation_Sales",
-        "importance": 0.028559
+        "importance": 0.030018
       },
       {
         "feature": "race_Asian-Pac",
-        "importance": 0.025266
-      },
-      {
-        "feature": "race_Black",
-        "importance": 0.02432
+        "importance": 0.021092
       },
       {
         "feature": "relationship_Not-in-family",
-        "importance": 0.019658
+        "importance": 0.020148
+      },
+      {
+        "feature": "race_Black",
+        "importance": 0.018841
       },
       {
         "feature": "workclass_Private",
-        "importance": 0.006963
+        "importance": 0.007758
       },
       {
         "feature": "marital_status_Married",
-        "importance": 0.004887
+        "importance": 0.00486
       },
       {
         "feature": "capital_loss",
-        "importance": 0.002596
+        "importance": 0.002833
       },
       {
         "feature": "race_Other",
-        "importance": 0.001083
+        "importance": 0.000833
       }
     ],
     "subgroup_shap": {
       "Female": [
         {
           "feature": "education_num",
-          "importance": 1.620926
+          "importance": 1.687692
         },
         {
           "feature": "age",
-          "importance": 1.017847
+          "importance": 0.952361
         },
         {
           "feature": "hours_per_week",
-          "importance": 0.759803
-        },
-        {
-          "feature": "capital_gain",
-          "importance": 0.178494
+          "importance": 0.870051
         },
         {
           "feature": "sex_Male",
-          "importance": 0.156262
+          "importance": 0.163474
+        },
+        {
+          "feature": "capital_gain",
+          "importance": 0.137336
         },
         {
           "feature": "relationship_Unmarried",
-          "importance": 0.110882
-        },
-        {
-          "feature": "relationship_Wife",
-          "importance": 0.110478
-        },
-        {
-          "feature": "occupation_Exec-managerial",
-          "importance": 0.098776
+          "importance": 0.109208
         },
         {
           "feature": "marital_status_Never-married",
-          "importance": 0.08552
+          "importance": 0.09155
         },
         {
           "feature": "relationship_Husband",
-          "importance": 0.077659
-        },
-        {
-          "feature": "occupation_Prof-specialty",
-          "importance": 0.073321
-        },
-        {
-          "feature": "sex_Female",
-          "importance": 0.06984
+          "importance": 0.08383
         },
         {
           "feature": "race_White",
-          "importance": 0.066212
+          "importance": 0.081882
+        },
+        {
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.076057
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.073677
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.073064
         },
         {
           "feature": "occupation_Craft-repair",
-          "importance": 0.065547
+          "importance": 0.071519
         },
         {
-          "feature": "relationship_Own-child",
-          "importance": 0.052824
-        },
-        {
-          "feature": "occupation_Other",
-          "importance": 0.05131
-        },
-        {
-          "feature": "marital_status_Divorced",
-          "importance": 0.042632
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.069208
         },
         {
           "feature": "workclass_Self-Emp",
-          "importance": 0.041564
+          "importance": 0.066305
         },
         {
-          "feature": "workclass_Gov",
-          "importance": 0.034747
+          "feature": "relationship_Own-child",
+          "importance": 0.064291
+        },
+        {
+          "feature": "occupation_Other",
+          "importance": 0.060657
         },
         {
           "feature": "race_Asian-Pac",
-          "importance": 0.027722
+          "importance": 0.044673
+        },
+        {
+          "feature": "workclass_Gov",
+          "importance": 0.041384
+        },
+        {
+          "feature": "marital_status_Divorced",
+          "importance": 0.037457
         },
         {
           "feature": "occupation_Sales",
-          "importance": 0.025874
+          "importance": 0.029685
         },
         {
           "feature": "race_Black",
-          "importance": 0.025031
+          "importance": 0.028061
         },
         {
           "feature": "relationship_Not-in-family",
-          "importance": 0.018776
+          "importance": 0.017062
         },
         {
           "feature": "workclass_Private",
-          "importance": 0.006637
+          "importance": 0.008235
         },
         {
           "feature": "marital_status_Married",
-          "importance": 0.004887
+          "importance": 0.004899
         },
         {
           "feature": "capital_loss",
-          "importance": 0.002021
+          "importance": 0.002673
         },
         {
           "feature": "race_Other",
-          "importance": 0.000794
+          "importance": 0.000833
         }
       ],
       "Male": [
         {
           "feature": "education_num",
-          "importance": 1.72732
+          "importance": 1.743829
         },
         {
           "feature": "age",
-          "importance": 1.00184
+          "importance": 0.863568
         },
         {
           "feature": "hours_per_week",
-          "importance": 0.776824
+          "importance": 0.753739
         },
         {
           "feature": "capital_gain",
-          "importance": 0.17588
-        },
-        {
-          "feature": "relationship_Wife",
-          "importance": 0.12845
+          "importance": 0.127431
         },
         {
           "feature": "relationship_Unmarried",
-          "importance": 0.10196
-        },
-        {
-          "feature": "marital_status_Never-married",
-          "importance": 0.090379
-        },
-        {
-          "feature": "sex_Male",
-          "importance": 0.084141
-        },
-        {
-          "feature": "occupation_Exec-managerial",
-          "importance": 0.080064
-        },
-        {
-          "feature": "occupation_Prof-specialty",
-          "importance": 0.075493
+          "importance": 0.103358
         },
         {
           "feature": "relationship_Husband",
-          "importance": 0.072781
+          "importance": 0.098312
         },
         {
-          "feature": "race_White",
-          "importance": 0.065572
+          "feature": "relationship_Wife",
+          "importance": 0.090543
         },
         {
-          "feature": "occupation_Other",
-          "importance": 0.062359
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.083333
+        },
+        {
+          "feature": "marital_status_Never-married",
+          "importance": 0.079406
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.076929
         },
         {
           "feature": "occupation_Craft-repair",
-          "importance": 0.057069
+          "importance": 0.066091
+        },
+        {
+          "feature": "occupation_Other",
+          "importance": 0.065471
+        },
+        {
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.059759
         },
         {
           "feature": "relationship_Own-child",
-          "importance": 0.04887
-        },
-        {
-          "feature": "workclass_Self-Emp",
-          "importance": 0.041598
+          "importance": 0.047874
         },
         {
           "feature": "workclass_Gov",
-          "importance": 0.040439
-        },
-        {
-          "feature": "sex_Female",
-          "importance": 0.037606
+          "importance": 0.047296
         },
         {
           "feature": "marital_status_Divorced",
-          "importance": 0.036533
+          "importance": 0.042808
+        },
+        {
+          "feature": "race_White",
+          "importance": 0.040607
+        },
+        {
+          "feature": "workclass_Self-Emp",
+          "importance": 0.038387
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.034383
         },
         {
           "feature": "occupation_Sales",
-          "importance": 0.030026
-        },
-        {
-          "feature": "race_Black",
-          "importance": 0.023931
-        },
-        {
-          "feature": "race_Asian-Pac",
-          "importance": 0.023924
+          "importance": 0.03016
         },
         {
           "feature": "relationship_Not-in-family",
-          "importance": 0.02014
+          "importance": 0.021471
+        },
+        {
+          "feature": "race_Black",
+          "importance": 0.01489
+        },
+        {
+          "feature": "race_Asian-Pac",
+          "importance": 0.010985
         },
         {
           "feature": "workclass_Private",
-          "importance": 0.007142
+          "importance": 0.007554
         },
         {
           "feature": "marital_status_Married",
-          "importance": 0.004887
+          "importance": 0.004843
         },
         {
           "feature": "capital_loss",
-          "importance": 0.00291
+          "importance": 0.002902
         },
         {
           "feature": "race_Other",
-          "importance": 0.001242
+          "importance": 0.000833
         }
       ]
     },
@@ -915,8 +915,8 @@
       "explainer_type": "LinearExplainer",
       "explainer_selection_mode": "auto",
       "shap_version": "0.50.0",
-      "background_reference_description": "Random sample of 100 training instances.",
-      "evaluation_sample_description": "Random sample of 150 test instances.",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
       "feature_representation_order": [
         "age",
         "education_num",
@@ -947,18 +947,18 @@
         "sex_Male"
       ],
       "number_of_features": 27,
-      "n_eval_samples": 150,
-      "n_background_samples": 100,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
       "random_seed": 42
     }
   },
   "attribution_comparison": {
     "provisional_status": "PROVISIONAL (pending literature review)",
-    "cosine_similarity": 0.945377,
-    "spearman_rank_correlation": 0.82906,
+    "cosine_similarity": 0.950286,
+    "spearman_rank_correlation": 0.824786,
     "spearman_pvalue": 0.0,
-    "l1_attribution_difference": 0.134281,
-    "l2_attribution_difference": 1.49263,
+    "l1_attribution_difference": 0.12886,
+    "l2_attribution_difference": 1.43102,
     "features_evaluated": 27,
     "top_rank_shifts": [
       {
@@ -988,8 +988,8 @@
       {
         "feature": "sex_Female",
         "baseline_rank": 5,
-        "mitigated_rank": 16,
-        "rank_shift": 11
+        "mitigated_rank": 17,
+        "rank_shift": 12
       }
     ]
   },

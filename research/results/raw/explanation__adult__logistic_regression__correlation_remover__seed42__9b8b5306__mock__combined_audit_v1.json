@@ -1,0 +1,29 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed42__9b8b5306",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "mock",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "mock-1.0.0",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "606746e9da783e049a40d61b20494fe258a6d22f9f7dbedb3f46a7495a878eb0",
+  "output_text": "Fairness Audit Summary:\nThe evaluated model exhibited a baseline demographic parity difference of 0.4200 and accuracy of 0.8500. After applying bias mitigation, demographic parity difference decreased to 0.0800, representing a significant fairness improvement toward parity. Model accuracy decreased moderately to 0.8200. SHAP feature importance analysis confirms that feature_0 and feature_1 were the top predictors governing outcomes.",
+  "timestamp_utc": "2026-09-17T05:19:03.683738+00:00",
+  "git_commit_hash": "f119b3047976c7b8ed0a45305495123a2d966a6f",
+  "metadata": {
+    "latency_seconds": 0.0,
+    "finish_reason": "STOP",
+    "prompt_tokens": 595,
+    "completion_tokens": 56,
+    "mock_mode": "faithful"
+  }
+}

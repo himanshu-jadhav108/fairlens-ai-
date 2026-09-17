@@ -1,0 +1,1518 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Demographic Parity Difference: 0.4222",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4222
+      },
+      "all_candidates": [
+        0.4222,
+        0.0123,
+        0.4222,
+        0.0123,
+        -0.4099,
+        -0.9709
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.4222,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.4222"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.4222 matches ground truth 0.4222 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_2",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Equalized Odds Difference: 0.1754",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.1754
+      },
+      "all_candidates": [
+        0.1754,
+        0.3333,
+        0.1754,
+        0.3333,
+        0.1579,
+        0.9002
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1754,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.1754"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1754 matches ground truth 0.1754 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_3",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Disparate Impact: 0.4222",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4222
+      },
+      "all_candidates": [
+        0.4222,
+        0.9796,
+        0.4222,
+        0.9796,
+        0.5574,
+        1.3202
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.4222,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.4222"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.4222 matches ground truth 0.4222 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_4",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Accuracy: 0.9100",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.91
+      },
+      "all_candidates": [
+        0.91,
+        0.8267,
+        0.91,
+        0.8267,
+        -0.0833,
+        -0.0915
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.91,
+      "metric_alias": "accuracy",
+      "raw_string": "0.9100"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.91 matches ground truth 0.91 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_5",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline F1 Score: 0.9252",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.9252
+      },
+      "all_candidates": [
+        0.9252,
+        0.8579,
+        0.9252,
+        0.8579,
+        -0.0673,
+        -0.0727
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "f1 score",
+      "raw_string": "1 "
+    },
+    "classification": "UNSUPPORTED",
+    "rationale": "Reported value 1.0 contradicts ground truth [0.9252, 0.8579, 0.9252, 0.8579, -0.0673, -0.0727] for 'f1_score' (min abs diff: 0.0748 > tol 0.015).",
+    "metadata": {
+      "abs_diff": 0.0748,
+      "rel_diff": 0.08085,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_6",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline F1 Score: 0.9252",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.9252
+      },
+      "all_candidates": [
+        0.9252,
+        0.8579,
+        0.9252,
+        0.8579,
+        -0.0673,
+        -0.0727
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9252,
+      "metric_alias": "f1 score",
+      "raw_string": "0.9252"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9252 matches ground truth 0.9252 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_7",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4222 to 0.0123 (absolute change: -0.4099, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4222
+      },
+      "all_candidates": [
+        0.4222,
+        0.0123,
+        0.4222,
+        0.0123,
+        -0.4099,
+        -0.9709
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.4222,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.4222 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.4222 matches ground truth 0.4222 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_8",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4222 to 0.0123 (absolute change: -0.4099, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.0123
+      },
+      "all_candidates": [
+        0.4222,
+        0.0123,
+        0.4222,
+        0.0123,
+        -0.4099,
+        -0.9709
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0123,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.0123 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0123 matches ground truth 0.0123 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_9",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4222 to 0.0123 (absolute change: -0.4099, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.4099
+      },
+      "all_candidates": [
+        0.4222,
+        0.0123,
+        0.4222,
+        0.0123,
+        -0.4099,
+        -0.9709
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.4099,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "-0.4099"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.4099 matches ground truth -0.4099 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_10",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.1754 to 0.3333 (absolute change: +0.1579, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.1754
+      },
+      "all_candidates": [
+        0.1754,
+        0.3333,
+        0.1754,
+        0.3333,
+        0.1579,
+        0.9002
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1754,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.1754 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1754 matches ground truth 0.1754 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_11",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.1754 to 0.3333 (absolute change: +0.1579, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.3333
+      },
+      "all_candidates": [
+        0.1754,
+        0.3333,
+        0.1754,
+        0.3333,
+        0.1579,
+        0.9002
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.3333,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.3333 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.3333 matches ground truth 0.3333 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_12",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.1754 to 0.3333 (absolute change: +0.1579, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.1579
+      },
+      "all_candidates": [
+        0.1754,
+        0.3333,
+        0.1754,
+        0.3333,
+        0.1579,
+        0.9002
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1579,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "+0.1579"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1579 matches ground truth 0.1579 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_13",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.1754 to 0.2055 (absolute change: +0.0301, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.1754
+      },
+      "all_candidates": [
+        0.1754,
+        0.2055,
+        0.1754,
+        0.2055,
+        0.0301,
+        0.1716
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1754,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.1754 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1754 matches ground truth 0.1754 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_14",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.1754 to 0.2055 (absolute change: +0.0301, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.2055
+      },
+      "all_candidates": [
+        0.1754,
+        0.2055,
+        0.1754,
+        0.2055,
+        0.0301,
+        0.1716
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2055,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.2055 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2055 matches ground truth 0.2055 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_15",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.1754 to 0.2055 (absolute change: +0.0301, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.0301
+      },
+      "all_candidates": [
+        0.1754,
+        0.2055,
+        0.1754,
+        0.2055,
+        0.0301,
+        0.1716
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0301,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "+0.0301"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0301 matches ground truth 0.0301 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_16",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 0.4222 to 0.9796 (absolute change: +0.5574, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4222
+      },
+      "all_candidates": [
+        0.4222,
+        0.9796,
+        0.4222,
+        0.9796,
+        0.5574,
+        1.3202
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.4222,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.4222 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.4222 matches ground truth 0.4222 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_17",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 0.4222 to 0.9796 (absolute change: +0.5574, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.9796
+      },
+      "all_candidates": [
+        0.4222,
+        0.9796,
+        0.4222,
+        0.9796,
+        0.5574,
+        1.3202
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9796,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.9796 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9796 matches ground truth 0.9796 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_18",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 0.4222 to 0.9796 (absolute change: +0.5574, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.5574
+      },
+      "all_candidates": [
+        0.4222,
+        0.9796,
+        0.4222,
+        0.9796,
+        0.5574,
+        1.3202
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.5574,
+      "metric_alias": "disparate impact",
+      "raw_string": "+0.5574"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.5574 matches ground truth 0.5574 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_19",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 0.9100 to 0.8267 (absolute change: -0.0833, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.91
+      },
+      "all_candidates": [
+        0.91,
+        0.8267,
+        0.91,
+        0.8267,
+        -0.0833,
+        -0.0915
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.91,
+      "metric_alias": "accuracy",
+      "raw_string": "0.9100 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.91 matches ground truth 0.91 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_20",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 0.9100 to 0.8267 (absolute change: -0.0833, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8267
+      },
+      "all_candidates": [
+        0.91,
+        0.8267,
+        0.91,
+        0.8267,
+        -0.0833,
+        -0.0915
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8267,
+      "metric_alias": "accuracy",
+      "raw_string": "0.8267 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8267 matches ground truth 0.8267 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_21",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 0.9100 to 0.8267 (absolute change: -0.0833, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.0833
+      },
+      "all_candidates": [
+        0.91,
+        0.8267,
+        0.91,
+        0.8267,
+        -0.0833,
+        -0.0915
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.0833,
+      "metric_alias": "accuracy",
+      "raw_string": "-0.0833"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.0833 matches ground truth -0.0833 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_22",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 0.9598 to 0.8771 (absolute change: -0.0827, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.9598
+      },
+      "all_candidates": [
+        0.9598,
+        0.8771,
+        0.9598,
+        0.8771,
+        -0.0827,
+        -0.0862
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9598,
+      "metric_alias": "precision",
+      "raw_string": "0.9598 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9598 matches ground truth 0.9598 for 'precision' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_23",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 0.9598 to 0.8771 (absolute change: -0.0827, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8771
+      },
+      "all_candidates": [
+        0.9598,
+        0.8771,
+        0.9598,
+        0.8771,
+        -0.0827,
+        -0.0862
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8771,
+      "metric_alias": "precision",
+      "raw_string": "0.8771 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8771 matches ground truth 0.8771 for 'precision' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_24",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 0.9598 to 0.8771 (absolute change: -0.0827, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.0827
+      },
+      "all_candidates": [
+        0.9598,
+        0.8771,
+        0.9598,
+        0.8771,
+        -0.0827,
+        -0.0862
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.0827,
+      "metric_alias": "precision",
+      "raw_string": "-0.0827"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.0827 matches ground truth -0.0827 for 'precision' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_25",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 0.8930 to 0.8396 (absolute change: -0.0534, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.893
+      },
+      "all_candidates": [
+        0.893,
+        0.8396,
+        0.893,
+        0.8396,
+        -0.0534,
+        -0.0598
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.893,
+      "metric_alias": "recall",
+      "raw_string": "0.8930 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.893 matches ground truth 0.893 for 'recall' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_26",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 0.8930 to 0.8396 (absolute change: -0.0534, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8396
+      },
+      "all_candidates": [
+        0.893,
+        0.8396,
+        0.893,
+        0.8396,
+        -0.0534,
+        -0.0598
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8396,
+      "metric_alias": "recall",
+      "raw_string": "0.8396 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8396 matches ground truth 0.8396 for 'recall' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_27",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 0.8930 to 0.8396 (absolute change: -0.0534, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.0534
+      },
+      "all_candidates": [
+        0.893,
+        0.8396,
+        0.893,
+        0.8396,
+        -0.0534,
+        -0.0598
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.0534,
+      "metric_alias": "recall",
+      "raw_string": "-0.0534"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.0534 matches ground truth -0.0534 for 'recall' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_28",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.9252 to 0.8579 (absolute change: -0.0673, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.9252
+      },
+      "all_candidates": [
+        0.9252,
+        0.8579,
+        0.9252,
+        0.8579,
+        -0.0673,
+        -0.0727
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "f1 score",
+      "raw_string": "1 "
+    },
+    "classification": "UNSUPPORTED",
+    "rationale": "Reported value 1.0 contradicts ground truth [0.9252, 0.8579, 0.9252, 0.8579, -0.0673, -0.0727] for 'f1_score' (min abs diff: 0.0748 > tol 0.015).",
+    "metadata": {
+      "abs_diff": 0.0748,
+      "rel_diff": 0.08085,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_29",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.9252 to 0.8579 (absolute change: -0.0673, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.9252
+      },
+      "all_candidates": [
+        0.9252,
+        0.8579,
+        0.9252,
+        0.8579,
+        -0.0673,
+        -0.0727
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9252,
+      "metric_alias": "f1 score",
+      "raw_string": "0.9252 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9252 matches ground truth 0.9252 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_30",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.9252 to 0.8579 (absolute change: -0.0673, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8579
+      },
+      "all_candidates": [
+        0.9252,
+        0.8579,
+        0.9252,
+        0.8579,
+        -0.0673,
+        -0.0727
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8579,
+      "metric_alias": "f1 score",
+      "raw_string": "0.8579 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8579 matches ground truth 0.8579 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_31",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.9252 to 0.8579 (absolute change: -0.0673, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.0673
+      },
+      "all_candidates": [
+        0.9252,
+        0.8579,
+        0.9252,
+        0.8579,
+        -0.0673,
+        -0.0727
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.0673,
+      "metric_alias": "f1 score",
+      "raw_string": "-0.0673"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.0673 matches ground truth -0.0673 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_32",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Roc Auc: changed from 0.9748 to 0.9161 (absolute change: -0.0587, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "roc_auc",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.9748
+      },
+      "all_candidates": [
+        0.9748,
+        0.9161,
+        0.9748,
+        0.9161,
+        -0.0587,
+        -0.0602
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9748,
+      "metric_alias": "roc auc",
+      "raw_string": "0.9748 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9748 matches ground truth 0.9748 for 'roc_auc' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_33",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Roc Auc: changed from 0.9748 to 0.9161 (absolute change: -0.0587, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "roc_auc",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.9161
+      },
+      "all_candidates": [
+        0.9748,
+        0.9161,
+        0.9748,
+        0.9161,
+        -0.0587,
+        -0.0602
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9161,
+      "metric_alias": "roc auc",
+      "raw_string": "0.9161 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9161 matches ground truth 0.9161 for 'roc_auc' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "num_34",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "numerical",
+    "claim_text": "- Roc Auc: changed from 0.9748 to 0.9161 (absolute change: -0.0587, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "roc_auc",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.0587
+      },
+      "all_candidates": [
+        0.9748,
+        0.9161,
+        0.9748,
+        0.9161,
+        -0.0587,
+        -0.0602
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.0587,
+      "metric_alias": "roc auc",
+      "raw_string": "-0.0587"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.0587 matches ground truth -0.0587 for 'roc_auc' within tolerance (abs diff: 0.0).",
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05
+    }
+  },
+  {
+    "claim_id": "dir_math_1",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4222 to 0.0123 (absolute change: -0.4099, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "direction": "decrease",
+      "before": 0.4222,
+      "after": 0.0123,
+      "absolute_change": -0.4099
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_2",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4222 to 0.0123 (absolute change: -0.4099, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute demographic_parity_difference decreased from 0.4222 to 0.0123, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_3",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Equalized Odds Difference: changed from 0.1754 to 0.3333 (absolute change: +0.1579, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "equalized_odds_difference",
+      "direction": "increase",
+      "before": 0.1754,
+      "after": 0.3333,
+      "absolute_change": 0.1579
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "equalized odds difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that equalized_odds_difference 'increase' matches ground truth direction: increase.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_4",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- Equalized Odds Difference: changed from 0.1754 to 0.3333 (absolute change: +0.1579, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "equalized_odds_difference",
+      "interpretation": "degradation",
+      "semantics_rationale": "Absolute equalized_odds_difference increased from 0.1754 to 0.3333, moving further from ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "equalized odds difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_5",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.1754 to 0.2055 (absolute change: +0.0301, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "equal_opportunity_difference",
+      "direction": "increase",
+      "before": 0.1754,
+      "after": 0.2055,
+      "absolute_change": 0.0301
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "equal opportunity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that equal_opportunity_difference 'increase' matches ground truth direction: increase.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_6",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.1754 to 0.2055 (absolute change: +0.0301, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "equal_opportunity_difference",
+      "interpretation": "degradation",
+      "semantics_rationale": "Absolute equal_opportunity_difference increased from 0.1754 to 0.2055, moving further from ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "equal opportunity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_7",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Disparate Impact: changed from 0.4222 to 0.9796 (absolute change: +0.5574, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "direction": "increase",
+      "before": 0.4222,
+      "after": 0.9796,
+      "absolute_change": 0.5574
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that disparate_impact 'increase' matches ground truth direction: increase.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_8",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Disparate Impact: changed from 0.4222 to 0.9796 (absolute change: +0.5574, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "interpretation": "improvement",
+      "semantics_rationale": "Disparate impact moved from 0.4222 to 0.9796 (closer to ideal ratio 1.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_9",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Accuracy: changed from 0.9100 to 0.8267 (absolute change: -0.0833, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "direction": "decrease",
+      "before": 0.91,
+      "after": 0.8267,
+      "absolute_change": -0.0833
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that accuracy 'decrease' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_10",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- Accuracy: changed from 0.9100 to 0.8267 (absolute change: -0.0833, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "interpretation": "degradation",
+      "semantics_rationale": "accuracy decreased from 0.9100 to 0.8267."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_11",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Precision: changed from 0.9598 to 0.8771 (absolute change: -0.0827, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "precision",
+      "direction": "decrease",
+      "before": 0.9598,
+      "after": 0.8771,
+      "absolute_change": -0.0827
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "precision"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that precision 'decrease' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_12",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- Precision: changed from 0.9598 to 0.8771 (absolute change: -0.0827, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "precision",
+      "interpretation": "degradation",
+      "semantics_rationale": "precision decreased from 0.9598 to 0.8771."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "precision"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_13",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Recall: changed from 0.8930 to 0.8396 (absolute change: -0.0534, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "recall",
+      "direction": "decrease",
+      "before": 0.893,
+      "after": 0.8396,
+      "absolute_change": -0.0534
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "recall"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that recall 'decrease' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_14",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- Recall: changed from 0.8930 to 0.8396 (absolute change: -0.0534, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "recall",
+      "interpretation": "degradation",
+      "semantics_rationale": "recall decreased from 0.8930 to 0.8396."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "recall"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_15",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- F1 Score: changed from 0.9252 to 0.8579 (absolute change: -0.0673, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "f1_score",
+      "direction": "decrease",
+      "before": 0.9252,
+      "after": 0.8579,
+      "absolute_change": -0.0673
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "f1 score"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that f1_score 'decrease' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_16",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- F1 Score: changed from 0.9252 to 0.8579 (absolute change: -0.0673, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "f1_score",
+      "interpretation": "degradation",
+      "semantics_rationale": "f1_score decreased from 0.9252 to 0.8579."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "f1 score"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_17",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "directional",
+    "claim_text": "- Roc Auc: changed from 0.9748 to 0.9161 (absolute change: -0.0587, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "roc_auc",
+      "direction": "decrease",
+      "before": 0.9748,
+      "after": 0.9161,
+      "absolute_change": -0.0587
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "roc auc"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that roc_auc 'decrease' matches ground truth direction: decrease.",
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_18",
+    "experiment_id": "adult__logistic_regression__correlation_remover__seed42__c5e3dc4e",
+    "claim_type": "performance",
+    "claim_text": "- Roc Auc: changed from 0.9748 to 0.9161 (absolute change: -0.0587, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "roc_auc",
+      "interpretation": "degradation",
+      "semantics_rationale": "roc_auc decreased from 0.9748 to 0.9161."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "roc auc"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "metadata": {}
+  }
+]
