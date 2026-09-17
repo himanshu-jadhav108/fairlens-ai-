@@ -53,7 +53,11 @@ def parse_args():
     parser.add_argument("--temperature", type=float, default=0.2, help="LLM sampling temperature")
     parser.add_argument("--output-dir", type=str, default="research/results", help="Root results directory")
     parser.add_argument("--smoke-test", action="store_true", help="Run deterministic offline smoke test")
-    parser.add_argument("--use-synthetic", action="store_true", help="Use fast synthetic benchmark dataset")
+    parser.add_argument("--local-path", type=str, default=None, help="Path to local CSV dataset file")
+    parser.add_argument("--use-synthetic", dest="use_synthetic", action="store_true", default=None,
+                        help="Force deterministic synthetic benchmark dataset")
+    parser.add_argument("--no-synthetic", dest="use_synthetic", action="store_false",
+                        help="Force loading from local CSV dataset")
     return parser.parse_args()
 
 
@@ -67,6 +71,7 @@ def run_experiment(
     temperature: float = 0.2,
     output_dir: str = "research/results",
     use_synthetic: bool = True,
+    local_path: Optional[str] = None,
     is_smoke_test: bool = False,
     execution_mode: Optional[str] = None
 ) -> Dict[str, Any]:
@@ -85,6 +90,8 @@ def run_experiment(
     print(f"Execution Mode: {effective_mode}")
     print(f"Output Path:    {effective_output_dir}")
     print(f"Dataset:        {dataset_name} (Synthetic: {use_synthetic})")
+    if local_path:
+        print(f"Local Path:     {local_path}")
     print(f"Model:          {model_name}")
     print(f"Mitigation:     {mitigation_name}")
     print(f"Seed:           {seed}")
@@ -99,6 +106,7 @@ def run_experiment(
         mitigation_name=mitigation_name,
         seed=seed,
         use_synthetic_benchmark=use_synthetic,
+        local_dataset_path=local_path,
         n_eval_samples=50,
         n_background_samples=25
     )
@@ -203,6 +211,32 @@ def run_experiment(
 
 def main():
     args = parse_args()
+
+    # Conveniently load GEMINI_API_KEY from backend/.env if running gemini and not already set
+    if args.provider == "gemini" and not os.environ.get("GEMINI_API_KEY"):
+        for candidate in [
+            os.path.join(os.getcwd(), "backend", ".env"),
+            os.path.join(os.path.dirname(__file__), "..", "..", "backend", ".env"),
+            os.path.join(os.getcwd(), ".env")
+        ]:
+            if os.path.exists(candidate):
+                try:
+                    with open(candidate, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line = line.strip()
+                            if line.startswith("GEMINI_API_KEY=") and not line.startswith("#"):
+                                val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                                if val:
+                                    os.environ["GEMINI_API_KEY"] = val
+                                    break
+                except Exception:
+                    pass
+            if os.environ.get("GEMINI_API_KEY"):
+                break
+
+    target_path = args.local_path or os.path.join("research", "data", f"{args.dataset}.csv")
+    has_local = bool(target_path and os.path.exists(target_path))
+
     if args.smoke_test:
         print("[SMOKE TEST MODE] Running fully deterministic pipeline with mock provider...")
         res = run_experiment(
@@ -215,11 +249,13 @@ def main():
             temperature=args.temperature,
             output_dir=args.output_dir,
             use_synthetic=True,
+            local_path=args.local_path,
             is_smoke_test=True
         )
         print("\n[SUCCESS] Smoke test completed cleanly! Pipeline verified.")
         sys.exit(0)
     else:
+        use_synthetic = args.use_synthetic if args.use_synthetic is not None else (not has_local)
         res = run_experiment(
             dataset_name=args.dataset,
             model_name=args.model,
@@ -229,7 +265,8 @@ def main():
             prompt_id=args.prompt,
             temperature=args.temperature,
             output_dir=args.output_dir,
-            use_synthetic=args.use_synthetic,
+            use_synthetic=use_synthetic,
+            local_path=args.local_path,
             is_smoke_test=False
         )
         print("\n[SUCCESS] Experiment completed.")
