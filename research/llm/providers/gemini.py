@@ -76,16 +76,21 @@ class GeminiProvider(BaseLLMProvider):
             response = model.generate_content(prompt)
             latency = round(time.time() - start_time, 3)
 
+            finish_reason = "STOP"
+            if hasattr(response, "candidates") and response.candidates:
+                finish_reason = str(getattr(response.candidates[0], "finish_reason", "STOP"))
+
             text = response.text if hasattr(response, "text") and response.text else ""
-            
+            if not text.strip():
+                raise RuntimeError(
+                    f"Gemini API returned an empty explanation (finish_reason: {finish_reason}). "
+                    f"Empty responses are not permitted to enter the research evaluation pipeline."
+                )
+
             # Extract usage metadata if available
             usage = getattr(response, "usage_metadata", None)
             prompt_tokens = getattr(usage, "prompt_token_count", None) if usage else None
             completion_tokens = getattr(usage, "candidates_token_count", None) if usage else None
-
-            finish_reason = "STOP"
-            if hasattr(response, "candidates") and response.candidates:
-                finish_reason = str(getattr(response.candidates[0], "finish_reason", "STOP"))
 
             return LLMResponse(
                 raw_text=text,

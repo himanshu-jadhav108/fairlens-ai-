@@ -15,21 +15,32 @@ from .taxonomy import ClaimType, ClaimClassification, ExtractedClaim, split_into
 from ..evidence.schemas import AuditEvidence, Direction, SemanticInterpretation
 
 CAUSAL_PATTERNS = [
+    r"(?:directly\s+)?causes?\s+(?:the\s+)?(?:model\s+to\s+[a-z]+|disparity|bias|discrimination|lower\s+rates|outcomes|improvement)",
     r"(?:directly\s+)?caused\s+(?:the\s+)?(?:model\s+to\s+[a-z]+|disparity|bias|discrimination|lower\s+rates|outcomes|improvement)",
     r"(?:is|was)\s+the\s+direct\s+cause\s+of",
     r"proves\s+(?:systemic\s+)?discriminatory\s+intent",
     r"leads\s+directly\s+to\s+discriminatory\s+outcomes",
     r"because\s+of\s+(?:their|the\s+applicant[']?s?)\s+(?:age|race|sex|gender),?\s+the\s+model\s+(?:rejected|discriminated)",
-    r"(?:removing|mitigating)\s+[a-zA-Z0-9_]+\s+caused\s+the\s+fairness"
+    r"(?:removing|mitigating)\s+[a-zA-Z0-9_]+\s+caused\s+the\s+fairness",
+    r"[a-zA-Z0-9_\- ]+\s+(?:causes?|caused)\s+(?:the\s+)?(?:model(?:'s)?\s+)?predictions?"
 ]
 
 ABSOLUTE_FAIRNESS_PATTERNS = [
     r"(?:is|was|became)\s+completely\s+fair",
     r"(?:is|was|became)\s+entirely\s+unbiased",
+    r"(?:has|contains)\s+no\s+bias",
+    r"\b(?:is|was|are)\s+unbiased\b",
+    r"free\s+of\s+(?:all\s+|any\s+)?bias",
+    r"without\s+(?:any\s+)?bias",
     r"(?:guarantees|ensures)\s+perfect\s+fairness",
     r"eliminates\s+all\s+(?:possible\s+)?bias",
-    r"free\s+of\s+(?:all\s+)?bias",
     r"achieved\s+complete\s+parity"
+]
+
+UNSUPPORTED_COMPARATIVE_PATTERNS = [
+    r"(?:more\s+fair|fairer)\s+in\s+every\s+respect",
+    r"superior\s+across\s+all\s+(?:dimensions|metrics|aspects)",
+    r"improved\s+across\s+every\s+(?:single\s+)?metric"
 ]
 
 OVERGENERALIZATION_PATTERNS = [
@@ -231,6 +242,33 @@ class UnsupportedClaimsDetector:
                         referenced_evidence="mitigation.method_name",
                         extracted_values={"statement": sent, "pattern": pattern},
                         expected_values={"optimality_proven": False},
+                        evidence_hash=ev_hash,
+                        provenance=prov
+                    ))
+                    claim_idx += 1
+                    break
+
+            # 5b. Detect unsupported comparative superiority claims
+            for pattern in UNSUPPORTED_COMPARATIVE_PATTERNS:
+                if re.search(pattern, sent_lower):
+                    claims.append(ExtractedClaim(
+                        claim_id=f"comp_{claim_idx}",
+                        experiment_id=evidence.experiment_id,
+                        claim_type=ClaimType.OTHER,
+                        claim_text=sent,
+                        ground_truth={"all_aspects_superior_proven": False},
+                        predicted_claim={
+                            "pattern_matched": pattern,
+                            "nature": "unsupported_comparative_statement"
+                        },
+                        classification=ClaimClassification.UNSUPPORTED,
+                        rationale=(
+                            "Explanation claims the model is superior or more fair in every respect, "
+                            "which is unevidenced as empirical trade-offs exist across metrics."
+                        ),
+                        referenced_evidence="metric_comparisons",
+                        extracted_values={"statement": sent, "pattern": pattern},
+                        expected_values={"all_aspects_superior_proven": False},
                         evidence_hash=ev_hash,
                         provenance=prov
                     ))

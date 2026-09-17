@@ -20,7 +20,7 @@ WORSENED_TERMS = ["worsened", "worse", "degraded", "degradation", "deteriorated"
 # They must be classified as UNDETERMINABLE and routed to human annotation.
 QUALITATIVE_MAGNITUDE_TERMS = [
     "substantially", "dramatically", "drastically", "significantly",
-    "slightly", "marginally", "minimally", "modestly",
+    "slightly", "marginally", "minimally", "modestly", "moderately",
     "large improvement", "small improvement", "massive reduction",
     "huge drop", "negligible change", "slight decrease", "substantial decrease"
 ]

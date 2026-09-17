@@ -132,3 +132,9 @@ def adjust_multiple_comparisons(p_values: List[float], method: str = "bonferroni
         return [round(float(q), 4) for q in q_out]
     else:
         raise ValueError(f"Unsupported adjustment method '{method}'.")
+
+
+def compute_bonferroni_correction(p_values: List[float]) -> List[float]:
+    """Convenience alias for Bonferroni multiple testing adjustment."""
+    return adjust_multiple_comparisons(p_values, method="bonferroni")
+
