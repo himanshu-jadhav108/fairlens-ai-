@@ -10,17 +10,39 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from research.analysis.aggregator import aggregate_raw_results
+from research.analysis.aggregator import aggregate_raw_results, aggregate_faithfulness_summaries
 
 
 def main():
     parser = argparse.ArgumentParser(description="Aggregate FairLens AI raw results.")
-    parser.add_argument("--raw-dir", type=str, default="research/results/raw", help="Directory of raw JSON results")
+    parser.add_argument("--raw-dir", "--input-dir", dest="raw_dir", type=str, default="research/results/raw", help="Directory of raw JSON results or pilot directory")
     parser.add_argument("--output-dir", type=str, default="research/results/processed", help="Directory for processed CSVs")
+    parser.add_argument("--mode", type=str, default=None, help="Execution mode filter (e.g. PILOT_VALIDATION_RUN or FINAL_EMPIRICAL_RUN)")
 
     args = parser.parse_args()
-    summary = aggregate_raw_results(raw_dir=args.raw_dir, output_dir=args.output_dir)
-    if summary is not None:
+
+    # Determine paths
+    if os.path.isdir(os.path.join(args.raw_dir, "raw")):
+        raw_target = os.path.join(args.raw_dir, "raw")
+    else:
+        raw_target = args.raw_dir
+
+    if os.path.isdir(os.path.join(args.raw_dir, "summaries")):
+        summaries_target = os.path.join(args.raw_dir, "summaries")
+    elif os.path.isdir("research/results/summaries"):
+        summaries_target = "research/results/summaries"
+    else:
+        summaries_target = None
+
+    print(f"[*] Aggregating raw experiment results from: {raw_target}")
+    summary_raw = aggregate_raw_results(raw_dir=raw_target, output_dir=args.output_dir, required_execution_mode=args.mode)
+
+    summary_faith = None
+    if summaries_target and os.path.isdir(summaries_target):
+        print(f"[*] Aggregating faithfulness summaries from: {summaries_target}")
+        summary_faith = aggregate_faithfulness_summaries(summaries_dir=summaries_target, output_dir=args.output_dir, required_execution_mode=args.mode)
+
+    if summary_raw is not None or summary_faith is not None:
         print("[+] Aggregation completed successfully.")
     else:
         print("[!] Aggregation produced no output.")

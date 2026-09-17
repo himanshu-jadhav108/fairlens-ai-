@@ -1,0 +1,52 @@
+[
+  {
+    "condition": {
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 123
+    },
+    "error": "GeminiProvider is not available. Check google-generativeai installation.",
+    "timestamp_utc": "2026-09-17T10:04:36.752551+00:00"
+  },
+  {
+    "condition": {
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 456
+    },
+    "error": "GeminiProvider is not available. Check google-generativeai installation.",
+    "timestamp_utc": "2026-09-17T10:04:38.072052+00:00"
+  },
+  {
+    "condition": {
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 42
+    },
+    "error": "GeminiProvider is not available. Check google-generativeai installation.",
+    "timestamp_utc": "2026-09-17T10:04:41.077162+00:00"
+  },
+  {
+    "condition": {
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 123
+    },
+    "error": "GeminiProvider is not available. Check google-generativeai installation.",
+    "timestamp_utc": "2026-09-17T10:04:44.001519+00:00"
+  },
+  {
+    "condition": {
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 456
+    },
+    "error": "GeminiProvider is not available. Check google-generativeai installation.",
+    "timestamp_utc": "2026-09-17T10:04:46.861287+00:00"
+  }
+]

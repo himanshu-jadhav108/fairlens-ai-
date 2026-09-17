@@ -1,0 +1,30 @@
+{
+  "experiment_id": "compas__logistic_regression__correlation_remover__seed456__e61a33c9",
+  "explanation_source": "gemini__gemini-2.5-flash",
+  "prompt_id": "combined_audit_v1",
+  "timestamp_utc": "2026-09-17T09:54:17.843390+00:00",
+  "execution_mode": "PILOT_VALIDATION_RUN",
+  "numerical_faithfulness": 1.0,
+  "directional_faithfulness": 1.0,
+  "attribution_faithfulness": 1.0,
+  "unsupported_claim_rate": 0.0,
+  "numeric_claim_count": 0,
+  "numeric_match_count": 0,
+  "numeric_error_count": 0,
+  "directional_claim_count": 0,
+  "directional_match_count": 0,
+  "directional_error_count": 0,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 0,
+  "undeterminable_claim_count": 0,
+  "total_claims_count": 0,
+  "numerical_mean_absolute_error": null,
+  "claims": [],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

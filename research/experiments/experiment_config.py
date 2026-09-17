@@ -16,7 +16,7 @@ class ExperimentConfig:
     seed: int = 42
     
     experiment_id: Optional[str] = None
-    description: str = "Fairness-Performance-Explainability evaluation"
+    description: str = "LLM Faithfulness Evaluation — Quantitative Faithfulness of LLM-Generated Explanations for ML Fairness Audits"
     
     # Split configuration
     train_ratio: float = 0.60

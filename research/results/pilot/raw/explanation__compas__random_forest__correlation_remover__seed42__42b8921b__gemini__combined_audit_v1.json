@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "614925d37c3b1cd25386d1b14d74ca269a0cb966d24d7bf170924819a93828ee",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates the fairness and performance of a `random_forest` machine learning model trained on the `compas` dataset. The audit specifically focuses on the protected attribute `race`, where `1` is designated as the privileged group and `0` as the unprivileged group. A `correlation_remover` preprocessing mitigation technique was applied, and the model was trained with a random seed of `42`.\n\n### 2. Baseline Fairness and Performance Audit\n\n#### Baseline Fairness Metrics:\nThe initial audit revealed significant disparities in certain fairness metrics, while others showed parity.\n\n*   **Demographic Parity Difference:** A value of `0.4014` indicates a substantial difference in positive prediction rates between the privileged and unprivileged groups. For perfect demographic parity, this metric should ideally be `0.0`.\n*   **Equalized Odds Difference:** A value of `0.0000` indicates that the model achieves parity in both false positive rates and true positive rates across the protected groups. This metric ideally targets `0.0`.\n*   **Equal Opportunity Difference:** A value of `0.0000` indicates parity in the true positive rates (recall) between the privileged and unprivileged groups. This metric ideally targets `0.0`.\n*   **Disparate Impact:** A value of `2.5128` indicates that the ratio of positive prediction rates for the unprivileged group to the privileged group is significantly above the ideal parity target of `1.0`. Specifically, the privileged group is predicted positively at a rate 2.5128 times higher than the unprivileged group.\n*   **False Positive Rate Difference:** A value of `0.0000` indicates parity in false positive rates between the groups.\n*   **False Negative Rate Difference:** A value of",
+  "timestamp_utc": "2026-09-17T09:54:24.721138+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 9.368,
+    "finish_reason": "2",
+    "prompt_tokens": 1595,
+    "completion_tokens": 412,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  }
+}

@@ -1,0 +1,2595 @@
+{
+  "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+  "explanation_source": "template_baseline",
+  "prompt_id": "deterministic_template",
+  "timestamp_utc": "2026-09-17T10:03:05.593683+00:00",
+  "execution_mode": "PILOT_VALIDATION_RUN",
+  "numerical_faithfulness": 0.8286,
+  "directional_faithfulness": 1.0,
+  "attribution_faithfulness": 1.0,
+  "unsupported_claim_rate": 0.0,
+  "numeric_claim_count": 35,
+  "numeric_match_count": 29,
+  "numeric_error_count": 0,
+  "directional_claim_count": 16,
+  "directional_match_count": 16,
+  "directional_error_count": 0,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 0,
+  "undeterminable_claim_count": 6,
+  "total_claims_count": 51,
+  "numerical_mean_absolute_error": 0.0,
+  "claims": [
+    {
+      "claim_id": "num_1",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline Demographic Parity Difference: 0.4740",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.474,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.474,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.4740"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.474 matches ground truth 0.474 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.474,
+        "raw_string": "0.4740",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.474,
+        "all_candidate_values": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_2",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline Equalized Odds Difference: 0.2516",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.2516,
+          "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2516,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.2516"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.2516 matches ground truth 0.2516 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.2516,
+        "raw_string": "0.2516",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.2516,
+        "all_candidate_values": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_3",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline Disparate Impact: 0.3942",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.3942,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.3942,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.3942"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.3942 matches ground truth 0.3942 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.3942,
+        "raw_string": "0.3942",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.3942,
+        "all_candidate_values": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_4",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline Accuracy: 0.8900",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.89,
+          "path": "baseline_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.89,
+        "metric_alias": "accuracy",
+        "raw_string": "0.8900"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.89 matches ground truth 0.89 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 0.89,
+        "raw_string": "0.8900",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.89,
+        "all_candidate_values": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_5",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline F1 Score: 0.9111",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9111,
+          "path": "baseline_state.performance_metrics.f1_score.value"
+        },
+        "all_candidates": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9111,
+        "metric_alias": "f1 score",
+        "raw_string": "0.9111"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9111 matches ground truth 0.9111 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+      "extracted_values": {
+        "value": 0.9111,
+        "raw_string": "0.9111",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9111,
+        "all_candidate_values": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_6",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Demographic Parity Difference: changed from 0.4740 to 0.0401 (absolute change: -0.4339, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.474,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.474,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.4740 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.474 matches ground truth 0.474 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.474,
+        "raw_string": "0.4740 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.474,
+        "all_candidate_values": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_7",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Demographic Parity Difference: changed from 0.4740 to 0.0401 (absolute change: -0.4339, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.0401,
+          "path": "mitigated_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0401,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.0401 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0401 matches ground truth 0.0401 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.0401,
+        "raw_string": "0.0401 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0401,
+        "all_candidate_values": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_8",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Demographic Parity Difference: changed from 0.4740 to 0.0401 (absolute change: -0.4339, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.4339,
+          "path": "metric_comparisons.demographic_parity_difference.absolute_change"
+        },
+        "all_candidates": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": -0.4339,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "-0.4339"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value -0.4339 matches ground truth -0.4339 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.demographic_parity_difference.absolute_change",
+      "extracted_values": {
+        "value": -0.4339,
+        "raw_string": "-0.4339",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.4339,
+        "all_candidate_values": [
+          0.474,
+          0.0401,
+          0.474,
+          0.0401,
+          -0.4339,
+          -0.9154
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_9",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Equalized Odds Difference: changed from 0.2516 to 0.2692 (absolute change: +0.0176, direction: increase, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.2516,
+          "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2516,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.2516 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.2516 matches ground truth 0.2516 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.2516,
+        "raw_string": "0.2516 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.2516,
+        "all_candidate_values": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_10",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Equalized Odds Difference: changed from 0.2516 to 0.2692 (absolute change: +0.0176, direction: increase, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.2692,
+          "path": "mitigated_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2692,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.2692 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.2692 matches ground truth 0.2692 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.2692,
+        "raw_string": "0.2692 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.2692,
+        "all_candidate_values": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_11",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Equalized Odds Difference: changed from 0.2516 to 0.2692 (absolute change: +0.0176, direction: increase, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": 0.0176,
+          "path": "metric_comparisons.equalized_odds_difference.absolute_change"
+        },
+        "all_candidates": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0176,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "+0.0176"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0176 matches ground truth 0.0176 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.equalized_odds_difference.absolute_change",
+      "extracted_values": {
+        "value": 0.0176,
+        "raw_string": "+0.0176",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0176,
+        "all_candidate_values": [
+          0.2516,
+          0.2692,
+          0.2516,
+          0.2692,
+          0.0176,
+          0.07
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_12",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.2516,
+          "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+        },
+        "all_candidates": [
+          0.2516,
+          0.137,
+          0.2516,
+          0.137,
+          -0.1146,
+          -0.4555
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2516,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.2516 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.2516 matches ground truth 0.2516 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+      "extracted_values": {
+        "value": 0.2516,
+        "raw_string": "0.2516 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.2516,
+        "all_candidate_values": [
+          0.2516,
+          0.137,
+          0.2516,
+          0.137,
+          -0.1146,
+          -0.4555
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_13",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.137,
+          "path": "mitigated_state.fairness_metrics.equal_opportunity_difference.value"
+        },
+        "all_candidates": [
+          0.2516,
+          0.137,
+          0.2516,
+          0.137,
+          -0.1146,
+          -0.4555
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.137,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.1370 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.137 matches ground truth 0.137 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.fairness_metrics.equal_opportunity_difference.value",
+      "extracted_values": {
+        "value": 0.137,
+        "raw_string": "0.1370 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.137,
+        "all_candidate_values": [
+          0.2516,
+          0.137,
+          0.2516,
+          0.137,
+          -0.1146,
+          -0.4555
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_14",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.1146,
+          "path": "metric_comparisons.equal_opportunity_difference.absolute_change"
+        },
+        "all_candidates": [
+          0.2516,
+          0.137,
+          0.2516,
+          0.137,
+          -0.1146,
+          -0.4555
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": -0.1146,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "-0.1146"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value -0.1146 matches ground truth -0.1146 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.equal_opportunity_difference.absolute_change",
+      "extracted_values": {
+        "value": -0.1146,
+        "raw_string": "-0.1146",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.1146,
+        "all_candidate_values": [
+          0.2516,
+          0.137,
+          0.2516,
+          0.137,
+          -0.1146,
+          -0.4555
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_15",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Disparate Impact: changed from 0.3942 to 0.9423 (absolute change: +0.5481, direction: increase, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.3942,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.3942,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.3942 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.3942 matches ground truth 0.3942 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.3942,
+        "raw_string": "0.3942 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.3942,
+        "all_candidate_values": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_16",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Disparate Impact: changed from 0.3942 to 0.9423 (absolute change: +0.5481, direction: increase, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.9423,
+          "path": "mitigated_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9423,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.9423 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9423 matches ground truth 0.9423 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.9423,
+        "raw_string": "0.9423 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9423,
+        "all_candidate_values": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_17",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Disparate Impact: changed from 0.3942 to 0.9423 (absolute change: +0.5481, direction: increase, evaluation: improvement)",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": 0.5481,
+          "path": "metric_comparisons.disparate_impact.absolute_change"
+        },
+        "all_candidates": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.5481,
+        "metric_alias": "disparate impact",
+        "raw_string": "+0.5481"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.5481 matches ground truth 0.5481 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.disparate_impact.absolute_change",
+      "extracted_values": {
+        "value": 0.5481,
+        "raw_string": "+0.5481",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.5481,
+        "all_candidate_values": [
+          0.3942,
+          0.9423,
+          0.3942,
+          0.9423,
+          0.5481,
+          1.3904
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_18",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- False Positive Rate Difference: changed from 0.1734 to 0.2692 (absolute change: +0.0958, direction: increase, evaluation: ambiguous)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1734,
+        "raw_string": "0.1734 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1734 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.1734,
+        "raw_string": "0.1734 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_19",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- False Positive Rate Difference: changed from 0.1734 to 0.2692 (absolute change: +0.0958, direction: increase, evaluation: ambiguous)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2692,
+        "raw_string": "0.2692 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.2692 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.2692,
+        "raw_string": "0.2692 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_20",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- False Positive Rate Difference: changed from 0.1734 to 0.2692 (absolute change: +0.0958, direction: increase, evaluation: ambiguous)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0958,
+        "raw_string": "+0.0958",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '+0.0958' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0958,
+        "raw_string": "+0.0958",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_21",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- False Negative Rate Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: ambiguous)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2516,
+        "raw_string": "0.2516 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.2516 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.2516,
+        "raw_string": "0.2516 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_22",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- False Negative Rate Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: ambiguous)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.137,
+        "raw_string": "0.1370 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1370 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.137,
+        "raw_string": "0.1370 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_23",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- False Negative Rate Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: ambiguous)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": -0.1146,
+        "raw_string": "-0.1146",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '-0.1146' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": -0.1146,
+        "raw_string": "-0.1146",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_24",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Accuracy: changed from 0.8900 to 0.8100 (absolute change: -0.0800, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.89,
+          "path": "baseline_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.89,
+        "metric_alias": "accuracy",
+        "raw_string": "0.8900 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.89 matches ground truth 0.89 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 0.89,
+        "raw_string": "0.8900 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.89,
+        "all_candidate_values": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_25",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Accuracy: changed from 0.8900 to 0.8100 (absolute change: -0.0800, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.81,
+          "path": "mitigated_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.81,
+        "metric_alias": "accuracy",
+        "raw_string": "0.8100 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.81 matches ground truth 0.81 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 0.81,
+        "raw_string": "0.8100 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.81,
+        "all_candidate_values": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_26",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Accuracy: changed from 0.8900 to 0.8100 (absolute change: -0.0800, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.08,
+          "path": "metric_comparisons.accuracy.absolute_change"
+        },
+        "all_candidates": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": -0.08,
+        "metric_alias": "accuracy",
+        "raw_string": "-0.0800"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value -0.08 matches ground truth -0.08 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.accuracy.absolute_change",
+      "extracted_values": {
+        "value": -0.08,
+        "raw_string": "-0.0800",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.08,
+        "all_candidate_values": [
+          0.89,
+          0.81,
+          0.89,
+          0.81,
+          -0.08,
+          -0.0899
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_27",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Precision: changed from 0.9185 to 0.8186 (absolute change: -0.0999, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "precision",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9185,
+          "path": "baseline_state.performance_metrics.precision.value"
+        },
+        "all_candidates": [
+          0.9185,
+          0.8186,
+          0.9185,
+          0.8186,
+          -0.0999,
+          -0.1088
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9185,
+        "metric_alias": "precision",
+        "raw_string": "0.9185 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9185 matches ground truth 0.9185 for 'precision' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+      "extracted_values": {
+        "value": 0.9185,
+        "raw_string": "0.9185 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9185,
+        "all_candidate_values": [
+          0.9185,
+          0.8186,
+          0.9185,
+          0.8186,
+          -0.0999,
+          -0.1088
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_28",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Precision: changed from 0.9185 to 0.8186 (absolute change: -0.0999, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "precision",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.8186,
+          "path": "mitigated_state.performance_metrics.precision.value"
+        },
+        "all_candidates": [
+          0.9185,
+          0.8186,
+          0.9185,
+          0.8186,
+          -0.0999,
+          -0.1088
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8186,
+        "metric_alias": "precision",
+        "raw_string": "0.8186 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8186 matches ground truth 0.8186 for 'precision' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.performance_metrics.precision.value",
+      "extracted_values": {
+        "value": 0.8186,
+        "raw_string": "0.8186 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8186,
+        "all_candidate_values": [
+          0.9185,
+          0.8186,
+          0.9185,
+          0.8186,
+          -0.0999,
+          -0.1088
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_29",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Precision: changed from 0.9185 to 0.8186 (absolute change: -0.0999, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "precision",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.0999,
+          "path": "metric_comparisons.precision.absolute_change"
+        },
+        "all_candidates": [
+          0.9185,
+          0.8186,
+          0.9185,
+          0.8186,
+          -0.0999,
+          -0.1088
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0999,
+        "metric_alias": "precision",
+        "raw_string": "-0.0999"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value -0.0999 matches ground truth -0.0999 for 'precision' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.precision.absolute_change",
+      "extracted_values": {
+        "value": -0.0999,
+        "raw_string": "-0.0999",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.0999,
+        "all_candidate_values": [
+          0.9185,
+          0.8186,
+          0.9185,
+          0.8186,
+          -0.0999,
+          -0.1088
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_30",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Recall: changed from 0.9037 to 0.8930 (absolute change: -0.0107, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "recall",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9037,
+          "path": "baseline_state.performance_metrics.recall.value"
+        },
+        "all_candidates": [
+          0.9037,
+          0.893,
+          0.9037,
+          0.893,
+          -0.0107,
+          -0.0118
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9037,
+        "metric_alias": "recall",
+        "raw_string": "0.9037 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9037 matches ground truth 0.9037 for 'recall' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+      "extracted_values": {
+        "value": 0.9037,
+        "raw_string": "0.9037 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9037,
+        "all_candidate_values": [
+          0.9037,
+          0.893,
+          0.9037,
+          0.893,
+          -0.0107,
+          -0.0118
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_31",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Recall: changed from 0.9037 to 0.8930 (absolute change: -0.0107, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "recall",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.893,
+          "path": "mitigated_state.performance_metrics.recall.value"
+        },
+        "all_candidates": [
+          0.9037,
+          0.893,
+          0.9037,
+          0.893,
+          -0.0107,
+          -0.0118
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.893,
+        "metric_alias": "recall",
+        "raw_string": "0.8930 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.893 matches ground truth 0.893 for 'recall' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.performance_metrics.recall.value",
+      "extracted_values": {
+        "value": 0.893,
+        "raw_string": "0.8930 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.893,
+        "all_candidate_values": [
+          0.9037,
+          0.893,
+          0.9037,
+          0.893,
+          -0.0107,
+          -0.0118
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_32",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- Recall: changed from 0.9037 to 0.8930 (absolute change: -0.0107, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "recall",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.0107,
+          "path": "metric_comparisons.recall.absolute_change"
+        },
+        "all_candidates": [
+          0.9037,
+          0.893,
+          0.9037,
+          0.893,
+          -0.0107,
+          -0.0118
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0107,
+        "metric_alias": "recall",
+        "raw_string": "-0.0107"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value -0.0107 matches ground truth -0.0107 for 'recall' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.recall.absolute_change",
+      "extracted_values": {
+        "value": -0.0107,
+        "raw_string": "-0.0107",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.0107,
+        "all_candidate_values": [
+          0.9037,
+          0.893,
+          0.9037,
+          0.893,
+          -0.0107,
+          -0.0118
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_33",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- F1 Score: changed from 0.9111 to 0.8542 (absolute change: -0.0569, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9111,
+          "path": "baseline_state.performance_metrics.f1_score.value"
+        },
+        "all_candidates": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9111,
+        "metric_alias": "f1 score",
+        "raw_string": "0.9111 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9111 matches ground truth 0.9111 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+      "extracted_values": {
+        "value": 0.9111,
+        "raw_string": "0.9111 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9111,
+        "all_candidate_values": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_34",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- F1 Score: changed from 0.9111 to 0.8542 (absolute change: -0.0569, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.8542,
+          "path": "mitigated_state.performance_metrics.f1_score.value"
+        },
+        "all_candidates": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8542,
+        "metric_alias": "f1 score",
+        "raw_string": "0.8542 "
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8542 matches ground truth 0.8542 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "mitigated_state.performance_metrics.f1_score.value",
+      "extracted_values": {
+        "value": 0.8542,
+        "raw_string": "0.8542 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8542,
+        "all_candidate_values": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_35",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "numerical",
+      "claim_text": "- F1 Score: changed from 0.9111 to 0.8542 (absolute change: -0.0569, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.0569,
+          "path": "metric_comparisons.f1_score.absolute_change"
+        },
+        "all_candidates": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0569,
+        "metric_alias": "f1 score",
+        "raw_string": "-0.0569"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value -0.0569 matches ground truth -0.0569 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "metric_comparisons.f1_score.absolute_change",
+      "extracted_values": {
+        "value": -0.0569,
+        "raw_string": "-0.0569",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.0569,
+        "all_candidate_values": [
+          0.9111,
+          0.8542,
+          0.9111,
+          0.8542,
+          -0.0569,
+          -0.0625
+        ]
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "dir_math_1",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Demographic Parity Difference: changed from 0.4740 to 0.0401 (absolute change: -0.4339, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "metric_name": "demographic_parity_difference",
+        "direction": "decrease",
+        "before": 0.474,
+        "after": 0.0401,
+        "absolute_change": -0.4339
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric_alias": "demographic parity difference"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease.",
+      "referenced_evidence": "metric_comparisons.demographic_parity_difference.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric": "demographic_parity_difference"
+      },
+      "expected_values": {
+        "direction": "decrease",
+        "absolute_change": -0.4339,
+        "before": 0.474,
+        "after": 0.0401
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_2",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.4740 to 0.0401 (absolute change: -0.4339, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "metric_name": "demographic_parity_difference",
+        "interpretation": "improvement",
+        "semantics_rationale": "Absolute Demographic Parity Difference decreased from 0.4740 to 0.0401, moving closer to ideal parity (0.0)."
+      },
+      "predicted_claim": {
+        "interpretation": "improvement",
+        "term": "improvement",
+        "metric_alias": "demographic parity difference"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+      "referenced_evidence": "metric_comparisons.demographic_parity_difference.interpretation",
+      "extracted_values": {
+        "interpretation": "improvement",
+        "term": "improvement",
+        "metric": "demographic_parity_difference"
+      },
+      "expected_values": {
+        "interpretation": "improvement",
+        "semantics_rationale": "Absolute Demographic Parity Difference decreased from 0.4740 to 0.0401, moving closer to ideal parity (0.0)."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_3",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Equalized Odds Difference: changed from 0.2516 to 0.2692 (absolute change: +0.0176, direction: increase, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "equalized_odds_difference",
+        "direction": "increase",
+        "before": 0.2516,
+        "after": 0.2692,
+        "absolute_change": 0.0176
+      },
+      "predicted_claim": {
+        "direction": "increase",
+        "term": "increase",
+        "metric_alias": "equalized odds difference"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that equalized_odds_difference 'increase' matches ground truth direction: increase.",
+      "referenced_evidence": "metric_comparisons.equalized_odds_difference.direction",
+      "extracted_values": {
+        "direction": "increase",
+        "term": "increase",
+        "metric": "equalized_odds_difference"
+      },
+      "expected_values": {
+        "direction": "increase",
+        "absolute_change": 0.0176,
+        "before": 0.2516,
+        "after": 0.2692
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_4",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equalized Odds Difference: changed from 0.2516 to 0.2692 (absolute change: +0.0176, direction: increase, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "equalized_odds_difference",
+        "interpretation": "degradation",
+        "semantics_rationale": "Absolute Equalized Odds Difference increased from 0.2516 to 0.2692, moving further from ideal parity (0.0)."
+      },
+      "predicted_claim": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric_alias": "equalized odds difference"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+      "referenced_evidence": "metric_comparisons.equalized_odds_difference.interpretation",
+      "extracted_values": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric": "equalized_odds_difference"
+      },
+      "expected_values": {
+        "interpretation": "degradation",
+        "semantics_rationale": "Absolute Equalized Odds Difference increased from 0.2516 to 0.2692, moving further from ideal parity (0.0)."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_5",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "metric_name": "equal_opportunity_difference",
+        "direction": "decrease",
+        "before": 0.2516,
+        "after": 0.137,
+        "absolute_change": -0.1146
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric_alias": "equal opportunity difference"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that equal_opportunity_difference 'decrease' matches ground truth direction: decrease.",
+      "referenced_evidence": "metric_comparisons.equal_opportunity_difference.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric": "equal_opportunity_difference"
+      },
+      "expected_values": {
+        "direction": "decrease",
+        "absolute_change": -0.1146,
+        "before": 0.2516,
+        "after": 0.137
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_6",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.2516 to 0.1370 (absolute change: -0.1146, direction: decrease, evaluation: improvement)",
+      "ground_truth": {
+        "metric_name": "equal_opportunity_difference",
+        "interpretation": "improvement",
+        "semantics_rationale": "Absolute Equal Opportunity Difference decreased from 0.2516 to 0.1370, moving closer to ideal parity (0.0)."
+      },
+      "predicted_claim": {
+        "interpretation": "improvement",
+        "term": "improvement",
+        "metric_alias": "equal opportunity difference"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+      "referenced_evidence": "metric_comparisons.equal_opportunity_difference.interpretation",
+      "extracted_values": {
+        "interpretation": "improvement",
+        "term": "improvement",
+        "metric": "equal_opportunity_difference"
+      },
+      "expected_values": {
+        "interpretation": "improvement",
+        "semantics_rationale": "Absolute Equal Opportunity Difference decreased from 0.2516 to 0.1370, moving closer to ideal parity (0.0)."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_7",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Disparate Impact: changed from 0.3942 to 0.9423 (absolute change: +0.5481, direction: increase, evaluation: improvement)",
+      "ground_truth": {
+        "metric_name": "disparate_impact",
+        "direction": "increase",
+        "before": 0.3942,
+        "after": 0.9423,
+        "absolute_change": 0.5481
+      },
+      "predicted_claim": {
+        "direction": "increase",
+        "term": "increase",
+        "metric_alias": "disparate impact"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that disparate_impact 'increase' matches ground truth direction: increase.",
+      "referenced_evidence": "metric_comparisons.disparate_impact.direction",
+      "extracted_values": {
+        "direction": "increase",
+        "term": "increase",
+        "metric": "disparate_impact"
+      },
+      "expected_values": {
+        "direction": "increase",
+        "absolute_change": 0.5481,
+        "before": 0.3942,
+        "after": 0.9423
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_8",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Disparate Impact: changed from 0.3942 to 0.9423 (absolute change: +0.5481, direction: increase, evaluation: improvement)",
+      "ground_truth": {
+        "metric_name": "disparate_impact",
+        "interpretation": "improvement",
+        "semantics_rationale": "Disparate Impact moved from 0.3942 to 0.9423, closer to ideal parity ratio (1.0)."
+      },
+      "predicted_claim": {
+        "interpretation": "improvement",
+        "term": "improvement",
+        "metric_alias": "disparate impact"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+      "referenced_evidence": "metric_comparisons.disparate_impact.interpretation",
+      "extracted_values": {
+        "interpretation": "improvement",
+        "term": "improvement",
+        "metric": "disparate_impact"
+      },
+      "expected_values": {
+        "interpretation": "improvement",
+        "semantics_rationale": "Disparate Impact moved from 0.3942 to 0.9423, closer to ideal parity ratio (1.0)."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_9",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Accuracy: changed from 0.8900 to 0.8100 (absolute change: -0.0800, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "accuracy",
+        "direction": "decrease",
+        "before": 0.89,
+        "after": 0.81,
+        "absolute_change": -0.08
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric_alias": "accuracy"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that accuracy 'decrease' matches ground truth direction: decrease.",
+      "referenced_evidence": "metric_comparisons.accuracy.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric": "accuracy"
+      },
+      "expected_values": {
+        "direction": "decrease",
+        "absolute_change": -0.08,
+        "before": 0.89,
+        "after": 0.81
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_10",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "performance",
+      "claim_text": "- Accuracy: changed from 0.8900 to 0.8100 (absolute change: -0.0800, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "accuracy",
+        "interpretation": "degradation",
+        "semantics_rationale": "Accuracy decreased from 0.8900 to 0.8100."
+      },
+      "predicted_claim": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric_alias": "accuracy"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+      "referenced_evidence": "metric_comparisons.accuracy.interpretation",
+      "extracted_values": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric": "accuracy"
+      },
+      "expected_values": {
+        "interpretation": "degradation",
+        "semantics_rationale": "Accuracy decreased from 0.8900 to 0.8100."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_11",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Precision: changed from 0.9185 to 0.8186 (absolute change: -0.0999, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "precision",
+        "direction": "decrease",
+        "before": 0.9185,
+        "after": 0.8186,
+        "absolute_change": -0.0999
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric_alias": "precision"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that precision 'decrease' matches ground truth direction: decrease.",
+      "referenced_evidence": "metric_comparisons.precision.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric": "precision"
+      },
+      "expected_values": {
+        "direction": "decrease",
+        "absolute_change": -0.0999,
+        "before": 0.9185,
+        "after": 0.8186
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_12",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "performance",
+      "claim_text": "- Precision: changed from 0.9185 to 0.8186 (absolute change: -0.0999, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "precision",
+        "interpretation": "degradation",
+        "semantics_rationale": "Precision decreased from 0.9185 to 0.8186."
+      },
+      "predicted_claim": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric_alias": "precision"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+      "referenced_evidence": "metric_comparisons.precision.interpretation",
+      "extracted_values": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric": "precision"
+      },
+      "expected_values": {
+        "interpretation": "degradation",
+        "semantics_rationale": "Precision decreased from 0.9185 to 0.8186."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_13",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- Recall: changed from 0.9037 to 0.8930 (absolute change: -0.0107, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "recall",
+        "direction": "decrease",
+        "before": 0.9037,
+        "after": 0.893,
+        "absolute_change": -0.0107
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric_alias": "recall"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that recall 'decrease' matches ground truth direction: decrease.",
+      "referenced_evidence": "metric_comparisons.recall.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric": "recall"
+      },
+      "expected_values": {
+        "direction": "decrease",
+        "absolute_change": -0.0107,
+        "before": 0.9037,
+        "after": 0.893
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_14",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "performance",
+      "claim_text": "- Recall: changed from 0.9037 to 0.8930 (absolute change: -0.0107, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "recall",
+        "interpretation": "degradation",
+        "semantics_rationale": "Recall decreased from 0.9037 to 0.8930."
+      },
+      "predicted_claim": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric_alias": "recall"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+      "referenced_evidence": "metric_comparisons.recall.interpretation",
+      "extracted_values": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric": "recall"
+      },
+      "expected_values": {
+        "interpretation": "degradation",
+        "semantics_rationale": "Recall decreased from 0.9037 to 0.8930."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_math_15",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "directional",
+      "claim_text": "- F1 Score: changed from 0.9111 to 0.8542 (absolute change: -0.0569, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "f1_score",
+        "direction": "decrease",
+        "before": 0.9111,
+        "after": 0.8542,
+        "absolute_change": -0.0569
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric_alias": "f1 score"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim that f1_score 'decrease' matches ground truth direction: decrease.",
+      "referenced_evidence": "metric_comparisons.f1_score.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "decrease",
+        "metric": "f1_score"
+      },
+      "expected_values": {
+        "direction": "decrease",
+        "absolute_change": -0.0569,
+        "before": 0.9111,
+        "after": 0.8542
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "dir_interp_16",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.9111 to 0.8542 (absolute change: -0.0569, direction: decrease, evaluation: degradation)",
+      "ground_truth": {
+        "metric_name": "f1_score",
+        "interpretation": "degradation",
+        "semantics_rationale": "F1 Score decreased from 0.9111 to 0.8542."
+      },
+      "predicted_claim": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric_alias": "f1 score"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+      "referenced_evidence": "metric_comparisons.f1_score.interpretation",
+      "extracted_values": {
+        "interpretation": "degradation",
+        "term": "degradation",
+        "metric": "f1_score"
+      },
+      "expected_values": {
+        "interpretation": "degradation",
+        "semantics_rationale": "F1 Score decreased from 0.9111 to 0.8542."
+      },
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "provenance": {
+        "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {}
+    }
+  ],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

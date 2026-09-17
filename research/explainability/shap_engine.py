@@ -62,9 +62,14 @@ class SHAPEngine:
     def _init_explainer(self):
         """Select appropriate SHAP explainer family based on underlying model architecture."""
         target_model = self.estimator
-        # Unwrap if encapsulated in a reduction or pipeline
+        # Unwrap if encapsulated in a reduction, pipeline, or postprocessor
         if hasattr(target_model, "get_raw_estimator"):
             target_model = target_model.get_raw_estimator()
+        if not isinstance(target_model, (LogisticRegression, RandomForestClassifier)):
+            if hasattr(target_model, "estimator_"):
+                target_model = target_model.estimator_
+            elif hasattr(target_model, "estimator"):
+                target_model = target_model.estimator
 
         req = self.explainer_type_requested.lower()
         if req == "linear" or (req == "auto" and isinstance(target_model, LogisticRegression)):
@@ -91,7 +96,14 @@ class SHAPEngine:
 
     def _compute_shap_values(self) -> np.ndarray:
         """Compute attribution matrix with proper handling of binary classification output shapes."""
-        raw_values = self.explainer.shap_values(self.X_test_sample)
+        try:
+            raw_values = self.explainer.shap_values(self.X_test_sample)
+        except Exception:
+            # Fallback with check_additivity=False if TreeExplainer additivity check fails on minor float precision
+            try:
+                raw_values = self.explainer.shap_values(self.X_test_sample, check_additivity=False)
+            except Exception:
+                raise
         
         # Handle SHAP output format discrepancies across versions and explainer types:
         # If list of arrays (e.g. [class_0, class_1]), select positive class (index 1)

@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__logistic_regression__correlation_remover__seed456__e61a33c9",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "89b2ba58603024e07634eddb747ecd332f53771e2f63a9034341573b829f8841",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `compas` dataset. The protected attribute under consideration is `race`, where `1` is designated as the privileged group and `0` as the unprivileged group. The audit includes an assessment of the model's baseline performance and fairness, followed by an evaluation of the impact of a `correlation_remover` preprocessing mitigation technique. The random seed used for this audit was `456`.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited perfect performance metrics but significant disparities in certain fairness metrics.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** `0.4527` (indicating a substantial disparity from the ideal `0.0`)\n*   **Equalized Odds Difference:** `0.0000` (indicating parity)\n*   **Equal Opportunity Difference:** `0.0000` (indicating parity)\n*   **Disparate Impact:** `2.9805` (indicating a significant disparity from the ideal `1.0`)\n*   **False Positive Rate Difference:** `0.0000` (indicating parity)\n*   **False Negative Rate Difference:** `0.0000` (indicating parity)\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** `1.0000`\n*   **Precision:** `1.0000`\n*   **Recall:** `1.0000`\n*   **F1 Score:** `1.0000`\n*   **ROC AUC:** `1.0000`\n\nThe baseline model achieved perfect scores across all audited performance metrics. However, it displayed considerable disparities in `demographic_parity_difference` and `disparate_impact`, suggesting unequal positive outcome rates between the privileged and unprivileged groups. Conversely, `equalized_odds_difference`, `equal_opportunity_difference`, `false_positive_rate_difference`, and `false_negative_rate_difference` were at `0.0000`, indicating parity in error rates and true positive rates across groups at baseline.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, resulting in a mixed impact on fairness metrics and a consistent degradation in performance metrics",
+  "timestamp_utc": "2026-09-17T09:54:09.131179+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 8.557,
+    "finish_reason": "2",
+    "prompt_tokens": 1637,
+    "completion_tokens": 529,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  }
+}

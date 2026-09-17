@@ -1,0 +1,32 @@
+{
+  "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__950c0545",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "259399f08f81189496940714569463477bdc332279dad0114e695c294786af13",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `adult` dataset. The protected attribute under examination is `sex`, where `1` represents the privileged group and `0` represents the unprivileged group. The model was trained with a `random_seed` of `123`. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.3507\n*   **Equalized Odds Difference:** 0.1546\n*   **Equal Opportunity Difference:** 0.0670\n*   **Disparate Impact:** 0.5292\n*   **False Positive Rate Difference:** 0.1546\n*   **False Negative Rate Difference:** 0.0670\n\n**Performance Metrics:**\n*   **Accuracy:** 0.8867\n*   **Precision:** 0.9091\n*   **Recall:** 0.9091\n*   **F1 Score:** 0.9091\n*   **ROC AUC:** 0.9597\n\nAt baseline, the model showed disparities across several fairness metrics. For instance, a Demographic Parity Difference of 0.3507 indicates a notable difference in positive prediction rates between groups, and a Disparate Impact of 0.5292 is below the ideal ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation was applied, resulting in the following changes:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.3507 | Mitigated: 0.1050 | Delta: -0.2457\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   Rationale: Absolute Demographic Parity Difference decreased from 0.3507 to 0.1050, moving closer to ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.1546 | Mitigated: 0.2119 | Delta: +0.0573\n    *   Direction: increase | Domain Evaluation: degradation\n    *   Rationale: Absolute Equalized Odds Difference increased from 0.1546 to 0.2119, moving further from ideal parity (0.0).\n*   **Equal Opportunity Difference:**\n    *   ",
+  "timestamp_utc": "2026-09-17T10:02:12.366325+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 17.963,
+    "finish_reason": "2",
+    "prompt_tokens": 1631,
+    "completion_tokens": 626,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  }
+}

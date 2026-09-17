@@ -1,0 +1,567 @@
+{
+  "pilot_timestamp_utc": "2026-09-17T10:33:38.215783+00:00",
+  "duration_seconds": 29.67,
+  "total_planned": 24,
+  "attempted_runs": 5,
+  "successful_runs": 5,
+  "failed_runs": 0,
+  "skipped_as_already_complete": 19,
+  "provider": "gemini",
+  "results": [
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover",
+        "seed": 42
+      },
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__ab326813",
+      "evidence_hash": "1ae32bb65de9036328be763169b744ee640a23c4a5fd4e155e5e3e9526d28d47",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.7308
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover",
+        "seed": 123
+      },
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__ceac3ef9",
+      "evidence_hash": "c0b11fd3d2b59b2764b828d26b3c1f699f058bc6fc06772004f46e9a22bcbda4",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.3333
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover",
+        "seed": 456
+      },
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__0696e632",
+      "evidence_hash": "2c03e08af4321248969e6406843088f2f300ccdcd076505466649c46369fa758",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.6176
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer",
+        "seed": 42
+      },
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__31aee77c",
+      "evidence_hash": "65a7bd58eb79db2632fa1b04bbccddd135cb4525931adf415fbd89c184b8866b",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.4737
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer",
+        "seed": 123
+      },
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__950c0545",
+      "evidence_hash": "259399f08f81189496940714569463477bdc332279dad0114e695c294786af13",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.5769
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer",
+        "seed": 456
+      },
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__779f437a",
+      "evidence_hash": "cf0c5457ea42a1eff547457b68e54d4da33f8705664ff9bcb8ccb27ea99a1880",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.4483
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "correlation_remover",
+        "seed": 42
+      },
+      "experiment_id": "adult__random_forest__correlation_remover__seed42__131ed43d",
+      "evidence_hash": "3711737163bc31c413ff3e39490650f0fe381dc4f6d6f2305086bcd8e6c6648e",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.6154
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "correlation_remover",
+        "seed": 123
+      },
+      "experiment_id": "adult__random_forest__correlation_remover__seed123__5b20607c",
+      "evidence_hash": "115c798b87ab086b302e998e7e8211e15373959752f7cc6a6658cf5231464756",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.3913
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "correlation_remover",
+        "seed": 456
+      },
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__8e666c74",
+      "evidence_hash": "56922aa894855c48935c08ada0d7b95cc8f9fbb43de651ef141eb22e3dab290b",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.4286
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer",
+        "seed": 42
+      },
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+      "evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.5
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer",
+        "seed": 123
+      },
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed123__aaa4e39f",
+      "evidence_hash": "de4e4450f2fda526f57cea66ea2a7d2f283f53c096f07c813dd38f628d73397d",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.6
+    },
+    {
+      "condition": {
+        "dataset": "adult",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer",
+        "seed": 456
+      },
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed456__05303090",
+      "evidence_hash": "0094add7e97185366f03803bfefe0bc4119f42407f4b405a4e0f9b6061670c32",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.48
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover",
+        "seed": 42
+      },
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.5
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover",
+        "seed": 123
+      },
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed123__8fbcec74",
+      "evidence_hash": "15cb6101c5fde567fa9feff4760bd47ba2d4025063642bdd06db52ab9d84d877",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.4545
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover",
+        "seed": 456
+      },
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed456__9e50edc2",
+      "evidence_hash": "4f155322033c97bad0b6e8b528cd58bcfad013bb73a8c845431fe99f544d1808",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.36
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer",
+        "seed": 42
+      },
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.0
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer",
+        "seed": 123
+      },
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed123__76fa7964",
+      "evidence_hash": "5e46b5fcc6c9c0837ecd415957cea68221ec08d0efb518332970bfe706aa7c19",
+      "status": "SUCCESS",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.875
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer",
+        "seed": 456
+      },
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__9b4afa7a",
+      "evidence_hash": "92f4f961911f27ce6d6c1b5c8cf09b34b055636babdc11598955ed94bf9bbe71",
+      "status": "SUCCESS",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.6346
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover",
+        "seed": 42
+      },
+      "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b",
+      "evidence_hash": "614925d37c3b1cd25386d1b14d74ca269a0cb966d24d7bf170924819a93828ee",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.0
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover",
+        "seed": 123
+      },
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.6429
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover",
+        "seed": 456
+      },
+      "experiment_id": "compas__random_forest__correlation_remover__seed456__abd93086",
+      "evidence_hash": "64798adb2a9576034c35151f55a35c1f50a63450a60817add67254c91a380372",
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "template_faithfulness": 0.8421,
+      "llm_faithfulness": 0.75
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer",
+        "seed": 42
+      },
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed42__6febbe1b",
+      "evidence_hash": "0baf3e48ef85359cb4acc07614d784ca07157861cd285e1f0042497a9f0eda8e",
+      "status": "SUCCESS",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.8
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer",
+        "seed": 123
+      },
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed123__35ea1003",
+      "evidence_hash": "30c64e5afd3b30ceddb3a5e272445675d47de92190f652b28f5446a1064fdae3",
+      "status": "SUCCESS",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.7368
+    },
+    {
+      "condition": {
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer",
+        "seed": 456
+      },
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__936e3c3a",
+      "evidence_hash": "34e6571dcec4c0d4416c46320cddbef092c127706220550bd3fccf9dbfa69502",
+      "status": "SUCCESS",
+      "template_faithfulness": 0.8286,
+      "llm_faithfulness": 0.6984
+    }
+  ],
+  "failures": [],
+  "inventory": [
+    {
+      "condition_id": "adult__logistic_regression__correlation_remover__s42",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__ab326813"
+    },
+    {
+      "condition_id": "adult__logistic_regression__correlation_remover__s123",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__ceac3ef9"
+    },
+    {
+      "condition_id": "adult__logistic_regression__correlation_remover__s456",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__0696e632"
+    },
+    {
+      "condition_id": "adult__logistic_regression__threshold_optimizer__s42",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__31aee77c"
+    },
+    {
+      "condition_id": "adult__logistic_regression__threshold_optimizer__s123",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__950c0545"
+    },
+    {
+      "condition_id": "adult__logistic_regression__threshold_optimizer__s456",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__779f437a"
+    },
+    {
+      "condition_id": "adult__random_forest__correlation_remover__s42",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__random_forest__correlation_remover__seed42__131ed43d"
+    },
+    {
+      "condition_id": "adult__random_forest__correlation_remover__s123",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__random_forest__correlation_remover__seed123__5b20607c"
+    },
+    {
+      "condition_id": "adult__random_forest__correlation_remover__s456",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__8e666c74"
+    },
+    {
+      "condition_id": "adult__random_forest__threshold_optimizer__s42",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2"
+    },
+    {
+      "condition_id": "adult__random_forest__threshold_optimizer__s123",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed123__aaa4e39f"
+    },
+    {
+      "condition_id": "adult__random_forest__threshold_optimizer__s456",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed456__05303090"
+    },
+    {
+      "condition_id": "compas__logistic_regression__correlation_remover__s42",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55"
+    },
+    {
+      "condition_id": "compas__logistic_regression__correlation_remover__s123",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed123__8fbcec74"
+    },
+    {
+      "condition_id": "compas__logistic_regression__correlation_remover__s456",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed456__9e50edc2"
+    },
+    {
+      "condition_id": "compas__logistic_regression__threshold_optimizer__s42",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114"
+    },
+    {
+      "condition_id": "compas__logistic_regression__threshold_optimizer__s123",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SUCCESS",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed123__76fa7964"
+    },
+    {
+      "condition_id": "compas__logistic_regression__threshold_optimizer__s456",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SUCCESS",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__9b4afa7a"
+    },
+    {
+      "condition_id": "compas__random_forest__correlation_remover__s42",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b"
+    },
+    {
+      "condition_id": "compas__random_forest__correlation_remover__s123",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c"
+    },
+    {
+      "condition_id": "compas__random_forest__correlation_remover__s456",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__random_forest__correlation_remover__seed456__abd93086"
+    },
+    {
+      "condition_id": "compas__random_forest__threshold_optimizer__s42",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SUCCESS",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed42__6febbe1b"
+    },
+    {
+      "condition_id": "compas__random_forest__threshold_optimizer__s123",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SUCCESS",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed123__35ea1003"
+    },
+    {
+      "condition_id": "compas__random_forest__threshold_optimizer__s456",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SUCCESS",
+      "execution_mode": "PILOT_VALIDATION_RUN",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__936e3c3a"
+    }
+  ]
+}

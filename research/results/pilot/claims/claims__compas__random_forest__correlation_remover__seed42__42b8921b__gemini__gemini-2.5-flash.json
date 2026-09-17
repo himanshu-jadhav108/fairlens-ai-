@@ -1,0 +1,72 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b",
+    "claim_type": "numerical",
+    "claim_text": "Specifically, the privileged group is predicted positively at a rate 2.5128 times higher than the unprivileged group",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 2.5128,
+      "raw_string": "2.5128 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '2.5128 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 2.5128,
+      "raw_string": "2.5128 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "614925d37c3b1cd25386d1b14d74ca269a0cb966d24d7bf170924819a93828ee",
+    "provenance": {
+      "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "mag_1",
+    "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b",
+    "claim_type": "magnitude",
+    "claim_text": "*   **Disparate Impact:** A value of `2.5128` indicates that the ratio of positive prediction rates for the unprivileged group to the privileged group is significantly above the ideal parity target of `1.0`",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "absolute_change": 0.0,
+      "relative_change": 0.0
+    },
+    "predicted_claim": {
+      "modifier": "significantly",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.0). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation.",
+    "referenced_evidence": "metric_comparisons.disparate_impact.absolute_change",
+    "extracted_values": {
+      "modifier": "significantly",
+      "metric": "disparate_impact"
+    },
+    "expected_values": {
+      "absolute_change": 0.0,
+      "relative_change": 0.0
+    },
+    "evidence_hash": "614925d37c3b1cd25386d1b14d74ca269a0cb966d24d7bf170924819a93828ee",
+    "provenance": {
+      "experiment_id": "compas__random_forest__correlation_remover__seed42__42b8921b",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {}
+  }
+]

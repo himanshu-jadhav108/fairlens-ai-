@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__random_forest__threshold_optimizer__seed456__936e3c3a",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-flash-lite-latest",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "34e6571dcec4c0d4416c46320cddbef092c127706220550bd3fccf9dbfa69502",
+  "output_text": "# Independent Machine Learning Fairness Audit Report\n\n## 1. Model & Dataset Overview\n- **Dataset:** compas\n- **Protected Attribute:** race (Privileged: 1, Unprivileged: 0)\n- **Model Architecture:** random_forest\n- **Random Seed:** 456\n- **Mitigation Applied:** threshold_optimizer (postprocessing)\n\n---\n\n## 2. Baseline Fairness and Performance Audit\nThe baseline evaluation establishes the model's initial performance and fairness characteristics prior to any mitigation strategy.\n\n### Baseline Performance\nThe unmitigated random forest model achieved perfect scores across all tracked performance metrics:\n- **Accuracy:** 1.0000\n- **Precision:** 1.0000\n- **Recall:** 1.0000\n- **F1 Score:** 1.0000\n- **ROC AUC:** 1.0000\n\n### Baseline Fairness\nEvaluating demographic parity and error rate parity across the protected attribute (`race`) revealed initial disparities:\n- **Demographic Parity Difference:** 0.4527\n- **Disparate Impact:** 2.9805 (deviating significantly from the ideal parity target of 1.0)\n- **Equalized Odds Difference:** 0.0000\n- **Equal Opportunity Difference:** 0.0000\n- **False Positive Rate Difference:** 0.0000\n- **False Negative Rate Difference:** 0.0000\n\nWhile the baseline model demonstrated perfect predictive performance, it exhibited a substantial demographic parity gap (0.4527) and a high disparate impact ratio (2.9805).\n\n---\n\n## 3. Mitigation Impact and Comparison\nTo address the baseline fairness disparities, a postprocessing mitigation technique (`threshold_optimizer`) was applied with random seed 456. The pre- vs. post-mitigation comparison indicates a trade-off between specific fairness dimensions and overall predictive performance.\n\n### Fairness Metrics Shift\n- **Demographic Parity Difference:** Improved significantly, decreasing by **-0.4340** from 0.4527 to **0.0187**, bringing it very close to the ideal parity target of 0.0.\n- **Disparate Impact:** Improved toward parity, decreasing by **-2.0073** from 2.9805 to **0.9732** (moving much closer to the ideal ratio of 1.0).\n- **Equalized Odds Difference:** Degraded, increasing by **+0.6111** from 0.0000 to **0.6111**, moving further away from ideal parity (0.0).\n- **Equal Opportunity Difference:** Remained unchanged at **0.0000** (Delta: +0.0000).\n- **False Positive Rate Difference:** Increased by **+0.6111** from 0.0000 to **0.6111**.\n- **False Negative Rate Difference:** Remained unchanged at **0.0000** (Delta: +0.0000).\n\n### Performance Metrics Shift\nApplying the threshold optimizer introduced a performance penalty across most evaluation metrics:\n- **Accuracy:** Decreased by **-0.2200** from 1.0000 to **0.7800**.\n- **Precision:** Decreased by **-0.3188** from 1.0000 to **0.6812**.\n- **Recall:** Remained stable at **1.0000** (Delta: +0.0000).\n- **F1 Score:** Decreased by **-0.1897** from 1.0000 to **0.8103**.\n- **ROC AUC:** Recorded as **N/A** post-mitigation.\n\n---\n\n## 4. Feature Attribution and Explainability Analysis\nGlobal feature importance was evaluated using TreeSHAP (mean absolute SHAP values). The features are ranked strictly below in descending order of importance:\n\n1. `decile_score`: 0.46825\n2. `priors_count`: 0.00863\n3. `age`: 0.00795\n4. `race_African-American`: 0.00375\n5. `race_Caucasian`: 0.00253\n6. `c_charge_degree_M`: 0.00124\n7. `c_charge_degree_F`: 0.00103\n8. `sex_Female`: 0.00099\n9. `sex_Male`: 0.00032\n\nThe attribution analysis shows that `decile_score` overwhelmingly dominates the model's decision-making process, carrying a mean absolute SHAP value orders of magnitude higher than any other feature. Protected demographic attributes such as `race_African-American` and `race_Caucasian` appear lower in the attribution ranking.\n\n---\n\n## 5. Summary of Audit Findings\n1. **Fairness-Performance Trade-off:** The application of the `threshold_optimizer` successfully corrected demographic disparities\u2014reducing the Demographic Parity Difference from 0.4527 to 0.0187 and bringing Disparate Impact from 2.9805 to 0.9732. However, this came at the cost of model performance, with accuracy dropping from 1.0000 to 0.7800 and precision falling from 1.0000 to 0.6812.\n2. **Divergent Fairness Dimensions:** While demographic parity metrics improved, equalized odds and false positive rate differences degraded from 0.0000 to 0.6111 post-mitigation, demonstrating that optimizing for one fairness criterion can adversely impact another.\n3. **Feature Reliance:** TreeSHAP attributions reveal that the model relies almost exclusively on `decile_score` for its predictions, with secondary inputs playing a minimal role in comparison.",
+  "timestamp_utc": "2026-09-17T10:34:02.685970+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 5.045,
+    "finish_reason": "1",
+    "prompt_tokens": 1608,
+    "completion_tokens": 1342,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  }
+}

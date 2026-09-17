@@ -534,3 +534,108 @@ def test_gemini_empty_response_raises_error():
         provider = GeminiProvider(api_key="fake-key")
         with pytest.raises(RuntimeError, match="empty explanation"):
             provider.generate("Test prompt")
+
+
+# =====================================================================
+# 10. PILOT RUNNER RESUMABILITY & IDEMPOTENCY
+# =====================================================================
+
+def test_pilot_resumability_detects_completed_conditions(tmp_path):
+    """Verifies that find_completed_pilot_condition correctly detects valid runs and rejects incomplete runs."""
+    from research.scripts.run_pilot_experiment import find_completed_pilot_condition
+
+    pilot_dir = tmp_path / "pilot"
+    summaries_dir = pilot_dir / "summaries"
+    raw_dir = pilot_dir / "raw"
+    manifests_dir = pilot_dir / "manifests"
+    summaries_dir.mkdir(parents=True)
+    raw_dir.mkdir(parents=True)
+    manifests_dir.mkdir(parents=True)
+
+    exp_id = "adult__logistic_regression__correlation_remover__seed42__abc12345"
+
+    # Initially: no files -> returns None
+    res = find_completed_pilot_condition(str(pilot_dir), "adult", "logistic_regression", "correlation_remover", 42, "gemini")
+    assert res is None
+
+    # Write summary with PILOT_VALIDATION_RUN
+    summary_path = summaries_dir / f"summary__adult__logistic_regression__correlation_remover__seed42__abc12345__gemini_gemini-2.5-flash.json"
+    with open(summary_path, "w") as f:
+        json.dump({
+            "experiment_id": exp_id,
+            "execution_mode": "PILOT_VALIDATION_RUN",
+            "total_claims_count": 25,
+            "numerical_faithfulness": 0.85
+        }, f)
+
+    # Still missing raw and manifest -> returns None
+    assert find_completed_pilot_condition(str(pilot_dir), "adult", "logistic_regression", "correlation_remover", 42, "gemini") is None
+
+    # Write raw explanation
+    raw_path = raw_dir / f"explanation__{exp_id}__gemini__combined_audit_v1.json"
+    with open(raw_path, "w") as f:
+        json.dump({
+            "output_text": "Valid explanation text",
+            "input_evidence_hash": "hash_12345"
+        }, f)
+
+    # Still missing manifest -> returns None
+    assert find_completed_pilot_condition(str(pilot_dir), "adult", "logistic_regression", "correlation_remover", 42, "gemini") is None
+
+    # Write manifest
+    man_path = manifests_dir / f"{exp_id}.json"
+    with open(man_path, "w") as f:
+        json.dump({"experiment_id": exp_id, "execution_mode": "PILOT_VALIDATION_RUN"}, f)
+
+    # Now all components exist -> returns valid dict!
+    completed = find_completed_pilot_condition(str(pilot_dir), "adult", "logistic_regression", "correlation_remover", 42, "gemini")
+    assert completed is not None
+    assert completed["experiment_id"] == exp_id
+    assert completed["evidence_hash"] == "hash_12345"
+    assert completed["llm_faithfulness"] == 0.85
+
+
+# =====================================================================
+# 11. MITIGATION SHAP UNWRAPPING & TREE ADDITIVITY REGRESSION
+# =====================================================================
+
+def test_threshold_optimizer_shap_unwrapping_regression():
+    """Confirms that ThresholdOptimizer mitigation properly unwraps underlying base model for SHAP attribution."""
+    from research.experiments.experiment_config import ExperimentConfig
+    from research.experiments.runner import run_single_experiment
+
+    cfg = ExperimentConfig(
+        dataset_name="adult",
+        model_name="logistic_regression",
+        mitigation_name="threshold_optimizer",
+        seed=42,
+        use_synthetic_benchmark=True,
+        n_eval_samples=20,
+        n_background_samples=10
+    )
+    raw_res, manifest = run_single_experiment(cfg, results_dir="research/results/smoke", save_artifacts=False)
+    assert raw_res is not None
+    assert "attribution_comparison" in raw_res
+    assert "cosine_similarity" in raw_res["attribution_comparison"]
+    assert raw_res["attribution_comparison"]["features_evaluated"] > 0
+
+
+def test_tree_explainer_additivity_fallback_regression():
+    """Confirms that TreeExplainer handles floating-point precision differences without raising AdditivityError."""
+    from research.experiments.experiment_config import ExperimentConfig
+    from research.experiments.runner import run_single_experiment
+
+    cfg = ExperimentConfig(
+        dataset_name="adult",
+        model_name="random_forest",
+        mitigation_name="correlation_remover",
+        seed=456,
+        use_synthetic_benchmark=True,
+        n_eval_samples=20,
+        n_background_samples=10
+    )
+    raw_res, manifest = run_single_experiment(cfg, results_dir="research/results/smoke", save_artifacts=False)
+    assert raw_res is not None
+    assert "attribution_comparison" in raw_res
+
+

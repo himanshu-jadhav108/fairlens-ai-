@@ -3,7 +3,7 @@
 **Date:** September 17, 2026  
 **Target Branch:** `research/fairness-xai-study`  
 **Base Commit (main HEAD):** `af11ba2b9a52898a1a78f0d7542385225252900b`  
-**Working Research Title (PROVISIONAL):** *"Evaluating fairness–performance–explainability trade-offs in machine-learning bias mitigation."*  
+**Locked Research Topic:** *"Quantitative Faithfulness of LLM-Generated Natural-Language Explanations for Machine Learning Fairness Audits: An Empirical Study"*  
 
 ---
 

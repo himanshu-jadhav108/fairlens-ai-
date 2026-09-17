@@ -1,0 +1,747 @@
+{
+  "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+  "explanation_source": "gemini__gemini-2.5-flash",
+  "prompt_id": "combined_audit_v1",
+  "timestamp_utc": "2026-09-17T09:54:47.377139+00:00",
+  "execution_mode": "PILOT_VALIDATION_RUN",
+  "numerical_faithfulness": 0.6429,
+  "directional_faithfulness": 1.0,
+  "attribution_faithfulness": 1.0,
+  "unsupported_claim_rate": 0.0,
+  "numeric_claim_count": 14,
+  "numeric_match_count": 9,
+  "numeric_error_count": 0,
+  "directional_claim_count": 0,
+  "directional_match_count": 0,
+  "directional_error_count": 0,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 0,
+  "undeterminable_claim_count": 5,
+  "total_claims_count": 14,
+  "numerical_mean_absolute_error": 0.0,
+  "claims": [
+    {
+      "claim_id": "num_1",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Demographic Parity Difference:** 0.4166",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.4166,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.4166,
+          0.4166,
+          0.4166,
+          0.4166,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.4166,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.4166"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.4166 matches ground truth 0.4166 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.4166,
+        "raw_string": "0.4166",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.4166,
+        "all_candidate_values": [
+          0.4166,
+          0.4166,
+          0.4166,
+          0.4166,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_2",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "This value indicates a substantial disparity in positive outcome rates between the privileged and unprivileged groups, being significantly far from the target of 0.0 for parity",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_3",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Disparate Impact:** 2.7912",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 2.7912,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          2.7912,
+          2.7912,
+          2.7912,
+          2.7912,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 2.7912,
+        "metric_alias": "disparate impact",
+        "raw_string": "2.7912"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 2.7912 matches ground truth 2.7912 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 2.7912,
+        "raw_string": "2.7912",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 2.7912,
+        "all_candidate_values": [
+          2.7912,
+          2.7912,
+          2.7912,
+          2.7912,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_4",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "This value is considerably higher than the target of 1.0, suggesting that the privileged group receives positive outcomes at a rate approximately 2.79 times higher than the unprivileged group",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "raw_string": "1.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '1.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_5",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "This value is considerably higher than the target of 1.0, suggesting that the privileged group receives positive outcomes at a rate approximately 2.79 times higher than the unprivileged group",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 2.79,
+        "raw_string": "2.79 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '2.79 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 2.79,
+        "raw_string": "2.79 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_6",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equalized Odds Difference:** 0.0000",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0,
+          "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0,
+        "all_candidate_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_7",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.0000",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0,
+          "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+        },
+        "all_candidates": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0,
+        "all_candidate_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_8",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Positive Rate Difference:** 0.0000",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0000",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0000' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_9",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Negative Rate Difference:** 0.0000",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0000",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0000' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_10",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Accuracy:** 1.0000",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 1.0,
+          "path": "baseline_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "accuracy",
+        "raw_string": "1.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 1.0 matches ground truth 1.0 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 1.0,
+        "all_candidate_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_11",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Precision:** 1.0000",
+      "ground_truth": {
+        "canonical_metric": "precision",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 1.0,
+          "path": "baseline_state.performance_metrics.precision.value"
+        },
+        "all_candidates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "precision",
+        "raw_string": "1.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 1.0 matches ground truth 1.0 for 'precision' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 1.0,
+        "all_candidate_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_12",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **Recall:** 1.0000",
+      "ground_truth": {
+        "canonical_metric": "recall",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 1.0,
+          "path": "baseline_state.performance_metrics.recall.value"
+        },
+        "all_candidates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "recall",
+        "raw_string": "1.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 1.0 matches ground truth 1.0 for 'recall' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 1.0,
+        "all_candidate_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_13",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **F1 Score:** 1.0000",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 1.0,
+          "path": "baseline_state.performance_metrics.f1_score.value"
+        },
+        "all_candidates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "f1 score",
+        "raw_string": "1.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 1.0 matches ground truth 1.0 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 1.0,
+        "all_candidate_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_14",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+      "claim_type": "numerical",
+      "claim_text": "*   **ROC-AUC:** 1.0000",
+      "ground_truth": {
+        "canonical_metric": "roc_auc",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 1.0,
+          "path": "baseline_state.performance_metrics.roc_auc.value"
+        },
+        "all_candidates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "roc-auc",
+        "raw_string": "1.0000"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 1.0 matches ground truth 1.0 for 'roc_auc' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.roc_auc.value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 1.0,
+        "all_candidate_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+      "provenance": {
+        "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+        "dataset": "compas",
+        "model": "random_forest",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    }
+  ],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

@@ -157,8 +157,9 @@ def run_experiment(
     llm_report = evaluator.evaluate(
         evidence=evidence,
         explanation_text=explanation_record.output_text,
-        explanation_source=f"{provider_name}_{explanation_record.llm_model}",
+        explanation_source=f"{provider_name}__{explanation_record.llm_model}",
         prompt_id=prompt_id,
+        execution_mode=effective_mode,
         save_records=True,
         output_claims_dir=os.path.join(effective_output_dir, "claims"),
         output_summaries_dir=os.path.join(effective_output_dir, "summaries")
@@ -175,6 +176,7 @@ def run_experiment(
         explanation_text=template_text,
         explanation_source="template_baseline",
         prompt_id="deterministic_template",
+        execution_mode=effective_mode,
         save_records=True,
         output_claims_dir=os.path.join(effective_output_dir, "claims"),
         output_summaries_dir=os.path.join(effective_output_dir, "summaries")

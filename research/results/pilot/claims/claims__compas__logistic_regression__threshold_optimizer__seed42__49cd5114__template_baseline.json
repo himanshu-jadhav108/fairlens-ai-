@@ -1,0 +1,2480 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Demographic Parity Difference: 0.4014",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4014,
+        "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.4014,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.4014"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.4014 matches ground truth 0.4014 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.4014,
+      "raw_string": "0.4014",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.4014,
+      "all_candidate_values": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_2",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Equalized Odds Difference: 0.0000",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.0,
+        "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.0000"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0,
+      "all_candidate_values": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_3",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Disparate Impact: 2.5128",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 2.5128,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 2.5128,
+      "metric_alias": "disparate impact",
+      "raw_string": "2.5128"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 2.5128 matches ground truth 2.5128 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 2.5128,
+      "raw_string": "2.5128",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 2.5128,
+      "all_candidate_values": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_4",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Accuracy: 1.0000",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "accuracy",
+      "raw_string": "1.0000"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_5",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline F1 Score: 1.0000",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "f1 score",
+      "raw_string": "1.0000"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_6",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4014 to 0.0544 (absolute change: -0.3470, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.4014,
+        "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.4014,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.4014 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.4014 matches ground truth 0.4014 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.4014,
+      "raw_string": "0.4014 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.4014,
+      "all_candidate_values": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_7",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4014 to 0.0544 (absolute change: -0.3470, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.0544,
+        "path": "mitigated_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0544,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.0544 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0544 matches ground truth 0.0544 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.0544,
+      "raw_string": "0.0544 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0544,
+      "all_candidate_values": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_8",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4014 to 0.0544 (absolute change: -0.3470, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.347,
+        "path": "metric_comparisons.demographic_parity_difference.absolute_change"
+      },
+      "all_candidates": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.347,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "-0.3470"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.347 matches ground truth -0.347 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.absolute_change",
+    "extracted_values": {
+      "value": -0.347,
+      "raw_string": "-0.3470",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.347,
+      "all_candidate_values": [
+        0.4014,
+        0.0544,
+        0.4014,
+        0.0544,
+        -0.347,
+        -0.8645
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_9",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.0,
+        "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0,
+      "all_candidate_values": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_10",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.6204,
+        "path": "mitigated_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6204,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.6204 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6204 matches ground truth 0.6204 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.6204,
+      "raw_string": "0.6204 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6204,
+      "all_candidate_values": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_11",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.6204,
+        "path": "mitigated_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6204,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "+0.6204"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6204 matches ground truth 0.6204 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.6204,
+      "raw_string": "+0.6204",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6204,
+      "all_candidate_values": [
+        0.0,
+        0.6204,
+        0.0,
+        0.6204,
+        0.6204
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_12",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.0,
+        "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0,
+      "all_candidate_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_13",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.0,
+        "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0,
+      "all_candidate_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_14",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.0,
+        "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+      },
+      "all_candidates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "+0.0000"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0 matches ground truth 0.0 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "+0.0000",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0,
+      "all_candidate_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_15",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 2.5128 to 0.9245 (absolute change: -1.5883, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 2.5128,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 2.5128,
+      "metric_alias": "disparate impact",
+      "raw_string": "2.5128 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 2.5128 matches ground truth 2.5128 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 2.5128,
+      "raw_string": "2.5128 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 2.5128,
+      "all_candidate_values": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_16",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 2.5128 to 0.9245 (absolute change: -1.5883, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.9245,
+        "path": "mitigated_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.9245,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.9245 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.9245 matches ground truth 0.9245 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 0.9245,
+      "raw_string": "0.9245 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.9245,
+      "all_candidate_values": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_17",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 2.5128 to 0.9245 (absolute change: -1.5883, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -1.5883,
+        "path": "metric_comparisons.disparate_impact.absolute_change"
+      },
+      "all_candidates": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -1.5883,
+      "metric_alias": "disparate impact",
+      "raw_string": "-1.5883"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -1.5883 matches ground truth -1.5883 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.disparate_impact.absolute_change",
+    "extracted_values": {
+      "value": -1.5883,
+      "raw_string": "-1.5883",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -1.5883,
+      "all_candidate_values": [
+        2.5128,
+        0.9245,
+        2.5128,
+        0.9245,
+        -1.5883,
+        -0.6321
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_18",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- False Positive Rate Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: ambiguous)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "raw_string": "0.0000 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.0000 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_19",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- False Positive Rate Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: ambiguous)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6204,
+      "raw_string": "0.6204 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.6204 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.6204,
+      "raw_string": "0.6204 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_20",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- False Positive Rate Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: ambiguous)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6204,
+      "raw_string": "+0.6204",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '+0.6204' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.6204,
+      "raw_string": "+0.6204",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_21",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- False Negative Rate Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: ambiguous)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "raw_string": "0.0000 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.0000 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_22",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- False Negative Rate Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: ambiguous)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "raw_string": "0.0000 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.0000 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_23",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- False Negative Rate Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: ambiguous)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "raw_string": "+0.0000",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '+0.0000' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "+0.0000",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_24",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 1.0000 to 0.7767 (absolute change: -0.2233, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "accuracy",
+      "raw_string": "1.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_25",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 1.0000 to 0.7767 (absolute change: -0.2233, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.7767,
+        "path": "mitigated_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.7767,
+      "metric_alias": "accuracy",
+      "raw_string": "0.7767 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.7767 matches ground truth 0.7767 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 0.7767,
+      "raw_string": "0.7767 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.7767,
+      "all_candidate_values": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_26",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 1.0000 to 0.7767 (absolute change: -0.2233, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.2233,
+        "path": "metric_comparisons.accuracy.absolute_change"
+      },
+      "all_candidates": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.2233,
+      "metric_alias": "accuracy",
+      "raw_string": "-0.2233"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.2233 matches ground truth -0.2233 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.accuracy.absolute_change",
+    "extracted_values": {
+      "value": -0.2233,
+      "raw_string": "-0.2233",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.2233,
+      "all_candidate_values": [
+        1.0,
+        0.7767,
+        1.0,
+        0.7767,
+        -0.2233,
+        -0.2233
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_27",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 1.0000 to 0.6779 (absolute change: -0.3221, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.precision.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.6779,
+        1.0,
+        0.6779,
+        -0.3221,
+        -0.3221
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "precision",
+      "raw_string": "1.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        0.6779,
+        1.0,
+        0.6779,
+        -0.3221,
+        -0.3221
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_28",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 1.0000 to 0.6779 (absolute change: -0.3221, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.6779,
+        "path": "mitigated_state.performance_metrics.precision.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.6779,
+        1.0,
+        0.6779,
+        -0.3221,
+        -0.3221
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6779,
+      "metric_alias": "precision",
+      "raw_string": "0.6779 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6779 matches ground truth 0.6779 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.precision.value",
+    "extracted_values": {
+      "value": 0.6779,
+      "raw_string": "0.6779 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6779,
+      "all_candidate_values": [
+        1.0,
+        0.6779,
+        1.0,
+        0.6779,
+        -0.3221,
+        -0.3221
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_29",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 1.0000 to 0.6779 (absolute change: -0.3221, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.3221,
+        "path": "metric_comparisons.precision.absolute_change"
+      },
+      "all_candidates": [
+        1.0,
+        0.6779,
+        1.0,
+        0.6779,
+        -0.3221,
+        -0.3221
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.3221,
+      "metric_alias": "precision",
+      "raw_string": "-0.3221"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.3221 matches ground truth -0.3221 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.precision.absolute_change",
+    "extracted_values": {
+      "value": -0.3221,
+      "raw_string": "-0.3221",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.3221,
+      "all_candidate_values": [
+        1.0,
+        0.6779,
+        1.0,
+        0.6779,
+        -0.3221,
+        -0.3221
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_30",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 1.0000 to 1.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.recall.value"
+      },
+      "all_candidates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "recall",
+      "raw_string": "1.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_31",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 1.0000 to 1.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.recall.value"
+      },
+      "all_candidates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "recall",
+      "raw_string": "1.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_32",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 1.0000 to 1.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.0,
+        "path": "metric_comparisons.recall.absolute_change"
+      },
+      "all_candidates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "metric_alias": "recall",
+      "raw_string": "+0.0000"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0 matches ground truth 0.0 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.recall.absolute_change",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "+0.0000",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0,
+      "all_candidate_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_33",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 1.0000 to 0.8080 (absolute change: -0.1920, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 1.0,
+        "path": "baseline_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "f1 score",
+      "raw_string": "1.0000 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0 matches ground truth 1.0 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0000 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0,
+      "all_candidate_values": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_34",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 1.0000 to 0.8080 (absolute change: -0.1920, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.808,
+        "path": "mitigated_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.808,
+      "metric_alias": "f1 score",
+      "raw_string": "0.8080 "
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.808 matches ground truth 0.808 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 0.808,
+      "raw_string": "0.8080 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.808,
+      "all_candidate_values": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_35",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 1.0000 to 0.8080 (absolute change: -0.1920, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.192,
+        "path": "metric_comparisons.f1_score.absolute_change"
+      },
+      "all_candidates": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.192,
+      "metric_alias": "f1 score",
+      "raw_string": "-0.1920"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.192 matches ground truth -0.192 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.f1_score.absolute_change",
+    "extracted_values": {
+      "value": -0.192,
+      "raw_string": "-0.1920",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.192,
+      "all_candidate_values": [
+        1.0,
+        0.808,
+        1.0,
+        0.808,
+        -0.192,
+        -0.192
+      ]
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "dir_math_1",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4014 to 0.0544 (absolute change: -0.3470, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "direction": "decrease",
+      "before": 0.4014,
+      "after": 0.0544,
+      "absolute_change": -0.347
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "demographic_parity_difference"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.347,
+      "before": 0.4014,
+      "after": 0.0544
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_2",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Demographic Parity Difference: changed from 0.4014 to 0.0544 (absolute change: -0.3470, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Demographic Parity Difference decreased from 0.4014 to 0.0544, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "demographic_parity_difference"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Demographic Parity Difference decreased from 0.4014 to 0.0544, moving closer to ideal parity (0.0)."
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_3",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Equalized Odds Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "equalized_odds_difference",
+      "direction": "increase",
+      "before": 0.0,
+      "after": 0.6204,
+      "absolute_change": 0.6204
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "equalized odds difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that equalized_odds_difference 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.equalized_odds_difference.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "equalized_odds_difference"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.6204,
+      "before": 0.0,
+      "after": 0.6204
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_4",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Equalized Odds Difference: changed from 0.0000 to 0.6204 (absolute change: +0.6204, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "equalized_odds_difference",
+      "interpretation": "degradation",
+      "semantics_rationale": "Absolute Equalized Odds Difference increased from 0.0000 to 0.6204, moving further from ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "equalized odds difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "referenced_evidence": "metric_comparisons.equalized_odds_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric": "equalized_odds_difference"
+    },
+    "expected_values": {
+      "interpretation": "degradation",
+      "semantics_rationale": "Absolute Equalized Odds Difference increased from 0.0000 to 0.6204, moving further from ideal parity (0.0)."
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_5",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.0000 to 0.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "metric_name": "equal_opportunity_difference",
+      "direction": "unchanged",
+      "before": 0.0,
+      "after": 0.0,
+      "absolute_change": 0.0
+    },
+    "predicted_claim": {
+      "direction": "unchanged",
+      "term": "unchanged",
+      "metric_alias": "equal opportunity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that equal_opportunity_difference 'unchanged' matches ground truth direction: unchanged.",
+    "referenced_evidence": "metric_comparisons.equal_opportunity_difference.direction",
+    "extracted_values": {
+      "direction": "unchanged",
+      "term": "unchanged",
+      "metric": "equal_opportunity_difference"
+    },
+    "expected_values": {
+      "direction": "unchanged",
+      "absolute_change": 0.0,
+      "before": 0.0,
+      "after": 0.0
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_6",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Disparate Impact: changed from 2.5128 to 0.9245 (absolute change: -1.5883, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "direction": "decrease",
+      "before": 2.5128,
+      "after": 0.9245,
+      "absolute_change": -1.5883
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that disparate_impact 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.disparate_impact.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "disparate_impact"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -1.5883,
+      "before": 2.5128,
+      "after": 0.9245
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_7",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Disparate Impact: changed from 2.5128 to 0.9245 (absolute change: -1.5883, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "interpretation": "improvement",
+      "semantics_rationale": "Disparate Impact moved from 2.5128 to 0.9245, closer to ideal parity ratio (1.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.disparate_impact.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "disparate_impact"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Disparate Impact moved from 2.5128 to 0.9245, closer to ideal parity ratio (1.0)."
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_8",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Accuracy: changed from 1.0000 to 0.7767 (absolute change: -0.2233, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "direction": "decrease",
+      "before": 1.0,
+      "after": 0.7767,
+      "absolute_change": -0.2233
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that accuracy 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.accuracy.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "accuracy"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.2233,
+      "before": 1.0,
+      "after": 0.7767
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_9",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "performance",
+    "claim_text": "- Accuracy: changed from 1.0000 to 0.7767 (absolute change: -0.2233, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "interpretation": "degradation",
+      "semantics_rationale": "Accuracy decreased from 1.0000 to 0.7767."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "referenced_evidence": "metric_comparisons.accuracy.interpretation",
+    "extracted_values": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric": "accuracy"
+    },
+    "expected_values": {
+      "interpretation": "degradation",
+      "semantics_rationale": "Accuracy decreased from 1.0000 to 0.7767."
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_10",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Precision: changed from 1.0000 to 0.6779 (absolute change: -0.3221, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "precision",
+      "direction": "decrease",
+      "before": 1.0,
+      "after": 0.6779,
+      "absolute_change": -0.3221
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "precision"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that precision 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.precision.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "precision"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.3221,
+      "before": 1.0,
+      "after": 0.6779
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_11",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "performance",
+    "claim_text": "- Precision: changed from 1.0000 to 0.6779 (absolute change: -0.3221, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "precision",
+      "interpretation": "degradation",
+      "semantics_rationale": "Precision decreased from 1.0000 to 0.6779."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "precision"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "referenced_evidence": "metric_comparisons.precision.interpretation",
+    "extracted_values": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric": "precision"
+    },
+    "expected_values": {
+      "interpretation": "degradation",
+      "semantics_rationale": "Precision decreased from 1.0000 to 0.6779."
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_12",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- Recall: changed from 1.0000 to 1.0000 (absolute change: +0.0000, direction: unchanged, evaluation: unchanged)",
+    "ground_truth": {
+      "metric_name": "recall",
+      "direction": "unchanged",
+      "before": 1.0,
+      "after": 1.0,
+      "absolute_change": 0.0
+    },
+    "predicted_claim": {
+      "direction": "unchanged",
+      "term": "unchanged",
+      "metric_alias": "recall"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that recall 'unchanged' matches ground truth direction: unchanged.",
+    "referenced_evidence": "metric_comparisons.recall.direction",
+    "extracted_values": {
+      "direction": "unchanged",
+      "term": "unchanged",
+      "metric": "recall"
+    },
+    "expected_values": {
+      "direction": "unchanged",
+      "absolute_change": 0.0,
+      "before": 1.0,
+      "after": 1.0
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_13",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "directional",
+    "claim_text": "- F1 Score: changed from 1.0000 to 0.8080 (absolute change: -0.1920, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "f1_score",
+      "direction": "decrease",
+      "before": 1.0,
+      "after": 0.808,
+      "absolute_change": -0.192
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "f1 score"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that f1_score 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.f1_score.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "f1_score"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.192,
+      "before": 1.0,
+      "after": 0.808
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_14",
+    "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+    "claim_type": "performance",
+    "claim_text": "- F1 Score: changed from 1.0000 to 0.8080 (absolute change: -0.1920, direction: decrease, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "f1_score",
+      "interpretation": "degradation",
+      "semantics_rationale": "F1 Score decreased from 1.0000 to 0.8080."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "f1 score"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "referenced_evidence": "metric_comparisons.f1_score.interpretation",
+    "extracted_values": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric": "f1_score"
+    },
+    "expected_values": {
+      "interpretation": "degradation",
+      "semantics_rationale": "F1 Score decreased from 1.0000 to 0.8080."
+    },
+    "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  }
+]

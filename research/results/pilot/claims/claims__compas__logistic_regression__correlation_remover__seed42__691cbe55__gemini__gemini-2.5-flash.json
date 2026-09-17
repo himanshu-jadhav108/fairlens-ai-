@@ -1,0 +1,274 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+    "claim_type": "numerical",
+    "claim_text": "*   **Demographic Parity Difference:** The `demographic_parity_difference` decreased from `0.4014` to `0.1390`, a delta of `-0.2624`",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.2624,
+        "path": "metric_comparisons.demographic_parity_difference.absolute_change"
+      },
+      "all_candidates": [
+        0.4014,
+        0.139,
+        0.4014,
+        0.139,
+        -0.2624,
+        -0.6537
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.2624,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "-0.2624"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.2624 matches ground truth -0.2624 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.absolute_change",
+    "extracted_values": {
+      "value": -0.2624,
+      "raw_string": "-0.2624",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.2624,
+      "all_candidate_values": [
+        0.4014,
+        0.139,
+        0.4014,
+        0.139,
+        -0.2624,
+        -0.6537
+      ]
+    },
+    "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_2",
+    "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+    "claim_type": "numerical",
+    "claim_text": "This represents an **improvement**, moving closer to ideal parity (0.0)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "raw_string": "0.0",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_3",
+    "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+    "claim_type": "numerical",
+    "claim_text": "*   **Disparate Impact:** `Disparate_impact` decreased from `2.5128` to `0.7446`, a delta of `-1.7682`",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -1.7682,
+        "path": "metric_comparisons.disparate_impact.absolute_change"
+      },
+      "all_candidates": [
+        2.5128,
+        0.7446,
+        2.5128,
+        0.7446,
+        -1.7682,
+        -0.7037
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -1.7682,
+      "metric_alias": "disparate impact",
+      "raw_string": "-1.7682"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -1.7682 matches ground truth -1.7682 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.disparate_impact.absolute_change",
+    "extracted_values": {
+      "value": -1.7682,
+      "raw_string": "-1.7682",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -1.7682,
+      "all_candidate_values": [
+        2.5128,
+        0.7446,
+        2.5128,
+        0.7446,
+        -1.7682,
+        -0.7037
+      ]
+    },
+    "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_4",
+    "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+    "claim_type": "numerical",
+    "claim_text": "This also represents an **improvement**, moving closer to the ideal parity ratio (1.0)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "raw_string": "1.0",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '1.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "dir_math_1",
+    "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+    "claim_type": "directional",
+    "claim_text": "*   **Demographic Parity Difference:** The `demographic_parity_difference` decreased from `0.4014` to `0.1390`, a delta of `-0.2624`",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "direction": "decrease",
+      "before": 0.4014,
+      "after": 0.139,
+      "absolute_change": -0.2624
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decreased",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that demographic_parity_difference 'decreased' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decreased",
+      "metric": "demographic_parity_difference"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.2624,
+      "before": 0.4014,
+      "after": 0.139
+    },
+    "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_2",
+    "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+    "claim_type": "directional",
+    "claim_text": "*   **Disparate Impact:** `Disparate_impact` decreased from `2.5128` to `0.7446`, a delta of `-1.7682`",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "direction": "decrease",
+      "before": 2.5128,
+      "after": 0.7446,
+      "absolute_change": -1.7682
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decreased",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that disparate_impact 'decreased' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.disparate_impact.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decreased",
+      "metric": "disparate_impact"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -1.7682,
+      "before": 2.5128,
+      "after": 0.7446
+    },
+    "evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+    "provenance": {
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover"
+    },
+    "metadata": {}
+  }
+]

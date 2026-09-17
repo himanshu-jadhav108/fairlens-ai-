@@ -1,0 +1,175 @@
+{
+  "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+  "explanation_source": "gemini__gemini-2.5-flash",
+  "prompt_id": "combined_audit_v1",
+  "timestamp_utc": "2026-09-17T10:03:44.650807+00:00",
+  "execution_mode": "PILOT_VALIDATION_RUN",
+  "numerical_faithfulness": 0.0,
+  "directional_faithfulness": 1.0,
+  "attribution_faithfulness": 1.0,
+  "unsupported_claim_rate": 0.0,
+  "numeric_claim_count": 4,
+  "numeric_match_count": 0,
+  "numeric_error_count": 0,
+  "directional_claim_count": 0,
+  "directional_match_count": 0,
+  "directional_error_count": 0,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 0,
+  "undeterminable_claim_count": 4,
+  "total_claims_count": 4,
+  "numerical_mean_absolute_error": null,
+  "claims": [
+    {
+      "claim_id": "num_1",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "claim_type": "numerical",
+      "claim_text": "*   **demographic_parity_difference:** 0.4014, indicating a substantial disparity in positive outcome rates between protected groups",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.4014,
+        "raw_string": "0.4014",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.4014' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.4014,
+        "raw_string": "0.4014",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+      "provenance": {
+        "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_2",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "claim_type": "numerical",
+      "claim_text": "*   **disparate_impact:** 2.5128, which is considerably higher than the ideal ratio of 1.0, suggesting that the unprivileged group is receiving positive outcomes at a rate significantly lower than the privileged group",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 2.5128,
+        "raw_string": "2.5128",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '2.5128' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 2.5128,
+        "raw_string": "2.5128",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+      "provenance": {
+        "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_3",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "claim_type": "numerical",
+      "claim_text": "*   **disparate_impact:** 2.5128, which is considerably higher than the ideal ratio of 1.0, suggesting that the unprivileged group is receiving positive outcomes at a rate significantly lower than the privileged group",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "raw_string": "1.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '1.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+      "provenance": {
+        "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_4",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+      "claim_type": "numerical",
+      "claim_text": "*   **equalized_odds_difference:** 0.0000, indicating perfect parity in false positive rates and true positive rates across groups",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0000",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0000' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0000",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+      "provenance": {
+        "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+        "dataset": "compas",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    }
+  ],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

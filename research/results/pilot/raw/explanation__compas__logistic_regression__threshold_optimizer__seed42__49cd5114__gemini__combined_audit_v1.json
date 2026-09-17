@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__49cd5114",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "b2777008e6d7a6ead7a09bfaf37abb5550b3510a612cafb94942836e722b2b32",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `compas` dataset. The protected attribute under consideration is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was initialized with a `random_seed` of `42`. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited perfect performance across several standard metrics, while simultaneously demonstrating significant fairness disparities.\n\n**Baseline Fairness Metrics:**\n*   **demographic_parity_difference:** 0.4014, indicating a substantial disparity in positive outcome rates between protected groups.\n*   **disparate_impact:** 2.5128, which is considerably higher than the ideal ratio of 1.0, suggesting that the unprivileged group is receiving positive outcomes at a rate significantly lower than the privileged group.\n*   **equalized_odds_difference:** 0.0000, indicating perfect parity in false positive rates and true positive rates across groups.\n*   ",
+  "timestamp_utc": "2026-09-17T10:03:35.885940+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 8.664,
+    "finish_reason": "2",
+    "prompt_tokens": 1607,
+    "completion_tokens": 269,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  }
+}

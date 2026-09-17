@@ -16,7 +16,7 @@ from research.experiments.runner import run_single_experiment
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run a single FairLens AI fairness-performance-XAI experiment.")
+    parser = argparse.ArgumentParser(description="Run a single FairLens AI LLM faithfulness research experiment (fairness audit + explanation generation + evaluation).")
     parser.add_argument("--dataset", type=str, default="adult", help="Dataset name (adult, compas, german)")
     parser.add_argument("--model", type=str, default="logistic_regression", help="Model family (logistic_regression, random_forest, xgboost)")
     parser.add_argument("--mitigation", type=str, default="correlation_remover", help="Mitigation method (correlation_remover, exponentiated_gradient, threshold_optimizer)")

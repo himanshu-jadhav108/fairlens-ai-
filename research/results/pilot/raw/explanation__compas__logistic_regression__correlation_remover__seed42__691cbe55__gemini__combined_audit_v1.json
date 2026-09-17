@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__logistic_regression__correlation_remover__seed42__691cbe55",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "d6f957bc21bc2191468ca65cff1ea43c2cbedbb986d8c89a11d599c0ca0946cd",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** [Current Date]\n**Auditor:** Independent Machine Learning Fairness Auditor\n\n---\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `logistic_regression` model trained on the `compas` dataset. The protected attribute under examination is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `42`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n---\n\n### 2. Baseline Fairness and Performance Audit\n\nThe initial audit of the unmitigated model revealed significant disparities in certain fairness metrics, despite perfect performance scores.\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** The model exhibited a `demographic_parity_difference` of `0.4014`. This indicates a substantial difference in positive prediction rates between the protected groups, moving away from the ideal parity of `0.0`.\n*   **Disparate Impact:** A `disparate_impact` ratio of `2.5128` was observed. This value is considerably higher than the ideal parity ratio of `1.0`, suggesting that the unprivileged group is less likely to receive a positive outcome compared to the privileged group.\n*   **Equalized Odds Difference:** The `equalized_odds_difference` was `0.0000`, indicating perfect parity with respect to true positive rates and false positive rates across groups.\n*   **Equal Opportunity Difference:** Similarly, the `equal_opportunity_difference` was `0.0000`, signifying perfect parity in true positive rates between groups.\n*   **False Positive Rate Difference:** The `false_positive_rate_difference` was `0.0000`, indicating no difference in false positive rates between groups.\n*   **False Negative Rate Difference:** The `false_negative_rate_difference` was `0.0000`, indicating no difference in false negative rates between groups.\n\n**Performance Metrics (Baseline):**\nThe baseline model demonstrated perfect performance across all audited metrics:\n*   **Accuracy:** `1.0000`\n*   **Precision:** `1.0000`\n*   **Recall:** `1.0000`\n*   **F1 Score:** `1.0000`\n*   **ROC-AUC:** `1.0000`\n\n---\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Impact on Fairness Metrics:**\n*   **Demographic Parity Difference:** The `demographic_parity_difference` decreased from `0.4014` to `0.1390`, a delta of `-0.2624`. This represents an **improvement**, moving closer to ideal parity (0.0).\n*   **Disparate Impact:** `Disparate_impact` decreased from `2.5128` to `0.7446`, a delta of `-1.7682`. This also represents an **improvement**, moving closer to the ideal parity ratio (1.0).\n*   **Equalized Odds Difference:** The `",
+  "timestamp_utc": "2026-09-17T09:53:48.084352+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 8.807,
+    "finish_reason": "2",
+    "prompt_tokens": 1636,
+    "completion_tokens": 721,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  }
+}

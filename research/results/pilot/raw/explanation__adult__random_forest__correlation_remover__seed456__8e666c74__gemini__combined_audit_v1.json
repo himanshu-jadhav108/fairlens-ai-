@@ -1,0 +1,32 @@
+{
+  "experiment_id": "adult__random_forest__correlation_remover__seed456__8e666c74",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "56922aa894855c48935c08ada0d7b95cc8f9fbb43de651ef141eb22e3dab290b",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` machine learning model trained on the `adult` dataset. The protected attribute under consideration is `sex`, with `1` designated as the privileged group and `0` as the unprivileged group. A `correlation_remover` preprocessing mitigation technique was applied to address potential biases. The random seed used for this audit was `456`.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.5088\n*   **Equalized Odds Difference:** 0.4016\n*   **Equal Opportunity Difference:** 0.1116\n*   **Disparate Impact:** 0.3900\n*   **False Positive Rate Difference:** 0.4016\n*   **False Negative Rate Difference:** 0.1116\n\n**Performance Metrics:**\n*   **Accuracy:** 0.8733\n*   **Precision:** 0.8606\n*   **Recall:** 0.9521\n*   **F1 Score:** 0.9040\n*   **ROC AUC:** 0.9439\n\nAt baseline, several fairness metrics indicated substantial disparities. For instance, a Demographic Parity Difference of 0.5088 and an Equalized Odds Difference of 0.4016 suggest significant differences in positive prediction rates and true/false positive rates between the protected groups, respectively, relative to the ideal parity of 0.0. A Disparate Impact of 0.3900 is considerably below the ideal parity ratio of 1.0.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on fairness and performance metrics was evaluated:\n\n**Fairness Metrics:**\n\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.5088 | Mitigated: 0.4904 | Delta: -0.0184\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* The absolute Demographic Parity Difference decreased, moving closer to ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.4016 | Mitigated: 0.3126 | Delta: -0.0890\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* The absolute Equalized Odds Difference decreased, moving closer to ideal parity (0.0).\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.1116 | Mitigated: 0.1768 | Delta: +0.0652\n    *   Direction: increase | Domain Evaluation: degradation\n    *   *Rationale:* The absolute Equal Opportunity Difference increased, moving further from ideal parity (0.0).\n*   **Disparate Impact",
+  "timestamp_utc": "2026-09-17T10:02:46.066289+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 9.092,
+    "finish_reason": "2",
+    "prompt_tokens": 1659,
+    "completion_tokens": 689,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  }
+}

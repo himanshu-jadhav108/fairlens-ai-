@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__9b4afa7a",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-flash-lite-latest",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "92f4f961911f27ce6d6c1b5c8cf09b34b055636babdc11598955ed94bf9bbe71",
+  "output_text": "# Machine Learning Fairness Audit Report\n\n## 1. Model & Dataset Overview\n* **Dataset:** compas\n* **Protected Attribute:** race (Privileged: 1, Unprivileged: 0)\n* **Model Architecture:** logistic_regression\n* **Random Seed:** 456\n* **Mitigation Applied:** threshold_optimizer (postprocessing)\n\n---\n\n## 2. Baseline Fairness and Performance Audit\nAt the baseline stage, the logistic regression model exhibited extreme performance alongside notable demographic disparities:\n\n* **Performance:** The model achieved perfect scores across all evaluated metrics: **accuracy** (1.0000), **precision** (1.0000), **recall** (1.0000), **f1_score** (1.0000), and **roc_auc** (1.0000).\n* **Fairness:** \n  * **Demographic Parity Difference** stood at **0.4527**.\n  * **Disparate Impact** was recorded at **2.9805**, indicating a substantial disparity ratio relative to the ideal parity target of 1.0.\n  * **Equalized Odds Difference**, **Equal Opportunity Difference**, **False Positive Rate Difference**, and **False Negative Rate Difference** all registered at **0.0000** at baseline.\n\n---\n\n## 3. Mitigation Impact and Comparison\nTo address the baseline disparities, a **threshold_optimizer** postprocessing mitigation strategy was applied. This intervention resulted in explicit trade-offs between demographic equity and model performance:\n\n* **Fairness Changes:**\n  * **Demographic Parity Difference** decreased by **-0.4482**, improving from **0.4527** to **0.0045** and closely approaching the ideal parity target of 0.0.\n  * **Disparate Impact** decreased by **-1.9870**, moving from **2.9805** to **0.9935**, representing an improvement toward the ideal parity ratio of 1.0.\n  * **Equalized Odds Difference** degraded, increasing by **+0.5926** from **0.0000** to **0.5926**.\n  * **False Positive Rate Difference** increased by **+0.5926** (from **0.0000** to **0.5926**).\n  * **Equal Opportunity Difference** and **False Negative Rate Difference** remained unchanged at **0.0000** (Delta: **+0.0000**).\n\n* **Performance Changes:**\n  * **Accuracy** degraded by **-0.2133**, dropping from **1.0000** to **0.7867**.\n  * **Precision** degraded by **-0.3122**, dropping from **1.0000** to **0.6878**.\n  * **F1 Score** degraded by **-0.1850**, dropping from **1.0000** to **0.8150**.\n  * **Recall** remained stable at **1.0000** (Delta: **+0.0000**).\n  * **ROC AUC** post-mitigation value is undefined (N/A).\n\n---\n\n## 4. Feature Attribution and Explainability Analysis\nFeature importance was evaluated using a `LinearExplainer` to calculate mean absolute SHAP values. The features are ranked strictly by their quantitative importance:\n\n1. **decile_score**: 7.50776\n2. **priors_count**: 0.28901\n3. **age**: 0.22561\n4. **race_Caucasian**: 0.14326\n5. **race_African-American**: 0.09152\n6. **c_charge_degree_M**: 0.03114\n7. **sex_Male**: 0.01514\n8. **sex_Female**: 0.00978\n9. **c_charge_degree_F**: 0.00756\n\nThe attribution analysis indicates that `decile_score` overwhelmingly dominates the model's decision-making process, exhibiting a mean absolute SHAP value orders of magnitude higher than any other feature. Secondary contributions originate from history and demographic indicators such as `priors_count`, `age`, and the explicit race indicators (`race_Caucasian` and `race_African-American`).\n\n---\n\n## 5. Summary of Audit Findings\n* **Fairness vs. Performance Trade-off:** The application of the threshold optimizer successfully corrected demographic imbalances concerning Demographic Parity Difference (dropping to 0.0045) and Disparate Impact (adjusting to 0.9935). However, this fairness enhancement came at the direct expense of overall predictive performance, resulting in decreased accuracy (0.7867), precision (0.6878), and F1 score (0.8150).\n* **Targeted Fairness Metric Divergence:** While parity metrics related to selection rates improved, error-rate parity degraded significantly, evidenced by the Equalized Odds Difference and False Positive Rate Difference increasing from 0.0000 to 0.5926 post-mitigation.\n* **Feature Dependency:** The model's predictions rely predominantly on `decile_score`, with protected demographic attributes (`race_Caucasian` and `race_African-American`) also registering direct quantitative influence within the linear explainer hierarchy.",
+  "timestamp_utc": "2026-09-17T10:33:44.376365+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 4.757,
+    "finish_reason": "1",
+    "prompt_tokens": 1608,
+    "completion_tokens": 1225,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  }
+}

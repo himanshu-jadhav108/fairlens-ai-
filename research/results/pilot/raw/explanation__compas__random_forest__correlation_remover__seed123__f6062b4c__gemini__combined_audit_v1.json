@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__random_forest__correlation_remover__seed123__f6062b4c",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "2caad71a78886b43f13558cb9c9f26cf536f9b0d7f88aec845a255e989ee9916",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `random_forest` machine learning model trained on the `compas` dataset. The protected attribute under examination is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a random seed of `123`. A preprocessing mitigation technique, `correlation_remover`, was applied to assess its impact on fairness and performance.\n\n### 2. Baseline Fairness and Performance Audit\n\nThe baseline model exhibited a mixed fairness profile and perfect performance:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.4166. This value indicates a substantial disparity in positive outcome rates between the privileged and unprivileged groups, being significantly far from the target of 0.0 for parity.\n*   **Disparate Impact:** 2.7912. This value is considerably higher than the target of 1.0, suggesting that the privileged group receives positive outcomes at a rate approximately 2.79 times higher than the unprivileged group.\n*   **Equalized Odds Difference:** 0.0000. This indicates perfect parity in both false positive rates and true positive rates across the protected groups.\n*   **Equal Opportunity Difference:** 0.0000. This indicates perfect parity in true positive rates across the protected groups.\n*   **False Positive Rate Difference:** 0.0000. This indicates perfect parity in false positive rates across the protected groups.\n*   **False Negative Rate Difference:** 0.0000. This indicates perfect parity in false negative rates across the protected groups.\n\n**Performance Metrics:**\nThe baseline model achieved perfect scores across all audited performance metrics:\n*   **Accuracy:** 1.0000\n*   **Precision:** 1.0000\n*   **Recall:** 1.0000\n*   **F1 Score:** 1.0000\n*   **ROC-AUC:** 1.0000\n\n### 3. Mitigation Impact",
+  "timestamp_utc": "2026-09-17T09:54:37.321694+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 9.881,
+    "finish_reason": "2",
+    "prompt_tokens": 1596,
+    "completion_tokens": 470,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  }
+}

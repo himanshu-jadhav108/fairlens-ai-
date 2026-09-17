@@ -1,0 +1,80 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed123__ceac3ef9",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "timestamp_utc": "2026-09-17T09:52:18.361500+00:00",
+  "runtime_seconds": 1.78,
+  "dataset": {
+    "name": "adult",
+    "official_title": "Adult Census Income (1994 US Census Database)",
+    "source_url": "https://archive.ics.uci.edu/dataset/2/adult",
+    "version": "1.0 (UCI 1996 release)",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "is_synthetic_benchmark": true,
+    "target_column": "income",
+    "sensitive_column": "sex",
+    "split_id": "adult__split_123_t60_v20_te20",
+    "train_samples": 900,
+    "val_samples": 300,
+    "test_samples": 300
+  },
+  "model": {
+    "family": "logistic_regression",
+    "parameters": {}
+  },
+  "mitigation": {
+    "name": "correlation_remover",
+    "strategy_type": "preprocessing",
+    "parameters": {},
+    "calibration_split": "train"
+  },
+  "random_seed": 123,
+  "train_val_test_strategy": {
+    "train_ratio": 0.6,
+    "val_ratio": 0.2,
+    "test_ratio": 0.2,
+    "stratified": true
+  },
+  "preprocessing_configuration": {
+    "preprocessor_type": "ResearchPreprocessor",
+    "transformed_features_count": 27,
+    "feature_names": [
+      "age",
+      "education_num",
+      "capital_gain",
+      "capital_loss",
+      "hours_per_week",
+      "workclass_Gov",
+      "workclass_Private",
+      "workclass_Self-Emp",
+      "marital_status_Divorced",
+      "marital_status_Married",
+      "marital_status_Never-married",
+      "occupation_Craft-repair",
+      "occupation_Exec-managerial",
+      "occupation_Other",
+      "occupation_Prof-specialty",
+      "occupation_Sales",
+      "relationship_Husband",
+      "relationship_Not-in-family",
+      "relationship_Own-child",
+      "relationship_Unmarried",
+      "relationship_Wife",
+      "race_Asian-Pac",
+      "race_Black",
+      "race_Other",
+      "race_White",
+      "sex_Female",
+      "sex_Male"
+    ]
+  },
+  "environment": {
+    "python_version": "3.14.6",
+    "scikit_learn_version": "1.8.0",
+    "fairlearn_version": "0.14.0",
+    "shap_version": "0.51.0",
+    "xgboost_version": "3.4.1",
+    "pandas_version": "3.0.3",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0"
+  }
+}

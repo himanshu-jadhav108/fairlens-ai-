@@ -1,0 +1,32 @@
+{
+  "experiment_id": "compas__random_forest__correlation_remover__seed456__abd93086",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "64798adb2a9576034c35151f55a35c1f50a63450a60817add67254c91a380372",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `random_forest` machine learning model trained on the `compas` dataset. The protected attribute under examination is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a random seed of `456`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nThe initial audit of the unmitigated model revealed the following:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.4527. This value indicates a substantial disparity in outcomes between the privileged and unprivileged groups, as the target for parity is 0.0.\n*   **Equalized Odds Difference:** 0.0000. This indicates perfect parity with respect to equalized odds.\n*   **Equal Opportunity Difference:** 0.0000. This indicates perfect parity with respect to equal opportunity.\n*   **Disparate Impact:** 2.9805. This value is significantly higher than the parity target of 1.0, indicating a substantial disparate impact where the privileged group receives favorable outcomes at a rate nearly three times higher than the unprivileged group.\n*   **False Positive Rate Difference:** 0.0000. This indicates perfect parity in false positive rates.\n*   **False Negative Rate Difference:** 0.0000. This indicates perfect parity in false negative rates.\n\n**Performance Metrics:**\nThe model demonstrated perfect performance across all audited metrics:\n*   **Accuracy:** 1.0000\n*   **Precision:** 1.0000\n*   **Recall:** 1.0000\n*   **F1 Score:** 1.0000\n*   **ROC-AUC:** 1.0000\n\n**Baseline Summary:** The baseline model achieved perfect predictive performance. However, it exhibited significant disparities according to Demographic Parity Difference and Disparate Impact, indicating unequal outcome rates between the protected groups. Conversely, the model achieved perfect parity on Equalized Odds Difference, Equal Opportunity Difference, False Positive Rate Difference, and False Negative Rate Difference.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on fairness and performance metrics was evaluated.\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** Baseline: 0.4527 | Mitigated: 0.4527 | Delta: +0.00",
+  "timestamp_utc": "2026-09-17T09:54:50.413961+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 8.654,
+    "finish_reason": "2",
+    "prompt_tokens": 1596,
+    "completion_tokens": 582,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  }
+}

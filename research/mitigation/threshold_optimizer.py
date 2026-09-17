@@ -98,4 +98,6 @@ class ThresholdOptimizerMitigation(BaseMitigation):
         return None
 
     def get_mitigated_estimator(self) -> Any:
-        return self.optimizer
+        if self.optimizer is not None:
+            return getattr(self.optimizer, "estimator_", self.optimizer.estimator)
+        return self.base_model.get_raw_estimator()

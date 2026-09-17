@@ -1,0 +1,32 @@
+{
+  "experiment_id": "adult__random_forest__threshold_optimizer__seed42__6ebda6e2",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "f88a6107c3a98364bf4150e4dfd39c65d6867ac61cfffb2562f0b93f57c4d73c",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` machine learning model trained on the `adult` dataset, configured with a random seed of `42`. The protected attribute under scrutiny is `sex`, where `1` is designated as the privileged group and `0` as the unprivileged group. A postprocessing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited significant disparities across several fairness metrics, while demonstrating strong overall performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.4740 (indicating a substantial difference in positive prediction rates between groups, far from the ideal of 0.0).\n*   **Equalized Odds Difference:** 0.2516 (suggesting disparities in both false positive rates and true positive rates across groups, away from 0.0).\n*   **Equal Opportunity Difference:** 0.2516 (indicating a difference in true positive rates between groups, away from 0.0).\n*   **Disparate Impact:** 0.3942 (signifying that the ratio of positive prediction rates between unprivileged and privileged groups is considerably below the ideal of 1.0).\n*   **False Positive Rate Difference:** 0.1734\n*   **False Negative Rate Difference:** 0.2516\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.8900\n*   **Precision:** 0.9185\n*   **Recall:** 0.9037\n*   **F1 Score:** 0.9111\n*   **ROC AUC:** 0.9541\n\nAt baseline, the model demonstrated high predictive performance, with an accuracy of 0.8900 and an F1 score of 0.9111. However, these performance levels were accompanied by notable fairness disparities, particularly in demographic parity and disparate impact.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` postprocessing mitigation was applied to address the identified fairness issues. The impact of this mitigation varied across different fairness and performance metrics.\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.4740 | Mitigated: 0.0401 | Delta: -0.4339\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* The absolute Demographic Parity Difference decreased significantly from 0.4740 to 0.0401, moving substantially closer to ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.2516 | Mitigated: 0.2692 | Delta: +0.0176\n    *   Direction: increase | Domain Evaluation:",
+  "timestamp_utc": "2026-09-17T10:02:56.428975+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 9.064,
+    "finish_reason": "2",
+    "prompt_tokens": 1627,
+    "completion_tokens": 662,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  }
+}

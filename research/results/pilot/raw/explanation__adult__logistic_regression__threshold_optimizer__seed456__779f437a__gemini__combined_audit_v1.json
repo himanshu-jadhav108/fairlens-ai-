@@ -1,0 +1,32 @@
+{
+  "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__779f437a",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "cf0c5457ea42a1eff547457b68e54d4da33f8705664ff9bcb8ccb27ea99a1880",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `adult` dataset. The model's fairness and performance were assessed with respect to the protected attribute `sex`, where `1` represents the privileged group and `0` represents the unprivileged group. A `threshold_optimizer` postprocessing mitigation technique was applied, and the audit was conducted with a `random_seed` of `456`.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities and achieved specific performance levels:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.3979 (Target: 0.0 for parity)\n*   **Equalized Odds Difference:** 0.1892 (Target: 0.0 for parity)\n*   **Equal Opportunity Difference:** 0.0277 (Target: 0.0 for parity)\n*   **Disparate Impact:** 0.4921 (Target: 1.0 for parity)\n*   **False Positive Rate Difference:** 0.1892\n*   **False Negative Rate Difference:** 0.0277\n\nThese baseline fairness metrics indicate notable disparities across the `sex` attribute, particularly with a Demographic Parity Difference of 0.3979 and a Disparate Impact of 0.4921, both deviating significantly from their respective parity targets.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8933\n*   **Precision:** 0.8861\n*   **Recall:** 0.9521\n*   **F1 Score:** 0.9179\n*   **ROC AUC:** 0.9662\n\nThe baseline model demonstrated strong predictive performance across standard metrics, with high accuracy, recall, and ROC AUC.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` postprocessing mitigation was applied to address the identified fairness disparities. The impact on both fairness and performance metrics is detailed below:\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.3979 | Mitigated: 0.0088 | Delta: -0.3891\n    *   Direction: Decrease | Domain Evaluation: **Improvement** (Moved closer to ideal parity of 0.0).\n*   **Disparate Impact:**\n    *   Baseline: 0.4921 | Mitigated: 0.9884 | Delta: +0.4963\n    *   Direction: Increase | Domain Evaluation: **Improvement** (Moved closer to ideal parity ratio of 1.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.1892 | Mitigated: 0.3726 | Delta: +0.1834\n    *   Direction: Increase | Domain Evaluation: **Degradation** (Moved further from ideal parity of 0.0).\n*   **Equal Opportunity Difference:**\n    *   Baseline: ",
+  "timestamp_utc": "2026-09-17T10:02:31.977914+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 8.856,
+    "finish_reason": "2",
+    "prompt_tokens": 1633,
+    "completion_tokens": 713,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  }
+}

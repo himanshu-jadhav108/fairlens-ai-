@@ -1,0 +1,534 @@
+{
+  "experiment_id": "compas__random_forest__threshold_optimizer__seed123__35ea1003",
+  "manifest_reference": "manifests/compas__random_forest__threshold_optimizer__seed123__35ea1003.json",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "random_seed": 123,
+  "is_synthetic_benchmark": true,
+  "baseline_evaluation": {
+    "performance": {
+      "accuracy": {
+        "value": 1.0,
+        "requires": "labels",
+        "defined": true
+      },
+      "precision": {
+        "value": 1.0,
+        "requires": "labels",
+        "defined": true
+      },
+      "recall": {
+        "value": 1.0,
+        "requires": "labels",
+        "defined": true
+      },
+      "f1_score": {
+        "value": 1.0,
+        "requires": "labels",
+        "defined": true
+      },
+      "roc_auc": {
+        "value": 1.0,
+        "requires": "probabilities",
+        "defined": true,
+        "reason": null
+      }
+    },
+    "fairness": {
+      "sensitive_attribute": "race",
+      "groups": [
+        "African-American",
+        "Caucasian"
+      ],
+      "privileged_group": "Caucasian",
+      "unprivileged_group": "African-American",
+      "demographic_parity_difference": {
+        "value": 0.4166,
+        "defined": true,
+        "reason": null
+      },
+      "equalized_odds_difference": {
+        "value": 0.0,
+        "defined": true,
+        "reason": null
+      },
+      "equal_opportunity_difference": {
+        "value": 0.0,
+        "defined": true,
+        "reason": null
+      },
+      "disparate_impact_ratio": {
+        "value": 2.7912,
+        "defined": true,
+        "reason": null
+      },
+      "false_positive_rate_difference": {
+        "value": 0.0,
+        "defined": true,
+        "reason": null
+      },
+      "false_negative_rate_difference": {
+        "value": 0.0,
+        "defined": true,
+        "reason": null
+      },
+      "subgroup_statistics": [
+        {
+          "group": "African-American",
+          "count": 171,
+          "base_rate": 0.6491,
+          "selection_rate": 0.6491,
+          "accuracy": 1.0,
+          "tpr": 1.0,
+          "fpr": 0.0,
+          "confusion_matrix": {
+            "tp": 111,
+            "tn": 60,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        {
+          "group": "Caucasian",
+          "count": 129,
+          "base_rate": 0.2326,
+          "selection_rate": 0.2326,
+          "accuracy": 1.0,
+          "tpr": 1.0,
+          "fpr": 0.0,
+          "confusion_matrix": {
+            "tp": 30,
+            "tn": 99,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      ]
+    },
+    "global_shap": [
+      {
+        "feature": "decile_score",
+        "importance": 0.507415
+      },
+      {
+        "feature": "priors_count",
+        "importance": 0.01373
+      },
+      {
+        "feature": "age",
+        "importance": 0.008777
+      },
+      {
+        "feature": "race_African-American",
+        "importance": 0.004695
+      },
+      {
+        "feature": "race_Caucasian",
+        "importance": 0.003551
+      },
+      {
+        "feature": "c_charge_degree_M",
+        "importance": 0.001404
+      },
+      {
+        "feature": "sex_Female",
+        "importance": 0.001367
+      },
+      {
+        "feature": "c_charge_degree_F",
+        "importance": 0.001269
+      },
+      {
+        "feature": "sex_Male",
+        "importance": 0.000997
+      }
+    ],
+    "subgroup_shap": {
+      "African-American": [
+        {
+          "feature": "decile_score",
+          "importance": 0.526363
+        },
+        {
+          "feature": "priors_count",
+          "importance": 0.014274
+        },
+        {
+          "feature": "age",
+          "importance": 0.008667
+        },
+        {
+          "feature": "race_African-American",
+          "importance": 0.005328
+        },
+        {
+          "feature": "race_Caucasian",
+          "importance": 0.004381
+        },
+        {
+          "feature": "c_charge_degree_M",
+          "importance": 0.001425
+        },
+        {
+          "feature": "c_charge_degree_F",
+          "importance": 0.001392
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.000993
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.000881
+        }
+      ],
+      "Caucasian": [
+        {
+          "feature": "decile_score",
+          "importance": 0.481248
+        },
+        {
+          "feature": "priors_count",
+          "importance": 0.012979
+        },
+        {
+          "feature": "age",
+          "importance": 0.00893
+        },
+        {
+          "feature": "race_African-American",
+          "importance": 0.00382
+        },
+        {
+          "feature": "race_Caucasian",
+          "importance": 0.002406
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.001883
+        },
+        {
+          "feature": "c_charge_degree_M",
+          "importance": 0.001375
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.001157
+        },
+        {
+          "feature": "c_charge_degree_F",
+          "importance": 0.001098
+        }
+      ]
+    },
+    "shap_provenance": {
+      "explainer_type": "TreeExplainer",
+      "explainer_selection_mode": "auto",
+      "shap_version": "0.51.0",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
+      "feature_representation_order": [
+        "age",
+        "priors_count",
+        "decile_score",
+        "c_charge_degree_F",
+        "c_charge_degree_M",
+        "race_African-American",
+        "race_Caucasian",
+        "sex_Female",
+        "sex_Male"
+      ],
+      "number_of_features": 9,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
+      "random_seed": 123
+    }
+  },
+  "mitigated_evaluation": {
+    "performance": {
+      "accuracy": {
+        "value": 0.7633,
+        "requires": "labels",
+        "defined": true
+      },
+      "precision": {
+        "value": 1.0,
+        "requires": "labels",
+        "defined": true
+      },
+      "recall": {
+        "value": 0.4965,
+        "requires": "labels",
+        "defined": true
+      },
+      "f1_score": {
+        "value": 0.6635,
+        "requires": "labels",
+        "defined": true
+      },
+      "roc_auc": {
+        "value": null,
+        "requires": "probabilities",
+        "defined": false,
+        "reason": "Model or mitigation intervention did not generate continuous probabilities."
+      }
+    },
+    "fairness": {
+      "sensitive_attribute": "race",
+      "groups": [
+        "African-American",
+        "Caucasian"
+      ],
+      "privileged_group": "Caucasian",
+      "unprivileged_group": "African-American",
+      "demographic_parity_difference": {
+        "value": 0.0014,
+        "defined": true,
+        "reason": null
+      },
+      "equalized_odds_difference": {
+        "value": 0.6396,
+        "defined": true,
+        "reason": null
+      },
+      "equal_opportunity_difference": {
+        "value": 0.6396,
+        "defined": true,
+        "reason": null
+      },
+      "disparate_impact_ratio": {
+        "value": 1.0058,
+        "defined": true,
+        "reason": null
+      },
+      "false_positive_rate_difference": {
+        "value": 0.0,
+        "defined": true,
+        "reason": null
+      },
+      "false_negative_rate_difference": {
+        "value": 0.6396,
+        "defined": true,
+        "reason": null
+      },
+      "subgroup_statistics": [
+        {
+          "group": "African-American",
+          "count": 171,
+          "base_rate": 0.6491,
+          "selection_rate": 0.2339,
+          "accuracy": 0.5848,
+          "tpr": 0.3604,
+          "fpr": 0.0,
+          "confusion_matrix": {
+            "tp": 40,
+            "tn": 60,
+            "fp": 0,
+            "fn": 71
+          }
+        },
+        {
+          "group": "Caucasian",
+          "count": 129,
+          "base_rate": 0.2326,
+          "selection_rate": 0.2326,
+          "accuracy": 1.0,
+          "tpr": 1.0,
+          "fpr": 0.0,
+          "confusion_matrix": {
+            "tp": 30,
+            "tn": 99,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      ]
+    },
+    "global_shap": [
+      {
+        "feature": "decile_score",
+        "importance": 0.507415
+      },
+      {
+        "feature": "priors_count",
+        "importance": 0.01373
+      },
+      {
+        "feature": "age",
+        "importance": 0.008777
+      },
+      {
+        "feature": "race_African-American",
+        "importance": 0.004695
+      },
+      {
+        "feature": "race_Caucasian",
+        "importance": 0.003551
+      },
+      {
+        "feature": "c_charge_degree_M",
+        "importance": 0.001404
+      },
+      {
+        "feature": "sex_Female",
+        "importance": 0.001367
+      },
+      {
+        "feature": "c_charge_degree_F",
+        "importance": 0.001269
+      },
+      {
+        "feature": "sex_Male",
+        "importance": 0.000997
+      }
+    ],
+    "subgroup_shap": {
+      "African-American": [
+        {
+          "feature": "decile_score",
+          "importance": 0.526363
+        },
+        {
+          "feature": "priors_count",
+          "importance": 0.014274
+        },
+        {
+          "feature": "age",
+          "importance": 0.008667
+        },
+        {
+          "feature": "race_African-American",
+          "importance": 0.005328
+        },
+        {
+          "feature": "race_Caucasian",
+          "importance": 0.004381
+        },
+        {
+          "feature": "c_charge_degree_M",
+          "importance": 0.001425
+        },
+        {
+          "feature": "c_charge_degree_F",
+          "importance": 0.001392
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.000993
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.000881
+        }
+      ],
+      "Caucasian": [
+        {
+          "feature": "decile_score",
+          "importance": 0.481248
+        },
+        {
+          "feature": "priors_count",
+          "importance": 0.012979
+        },
+        {
+          "feature": "age",
+          "importance": 0.00893
+        },
+        {
+          "feature": "race_African-American",
+          "importance": 0.00382
+        },
+        {
+          "feature": "race_Caucasian",
+          "importance": 0.002406
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.001883
+        },
+        {
+          "feature": "c_charge_degree_M",
+          "importance": 0.001375
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.001157
+        },
+        {
+          "feature": "c_charge_degree_F",
+          "importance": 0.001098
+        }
+      ]
+    },
+    "shap_provenance": {
+      "explainer_type": "TreeExplainer",
+      "explainer_selection_mode": "auto",
+      "shap_version": "0.51.0",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
+      "feature_representation_order": [
+        "age",
+        "priors_count",
+        "decile_score",
+        "c_charge_degree_F",
+        "c_charge_degree_M",
+        "race_African-American",
+        "race_Caucasian",
+        "sex_Female",
+        "sex_Male"
+      ],
+      "number_of_features": 9,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
+      "random_seed": 123
+    }
+  },
+  "attribution_comparison": {
+    "provisional_status": "PROVISIONAL (pending literature review)",
+    "cosine_similarity": 1.0,
+    "spearman_rank_correlation": 1.0,
+    "spearman_pvalue": 0.0,
+    "l1_attribution_difference": 0.0,
+    "l2_attribution_difference": 0.0,
+    "features_evaluated": 9,
+    "top_rank_shifts": [
+      {
+        "feature": "decile_score",
+        "baseline_rank": 1,
+        "mitigated_rank": 1,
+        "rank_shift": 0
+      },
+      {
+        "feature": "priors_count",
+        "baseline_rank": 2,
+        "mitigated_rank": 2,
+        "rank_shift": 0
+      },
+      {
+        "feature": "age",
+        "baseline_rank": 3,
+        "mitigated_rank": 3,
+        "rank_shift": 0
+      },
+      {
+        "feature": "race_African-American",
+        "baseline_rank": 4,
+        "mitigated_rank": 4,
+        "rank_shift": 0
+      },
+      {
+        "feature": "race_Caucasian",
+        "baseline_rank": 5,
+        "mitigated_rank": 5,
+        "rank_shift": 0
+      }
+    ]
+  },
+  "trade_off_deltas": {
+    "delta_accuracy": -0.2367,
+    "delta_f1_score": -0.3365,
+    "delta_demographic_parity_difference": -0.4152,
+    "delta_equalized_odds_difference": 0.6396
+  }
+}

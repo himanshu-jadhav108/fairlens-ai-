@@ -50,6 +50,7 @@ class FaithfulnessEvaluator:
         explanation_text: str,
         explanation_source: str = "llm",
         prompt_id: Optional[str] = None,
+        execution_mode: Optional[str] = None,
         save_records: bool = True,
         output_claims_dir: str = "research/results/claims",
         output_summaries_dir: str = "research/results/summaries"
@@ -57,6 +58,11 @@ class FaithfulnessEvaluator:
         """
         Evaluates an explanation against structured evidence.
         Computes rate metrics and saves claim-level records.
+
+        Args:
+            execution_mode: Evidence classification tag.
+                Must be one of: SOFTWARE_VALIDATION_ONLY | PILOT_VALIDATION_RUN | FINAL_EMPIRICAL_RUN
+                This field is required for the aggregator to correctly identify evidence class.
         """
         all_claims: List[ExtractedClaim] = []
 
@@ -108,6 +114,7 @@ class FaithfulnessEvaluator:
             explanation_source=explanation_source,
             prompt_id=prompt_id,
             timestamp_utc=timestamp,
+            execution_mode=execution_mode,
             numerical_faithfulness=round(num_faithfulness, 4),
             directional_faithfulness=round(dir_faithfulness, 4),
             attribution_faithfulness=round(attr_faithfulness, 4),
