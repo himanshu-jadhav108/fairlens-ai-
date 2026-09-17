@@ -67,19 +67,22 @@ def run_experiment(
     temperature: float = 0.2,
     output_dir: str = "research/results",
     use_synthetic: bool = True,
-    is_smoke_test: bool = False
+    is_smoke_test: bool = False,
+    execution_mode: Optional[str] = None
 ) -> Dict[str, Any]:
     """
     Executes the end-to-end fairness audit, explanation generation, and faithfulness evaluation.
     Isolates smoke test outputs into a dedicated subdirectory with explicit software validation tags.
     """
-    # Isolate smoke test outputs (Section 20)
     effective_output_dir = os.path.join(output_dir, "smoke") if is_smoke_test else output_dir
-    execution_mode = "SOFTWARE_VALIDATION_ONLY" if is_smoke_test else "EMPIRICAL_RESEARCH_RUN"
+    if is_smoke_test:
+        effective_mode = "SOFTWARE_VALIDATION_ONLY"
+    else:
+        effective_mode = execution_mode or "EMPIRICAL_RESEARCH_RUN"
 
     print("=" * 70)
     print("FAIRLENS AI RESEARCH: LLM EXPLANATION FAITHFULNESS PIPELINE")
-    print(f"Execution Mode: {execution_mode}")
+    print(f"Execution Mode: {effective_mode}")
     print(f"Output Path:    {effective_output_dir}")
     print(f"Dataset:        {dataset_name} (Synthetic: {use_synthetic})")
     print(f"Model:          {model_name}")
@@ -104,7 +107,7 @@ def run_experiment(
         results_dir=effective_output_dir,
         save_artifacts=True
     )
-    manifest["execution_mode"] = execution_mode
+    manifest["execution_mode"] = effective_mode
     print(f"-> Audit completed. Experiment ID: {config.experiment_id}")
 
     # 2. Build Authoritative Structured Audit Evidence
@@ -190,7 +193,7 @@ def run_experiment(
     return {
         "experiment_id": config.experiment_id,
         "evidence_hash": evidence_hash,
-        "execution_mode": execution_mode,
+        "execution_mode": effective_mode,
         "llm_report": llm_report.to_dict(),
         "template_report": template_report.to_dict(),
         "llm_coverage": llm_coverage.to_dict(),
