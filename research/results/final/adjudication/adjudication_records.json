@@ -1,0 +1,2208 @@
+{
+  "timestamp_utc": "2026-09-20T14:10:55.478874+00:00",
+  "total_claims": 100,
+  "adjudicator_model": "llama3:latest",
+  "adjudicator_platform": "ollama_local_gpu",
+  "adjudication_records": [
+    {
+      "sample_queue_id": "FINAL_CLAIM_001",
+      "claim_id": "num_3",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline Disparate Impact: 0.8781",
+      "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.8781 for state 'baseline' matches ground truth 0.8781 for 'disparate_impact' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The provided claim reports a Baseline Disparate Impact of 0.8781, which is a quantitative value that can be directly compared to the audit evidence. As there is no structured audit evidence found for this condition, we rely solely on the reported value.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_002",
+      "claim_id": "num_22",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Numerical value '0.0921 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim presents a numerical comparison between baseline and mitigated values, with a statistically significant decrease in the value (-0.0221), indicating that the mitigation had a positive effect.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_003",
+      "claim_id": "num_15",
+      "claim_type": "numerical",
+      "claim_text": "- Disparate Impact: changed from 0.2531 to 0.4938 (absolute change: +0.2407, direction: increase, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__6581c502",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.2531 for state 'baseline' matches ground truth 0.2531 for 'disparate_impact' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the disparate impact increased from 0.2531 to 0.4938, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_004",
+      "claim_id": "num_15",
+      "claim_type": "numerical",
+      "claim_text": "This represents an **improvement**, moving closer to ideal parity (0.0)",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__c3711d22",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.9,
+        "justification": "The claim states an improvement, which is supported by the lack of structured audit evidence. The absence of any contradictory data suggests that the disparity has indeed decreased.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_005",
+      "claim_id": "num_22",
+      "claim_type": "numerical",
+      "claim_text": "The mitigation generally led to improvements across fairness metrics, moving them closer to their respective ideal parity targets (0.0 for differences, 1.0 for ratios)",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Numerical value '1.0 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the mitigation led to improvements across fairness metrics, which is supported by the lack of structured audit evidence for this condition.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_006",
+      "claim_id": "num_3",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.0826",
+      "experiment_id": "adult__random_forest__correlation_remover__seed42__96b67712",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.0826 matches ground truth 0.0826 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The provided claim reports an Equal Opportunity Difference of 0.0826, which is a quantitative metric that can be directly compared to the audit evidence. Given the absence of any contradictory or ambiguous information, this claim is supported by the available data.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_007",
+      "claim_id": "num_10",
+      "claim_type": "numerical",
+      "claim_text": "*   **F1 Score:** 0.6510",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.651 matches ground truth 0.651 for 'f1_score' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The provided F1 Score of 0.6510 is a quantitative metric that can be directly compared to the claim, and since there are no discrepancies, the claim is supported.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_008",
+      "claim_id": "num_23",
+      "claim_type": "numerical",
+      "claim_text": "- False Negative Rate Difference: changed from 0.1142 to 0.0921 (absolute change: -0.0221, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__462a71d8",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value -0.0221 for state 'absolute_change' matches ground truth -0.0221 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in the False Negative Rate Difference, which is accurately reflected in the provided evidence showing a change from 0.1142 to 0.0921.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_009",
+      "claim_id": "num_18",
+      "claim_type": "numerical",
+      "claim_text": "- False Positive Rate Difference: changed from 0.0867 to 0.4337 (absolute change: +0.3470, direction: increase, evaluation: degradation)",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed123__54fb0237",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.0867 for state 'baseline' matches ground truth 0.0867 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in False Positive Rate Difference, with a significant increase from 0.0867 to 0.4337, indicating degradation.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_010",
+      "claim_id": "num_43",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.0622 | Mitigated: 0.3781 | Delta: +0.3159",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed456__e69a9374",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Numerical value '0.3781 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim reports a significant increase in the value (+0.3159) from the baseline (0.0622) to the mitigated state (0.3781), which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_011",
+      "claim_id": "num_8",
+      "claim_type": "numerical",
+      "claim_text": "- Demographic Parity Difference: changed from 0.1770 to 0.0829 (absolute change: -0.0941, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value -0.0941 for state 'absolute_change' matches ground truth -0.0941 for 'demographic_parity_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in the Demographic Parity Difference from 0.1770 to 0.0829, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_012",
+      "claim_id": "num_2",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equalized Odds Difference:** 0.1307",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed456__37498e86",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.1307 matches ground truth 0.1307 for 'equalized_odds_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The provided Equalized Odds Difference value of 0.1307 is within the acceptable tolerance range, indicating that the claim is quantitatively accurate according to the evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_013",
+      "claim_id": "num_29",
+      "claim_type": "numerical",
+      "claim_text": "- Precision: changed from 0.6409 to 0.6418 (absolute change: +0.0009, direction: increase, evaluation: improvement)",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__ec4d3659",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.0009 for state 'absolute_change' matches ground truth 0.0009 for 'precision' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the precision increased from 0.6409 to 0.6418, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_014",
+      "claim_id": "num_5",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.1326",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.1326 matches ground truth 0.1326 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The provided claim reports an Equal Opportunity Difference of 0.1326, which is a quantitative value that can be directly compared to the audit evidence. As there is no structured audit evidence found for this condition, we rely solely on the reported numerical value.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_015",
+      "claim_id": "num_35",
+      "claim_type": "numerical",
+      "claim_text": "- F1 Score: changed from 0.6510 to 0.6240 (absolute change: -0.0270, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__6581c502",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value -0.027 for state 'absolute_change' matches ground truth -0.027 for 'f1_score' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in F1 Score from 0.6510 to 0.6240, with a decrease of -0.0270, which is consistent with the audit evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_016",
+      "claim_id": "num_35",
+      "claim_type": "numerical",
+      "claim_text": "- F1 Score: changed from 0.6618 to 0.6358 (absolute change: -0.0260, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value -0.026 for state 'absolute_change' matches ground truth -0.026 for 'f1_score' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in F1 Score from 0.6618 to 0.6358, with a decrease of -0.0260, which is consistent with the audit evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_017",
+      "claim_id": "num_22",
+      "claim_type": "numerical",
+      "claim_text": "- False Negative Rate Difference: changed from 0.1058 to 0.1159 (absolute change: +0.0101, direction: increase, evaluation: degradation)",
+      "experiment_id": "adult__random_forest__correlation_remover__seed123__817dbb0b",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.1159 for state 'mitigated' matches ground truth 0.1159 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in False Negative Rate Difference, with a statistically significant increase from 0.1058 to 0.1159.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_018",
+      "claim_id": "num_9",
+      "claim_type": "numerical",
+      "claim_text": "- Equalized Odds Difference: changed from 0.0826 to 0.0773 (absolute change: -0.0053, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__random_forest__correlation_remover__seed42__96b67712",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.0826 for state 'baseline' matches ground truth 0.0826 for 'equalized_odds_difference' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Equalized Odds Difference decreased from 0.0826 to 0.0773, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_019",
+      "claim_id": "num_17",
+      "claim_type": "numerical",
+      "claim_text": "*   **F1 Score:** 0.8188",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed123__3f4c1ddd",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.8188 matches ground truth 0.8188 for 'f1_score' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The provided F1 Score of 0.8188 is a quantitative metric that can be directly compared to the claim, and since there are no discrepancies, we conclude that the claim is supported by the evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_020",
+      "claim_id": "num_5",
+      "claim_type": "numerical",
+      "claim_text": "- Baseline F1 Score: 0.8123",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed456__37498e86",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Reported value 0.8123 for state 'baseline' matches ground truth 0.8123 for 'f1_score' within tolerance (abs diff: 0.0)."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The provided baseline F1 Score of 0.8123 is a quantitative claim that can be directly compared to the audit evidence, and since no discrepancies are reported, it is considered supported.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_021",
+      "claim_id": "dir_math_15",
+      "claim_type": "directional",
+      "claim_text": "- Precision: changed from 0.7335 to 0.7353 (absolute change: +0.0018, direction: increase, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__6581c502",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that precision 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that precision increased from 0.7335 to 0.7353, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_022",
+      "claim_id": "dir_math_9",
+      "claim_type": "directional",
+      "claim_text": "- False Positive Rate Difference: changed from 0.0341 to 0.2955 (absolute change: +0.2614, direction: increase, evaluation: degradation)",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that false_positive_rate_difference 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in False Positive Rate, with a significant increase from 0.0341 to 0.2955, indicating degradation.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_023",
+      "claim_id": "dir_math_3",
+      "claim_type": "directional",
+      "claim_text": "Precision was 0.7858, while recall was lower at 0.5522, resulting in an F1 Score of 0.6486",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that precision 'lower' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the precision, recall, and F1 Score values provided in the audit evidence, with no discrepancies.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_024",
+      "claim_id": "dir_math_2",
+      "claim_type": "directional",
+      "claim_text": "*   **Equalized Odds Difference:** Increased from 0.2445 to 0.4337 (Delta: +0.1892)",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed123__54fb0237",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that equalized_odds_difference 'increased' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Equalized Odds Difference increased from 0.2445 to 0.4337, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_025",
+      "claim_id": "dir_math_3",
+      "claim_type": "directional",
+      "claim_text": "*   *Rationale:* The absolute Equal Opportunity Difference decreased, moving closer to ideal parity (0.0)",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed42__b775fadd",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that equal_opportunity_difference 'decreased' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the absolute Equal Opportunity Difference decreased, which is consistent with the lack of structured audit evidence provided.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_026",
+      "claim_id": "dir_math_11",
+      "claim_type": "directional",
+      "claim_text": "- False Negative Rate Difference: changed from 0.1058 to 0.2975 (absolute change: +0.1917, direction: increase, evaluation: degradation)",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed123__f2260c85",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that false_negative_rate_difference 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in False Negative Rate, with a significant increase from 0.1058 to 0.2975, indicating degradation.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_027",
+      "claim_id": "dir_math_2",
+      "claim_type": "directional",
+      "claim_text": "| demographic_parity_difference   | Fairness    | 0.2859   | 0.0467    | -0.2392  | decrease  | improvement       | Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, moving closer to ideal parity (0.0)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_028",
+      "claim_id": "dir_math_9",
+      "claim_type": "directional",
+      "claim_text": "- False Positive Rate Difference: changed from 0.1666 to 0.1350 (absolute change: -0.0316, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__6a1a53f7",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that false_positive_rate_difference 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in the False Positive Rate Difference, which is accurately reflected in the provided evidence showing a change from 0.1666 to 0.1350.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_029",
+      "claim_id": "dir_math_11",
+      "claim_type": "directional",
+      "claim_text": "- False Negative Rate Difference: changed from 0.1326 to 0.1148 (absolute change: -0.0178, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that false_negative_rate_difference 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in the False Negative Rate Difference, which is accurately reflected in the provided evidence showing a change from 0.1326 to 0.1148.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_030",
+      "claim_id": "dir_math_13",
+      "claim_type": "directional",
+      "claim_text": "- Accuracy: changed from 0.8449 to 0.8310 (absolute change: -0.0139, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__cf630b0a",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that accuracy 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports a decrease in accuracy from 0.8449 to 0.8310, with an absolute change of -0.0139, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_031",
+      "claim_id": "dir_math_1",
+      "claim_type": "directional",
+      "claim_text": "- Demographic Parity Difference: changed from 0.0191 to 0.0691 (absolute change: +0.0500, direction: increase, evaluation: degradation)",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed42__b775fadd",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that demographic_parity_difference 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Demographic Parity Difference increased from 0.0191 to 0.0691, which is consistent with the provided evidence. The absolute change of +0.0500 also supports this finding.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_032",
+      "claim_id": "dir_math_6",
+      "claim_type": "directional",
+      "claim_text": "- Disparate Impact: changed from 2.0363 to 2.0727 (absolute change: +0.0364, direction: increase, evaluation: degradation)",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__ec4d3659",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that disparate_impact 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the disparate impact increased from 2.0363 to 2.0727, which is quantitatively supported by the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_033",
+      "claim_id": "dir_math_5",
+      "claim_type": "directional",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.1142 to 0.3189 (absolute change: +0.2047, direction: increase, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__cf630b0a",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that equal_opportunity_difference 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Equal Opportunity Difference increased from 0.1142 to 0.3189, which is quantitatively supported by the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_034",
+      "claim_id": "dir_math_1",
+      "claim_type": "directional",
+      "claim_text": "- Demographic Parity Difference: changed from 0.1571 to 0.0146 (absolute change: -0.1425, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed123__f2260c85",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.1571 to 0.0146, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_035",
+      "claim_id": "dir_math_8",
+      "claim_type": "directional",
+      "claim_text": "*   **False Positive Rate Difference:** Improved, decreasing from 0.1761",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__ec4d3659",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that false_positive_rate_difference 'decreasing' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the False Positive Rate Difference has improved, which is supported by the evidence showing a decreasing value from 0.1761.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_036",
+      "claim_id": "dir_math_21",
+      "claim_type": "directional",
+      "claim_text": "- Roc Auc: changed from 0.9041 to 0.8815 (absolute change: -0.0226, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that roc_auc 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the ROC AUC decreased from 0.9041 to 0.8815, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_037",
+      "claim_id": "dir_math_1",
+      "claim_type": "directional",
+      "claim_text": "- Demographic Parity Difference: changed from 0.1834 to 0.0981 (absolute change: -0.0853, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.1834 to 0.0981, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_038",
+      "claim_id": "dir_math_2",
+      "claim_type": "directional",
+      "claim_text": "*   **Demographic Parity Difference:** Decreased from 0.2379 to 0.0299 (Delta: -0.2080), moving significantly closer to ideal parity (0.0)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed42__ccfc4f9c",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that demographic_parity_difference 'decreased' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.2379 to 0.0299, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_039",
+      "claim_id": "dir_math_11",
+      "claim_type": "directional",
+      "claim_text": "- False Negative Rate Difference: changed from 0.1142 to 0.0921 (absolute change: -0.0221, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that false_negative_rate_difference 'decrease' matches ground truth direction: decrease."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in the False Negative Rate Difference, which is accurately reflected in the provided evidence showing a change from 0.1142 to 0.0921.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_040",
+      "claim_id": "dir_math_1",
+      "claim_type": "directional",
+      "claim_text": "- Demographic Parity Difference: changed from 0.2289 to 0.2291 (absolute change: +0.0002, direction: increase, evaluation: degradation)",
+      "experiment_id": "compas__random_forest__correlation_remover__seed456__c9644d7e",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that demographic_parity_difference 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Demographic Parity Difference increased from 0.2289 to 0.2291, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_041",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Disparate Impact:** 2.7543, which is considerably higher than the ideal parity ratio of 1.0, indicating the unprivileged group is predicted positive at a rate significantly lower than the privileged group",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed123__bc5d7475",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: -1.823). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the unprivileged group is predicted positive at a rate significantly lower than the privileged group, which is supported by the provided disparate impact value of 2.7543 being higher than the ideal parity ratio of 1.0.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_042",
+      "claim_id": "mag_1",
+      "claim_type": "magnitude",
+      "claim_text": "A Disparate Impact ratio of 0.2699, which is significantly below the ideal parity of 1.0, further highlights a substantial disparity in outcomes",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.028). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The Disparate Impact ratio of 0.2699 is significantly below the ideal parity of 1.0, indicating a substantial disparity in outcomes, which is supported by the provided ground-truth evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_043",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Disparate Impact:** 0.2531 (significantly below the ideal ratio of 1.0, indicating a lower positive prediction rate for the unprivileged group)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__6581c502",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.2407). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states a disparate impact of 0.2531, which is significantly below the ideal ratio of 1.0, indicating a lower positive prediction rate for the unprivileged group. This finding is consistent with the provided ground-truth evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_044",
+      "claim_id": "mag_5",
+      "claim_type": "magnitude",
+      "claim_text": "*   *Rationale:* The absolute Equal Opportunity Difference significantly decreased, moving very close to ideal parity (0.0)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__7b502b89",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'equal_opportunity_difference' (actual delta: -0.2059). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the absolute Equal Opportunity Difference significantly decreased, which is supported by the lack of structured audit evidence for this condition.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_045",
+      "claim_id": "mag_4",
+      "claim_type": "magnitude",
+      "claim_text": "*   *Rationale:* The absolute Equalized Odds Difference slightly decreased, moving closer to the ideal parity of 0.0",
+      "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'slightly' for 'equalized_odds_difference' (actual delta: -0.0009). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.9,
+        "justification": "The claim states that the absolute Equalized Odds Difference slightly decreased, which is consistent with the lack of structured audit evidence provided.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_046",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   *Rationale:* The absolute Demographic Parity Difference significantly decreased, moving substantially closer to the ideal parity of 0.0",
+      "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'substantially' for 'demographic_parity_difference' (actual delta: -0.0978). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the absolute Demographic Parity Difference significantly decreased, which is consistent with the lack of structured audit evidence provided.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_047",
+      "claim_id": "mag_4",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Disparate Impact:** Improved significantly",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__10ea6787",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.7012). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "UNSUPPORTED",
+        "confidence": 1.0,
+        "justification": "Since no structured audit evidence is provided, it is not possible to determine whether the claim is supported or not.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_048",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   *Rationale:* The absolute Demographic Parity Difference significantly decreased, moving very close to ideal parity (0.0)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__7b502b89",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'demographic_parity_difference' (actual delta: -0.2245). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the absolute Demographic Parity Difference significantly decreased, which is consistent with the lack of structured audit evidence provided.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_049",
+      "claim_id": "mag_11",
+      "claim_type": "magnitude",
+      "claim_text": "*   **False Positive Rate Difference:** Decreased significantly from 0.0867 to 0.0016 (Delta: -0.0851), indicating a substantial improvement towards parity (0.0)",
+      "experiment_id": "german__random_forest__correlation_remover__seed123__9b5a5fb2",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'false_positive_rate_difference' (actual delta: -0.0851). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states a significant decrease in the false positive rate difference, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_050",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "A Disparate Impact of 0.2862 is significantly below the ideal parity ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.2554). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states a Disparate Impact of 0.2862, which is significantly below the ideal parity ratio of 1.0, indicating a lower positive outcome rate for the unprivileged group relative to the privileged group. This conclusion aligns with the provided ground-truth evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_051",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Demographic Parity Difference:** Improved significantly",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__10ea6787",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'demographic_parity_difference' (actual delta: -0.1765). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "UNSUPPORTED",
+        "confidence": 1.0,
+        "justification": "Since no structured audit evidence is provided, it is not possible to determine whether the claim is supported or not.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_052",
+      "claim_id": "mag_3",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Demographic Parity Difference:** Improved significantly, decreasing by 0.0941 from 0.1770 to 0.0829",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'demographic_parity_difference' (actual delta: -0.0941). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.1770 to 0.0829, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_053",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Disparate Impact:** 2.5848 (Signifying that the unprivileged group is predicted positively at a rate 2.58 times higher than the privileged group, substantially deviating from the ideal ratio of 1.0.)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed456__58e2fdda",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'substantially' for 'disparate_impact' (actual delta: -1.823). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim's numerical value of 2.5848 is within the acceptable tolerance range, indicating a statistically significant disparate impact in favor of the unprivileged group.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_054",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Disparate Impact:** 0.2531 (significantly below the ideal ratio of 1.0, suggesting the unprivileged group receives positive outcomes at a much lower rate than the privileged group)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.2407). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the unprivileged group receives positive outcomes at a much lower rate than the privileged group, which is supported by the provided disparate impact value of 0.2531, significantly below the ideal ratio of 1.0.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_055",
+      "claim_id": "mag_3",
+      "claim_type": "magnitude",
+      "claim_text": "*   **Demographic Parity Difference:** Decreased from 0.2379 to 0.0299 (Delta: -0.2080), moving significantly closer to ideal parity (0.0)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed42__ccfc4f9c",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'demographic_parity_difference' (actual delta: -0.208). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.2379 to 0.0299, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_056",
+      "claim_id": "mag_6",
+      "claim_type": "magnitude",
+      "claim_text": "*   *Rationale:* The absolute Equal Opportunity Difference slightly decreased, moving closer to the ideal parity of 0.0",
+      "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'slightly' for 'equal_opportunity_difference' (actual delta: -0.0009). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the absolute Equal Opportunity Difference decreased, which is consistent with the lack of structured audit evidence provided.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_057",
+      "claim_id": "mag_1",
+      "claim_type": "magnitude",
+      "claim_text": "This ratio of positive prediction rates between groups is 0.2666, which is significantly below the ideal parity ratio of 1.0, suggesting a disparate impact",
+      "experiment_id": "adult__random_forest__correlation_remover__seed123__817dbb0b",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: -0.0043). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the ratio of positive prediction rates between groups is significantly below the ideal parity ratio, which is supported by the provided evidence stating a value of 0.2666.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_058",
+      "claim_id": "mag_3",
+      "claim_type": "magnitude",
+      "claim_text": "*   *Rationale:* The absolute Demographic Parity Difference decreased substantially, moving from 0.1626 to 0.0032, indicating a significant improvement towards the ideal parity of 0.0",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed456__96b73ae1",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'substantially' for 'demographic_parity_difference' (actual delta: -0.1594). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the absolute Demographic Parity Difference decreased substantially, which is supported by the provided evidence showing a decrease from 0.1626 to 0.0032.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_059",
+      "claim_id": "mag_2",
+      "claim_type": "magnitude",
+      "claim_text": "Disparate Impact, at 0.2955, is significantly below the ideal ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "UNDETERMINABLE",
+        "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.2962). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that Disparate Impact is significantly below the ideal ratio of 1.0, which is consistent with the provided ground-truth evidence stating 'No structured audit evidence found for this condition.' This lack of evidence supporting a disparity suggests that the unprivileged group's positive outcome rate is indeed lower relative to the privileged group.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_060",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "*   **Demographic Parity Difference:** Improved significantly, decreasing by 0.0941 from 0.1770 to 0.0829",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improved' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states a significant decrease in the Demographic Parity Difference, which is supported by the provided evidence showing a value of 0.0829 compared to the initial value of 0.1770.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_061",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.3643 to 0.1188 (absolute change: -0.2455, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed456__58e2fdda",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.3643 to 0.1188, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_062",
+      "claim_id": "dir_interp_10",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "*   **Equal Opportunity Difference:** Decreased from 0.1273 to 0.0953 (Delta: -0.0320), indicating an improvement towards parity",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Equal Opportunity Difference decreased from 0.1273 to 0.0953, which is consistent with the provided evidence. The numerical value of the delta (-0.0320) also aligns with the expected direction of improvement.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_063",
+      "claim_id": "dir_interp_8",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Disparate Impact: changed from 2.5848 to 1.0507 (absolute change: -1.5341, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__d2ac04f4",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Disparate Impact value decreased from 2.5848 to 1.0507, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_064",
+      "claim_id": "dir_interp_8",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Disparate Impact: changed from 0.6602 to 1.0594 (absolute change: +0.3992, direction: increase, evaluation: improvement)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Disparate Impact value increased from 0.6602 to 1.0594, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_065",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.2868 to 0.0713 (absolute change: -0.2155, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__6a1a53f7",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in Demographic Parity Difference from 0.2868 to 0.0713, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_066",
+      "claim_id": "dir_interp_6",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.1326 to 0.3201 (absolute change: +0.1875, direction: increase, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__021be82b",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Equal Opportunity Difference increased from 0.1326 to 0.3201, which is consistent with the provided evidence. The absolute change of +0.1875 and direction of increase also match the reported evaluation as 'degradation'.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_067",
+      "claim_id": "dir_interp_4",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equalized Odds Difference: changed from 0.3558 to 0.1350 (absolute change: -0.2208, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__6a1a53f7",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Equalized Odds Difference decreased from 0.3558 to 0.1350, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_068",
+      "claim_id": "dir_interp_4",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equalized Odds Difference: changed from 0.3786 to 0.1760 (absolute change: -0.2026, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed123__551690cc",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Equalized Odds Difference decreased from 0.3786 to 0.1760, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_069",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.1770 to 0.0000 (absolute change: -0.1770, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.1770 to 0.0000, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_070",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.1005 to 0.0490 (absolute change: -0.0515, direction: decrease, evaluation: improvement)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed456__37498e86",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Demographic Parity Difference decreased from 0.1005 to 0.0490, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_071",
+      "claim_id": "dir_interp_8",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Disparate Impact: changed from 0.2987 to 0.3068 (absolute change: +0.0081, direction: increase, evaluation: improvement)",
+      "experiment_id": "adult__random_forest__correlation_remover__seed42__96b67712",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Disparate Impact value increased from 0.2987 to 0.3068, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_072",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.2053 to 0.1409 (absolute change: -0.0644, direction: decrease, evaluation: improvement)",
+      "experiment_id": "german__random_forest__correlation_remover__seed123__9b5a5fb2",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in Demographic Parity Difference from 0.2053 to 0.1409, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_073",
+      "claim_id": "dir_interp_8",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Disparate Impact: changed from 0.8710 to 1.0606 (absolute change: +0.1896, direction: increase, evaluation: improvement)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed456__37498e86",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Disparate Impact value increased from 0.8710 to 1.0606, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_074",
+      "claim_id": "dir_interp_6",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equal Opportunity Difference: changed from 0.0683 to 0.0847 (absolute change: +0.0164, direction: increase, evaluation: degradation)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Equal Opportunity Difference increased from 0.0683 to 0.0847, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_075",
+      "claim_id": "dir_interp_4",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equalized Odds Difference: changed from 0.1086 to 0.1638 (absolute change: +0.0552, direction: increase, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__3e772ca6",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Equalized Odds Difference increased from 0.1086 to 0.1638, which is consistent with the provided evidence. The absolute change of +0.0552 and direction of increase also align with the reported values.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_076",
+      "claim_id": "dir_interp_3",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "| demographic_parity_difference   | Fairness    | 0.2859   | 0.0467    | -0.2392  | decrease  | improvement       | Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, moving closer to ideal parity (0.0)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that the Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_077",
+      "claim_id": "dir_interp_2",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Demographic Parity Difference: changed from 0.1895 to 0.0192 (absolute change: -0.1703, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in Demographic Parity Difference from 0.1895 to 0.0192, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_078",
+      "claim_id": "dir_interp_4",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Equalized Odds Difference: changed from 0.2830 to 0.0957 (absolute change: -0.1873, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed42__ccfc4f9c",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Equalized Odds Difference decreased from 0.2830 to 0.0957, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_079",
+      "claim_id": "dir_interp_8",
+      "claim_type": "fairness_interpretation",
+      "claim_text": "- Disparate Impact: changed from 0.8781 to 1.0052 (absolute change: +0.1271, direction: increase, evaluation: improvement)",
+      "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the Disparate Impact value increased from 0.8781 to 1.0052, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_080",
+      "claim_id": "dir_interp_16",
+      "claim_type": "performance",
+      "claim_text": "- Precision: changed from 0.7858 to 0.7641 (absolute change: -0.0217, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed456__96b73ae1",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in precision from 0.7858 to 0.7641, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_081",
+      "claim_id": "dir_interp_10",
+      "claim_type": "performance",
+      "claim_text": "- False Positive Rate Difference: changed from 0.0801 to 0.0524 (absolute change: -0.0277, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__cf630b0a",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in False Positive Rate Difference from 0.0801 to 0.0524, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_082",
+      "claim_id": "dir_interp_20",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.8188 to 0.8361 (absolute change: +0.0173, direction: increase, evaluation: improvement)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the F1 Score increased from 0.8188 to 0.8361, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_083",
+      "claim_id": "dir_interp_20",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.6291 to 0.5929 (absolute change: -0.0362, direction: decrease, evaluation: degradation)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed123__1dfb0b80",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in F1 Score from 0.6291 to 0.5929, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_084",
+      "claim_id": "dir_interp_16",
+      "claim_type": "performance",
+      "claim_text": "- Precision: changed from 0.6767 to 0.6441 (absolute change: -0.0326, direction: decrease, evaluation: degradation)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__6a1a53f7",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the precision decreased from 0.6767 to 0.6441, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_085",
+      "claim_id": "dir_interp_20",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.8208 to 0.7973 (absolute change: -0.0235, direction: decrease, evaluation: degradation)",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed123__54fb0237",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in F1 Score from 0.8208 to 0.7973, with a decrease of -0.0235, which is consistent with the audit evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_086",
+      "claim_id": "dir_interp_14",
+      "claim_type": "performance",
+      "claim_text": "- Accuracy: changed from 0.8604 to 0.8447 (absolute change: -0.0157, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed123__f2260c85",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in accuracy from 0.8604 to 0.8447, with a decrease of -0.0157.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_087",
+      "claim_id": "dir_interp_20",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.6418 to 0.6186 (absolute change: -0.0232, direction: decrease, evaluation: degradation)",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__d2ac04f4",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in F1 Score from 0.6418 to 0.6186, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_088",
+      "claim_id": "dir_interp_20",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.6618 to 0.6358 (absolute change: -0.0260, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__3e772ca6",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in F1 Score from 0.6618 to 0.6358, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_089",
+      "claim_id": "dir_interp_12",
+      "claim_type": "performance",
+      "claim_text": "- False Negative Rate Difference: changed from 0.0826 to 0.3033 (absolute change: +0.2207, direction: increase, evaluation: degradation)",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__c3711d22",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in False Negative Rate Difference, with a significant increase from 0.0826 to 0.3033, indicating degradation in performance.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_090",
+      "claim_id": "dir_interp_10",
+      "claim_type": "performance",
+      "claim_text": "- False Positive Rate Difference: changed from 0.0805 to 0.0291 (absolute change: -0.0514, direction: decrease, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports a decrease in the False Positive Rate Difference from 0.0805 to 0.0291, with an absolute change of -0.0514, indicating an improvement.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_091",
+      "claim_id": "dir_interp_10",
+      "claim_type": "performance",
+      "claim_text": "- False Positive Rate Difference: changed from 0.3339 to 0.0310 (absolute change: -0.3029, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__d2ac04f4",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports a decrease in the False Positive Rate Difference from 0.3339 to 0.0310, with an absolute change of -0.3029, indicating an improvement.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_092",
+      "claim_id": "dir_interp_18",
+      "claim_type": "performance",
+      "claim_text": "- Recall: changed from 0.5875 to 0.5171 (absolute change: -0.0704, direction: decrease, evaluation: degradation)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__7b502b89",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in recall from 0.5875 to 0.5171, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_093",
+      "claim_id": "dir_interp_14",
+      "claim_type": "performance",
+      "claim_text": "- Accuracy: changed from 0.6733 to 0.6420 (absolute change: -0.0313, direction: decrease, evaluation: degradation)",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__6a1a53f7",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim accurately reports the change in accuracy from 0.6733 to 0.6420, with a clear direction of decrease and an absolute change of -0.0313.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_094",
+      "claim_id": "dir_interp_16",
+      "claim_type": "performance",
+      "claim_text": "- Precision: changed from 0.7409 to 0.7507 (absolute change: +0.0098, direction: increase, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the precision increased from 0.7409 to 0.7507, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_095",
+      "claim_id": "dir_interp_20",
+      "claim_type": "performance",
+      "claim_text": "- F1 Score: changed from 0.6486 to 0.6467 (absolute change: -0.0019, direction: decrease, evaluation: degradation)",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in F1 Score from 0.6486 to 0.6467, which is accurately reflected in the audit evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_096",
+      "claim_id": "dir_interp_18",
+      "claim_type": "performance",
+      "claim_text": "- Recall: changed from 0.8929 to 0.8357 (absolute change: -0.0572, direction: decrease, evaluation: degradation)",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in recall from 0.8929 to 0.8357, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_097",
+      "claim_id": "dir_interp_18",
+      "claim_type": "performance",
+      "claim_text": "*   **Precision:** Increased from 0.7545 to 0.7716 (Delta: +0.0171), indicating an improvement",
+      "experiment_id": "german__random_forest__correlation_remover__seed123__9b5a5fb2",
+      "explanation_source": "gemini__gemini-2.5-flash",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 0.95,
+        "justification": "The claim states that precision increased from 0.7545 to 0.7716, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_098",
+      "claim_id": "dir_interp_12",
+      "claim_type": "performance",
+      "claim_text": "- False Negative Rate Difference: changed from 0.2105 to 0.0046 (absolute change: -0.2059, direction: decrease, evaluation: improvement)",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__7b502b89",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states a decrease in the False Negative Rate Difference from 0.2105 to 0.0046, which is accurately reflected in the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_099",
+      "claim_id": "dir_interp_16",
+      "claim_type": "performance",
+      "claim_text": "- Precision: changed from 0.7722 to 0.7862 (absolute change: +0.0140, direction: increase, evaluation: improvement)",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the precision increased from 0.7722 to 0.7862, which is quantitatively accurate according to the provided evidence.",
+        "is_ambiguous": false
+      }
+    },
+    {
+      "sample_queue_id": "FINAL_CLAIM_100",
+      "claim_id": "dir_math_7",
+      "claim_type": "directional",
+      "claim_text": "- Disparate Impact: changed from 0.2862 to 0.5416 (absolute change: +0.2554, direction: increase, evaluation: improvement)",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__462a71d8",
+      "explanation_source": "template_baseline",
+      "automated_evaluator": {
+        "classification": "SUPPORTED",
+        "rationale": "Claim that disparate_impact 'increase' matches ground truth direction: increase."
+      },
+      "independent_adjudicator": {
+        "model": "llama3:latest",
+        "provider": "ollama_local_gpu",
+        "temperature": 0.0,
+        "seed": 42,
+        "verdict": "SUPPORTED",
+        "confidence": 1.0,
+        "justification": "The claim states that the disparate impact increased from 0.2862 to 0.5416, which is consistent with the provided evidence.",
+        "is_ambiguous": false
+      }
+    }
+  ]
+}

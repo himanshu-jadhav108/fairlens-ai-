@@ -1,0 +1,402 @@
+{
+  "quarantine_timestamp_utc": "2026-09-20T14:02:26.104246+00:00",
+  "quarantined_files_count": 44,
+  "records": [
+    {
+      "filename": "adult__logistic_regression__correlation_remover__seed123__39d9dc41.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__correlation_remover__seed123__39d9dc41.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__correlation_remover__seed123__39d9dc41.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__correlation_remover__seed123__c9a87169.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__correlation_remover__seed123__c9a87169.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__correlation_remover__seed123__c9a87169.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__correlation_remover__seed42__42c266e1.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__correlation_remover__seed42__42c266e1.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__correlation_remover__seed42__42c266e1.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__correlation_remover__seed42__f6158150.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__correlation_remover__seed42__f6158150.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__correlation_remover__seed42__f6158150.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__correlation_remover__seed456__b33525c4.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__correlation_remover__seed456__b33525c4.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__correlation_remover__seed456__b33525c4.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__threshold_optimizer__seed42__adca6fc8.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__threshold_optimizer__seed42__adca6fc8.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "adult__logistic_regression__threshold_optimizer__seed456__90c16eda.json",
+      "original_path": "research/results/final/manifests/adult__logistic_regression__threshold_optimizer__seed456__90c16eda.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/adult__logistic_regression__threshold_optimizer__seed456__90c16eda.json",
+      "artifact_type": "manifest",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__90c16eda",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "compas__random_forest__correlation_remover__seed123__24857611.json",
+      "original_path": "research/results/final/manifests/compas__random_forest__correlation_remover__seed123__24857611.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/compas__random_forest__correlation_remover__seed123__24857611.json",
+      "artifact_type": "manifest",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__24857611",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "compas__random_forest__correlation_remover__seed42__a5033857.json",
+      "original_path": "research/results/final/manifests/compas__random_forest__correlation_remover__seed42__a5033857.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/compas__random_forest__correlation_remover__seed42__a5033857.json",
+      "artifact_type": "manifest",
+      "experiment_id": "compas__random_forest__correlation_remover__seed42__a5033857",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "compas__random_forest__correlation_remover__seed456__eddcbf0a.json",
+      "original_path": "research/results/final/manifests/compas__random_forest__correlation_remover__seed456__eddcbf0a.json",
+      "quarantine_path": "research/results/legacy_retries/manifests/compas__random_forest__correlation_remover__seed456__eddcbf0a.json",
+      "artifact_type": "manifest",
+      "experiment_id": "compas__random_forest__correlation_remover__seed456__eddcbf0a",
+      "reason": "Non-canonical manifest (legacy retry or orphan pilot)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "explanation__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__combined_audit_v1.json",
+      "original_path": "research/results/final/raw/explanation__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__combined_audit_v1.json",
+      "quarantine_path": "research/results/legacy_retries/raw/explanation__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__combined_audit_v1.json",
+      "artifact_type": "raw_explanation",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "reason": "Non-canonical Gemini explanation run (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "explanation__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__combined_audit_v1.json",
+      "original_path": "research/results/final/raw/explanation__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__combined_audit_v1.json",
+      "quarantine_path": "research/results/legacy_retries/raw/explanation__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__combined_audit_v1.json",
+      "artifact_type": "raw_explanation",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "reason": "Non-canonical Gemini explanation run (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "explanation__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__combined_audit_v1.json",
+      "original_path": "research/results/final/raw/explanation__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__combined_audit_v1.json",
+      "quarantine_path": "research/results/legacy_retries/raw/explanation__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__combined_audit_v1.json",
+      "artifact_type": "raw_explanation",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "reason": "Non-canonical Gemini explanation run (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "explanation__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__combined_audit_v1.json",
+      "original_path": "research/results/final/raw/explanation__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__combined_audit_v1.json",
+      "quarantine_path": "research/results/legacy_retries/raw/explanation__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__combined_audit_v1.json",
+      "artifact_type": "raw_explanation",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "reason": "Non-canonical Gemini explanation run (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "explanation__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__combined_audit_v1.json",
+      "original_path": "research/results/final/raw/explanation__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__combined_audit_v1.json",
+      "quarantine_path": "research/results/legacy_retries/raw/explanation__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__combined_audit_v1.json",
+      "artifact_type": "raw_explanation",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "reason": "Non-canonical Gemini explanation run (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed123__39d9dc41__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed123__39d9dc41__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed123__39d9dc41__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed123__39d9dc41__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed123__39d9dc41__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed123__39d9dc41__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed123__c9a87169__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed123__c9a87169__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed123__c9a87169__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed42__42c266e1__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed42__42c266e1__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed42__42c266e1__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed42__42c266e1__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed42__42c266e1__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed42__42c266e1__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed42__f6158150__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed42__f6158150__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed42__f6158150__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__correlation_remover__seed456__b33525c4__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__correlation_remover__seed456__b33525c4__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__correlation_remover__seed456__b33525c4__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__gemini-2.5-flash.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "claims__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__template_baseline.json",
+      "original_path": "research/results/final/claims/claims__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/claims/claims__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__template_baseline.json",
+      "artifact_type": "claims",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "reason": "Non-canonical claims artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed123__39d9dc41__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed123__39d9dc41__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed123__39d9dc41__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed123__39d9dc41__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed123__39d9dc41__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed123__39d9dc41__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__39d9dc41",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed123__c9a87169__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed123__c9a87169__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed123__c9a87169__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed123__c9a87169__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed42__42c266e1__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed42__42c266e1__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed42__42c266e1__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed42__42c266e1__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed42__42c266e1__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed42__42c266e1__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__42c266e1",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed42__f6158150__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed42__f6158150__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed42__f6158150__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed42__f6158150__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed456__b33525c4__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__correlation_remover__seed456__b33525c4__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__correlation_remover__seed456__b33525c4__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__correlation_remover__seed456__b33525c4__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__6d4e9e00",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__gemini-2.5-flash.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__gemini-2.5-flash.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__gemini__gemini-2.5-flash.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    },
+    {
+      "filename": "summary__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__template_baseline.json",
+      "original_path": "research/results/final/summaries/summary__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__template_baseline.json",
+      "quarantine_path": "research/results/legacy_retries/summaries/summary__adult__logistic_regression__threshold_optimizer__seed42__adca6fc8__template_baseline.json",
+      "artifact_type": "summary",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__adca6fc8",
+      "reason": "Non-canonical summary artifact (legacy duplicate retry)",
+      "included_in_final_statistics": false
+    }
+  ]
+}

@@ -211,7 +211,8 @@ def aggregate_faithfulness_summaries(
     summaries_dir: str = "research/results/summaries",
     output_dir: str = "research/results/processed",
     required_execution_mode: Optional[str] = None,
-    expected_conditions: Optional[List[Dict[str, Any]]] = None
+    expected_conditions: Optional[List[Dict[str, Any]]] = None,
+    canonical_inventory_path: Optional[str] = None
 ) -> Optional[pd.DataFrame]:
     """
     Parses faithfulness summary JSON files and builds aggregated faithfulness tables.
@@ -222,6 +223,7 @@ def aggregate_faithfulness_summaries(
         - Files from mock providers (explanation_source starts with 'mock') are excluded.
         - Files missing execution_mode are conservatively excluded.
         - If required_execution_mode is set, only matching files are admitted.
+        - If canonical_inventory_path or expected_conditions is set, only canonical condition IDs are admitted.
     """
     json_pattern = os.path.join(summaries_dir, "*.json")
     files = glob.glob(json_pattern)
@@ -230,10 +232,21 @@ def aggregate_faithfulness_summaries(
         print(f"[!] No summary files found in '{summaries_dir}'.")
         return None
 
+    canonical_exp_ids: Set[str] = set()
+    if canonical_inventory_path and os.path.exists(canonical_inventory_path):
+        try:
+            with open(canonical_inventory_path, "r", encoding="utf-8") as f:
+                inv_data = json.load(f)
+                canonical_exp_ids = {c.get("experiment_id") for c in inv_data.get("inventory", []) if c.get("experiment_id")}
+        except Exception as e:
+            print(f"[!] Warning: Failed parsing canonical inventory at '{canonical_inventory_path}': {e}")
+    elif expected_conditions:
+        canonical_exp_ids = {c.get("experiment_id") for c in expected_conditions if c.get("experiment_id")}
+
     rows = []
     seen_keys: Set[Tuple[str, str, str]] = set()
     excluded_counts = {"smoke_path": 0, "mock_source": 0, "no_mode": 0, "wrong_mode": 0,
-                       "software_only": 0, "duplicate": 0}
+                       "software_only": 0, "duplicate": 0, "non_canonical": 0}
 
     for fp in files:
         norm_fp = fp.replace("\\", "/").lower()
@@ -273,6 +286,11 @@ def aggregate_faithfulness_summaries(
             continue
 
         exp_id = data.get("experiment_id")
+        # Guard: Canonical condition enforcement
+        if canonical_exp_ids and exp_id not in canonical_exp_ids:
+            excluded_counts["non_canonical"] += 1
+            continue
+
         prompt_id = data.get("prompt_id", "unknown")
 
         dedup_key = (exp_id, source, prompt_id)
@@ -308,7 +326,8 @@ def aggregate_faithfulness_summaries(
           f"No mode: {excluded_counts['no_mode']} | "
           f"Wrong mode: {excluded_counts['wrong_mode']} | "
           f"Software-only: {excluded_counts['software_only']} | "
-          f"Duplicate: {excluded_counts['duplicate']}")
+          f"Duplicate: {excluded_counts['duplicate']} | "
+          f"Non-canonical: {excluded_counts['non_canonical']}")
 
     if not rows:
         print("[FaithAggregator] No admissible faithfulness summaries found.")
