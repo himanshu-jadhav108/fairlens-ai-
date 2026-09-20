@@ -2,9 +2,13 @@
 
 **Study Title:** Quantitative Faithfulness of LLM-Generated Natural-Language Explanations for Machine Learning Fairness Audits: An Empirical Study  
 **Branch:** `research/fairness-xai-study`  
-**Base Commit Hash:** `2e47573`  
+**Provenance Commits:**
+- `79ca784`: Canonical 36-condition benchmark execution with `gemini-2.5-flash` and initial publication report generation.
+- `2e47573`: Independent scientific and experimental audit completion report.
+- `e80c314`: Final research reports, quarantine of non-canonical legacy runs, and local Llama 3 secondary adjudication.
+**Audited Commit Hash:** `e80c314` (Current HEAD)  
 **Ledger Date:** 2026-09-20  
-**Status:** **FROZEN EMPIRICAL EVIDENCE**  
+**Status:** **FROZEN CONTROLLED BENCHMARK EVIDENCE**  
 
 ---
 
@@ -45,7 +49,12 @@ Every empirical number, statistical comparison, and metric cited in the research
 | **Adjudication Numerical Agreement** | 80.0% concordance (16/20) | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 3, Table 2 |
 | **Adjudication Magnitude Agreement** | 0.0% (evaluator routes to UNDETERMINABLE) | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 3, Table 2 |
 | **Adjudication Cohen's Kappa** | $\kappa = 0.063$ | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 2, Table 1 |
-| **Evaluator False Positives (Fabricated Values)** | 0 cases (0.0%) | `research/results/final/adjudication/adjudication_records.json` | Zero hallucinated numbers accepted |
+| **Evaluator False Positives (Fabricated Values)** | 0 cases in 100-claim sample (0.0%) | `research/results/final/adjudication/adjudication_records.json` | Zero hallucinated numbers accepted in sensitivity sample |
+| **Canonical Total Extracted Claims** | 1,306 claims (888 supp, 305 undet, 113 unsup) | `research/results/final/claims/claims__*.json` | 36 canonical Gemini claim files |
+| **Canonical Numerical Claims** | 1,125 claims (726 supp, 290 undet, 109 unsup) | `research/results/final/claims/claims__*.json` | 36 canonical Gemini claim files |
+| **Canonical Unsupported Numerical Claims** | 109 claims ($9.69\%$ of numerical claims) | `research/results/final/claims/claims__*.json` | Filter: `claim_type=='numerical' & classification=='UNSUPPORTED'` |
+| **Canonical Unsupported Directional Claims** | 4 claims across 4 conditions ($11.11\%$ of runs) | `research/results/final/claims/claims__*.json` | Filter: `claim_type=='directional' & classification=='UNSUPPORTED'` |
+| **Canonical Total Unsupported Claims** | 113 claims (109 numerical + 4 directional) | `research/results/final/claims/claims__*.json` | Filter: `classification=='UNSUPPORTED'` |
 
 ---
 
