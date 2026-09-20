@@ -34,11 +34,13 @@ Every empirical number, statistical comparison, and metric cited in the research
 | **Directional Paired $t$-test** | $t = -1.328, p = 0.1979$ (Non-significant) | `research/results/final/processed/final_paired_comparison.csv` | Row 1, Col: `t_statistic`, `t_p_value` |
 | **Directional Wilcoxon Signed-Rank** | $W = 0.0, p = 0.0679$ | `research/results/final/processed/final_paired_comparison.csv` | Row 1, Col: `wilcoxon_w`, `wilcoxon_p_value` |
 | **Template Unsupported Claim Rate** | $0.00\% \pm 0.00\%$ | `research/results/final/processed/final_paired_comparison.csv` | Row 3, Col: `mean_template` |
-| **Gemini Unsupported Claim Rate** | $8.51\% \pm 8.72\%$ | `research/results/final/processed/final_paired_comparison.csv` | Row 3, Col: `mean_llm`, `std_difference` |
+| **Gemini Unsupported Claim Rate (Mean)** | $8.51\% \pm 8.72\%$ (Condition Mean) | `research/results/final/processed/final_paired_comparison.csv` | Unweighted mean of 36 condition-level rates |
+| **Gemini Unsupported Claim Rate (Pooled)**| $8.65\%$ (113 / 1,306 claims) | `research/results/final/claims/claims__*.json` | Pooled claim-level taxonomy across all 36 Gemini files |
 | **Unsupported Claim Paired $t$-test** | $t = 5.854, p = 1.20 \times 10^{-6}$ | `research/results/final/processed/final_paired_comparison.csv` | Row 3, Col: `t_statistic`, `t_p_value` |
 | **Adult Census Benchmark Size** | 48,842 instances, 15 attributes | `research/data/adult.csv` | `shape = (48842, 15)` |
 | **COMPAS Benchmark Size** | 7,214 instances, 53 attributes | `research/data/compas.csv` | `shape = (7214, 53)` |
 | **German Credit Benchmark Size** | 1,000 instances, 21 attributes | `research/data/german.csv` | `shape = (1000, 21)` |
+| **Total Benchmark Instances** | 57,056 instances ($48,842 + 7,214 + 1,000$) | `research/data/*.csv` | Pooled instances across all 3 benchmark datasets |
 | **Synthetic Fallback Instances** | 0 instances (0.0% synthetic) | `research/results/final/manifests/*.json` | `is_synthetic_benchmark: false` |
 | **Evidence Cryptographic Parity** | 36 / 36 conditions (100% match) | `research/results/final/raw/*.json` | `input_evidence_hash` parity |
 | **Secondary Adjudication Queue** | 100 stratified claims | `research/results/final/human_annotation_sample.json` | Key: `"claims": [100 items]` |
@@ -48,12 +50,12 @@ Every empirical number, statistical comparison, and metric cited in the research
 | **Adjudication Performance Agreement**| 100.0% concordance (20/20) | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 3, Table 2 |
 | **Adjudication Numerical Agreement** | 80.0% concordance (16/20) | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 3, Table 2 |
 | **Adjudication Magnitude Agreement** | 0.0% (evaluator routes to UNDETERMINABLE) | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 3, Table 2 |
-| **Adjudication Cohen's Kappa** | $\kappa = 0.063$ | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 2, Table 1 |
+| **Adjudication Cohen's Kappa** | Ternary $\kappa = 0.063$, Binary collapsed $\kappa = 0.045$ | `research/results/final/INDEPENDENT_LLM_ADJUDICATION_REPORT.md` | Section 2 & 4 (Attenuated by Kappa Paradox due to 98% vs 2% base rate skew; observed raw agreement is 77.0%) |
 | **Evaluator False Positives (Fabricated Values)** | 0 cases in 100-claim sample (0.0%) | `research/results/final/adjudication/adjudication_records.json` | Zero hallucinated numbers accepted in sensitivity sample |
 | **Canonical Total Extracted Claims** | 1,306 claims (888 supp, 305 undet, 113 unsup) | `research/results/final/claims/claims__*.json` | 36 canonical Gemini claim files |
 | **Canonical Numerical Claims** | 1,125 claims (726 supp, 290 undet, 109 unsup) | `research/results/final/claims/claims__*.json` | 36 canonical Gemini claim files |
 | **Canonical Unsupported Numerical Claims** | 109 claims ($9.69\%$ of numerical claims) | `research/results/final/claims/claims__*.json` | Filter: `claim_type=='numerical' & classification=='UNSUPPORTED'` |
-| **Canonical Unsupported Directional Claims** | 4 claims across 4 conditions ($11.11\%$ of runs) | `research/results/final/claims/claims__*.json` | Filter: `claim_type=='directional' & classification=='UNSUPPORTED'` |
+| **Canonical Unsupported Directional Claims** | 4 claims across 4 conditions ($11.11\%$ of runs) | `research/results/final/claims/claims__*.json` | Filter: `claim_type=='directional' & classification=='UNSUPPORTED'` (ratio-transition mismatches) |
 | **Canonical Total Unsupported Claims** | 113 claims (109 numerical + 4 directional) | `research/results/final/claims/claims__*.json` | Filter: `classification=='UNSUPPORTED'` |
 
 ---

@@ -27,10 +27,17 @@ This independent secondary adjudication evaluates the reliability and validity o
 
 | Metric | Measured Value | Scientific Interpretation |
 |---|---|---|
-| **Overall Agreement Rate** | **77.0%** (77/100) | High inter-method concordance across multi-metric fairness claims |
-| **Overall Disagreement Rate** | **23.0%** (23/100) | Traceable to subtle numerical rounding tolerances and causal boundaries |
-| **Cohen's Kappa ($\kappa$)** | **0.063** | Substantial agreement beyond chance according to Landis & Koch (1977) criteria |
+| **Overall Agreement Rate** | **77.0%** (77/100) | High raw concordance across multi-metric fairness claims |
+| **Overall Disagreement Rate** | **23.0%** (23/100) | Traceable to conservative evaluator thresholds on subjective magnitude phrasing |
+| **Cohen's Kappa ($\kappa_{3\text{-class}}$)** | **0.063** | Ternary nominal calculation ($P_o = 0.770, P_e = 0.755$); slight agreement under Landis & Koch (1977) |
+| **Cohen's Kappa ($\kappa_{2\text{-class}}$)** | **0.045** | Binary collapsed calculation (Supported vs Non-Supported, $P_o = 0.770, P_e = 0.759$) |
 | **Adjudication Mean Confidence** | **0.98** | Strong model certainty across structured numeric tasks |
+
+> [!NOTE]
+> **Methodological Note on Cohen's Kappa & the Kappa Paradox:**  
+> The nominal ternary Cohen's Kappa is $\kappa = \frac{P_o - P_e}{1 - P_e} = \frac{0.7700 - 0.7546}{1.0000 - 0.7546} = \frac{0.0154}{0.2454} \approx 0.063$.  
+> If non-supported categories (`UNDETERMINABLE` and `UNSUPPORTED`) are collapsed into a single binary non-supported class, expected agreement rises to $P_e = (0.77 \times 0.98) + (0.23 \times 0.02) = 0.7592$, yielding binary $\kappa = \frac{0.7700 - 0.7592}{1.0000 - 0.7592} = \frac{0.0108}{0.2408} \approx 0.045$.  
+> Both values are heavily attenuated by the classic **Kappa Paradox** (Feinstein & Cicchetti, 1990; Byrt et al., 1993): when marginal base rates are severely skewed ($98\%$ vs $2\%$ for adjudicator; $77\%$ vs $23\%$ for evaluator), chance-expected agreement $P_e$ is extremely high ($\approx 0.755$), drastically shrinking the denominator $(1 - P_e)$ to $\approx 0.245$. In addition, the adjudicator evaluates subjective phrasing semantically and assigns zero claims to `UNDETERMINABLE`. Therefore, raw category concordance ($77.0\%$) and the confusion matrix below provide the scientifically transparent characterization of inter-method alignment.
 
 ---
 
@@ -56,6 +63,10 @@ Rows represent the **Automated Evaluator** classification; columns represent the
 | **UNSUPPORTED** | 0 | 0 | 0 | 0 |
 | **UNDETERMINABLE** | 21 | 2 | 0 | 23 |
 | **Total Adjudicator** | 98 | 2 | 0 | 100 |
+
+*Observed Agreement:* $P_o = \frac{77 + 0 + 0}{100} = 0.7700$ (77.0%).  
+*Ternary Expected Agreement:* $P_e = (0.77 \times 0.98) + (0.00 \times 0.02) + (0.23 \times 0.00) = 0.7546$. $\kappa = \frac{0.7700 - 0.7546}{1.0000 - 0.7546} \approx 0.063$.  
+*Binary Collapsed Expected Agreement:* $P_e = (0.77 \times 0.98) + (0.23 \times 0.02) = 0.7592$. $\kappa_{\text{binary}} = \frac{0.7700 - 0.7592}{1.0000 - 0.7592} \approx 0.045$.
 
 ---
 
