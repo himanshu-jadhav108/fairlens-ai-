@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+  "dataset_name": "german",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a machine learning model configured as a `random_forest` classifier, trained on the `german` dataset. The audit specifically focuses on fairness with respect to the `age_group` protected attribute, where `1` represents the privileged group and `0` represents the unprivileged group. The model was trained with a random seed of `456`. To address potential fairness issues, a `threshold_optimizer` postprocessing mitigation technique was applied.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited notable disparities across several fairness metrics, while demonstrating a reasonable level of overall performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.2666\n*   **Equalized Odds Difference:** 0.2881\n*   **Equal Opportunity Difference:** 0.1467\n*   **Disparate Impact:** 0.6677\n*   **False Positive Rate Difference:** 0.2881\n*   **False Negative Rate Difference:** 0.1467\n\nThese baseline values indicate that the model's predictions and error rates were not uniformly distributed across the `age_group` categories, with differences ranging from 0.1467 to 0.2881 for difference metrics (where 0.0 is ideal parity) and a Disparate Impact ratio of 0.6677 (where 1.0 is ideal parity).\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.7450\n*   **Precision:** 0.7908\n*   **Recall:** 0.8643\n*   **F1 Score:** 0.8259\n*   **ROC AUC:** 0.7823\n\nThe model's baseline performance showed an accuracy of 74.50% and a strong recall of 86.43%, contributing to an F1 score of 82.59%.\n\n### 3. Mitigation Impact and Comparison\n\nThe application of the `threshold_optimizer` mitigation strategy resulted in significant improvements across all audited fairness metrics, accompanied by a mixed impact on performance metrics.\n\n**Fairness Metric Changes (Baseline vs. Mit",
+  "timestamp_utc": "2026-09-20T08:41:22.676449+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.042,
+    "finish_reason": "2",
+    "prompt_tokens": 1692,
+    "completion_tokens": 513,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__logistic_regression__correlation_remover__seed456__e69a9374",
+  "dataset_name": "german",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "94589153400532a5e00afb7c7467f358bb987ceb8d14ce4df18eec53978f9686",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `logistic_regression` model trained on the `german` dataset. The protected attribute under examination is `age_group`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `456`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1005 (deviation from ideal 0.0)\n*   **Equalized Odds Difference:** 0.1307 (deviation from ideal 0.0)\n*   **Equal Opportunity Difference:** 0.1307 (deviation from ideal 0.0)\n*   **Disparate Impact:** 0.8710 (deviation from ideal 1.0)\n*   **False Positive Rate Difference:** 0.0622 (deviation from ideal 0.0)\n*   **False Negative Rate Difference:** 0.1307 (deviation from ideal 0.0)\n\n**Performance Metrics:**\n*   **Accuracy:** 0.7250\n*   **Precision:** 0.7778\n*   **Recall:** 0.8500\n*   **F1 Score:** 0.8123\n*   **ROC-AUC:** 0.7720\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on fairness and performance metrics was evaluated against the baseline.\n\n**Impact on Fairness Metrics:**\n\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.1005 | Mitigated: 0.1071 | Delta: +0.0066\n    *   Direction: increase | Domain Evaluation: degradation\n    *   Rationale: Absolute Demographic Parity Difference increased from 0.1005 to 0.1071, moving further from ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.1307 | Mitigated: 0.3781 | Delta: +0.2474\n    *   Direction: increase | Domain Evaluation: degradation\n    *   Rationale: Absolute Equalized Odds Difference increased from 0.1307 to 0.3781, moving further from ideal parity (0.0).\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.1307 | Mitigated: 0.0107 | Delta: -0.1200\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   Rationale: Absolute Equal Opportunity Difference decreased from 0.1307 to 0.0107, moving closer to ideal parity (0.0).\n*   **Disparate Impact:**\n    *   Baseline: 0.8710 | Mitigated: 1.1429 | Delta: +0.2719\n    *   Direction: increase | Domain Evaluation: degradation\n    *   Rationale: Disparate Impact moved from 0.8710 to 1.1429, further from ideal parity ratio (1.0).\n*   **False Positive Rate Difference:**\n    *   Baseline: 0.0622 | Mitigated: 0.3781 | Delta: +0.3159\n    *   Direction: increase | Domain Evaluation: degradation\n    *   Rationale: Absolute False Positive Rate Difference increased from 0.0622 to 0.3781, moving further from ideal parity (0.0).\n*   **False Negative Rate Difference:**\n    *   Baseline: 0.1307 | Mitigated: 0.0107 | Delta: -0.1200\n    *   ",
+  "timestamp_utc": "2026-09-20T08:39:25.491228+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 7.474,
+    "finish_reason": "2",
+    "prompt_tokens": 1710,
+    "completion_tokens": 925,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

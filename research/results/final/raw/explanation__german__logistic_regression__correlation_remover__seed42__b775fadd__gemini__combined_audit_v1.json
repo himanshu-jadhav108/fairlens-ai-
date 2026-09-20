@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__logistic_regression__correlation_remover__seed42__b775fadd",
+  "dataset_name": "german",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "6c0a28ee6100c55d6584257992d21a1f575126d294870992abdb68caa63b6b06",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `german` dataset. The protected attribute under consideration is `age_group`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a random seed of `42`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.0191 (Close to ideal parity of 0.0)\n*   **Equalized Odds Difference:** 0.1818 (Further from ideal parity of 0.0)\n*   **Equal Opportunity Difference:** 0.0683 (Further from ideal parity of 0.0)\n*   **Disparate Impact:** 0.9765 (Close to ideal parity ratio of 1.0)\n*   **False Positive Rate Difference:** 0.1818 (Further from ideal parity of 0.0)\n*   **False Negative Rate Difference:** 0.0683 (Further from ideal parity of 0.0)\n\n**Performance Metrics:**\n*   **Accuracy:** 0.7400\n*   **Precision:** 0.7716\n*   **Recall:** 0.8929\n*   **F1 Score:** 0.8278\n*   **ROC-AUC:** 0.7767\n\nAt baseline, the model showed relatively good Demographic Parity Difference and Disparate Impact, indicating a small difference in overall positive prediction rates between groups. However, metrics related to error rate parity, such as Equalized Odds Difference, Equal Opportunity Difference, and False Positive/Negative Rate Differences, showed more substantial disparities.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` mitigation technique was applied, and its impact on fairness and performance metrics was evaluated:\n\n**Fairness Metrics:**\n\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.0191 | Mitigated: 0.0691 | Delta: +0.0500\n    *   Direction: Increase | Domain Evaluation: Degradation\n    *   *Rationale:* The absolute Demographic Parity Difference increased, moving further from ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.1818 | Mitigated: 0.3068 | Delta: +0.1250\n    *   Direction: Increase | Domain Evaluation: Degradation\n    *   *Rationale:* The absolute Equalized Odds Difference increased, moving further from ideal parity (0.0).\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.0683 | Mitigated: 0.0128 | Delta: -0.0555\n    *   Direction: Decrease | Domain Evaluation: Improvement\n    *   *Rationale:* The absolute Equal Opportunity Difference decreased, moving closer to ideal parity (0.0).\n*   **Disparate Impact:**\n    *   Baseline: 0.9765 | Mitigated: 1.0850 | Delta: +0.1085\n    *   Direction: Increase | Domain Evaluation: Degradation\n    *   *Rationale:* Disparate Impact moved further from the ideal parity ratio (1.0).\n*   **False Positive Rate Difference:**\n    *   Baseline: 0.1818 | Mitigated: 0.3068 | Delta: +0.1250\n    *   Direction: Increase | Domain Evaluation: Degradation\n    *   *Rationale:* The absolute False Positive Rate Difference increased, moving further from ideal parity (0.0).\n*   **False Negative Rate Difference:**\n    *   Baseline: 0.0683 | Mitigated: 0.0128 | Delta: -0.0555\n    *   Direction: Decrease | Domain Evaluation: Improvement\n    *   *Rationale:* The absolute False Negative Rate Difference decreased, moving closer to ideal parity (0.0).\n\n**Performance Metrics:**\n\n*   **Accuracy:**\n    *   Baseline: 0.7400 | Mitigated: 0.7350 | Delta: -0.0050",
+  "timestamp_utc": "2026-09-20T08:38:59.176259+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.925,
+    "finish_reason": "2",
+    "prompt_tokens": 1706,
+    "completion_tokens": 1004,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

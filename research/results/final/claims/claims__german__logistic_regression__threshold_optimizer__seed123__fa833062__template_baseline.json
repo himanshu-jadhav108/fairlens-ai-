@@ -1,0 +1,2667 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Demographic Parity Difference: 0.2859",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.2859,
+        "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.2859,
+        0.2859
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2859,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.2859",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2859 for state 'baseline' matches ground truth 0.2859 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.2859,
+      "raw_string": "0.2859",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2859,
+      "candidate_values": [
+        0.2859,
+        0.2859
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_2",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Equalized Odds Difference: 0.3144",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.3144,
+        "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.3144,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.3144",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.3144 for state 'baseline' matches ground truth 0.3144 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.3144,
+      "raw_string": "0.3144",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.3144,
+      "candidate_values": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_3",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Disparate Impact: 0.6602",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.6602,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        0.6602,
+        0.6602
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6602,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.6602",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6602 for state 'baseline' matches ground truth 0.6602 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 0.6602,
+      "raw_string": "0.6602",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6602,
+      "candidate_values": [
+        0.6602,
+        0.6602
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_4",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline Accuracy: 0.7300",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.73,
+        "path": "baseline_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        0.73,
+        0.73
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.73,
+      "metric_alias": "accuracy",
+      "raw_string": "0.7300",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.73 for state 'baseline' matches ground truth 0.73 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 0.73,
+      "raw_string": "0.7300",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.73,
+      "candidate_values": [
+        0.73,
+        0.73
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_5",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Baseline F1 Score: 0.8188",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8188,
+        "path": "baseline_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        0.8188,
+        0.8188
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8188,
+      "metric_alias": "f1 score",
+      "raw_string": "0.8188",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8188 for state 'baseline' matches ground truth 0.8188 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 0.8188,
+      "raw_string": "0.8188",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8188,
+      "candidate_values": [
+        0.8188,
+        0.8188
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_6",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.2859 to 0.0467 (absolute change: -0.2392, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.2859,
+        "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.2859,
+        0.2859
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2859,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.2859 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2859 for state 'baseline' matches ground truth 0.2859 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.2859,
+      "raw_string": "0.2859 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2859,
+      "candidate_values": [
+        0.2859,
+        0.2859
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_7",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.2859 to 0.0467 (absolute change: -0.2392, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.0467,
+        "path": "mitigated_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.0467,
+        0.0467
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0467,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.0467 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0467 for state 'mitigated' matches ground truth 0.0467 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.0467,
+      "raw_string": "0.0467 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0467,
+      "candidate_values": [
+        0.0467,
+        0.0467
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_8",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Demographic Parity Difference: changed from 0.2859 to 0.0467 (absolute change: -0.2392, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.2392,
+        "path": "metric_comparisons.demographic_parity_difference.absolute_change"
+      },
+      "all_candidates": [
+        -0.2392
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.2392,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "-0.2392",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.2392 for state 'absolute_change' matches ground truth -0.2392 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.absolute_change",
+    "extracted_values": {
+      "value": -0.2392,
+      "raw_string": "-0.2392",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.2392,
+      "candidate_values": [
+        -0.2392
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_9",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.3144 to 0.2586 (absolute change: -0.0558, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.3144,
+        "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.3144,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.3144 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.3144 for state 'baseline' matches ground truth 0.3144 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.3144,
+      "raw_string": "0.3144 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.3144,
+      "candidate_values": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_10",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.3144 to 0.2586 (absolute change: -0.0558, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.2586,
+        "path": "mitigated_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.2586,
+        0.2586
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2586,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.2586 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2586 for state 'mitigated' matches ground truth 0.2586 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.2586,
+      "raw_string": "0.2586 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2586,
+      "candidate_values": [
+        0.2586,
+        0.2586
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_11",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Equalized Odds Difference: changed from 0.3144 to 0.2586 (absolute change: -0.0558, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.0558,
+        "path": "metric_comparisons.equalized_odds_difference.absolute_change"
+      },
+      "all_candidates": [
+        -0.0558
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.0558,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "-0.0558",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.0558 for state 'absolute_change' matches ground truth -0.0558 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.equalized_odds_difference.absolute_change",
+    "extracted_values": {
+      "value": -0.0558,
+      "raw_string": "-0.0558",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.0558,
+      "candidate_values": [
+        -0.0558
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_12",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.3144,
+        "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+      },
+      "all_candidates": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.3144,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.3144 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.3144 for state 'baseline' matches ground truth 0.3144 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+    "extracted_values": {
+      "value": 0.3144,
+      "raw_string": "0.3144 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.3144,
+      "candidate_values": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_13",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.0279,
+        "path": "mitigated_state.fairness_metrics.equal_opportunity_difference.value"
+      },
+      "all_candidates": [
+        0.0279,
+        0.0279
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0279,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.0279 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0279 for state 'mitigated' matches ground truth 0.0279 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.equal_opportunity_difference.value",
+    "extracted_values": {
+      "value": 0.0279,
+      "raw_string": "0.0279 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0279,
+      "candidate_values": [
+        0.0279,
+        0.0279
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_14",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.2865,
+        "path": "metric_comparisons.equal_opportunity_difference.absolute_change"
+      },
+      "all_candidates": [
+        -0.2865
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.2865,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "-0.2865",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.2865 for state 'absolute_change' matches ground truth -0.2865 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.equal_opportunity_difference.absolute_change",
+    "extracted_values": {
+      "value": -0.2865,
+      "raw_string": "-0.2865",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.2865,
+      "candidate_values": [
+        -0.2865
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_15",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 0.6602 to 1.0594 (absolute change: +0.3992, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.6602,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        0.6602,
+        0.6602
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6602,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.6602 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6602 for state 'baseline' matches ground truth 0.6602 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 0.6602,
+      "raw_string": "0.6602 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6602,
+      "candidate_values": [
+        0.6602,
+        0.6602
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_16",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 0.6602 to 1.0594 (absolute change: +0.3992, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 1.0594,
+        "path": "mitigated_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        1.0594,
+        1.0594
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0594,
+      "metric_alias": "disparate impact",
+      "raw_string": "1.0594 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 1.0594 for state 'mitigated' matches ground truth 1.0594 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 1.0594,
+      "raw_string": "1.0594 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 1.0594,
+      "candidate_values": [
+        1.0594,
+        1.0594
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_17",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Disparate Impact: changed from 0.6602 to 1.0594 (absolute change: +0.3992, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.3992,
+        "path": "metric_comparisons.disparate_impact.absolute_change"
+      },
+      "all_candidates": [
+        0.3992
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.3992,
+      "metric_alias": "disparate impact",
+      "raw_string": "+0.3992",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.3992 for state 'absolute_change' matches ground truth 0.3992 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.disparate_impact.absolute_change",
+    "extracted_values": {
+      "value": 0.3992,
+      "raw_string": "+0.3992",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.3992,
+      "candidate_values": [
+        0.3992
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_18",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- False Positive Rate Difference: changed from 0.1768 to 0.2586 (absolute change: +0.0818, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "false_positive_rate_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.1768,
+        "path": "baseline_state.fairness_metrics.false_positive_rate_difference.value"
+      },
+      "all_candidates": [
+        0.1768,
+        0.1768
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1768,
+      "metric_alias": "false positive rate difference",
+      "raw_string": "0.1768 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1768 for state 'baseline' matches ground truth 0.1768 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.false_positive_rate_difference.value",
+    "extracted_values": {
+      "value": 0.1768,
+      "raw_string": "0.1768 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.1768,
+      "candidate_values": [
+        0.1768,
+        0.1768
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_19",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- False Positive Rate Difference: changed from 0.1768 to 0.2586 (absolute change: +0.0818, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "false_positive_rate_difference",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.2586,
+        "path": "mitigated_state.fairness_metrics.false_positive_rate_difference.value"
+      },
+      "all_candidates": [
+        0.2586,
+        0.2586
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2586,
+      "metric_alias": "false positive rate difference",
+      "raw_string": "0.2586 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2586 for state 'mitigated' matches ground truth 0.2586 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.false_positive_rate_difference.value",
+    "extracted_values": {
+      "value": 0.2586,
+      "raw_string": "0.2586 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2586,
+      "candidate_values": [
+        0.2586,
+        0.2586
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_20",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- False Positive Rate Difference: changed from 0.1768 to 0.2586 (absolute change: +0.0818, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "canonical_metric": "false_positive_rate_difference",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.0818,
+        "path": "metric_comparisons.false_positive_rate_difference.absolute_change"
+      },
+      "all_candidates": [
+        0.0818
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0818,
+      "metric_alias": "false positive rate difference",
+      "raw_string": "+0.0818",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0818 for state 'absolute_change' matches ground truth 0.0818 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.false_positive_rate_difference.absolute_change",
+    "extracted_values": {
+      "value": 0.0818,
+      "raw_string": "+0.0818",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0818,
+      "candidate_values": [
+        0.0818
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_21",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- False Negative Rate Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "false_negative_rate_difference",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.3144,
+        "path": "baseline_state.fairness_metrics.false_negative_rate_difference.value"
+      },
+      "all_candidates": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.3144,
+      "metric_alias": "false negative rate difference",
+      "raw_string": "0.3144 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.3144 for state 'baseline' matches ground truth 0.3144 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.false_negative_rate_difference.value",
+    "extracted_values": {
+      "value": 0.3144,
+      "raw_string": "0.3144 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.3144,
+      "candidate_values": [
+        0.3144,
+        0.3144
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_22",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- False Negative Rate Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "false_negative_rate_difference",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.0279,
+        "path": "mitigated_state.fairness_metrics.false_negative_rate_difference.value"
+      },
+      "all_candidates": [
+        0.0279,
+        0.0279
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0279,
+      "metric_alias": "false negative rate difference",
+      "raw_string": "0.0279 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0279 for state 'mitigated' matches ground truth 0.0279 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.fairness_metrics.false_negative_rate_difference.value",
+    "extracted_values": {
+      "value": 0.0279,
+      "raw_string": "0.0279 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0279,
+      "candidate_values": [
+        0.0279,
+        0.0279
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_23",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- False Negative Rate Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "false_negative_rate_difference",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": -0.2865,
+        "path": "metric_comparisons.false_negative_rate_difference.absolute_change"
+      },
+      "all_candidates": [
+        -0.2865
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": -0.2865,
+      "metric_alias": "false negative rate difference",
+      "raw_string": "-0.2865",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value -0.2865 for state 'absolute_change' matches ground truth -0.2865 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.false_negative_rate_difference.absolute_change",
+    "extracted_values": {
+      "value": -0.2865,
+      "raw_string": "-0.2865",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": -0.2865,
+      "candidate_values": [
+        -0.2865
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_24",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 0.7300 to 0.7550 (absolute change: +0.0250, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.73,
+        "path": "baseline_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        0.73,
+        0.73
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.73,
+      "metric_alias": "accuracy",
+      "raw_string": "0.7300 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.73 for state 'baseline' matches ground truth 0.73 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 0.73,
+      "raw_string": "0.7300 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.73,
+      "candidate_values": [
+        0.73,
+        0.73
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_25",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 0.7300 to 0.7550 (absolute change: +0.0250, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.755,
+        "path": "mitigated_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        0.755,
+        0.755
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.755,
+      "metric_alias": "accuracy",
+      "raw_string": "0.7550 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.755 for state 'mitigated' matches ground truth 0.755 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 0.755,
+      "raw_string": "0.7550 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.755,
+      "candidate_values": [
+        0.755,
+        0.755
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_26",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Accuracy: changed from 0.7300 to 0.7550 (absolute change: +0.0250, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.025,
+        "path": "metric_comparisons.accuracy.absolute_change"
+      },
+      "all_candidates": [
+        0.025
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.025,
+      "metric_alias": "accuracy",
+      "raw_string": "+0.0250",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.025 for state 'absolute_change' matches ground truth 0.025 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.accuracy.absolute_change",
+    "extracted_values": {
+      "value": 0.025,
+      "raw_string": "+0.0250",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.025,
+      "candidate_values": [
+        0.025
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_27",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 0.7722 to 0.7862 (absolute change: +0.0140, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.7722,
+        "path": "baseline_state.performance_metrics.precision.value"
+      },
+      "all_candidates": [
+        0.7722,
+        0.7722
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.7722,
+      "metric_alias": "precision",
+      "raw_string": "0.7722 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.7722 for state 'baseline' matches ground truth 0.7722 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+    "extracted_values": {
+      "value": 0.7722,
+      "raw_string": "0.7722 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.7722,
+      "candidate_values": [
+        0.7722,
+        0.7722
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_28",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 0.7722 to 0.7862 (absolute change: +0.0140, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.7862,
+        "path": "mitigated_state.performance_metrics.precision.value"
+      },
+      "all_candidates": [
+        0.7862,
+        0.7862
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.7862,
+      "metric_alias": "precision",
+      "raw_string": "0.7862 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.7862 for state 'mitigated' matches ground truth 0.7862 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.precision.value",
+    "extracted_values": {
+      "value": 0.7862,
+      "raw_string": "0.7862 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.7862,
+      "candidate_values": [
+        0.7862,
+        0.7862
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_29",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Precision: changed from 0.7722 to 0.7862 (absolute change: +0.0140, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.014,
+        "path": "metric_comparisons.precision.absolute_change"
+      },
+      "all_candidates": [
+        0.014
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.014,
+      "metric_alias": "precision",
+      "raw_string": "+0.0140",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.014 for state 'absolute_change' matches ground truth 0.014 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.precision.absolute_change",
+    "extracted_values": {
+      "value": 0.014,
+      "raw_string": "+0.0140",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.014,
+      "candidate_values": [
+        0.014
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_30",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 0.8714 to 0.8929 (absolute change: +0.0215, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8714,
+        "path": "baseline_state.performance_metrics.recall.value"
+      },
+      "all_candidates": [
+        0.8714,
+        0.8714
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8714,
+      "metric_alias": "recall",
+      "raw_string": "0.8714 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8714 for state 'baseline' matches ground truth 0.8714 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+    "extracted_values": {
+      "value": 0.8714,
+      "raw_string": "0.8714 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8714,
+      "candidate_values": [
+        0.8714,
+        0.8714
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_31",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 0.8714 to 0.8929 (absolute change: +0.0215, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8929,
+        "path": "mitigated_state.performance_metrics.recall.value"
+      },
+      "all_candidates": [
+        0.8929,
+        0.8929
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8929,
+      "metric_alias": "recall",
+      "raw_string": "0.8929 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8929 for state 'mitigated' matches ground truth 0.8929 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.recall.value",
+    "extracted_values": {
+      "value": 0.8929,
+      "raw_string": "0.8929 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8929,
+      "candidate_values": [
+        0.8929,
+        0.8929
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_32",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- Recall: changed from 0.8714 to 0.8929 (absolute change: +0.0215, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.0215,
+        "path": "metric_comparisons.recall.absolute_change"
+      },
+      "all_candidates": [
+        0.0215
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0215,
+      "metric_alias": "recall",
+      "raw_string": "+0.0215",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0215 for state 'absolute_change' matches ground truth 0.0215 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.recall.absolute_change",
+    "extracted_values": {
+      "value": 0.0215,
+      "raw_string": "+0.0215",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0215,
+      "candidate_values": [
+        0.0215
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_33",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.8188 to 0.8361 (absolute change: +0.0173, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8188,
+        "path": "baseline_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        0.8188,
+        0.8188
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8188,
+      "metric_alias": "f1 score",
+      "raw_string": "0.8188 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8188 for state 'baseline' matches ground truth 0.8188 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 0.8188,
+      "raw_string": "0.8188 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8188,
+      "candidate_values": [
+        0.8188,
+        0.8188
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_34",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.8188 to 0.8361 (absolute change: +0.0173, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "target_state": "mitigated",
+      "matched_candidate": {
+        "state": "mitigated",
+        "value": 0.8361,
+        "path": "mitigated_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        0.8361,
+        0.8361
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8361,
+      "metric_alias": "f1 score",
+      "raw_string": "0.8361 ",
+      "inferred_target_state": "mitigated"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8361 for state 'mitigated' matches ground truth 0.8361 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "mitigated_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 0.8361,
+      "raw_string": "0.8361 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8361,
+      "candidate_values": [
+        0.8361,
+        0.8361
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "mitigated",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_35",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "numerical",
+    "claim_text": "- F1 Score: changed from 0.8188 to 0.8361 (absolute change: +0.0173, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "target_state": "absolute_change",
+      "matched_candidate": {
+        "state": "absolute_change",
+        "value": 0.0173,
+        "path": "metric_comparisons.f1_score.absolute_change"
+      },
+      "all_candidates": [
+        0.0173
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0173,
+      "metric_alias": "f1 score",
+      "raw_string": "+0.0173",
+      "inferred_target_state": "absolute_change"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.0173 for state 'absolute_change' matches ground truth 0.0173 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "metric_comparisons.f1_score.absolute_change",
+    "extracted_values": {
+      "value": 0.0173,
+      "raw_string": "+0.0173",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.0173,
+      "candidate_values": [
+        0.0173
+      ]
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "absolute_change",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "dir_math_1",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Demographic Parity Difference: changed from 0.2859 to 0.0467 (absolute change: -0.2392, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "direction": "decrease",
+      "before": 0.2859,
+      "after": 0.0467,
+      "absolute_change": -0.2392
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that demographic_parity_difference 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "demographic_parity_difference"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.2392,
+      "before": 0.2859,
+      "after": 0.0467
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_2",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Demographic Parity Difference: changed from 0.2859 to 0.0467 (absolute change: -0.2392, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "demographic_parity_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "demographic parity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.demographic_parity_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "demographic_parity_difference"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, moving closer to ideal parity (0.0)."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_3",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Equalized Odds Difference: changed from 0.3144 to 0.2586 (absolute change: -0.0558, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "equalized_odds_difference",
+      "direction": "decrease",
+      "before": 0.3144,
+      "after": 0.2586,
+      "absolute_change": -0.0558
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "equalized odds difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that equalized_odds_difference 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.equalized_odds_difference.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "equalized_odds_difference"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.0558,
+      "before": 0.3144,
+      "after": 0.2586
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_4",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Equalized Odds Difference: changed from 0.3144 to 0.2586 (absolute change: -0.0558, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "equalized_odds_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Equalized Odds Difference decreased from 0.3144 to 0.2586, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "equalized odds difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.equalized_odds_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "equalized_odds_difference"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Equalized Odds Difference decreased from 0.3144 to 0.2586, moving closer to ideal parity (0.0)."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_5",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "equal_opportunity_difference",
+      "direction": "decrease",
+      "before": 0.3144,
+      "after": 0.0279,
+      "absolute_change": -0.2865
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "equal opportunity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that equal_opportunity_difference 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.equal_opportunity_difference.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "equal_opportunity_difference"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.2865,
+      "before": 0.3144,
+      "after": 0.0279
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_6",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Equal Opportunity Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "equal_opportunity_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Equal Opportunity Difference decreased from 0.3144 to 0.0279, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "equal opportunity difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.equal_opportunity_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "equal_opportunity_difference"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute Equal Opportunity Difference decreased from 0.3144 to 0.0279, moving closer to ideal parity (0.0)."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_7",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Disparate Impact: changed from 0.6602 to 1.0594 (absolute change: +0.3992, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "direction": "increase",
+      "before": 0.6602,
+      "after": 1.0594,
+      "absolute_change": 0.3992
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that disparate_impact 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.disparate_impact.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "disparate_impact"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.3992,
+      "before": 0.6602,
+      "after": 1.0594
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_8",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "fairness_interpretation",
+    "claim_text": "- Disparate Impact: changed from 0.6602 to 1.0594 (absolute change: +0.3992, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "disparate_impact",
+      "interpretation": "improvement",
+      "semantics_rationale": "Disparate Impact moved from 0.6602 to 1.0594, closer to ideal parity ratio (1.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "disparate impact"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.disparate_impact.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "disparate_impact"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Disparate Impact moved from 0.6602 to 1.0594, closer to ideal parity ratio (1.0)."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_9",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- False Positive Rate Difference: changed from 0.1768 to 0.2586 (absolute change: +0.0818, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "false_positive_rate_difference",
+      "direction": "increase",
+      "before": 0.1768,
+      "after": 0.2586,
+      "absolute_change": 0.0818
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "false positive rate difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that false_positive_rate_difference 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.false_positive_rate_difference.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "false_positive_rate_difference"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.0818,
+      "before": 0.1768,
+      "after": 0.2586
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_10",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "performance",
+    "claim_text": "- False Positive Rate Difference: changed from 0.1768 to 0.2586 (absolute change: +0.0818, direction: increase, evaluation: degradation)",
+    "ground_truth": {
+      "metric_name": "false_positive_rate_difference",
+      "interpretation": "degradation",
+      "semantics_rationale": "Absolute False Positive Rate Difference increased from 0.1768 to 0.2586, moving further from ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric_alias": "false positive rate difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'degradation' matches domain interpretation: degradation.",
+    "referenced_evidence": "metric_comparisons.false_positive_rate_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "degradation",
+      "term": "degradation",
+      "metric": "false_positive_rate_difference"
+    },
+    "expected_values": {
+      "interpretation": "degradation",
+      "semantics_rationale": "Absolute False Positive Rate Difference increased from 0.1768 to 0.2586, moving further from ideal parity (0.0)."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_11",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- False Negative Rate Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "false_negative_rate_difference",
+      "direction": "decrease",
+      "before": 0.3144,
+      "after": 0.0279,
+      "absolute_change": -0.2865
+    },
+    "predicted_claim": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric_alias": "false negative rate difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that false_negative_rate_difference 'decrease' matches ground truth direction: decrease.",
+    "referenced_evidence": "metric_comparisons.false_negative_rate_difference.direction",
+    "extracted_values": {
+      "direction": "decrease",
+      "term": "decrease",
+      "metric": "false_negative_rate_difference"
+    },
+    "expected_values": {
+      "direction": "decrease",
+      "absolute_change": -0.2865,
+      "before": 0.3144,
+      "after": 0.0279
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_12",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "performance",
+    "claim_text": "- False Negative Rate Difference: changed from 0.3144 to 0.0279 (absolute change: -0.2865, direction: decrease, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "false_negative_rate_difference",
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute False Negative Rate Difference decreased from 0.3144 to 0.0279, moving closer to ideal parity (0.0)."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "false negative rate difference"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.false_negative_rate_difference.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "false_negative_rate_difference"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Absolute False Negative Rate Difference decreased from 0.3144 to 0.0279, moving closer to ideal parity (0.0)."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_13",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Accuracy: changed from 0.7300 to 0.7550 (absolute change: +0.0250, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "direction": "increase",
+      "before": 0.73,
+      "after": 0.755,
+      "absolute_change": 0.025
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that accuracy 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.accuracy.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "accuracy"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.025,
+      "before": 0.73,
+      "after": 0.755
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_14",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "performance",
+    "claim_text": "- Accuracy: changed from 0.7300 to 0.7550 (absolute change: +0.0250, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "accuracy",
+      "interpretation": "improvement",
+      "semantics_rationale": "Accuracy increased from 0.7300 to 0.7550."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "accuracy"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.accuracy.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "accuracy"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Accuracy increased from 0.7300 to 0.7550."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_15",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Precision: changed from 0.7722 to 0.7862 (absolute change: +0.0140, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "precision",
+      "direction": "increase",
+      "before": 0.7722,
+      "after": 0.7862,
+      "absolute_change": 0.014
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "precision"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that precision 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.precision.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "precision"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.014,
+      "before": 0.7722,
+      "after": 0.7862
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_16",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "performance",
+    "claim_text": "- Precision: changed from 0.7722 to 0.7862 (absolute change: +0.0140, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "precision",
+      "interpretation": "improvement",
+      "semantics_rationale": "Precision increased from 0.7722 to 0.7862."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "precision"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.precision.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "precision"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Precision increased from 0.7722 to 0.7862."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_17",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- Recall: changed from 0.8714 to 0.8929 (absolute change: +0.0215, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "recall",
+      "direction": "increase",
+      "before": 0.8714,
+      "after": 0.8929,
+      "absolute_change": 0.0215
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "recall"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that recall 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.recall.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "recall"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.0215,
+      "before": 0.8714,
+      "after": 0.8929
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_18",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "performance",
+    "claim_text": "- Recall: changed from 0.8714 to 0.8929 (absolute change: +0.0215, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "recall",
+      "interpretation": "improvement",
+      "semantics_rationale": "Recall increased from 0.8714 to 0.8929."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "recall"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.recall.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "recall"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "Recall increased from 0.8714 to 0.8929."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_math_19",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "directional",
+    "claim_text": "- F1 Score: changed from 0.8188 to 0.8361 (absolute change: +0.0173, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "f1_score",
+      "direction": "increase",
+      "before": 0.8188,
+      "after": 0.8361,
+      "absolute_change": 0.0173
+    },
+    "predicted_claim": {
+      "direction": "increase",
+      "term": "increase",
+      "metric_alias": "f1 score"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim that f1_score 'increase' matches ground truth direction: increase.",
+    "referenced_evidence": "metric_comparisons.f1_score.direction",
+    "extracted_values": {
+      "direction": "increase",
+      "term": "increase",
+      "metric": "f1_score"
+    },
+    "expected_values": {
+      "direction": "increase",
+      "absolute_change": 0.0173,
+      "before": 0.8188,
+      "after": 0.8361
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  },
+  {
+    "claim_id": "dir_interp_20",
+    "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+    "claim_type": "performance",
+    "claim_text": "- F1 Score: changed from 0.8188 to 0.8361 (absolute change: +0.0173, direction: increase, evaluation: improvement)",
+    "ground_truth": {
+      "metric_name": "f1_score",
+      "interpretation": "improvement",
+      "semantics_rationale": "F1 Score increased from 0.8188 to 0.8361."
+    },
+    "predicted_claim": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric_alias": "f1 score"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Claim of fairness/performance 'improvement' matches domain interpretation: improvement.",
+    "referenced_evidence": "metric_comparisons.f1_score.interpretation",
+    "extracted_values": {
+      "interpretation": "improvement",
+      "term": "improvement",
+      "metric": "f1_score"
+    },
+    "expected_values": {
+      "interpretation": "improvement",
+      "semantics_rationale": "F1 Score increased from 0.8188 to 0.8361."
+    },
+    "evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+    "provenance": {
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {}
+  }
+]

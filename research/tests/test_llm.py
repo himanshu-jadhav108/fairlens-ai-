@@ -67,7 +67,7 @@ def test_gemini_mocked_api_response():
 def test_gemini_api_failure():
     with patch("research.llm.providers.gemini.genai") as mock_genai:
         mock_model_instance = MagicMock()
-        mock_model_instance.generate_content.side_effect = RuntimeError("Quota exceeded")
+        mock_model_instance.generate_content.side_effect = RuntimeError("Fatal internal backend failure")
         mock_genai.GenerativeModel.return_value = mock_model_instance
 
         provider = GeminiProvider(api_key="fake-test-key-12345")

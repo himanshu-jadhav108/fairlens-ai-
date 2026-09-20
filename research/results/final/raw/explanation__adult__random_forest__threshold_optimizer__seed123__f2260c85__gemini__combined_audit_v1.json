@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__random_forest__threshold_optimizer__seed123__f2260c85",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "bad6c323fe188edbd6a1b0d79471d9c9e07a61213cbea058949ca57b4daffe62",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** [Current Date]\n**Audited Model:** random_forest\n**Dataset:** adult\n**Protected Attribute:** sex (Privileged: 1, Unprivileged: 0)\n**Mitigation Strategy:** threshold_optimizer (postprocessing)\n**Random Seed:** 123\n\n---\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `random_forest` machine learning model trained on the `adult` dataset. The primary focus of the fairness assessment is the `sex` attribute, where `1` represents the privileged group and `0` represents the unprivileged group. A `threshold_optimizer` postprocessing mitigation technique was applied to address observed fairness disparities. The model was trained with a `random_seed` of `123`.\n\n---\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to the application of any fairness mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.1571 (Indicates a disparity in positive prediction rates between groups, with 0.0 being ideal parity).\n*   **Equalized Odds Difference:** 0.1058 (Indicates disparities in both true positive rates and false positive rates between groups, with 0.0 being ideal parity).\n*   **Equal Opportunity Difference:** 0.1058 (Indicates a disparity in true positive rates between groups, with 0.0 being ideal parity).\n*   **Disparate Impact:** 0.2666 (Indicates the ratio of positive prediction rates between unprivileged and privileged groups, with 1.0 being ideal parity).\n*   **False Positive Rate Difference:** 0.0482 (Indicates a disparity in false positive rates between groups, with 0.0 being ideal parity).\n*   **False Negative Rate Difference:** 0.1058 (Indicates a disparity in false negative rates between groups, with 0.0 being ideal parity).\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8604\n*   **Precision:** 0.8074\n*   **Recall:** 0.5470\n*   **F1 Score:** 0.6522\n*   **ROC AUC:** 0.9119\n\nAt baseline, the model demonstrated notable disparities across all audited fairness metrics, indicating a lack of parity between the protected groups. For instance, `demographic_parity_difference` was 0.1571 and `disparate_impact` was 0.2666, both significantly deviating from their respective ideal parity targets (0.0 and 1.0). Performance metrics were generally strong, with an `accuracy` of 0.8604 and `roc_auc` of 0.911",
+  "timestamp_utc": "2026-09-18T07:24:03.277444+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 7.958,
+    "finish_reason": "2",
+    "prompt_tokens": 1675,
+    "completion_tokens": 625,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

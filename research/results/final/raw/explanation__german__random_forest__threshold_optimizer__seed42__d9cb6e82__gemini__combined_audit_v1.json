@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+  "dataset_name": "german",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` machine learning model trained on the `german` dataset. The primary focus of the fairness audit is the `age_group` protected attribute, where `1` is designated as the privileged group and `0` as the unprivileged group. A `threshold_optimizer` postprocessing mitigation strategy was applied to address potential fairness concerns. The model was trained with a random seed of `42`.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1021\n*   **Equalized Odds Difference:** 0.0683\n*   **Equal Opportunity Difference:** 0.0683\n*   **Disparate Impact:** 0.8781\n*   **False Positive Rate Difference:** 0.0341\n*   **False Negative Rate Difference:** 0.0683\n\n**Performance Metrics:**\n*   **Accuracy:** 0.7300\n*   **Precision:** 0.7622\n*   **Recall:** 0.8929\n*   **F1 Score:** 0.8224\n*   **ROC AUC:** 0.7669\n\nAt baseline, the model showed disparities across several fairness metrics. For instance, the `demographic_parity_difference` of 0.1021 and `disparate_impact` of 0.8781 indicate a deviation from demographic parity (ideal 0.0 and 1.0, respectively). Similarly, `equalized_odds_difference` and `equal_opportunity_difference` were 0.0683, suggesting differences in true positive and false positive rates between the protected groups.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` postprocessing mitigation was applied, resulting in the following changes:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.1021 | Mitigated: 0.0592 | Delta: -0.0429\n    *   Direction: decrease | Domain Evaluation: improvement (moved closer to ideal parity of 0.0)\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.0683 | Mitigated: 0.2955 | Delta: +0.2272\n    *   Direction: increase | Domain Evaluation: degradation (moved",
+  "timestamp_utc": "2026-09-20T08:40:54.816389+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.054,
+    "finish_reason": "2",
+    "prompt_tokens": 1691,
+    "completion_tokens": 584,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

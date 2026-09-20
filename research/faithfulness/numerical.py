@@ -191,14 +191,40 @@ class NumericalFaithfulnessEvaluator:
                     if not gt_candidates:
                         continue
 
+                    # State-aware candidate filtering to prevent cross-state false positives
+                    target_state = self._detect_target_state(clause_text, num_start, num_end, sent)
+                    candidate_pool = gt_candidates
+                    if target_state == "relative_change":
+                        filtered = [c for c in gt_candidates if c["state"] == "relative_change"]
+                        if filtered:
+                            candidate_pool = filtered
+                    elif target_state == "absolute_change":
+                        filtered = [c for c in gt_candidates if c["state"] == "absolute_change"]
+                        if filtered:
+                            candidate_pool = filtered
+                    elif target_state == "mitigated":
+                        filtered = [c for c in gt_candidates if c["state"] in ("mitigated", "comparison_after")]
+                        if filtered:
+                            candidate_pool = filtered
+                    elif target_state == "baseline":
+                        filtered = [c for c in gt_candidates if c["state"] in ("baseline", "comparison_before")]
+                        if filtered:
+                            candidate_pool = filtered
+
                     best_match = None
                     best_abs_diff = float("inf")
 
-                    for cand in gt_candidates:
+                    for cand in candidate_pool:
                         true_val = cand["value"]
                         if true_val is None:
                             continue
-                        abs_diff = abs(extracted_val - true_val)
+
+                        # For changes, allow both signed (e.g. -0.34) and magnitude (e.g. reduction of 0.34)
+                        if cand["state"] in ("absolute_change", "relative_change"):
+                            abs_diff = min(abs(extracted_val - true_val), abs(extracted_val - abs(true_val)))
+                        else:
+                            abs_diff = abs(extracted_val - true_val)
+
                         rel_diff = abs_diff / abs(true_val) if abs(true_val) > 1e-6 else abs_diff
 
                         if abs_diff < best_abs_diff:
@@ -206,7 +232,8 @@ class NumericalFaithfulnessEvaluator:
                             best_match = {
                                 "candidate": cand,
                                 "abs_diff": round(abs_diff, 5),
-                                "rel_diff": round(rel_diff, 5)
+                                "rel_diff": round(rel_diff, 5),
+                                "target_state": target_state
                             }
 
                     if best_match is not None:
@@ -217,12 +244,13 @@ class NumericalFaithfulnessEvaluator:
 
                         classification = ClaimClassification.SUPPORTED if is_match else ClaimClassification.UNSUPPORTED
                         conversion_note = f" (converted from {num_match.group(0).strip()} -> {extracted_val})" if is_pct else ""
+                        state_note = f" for state '{target_state}'" if target_state else ""
                         rationale = (
-                            f"Reported value {extracted_val}{conversion_note} matches ground truth {best_match['candidate']['value']} "
+                            f"Reported value {extracted_val}{conversion_note}{state_note} matches ground truth {best_match['candidate']['value']} "
                             f"for '{canonical_metric}' within tolerance (abs diff: {best_match['abs_diff']})."
                             if is_match else
-                            f"Reported value {extracted_val}{conversion_note} contradicts ground truth "
-                            f"{[c['value'] for c in gt_candidates]} for '{canonical_metric}' "
+                            f"Reported value {extracted_val}{conversion_note}{state_note} contradicts ground truth "
+                            f"{[c['value'] for c in candidate_pool]} for '{canonical_metric}' "
                             f"(min abs diff: {best_match['abs_diff']} > tol {self.absolute_tolerance})."
                         )
 
@@ -234,13 +262,15 @@ class NumericalFaithfulnessEvaluator:
                             claim_text=sent,
                             ground_truth={
                                 "canonical_metric": canonical_metric,
+                                "target_state": target_state,
                                 "matched_candidate": best_match["candidate"],
-                                "all_candidates": [c["value"] for c in gt_candidates]
+                                "all_candidates": [c["value"] for c in candidate_pool]
                             },
                             predicted_claim={
                                 "extracted_value": extracted_val,
                                 "metric_alias": matched_alias,
-                                "raw_string": num_match.group(0)
+                                "raw_string": num_match.group(0),
+                                "inferred_target_state": target_state
                             },
                             classification=classification,
                             rationale=rationale,
@@ -252,13 +282,14 @@ class NumericalFaithfulnessEvaluator:
                             },
                             expected_values={
                                 "matched_value": best_match["candidate"]["value"],
-                                "all_candidate_values": [c["value"] for c in gt_candidates]
+                                "candidate_values": [c["value"] for c in candidate_pool]
                             },
                             evidence_hash=ev_hash,
                             provenance=prov,
                             metadata={
                                 "abs_diff": best_match["abs_diff"],
                                 "rel_diff": best_match["rel_diff"],
+                                "target_state": target_state,
                                 "absolute_tolerance": self.absolute_tolerance,
                                 "relative_tolerance": self.relative_tolerance,
                                 "is_percentage_converted": is_pct
@@ -267,6 +298,92 @@ class NumericalFaithfulnessEvaluator:
                         claim_idx += 1
 
         return claims
+
+    def _detect_target_state(
+        self,
+        clause_text: str,
+        num_start: int,
+        num_end: int,
+        sent_text: str
+    ) -> Optional[str]:
+        """
+        Detects whether a numerical value refers to a specific metric state:
+        'relative_change', 'absolute_change', 'mitigated', 'baseline', or None.
+        Uses local context preceding the number to disambiguate multi-number sentences.
+        """
+        # 1. Inspect local prefix preceding the number (up to 60 characters)
+        local_pre = clause_text[max(0, num_start - 60):num_start].lower()
+
+        # Check 'from X to Y' pattern
+        if re.search(r"\bfrom\s*$", local_pre) or re.search(r"\bbefore\s*$", local_pre):
+            return "baseline"
+        if re.search(r"\bto\s*$", local_pre) or re.search(r"\bafter\s*$", local_pre):
+            return "mitigated"
+
+        # Local relative change
+        if any(p in local_pre for p in [
+            "relative change", "relative reduction", "relative decrease",
+            "relative improvement", "percent change", "percentage change",
+            "percentage reduction", "percent reduction", "percentage decrease",
+            "percent decrease", "% reduction", "% decrease", "% drop", "% improvement"
+        ]):
+            return "relative_change"
+
+        # Local absolute change / delta
+        if any(p in local_pre for p in [
+            "absolute change", "reduced by", "decreased by", "dropped by",
+            "increased by", "difference of", "delta of", "delta:", "reduction of",
+            "decrease of", "improvement of", "drop of", "changed by", "shifted by"
+        ]):
+            return "absolute_change"
+
+        # Local mitigated
+        if any(p in local_pre for p in [
+            "mitigated", "post-mitigation", "after mitigation", "reduced to",
+            "dropped to", "decreased to", "improved to", "final model",
+            "mitigated model", "with mitigation", "post-intervention",
+            "after correlation", "after threshold"
+        ]):
+            return "mitigated"
+
+        # Local baseline
+        if any(p in local_pre for p in [
+            "baseline", "initial", "prior to", "before mitigation",
+            "pre-mitigation", "original model", "unmitigated", "starting",
+            "pre-intervention", "at baseline"
+        ]):
+            return "baseline"
+
+        # 2. If local prefix has no state indicator, check clause text ONLY IF not mixed
+        c_lower = clause_text.lower()
+        has_from_to = "from" in c_lower and "to" in c_lower
+        if not has_from_to:
+            if any(p in c_lower for p in [
+                "relative change", "relative reduction", "relative decrease",
+                "percent change", "percentage change"
+            ]):
+                return "relative_change"
+            if any(p in c_lower for p in [
+                "absolute change", "reduced by", "decreased by", "dropped by",
+                "difference of", "reduction of", "decrease of"
+            ]):
+                return "absolute_change"
+            if any(p in c_lower for p in ["mitigated", "post-mitigation", "after mitigation", "reduced to"]):
+                return "mitigated"
+            if any(p in c_lower for p in ["baseline", "initial", "unmitigated", "before mitigation"]):
+                return "baseline"
+
+        # 3. Fallback to check full sentence if exclusive
+        s_lower = sent_text.lower()
+        has_base = any(p in s_lower for p in ["baseline", "initial", "unmitigated", "before mitigation"])
+        has_mit = any(p in s_lower for p in ["mitigated", "post-mitigation", "after mitigation"])
+
+        if has_base and not has_mit and not has_from_to:
+            return "baseline"
+        if has_mit and not has_base and not has_from_to:
+            return "mitigated"
+
+        return None
 
     def _split_clauses(self, sentence: str) -> List[Tuple[str, int]]:
         """

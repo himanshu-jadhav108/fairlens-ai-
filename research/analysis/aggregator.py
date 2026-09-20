@@ -79,6 +79,10 @@ def aggregate_raw_results(
             excluded_counts["smoke_path"] += 1
             continue
 
+        # Skip explanation records (handled by aggregate_faithfulness_summaries)
+        if os.path.basename(fp).startswith("explanation__"):
+            continue
+
         try:
             with open(fp, "r", encoding="utf-8") as f:
                 data = json.load(f)

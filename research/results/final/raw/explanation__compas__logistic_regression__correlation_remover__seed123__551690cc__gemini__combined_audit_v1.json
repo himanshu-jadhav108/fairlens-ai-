@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__logistic_regression__correlation_remover__seed123__551690cc",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "452b6a654040674eedc45494c651474401db9b9bec2e463fb557ba9d3d62b81b",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `compas` dataset. The protected attribute under examination is `race`, where the privileged group is designated as `1` and the unprivileged group as `0`. The model was trained with a `random_seed` of `123`. A preprocessing fairness mitigation technique, `correlation_remover`, was applied to address potential biases.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to the application of any mitigation, the model exhibited notable disparities across several fairness metrics:\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.3617\n*   **Equalized Odds Difference:** 0.3786\n*   **Equal Opportunity Difference:** 0.3786\n*   **Disparate Impact:** 2.7543\n*   **False Positive Rate Difference:** 0.2572\n*   **False Negative Rate Difference:** 0.3786\n\nThese baseline values indicate a significant deviation from ideal fairness targets (0.0 for differences, 1.0 for Disparate Impact).\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.6856\n*   **Precision:** 0.6846\n*   **Recall:** 0.6157\n*   **F1 Score:** 0.6483\n*   **ROC-AUC:** 0.7480\n\nThe model demonstrated moderate predictive performance at baseline.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was assessed.\n\n**Impact on Fairness Metrics:**\nThe mitigation resulted in substantial improvements across all audited fairness metrics, moving them closer to their respective ideal parity targets:\n*   **Demographic Parity Difference:** Decreased from 0.3617 to 0.0938, a reduction of 0.2679. This represents an improvement towards parity (0.0).\n*   **Equalized Odds Difference:** Decreased from 0.3786 to 0.1760, a reduction of 0.2026. This is an improvement towards parity (0.0).\n*   **Equal Opportunity Difference:** Decreased from 0.3786 to 0.1325, a reduction of 0.2461. This indicates an improvement towards parity (0.0).\n*   **Disparate Impact:** Moved from 2.7543 to 0.8001, a decrease of 1.9542. This is an improvement, moving closer to the ideal ratio of 1.0.\n*   **False Positive Rate Difference:** Decreased from 0.2572 to 0.1760, a reduction of 0.0812. This is an improvement towards parity (0.0).\n*   **False Negative Rate Difference:** Decreased from 0.3786 to ",
+  "timestamp_utc": "2026-09-18T07:25:01.686861+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.701,
+    "finish_reason": "2",
+    "prompt_tokens": 1656,
+    "completion_tokens": 697,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

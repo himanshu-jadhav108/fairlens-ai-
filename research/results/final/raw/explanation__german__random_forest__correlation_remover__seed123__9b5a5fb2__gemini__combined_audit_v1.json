@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__random_forest__correlation_remover__seed123__9b5a5fb2",
+  "dataset_name": "german",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "e0b366c83d34842ad42a961a446d39b886d5545c286ef836128f348d2bd9fddb",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `random_forest` model trained on the `german` dataset. The protected attribute under examination is `age_group`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `123`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities across fairness metrics and achieved a certain level of predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.2053\n*   **Equalized Odds Difference:** 0.2445\n*   **Equal Opportunity Difference:** 0.2445\n*   **Disparate Impact:** 0.7646\n*   **False Positive Rate Difference:** 0.0867\n*   **False Negative Rate Difference:** 0.2445\n\nThese baseline fairness metrics indicate existing disparities, with values for difference metrics (Demographic Parity Difference, Equalized Odds Difference, Equal Opportunity Difference, False Positive Rate Difference, False Negative Rate Difference) being non-zero, and Disparate Impact being below the ideal ratio of 1.0.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.7250\n*   **Precision:** 0.7545\n*   **Recall:** 0.9000\n*   **F1 Score:** 0.8208\n*   **ROC AUC:** 0.7065\n\nThe model demonstrated a baseline accuracy of 0.7250 and an F1 score of 0.8208, with a relatively high recall of 0.9000.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Impact on Fairness Metrics:**\n*   **Demographic Parity Difference:** Decreased from 0.2053 to 0.1409 (Delta: -0.0644), indicating an improvement towards parity (0.0).\n*   **Equalized Odds Difference:** Decreased from 0.2445 to 0.1839 (Delta: -0.0606), indicating an improvement towards parity (0.0).\n*   **Equal Opportunity Difference:** Decreased from 0.2445 to 0.1839 (Delta: -0.0606), indicating an improvement towards parity (0.0).\n*   **Disparate Impact:** Increased from 0.7646 to 0.8313 (Delta: +0.0667), indicating an improvement towards parity (1.0).\n*   **False Positive Rate Difference:** Decreased significantly from 0.0867 to 0.0016 (Delta: -0.0851), indicating a substantial improvement towards parity (0.0).\n*   **False Negative Rate Difference:** Decreased from 0.2445 to 0.1839 (Delta: -0.0606), indicating an improvement towards parity (0.0).\n\nThe `correlation_remover` mitigation consistently improved all audited fairness metrics, moving them closer to their respective ideal parity targets. The most notable improvement was observed in the False Positive Rate Difference.\n\n**Impact on Performance Metrics:**\n*   **Accuracy:** Increased from 0.7250 to 0.7400 (Delta: +0.0150), indicating an improvement.\n*   **Precision:** Increased from 0.7545 to 0.7716 (Delta: +0.0171), indicating an improvement.\n*   **Recall:** Decreased from 0.9000 to 0.8929 (Delta: -0.0071), indicating a slight degradation.\n*   **F1 Score:** Increased from 0.8208 to 0.8278 (Delta: +0.0070), indicating an improvement.\n*   **ROC AUC:** Increased from 0.7065 to 0.7176 (Delta: +0.0111), indicating an improvement.\n\nThe mitigation generally led to improvements in performance metrics, including Accuracy, Precision, F1 Score, and ROC AUC. A minor degradation was observed in Recall.\n\n### 4. Feature Attribution and Explainability Analysis\n\nSHAP (SHapley Additive exPlanations) values were used to determine the importance of features in the model's predictions. The following",
+  "timestamp_utc": "2026-09-20T08:40:27.301066+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 7.742,
+    "finish_reason": "2",
+    "prompt_tokens": 1709,
+    "completion_tokens": 1073,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

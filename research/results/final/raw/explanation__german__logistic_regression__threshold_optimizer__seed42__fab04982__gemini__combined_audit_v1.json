@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+  "dataset_name": "german",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** [Current Date]\n**Auditor:** Independent ML Fairness Auditor\n\n---\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `german` dataset. The model's fairness was assessed with respect to the `age_group` protected attribute, where `1` represents the privileged group and `0` represents the unprivileged group. The model was trained with a `random_seed` of `42`. A postprocessing mitigation technique, `threshold_optimizer`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.0191, indicating a relatively small difference in positive prediction rates between groups, close to the ideal of 0.0.\n*   **Equalized Odds Difference:** 0.1818, suggesting a notable disparity in true positive rates and false positive rates across groups, further from the ideal of 0.0.\n*   **Equal Opportunity Difference:** 0.0683, indicating a moderate difference in true positive rates between groups, further from the ideal of 0.0.\n*   **Disparate Impact:** 0.9765, which is close to the ideal ratio of 1.0, suggesting near parity in the ratio of positive prediction rates.\n*   **False Positive Rate Difference:** 0.1818, indicating a notable difference in false positive rates between groups, further from the ideal of 0.0.\n*   **False Negative Rate Difference:** 0.0683, indicating a moderate difference in false negative rates between groups, further from the ideal of 0.0",
+  "timestamp_utc": "2026-09-20T08:39:37.137337+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 7.784,
+    "finish_reason": "2",
+    "prompt_tokens": 1685,
+    "completion_tokens": 388,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

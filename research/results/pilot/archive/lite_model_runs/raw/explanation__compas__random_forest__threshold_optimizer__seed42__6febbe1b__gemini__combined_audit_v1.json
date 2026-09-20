@@ -1,0 +1,34 @@
+{
+  "experiment_id": "compas__random_forest__threshold_optimizer__seed42__6febbe1b",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-flash-lite-latest",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "0baf3e48ef85359cb4acc07614d784ca07157861cd285e1f0042497a9f0eda8e",
+  "output_text": "# Independent Machine Learning Fairness Audit Report\n\n**Audited Model Architecture:** Random Forest  \n**Dataset:** COMPAS  \n**Protected Attribute:** Race (Privileged: 1, Unprivileged: 0)  \n**Random Seed:** 42  \n**Mitigation Technique Applied:** Threshold Optimizer (Post-processing)  \n\n---\n\n## 1. Model & Dataset Overview\nThis audit evaluates a Random Forest model trained on the COMPAS dataset with a random seed of 42. The audit assesses demographic equity concerning the protected attribute `race`, defining the privileged group as `1` and the unprivileged group as `0`. To evaluate and correct demographic disparities, a threshold optimizer post-processing mitigation technique was applied. This report outlines the baseline performance and fairness metrics, the quantitative impacts of the mitigation strategy, and the underlying feature importances derived via TreeExplainer SHAP values.\n\n---\n\n## 2. Baseline Fairness and Performance Audit\nAt baseline, the model exhibited perfect predictive performance alongside notable demographic disparities:\n\n*   **Performance Metrics:** The baseline model achieved flawless scores across all tracked metrics, with an accuracy, precision, recall, f1_score, and roc_auc all equal to `1.0000`.\n*   **Fairness Metrics:** \n    *   **Demographic Parity Difference:** `0.4014` (indicating a substantial baseline disparity away from the ideal target of `0.0`).\n    *   **Disparate Impact:** `2.5128` (deviating substantially from the parity target of `1.0`).\n    *   **Equalized Odds Difference:** `0.0000`\n    *   **Equal Opportunity Difference:** `0.0000`\n    *   **False Positive Rate Difference:** `0.0000`\n    *   **False Negative Rate Difference:** `0.0000`\n\n---\n\n## 3. Mitigation Impact and Comparison\nApplying the threshold optimizer post-processing mitigation produced mixed outcomes across fairness and performance metrics:\n\n### Fairness Changes\n*   **Demographic Parity Difference:** Improved by decreasing from `0.4014` to `0.0204` (a delta of `-0.3810`), moving close to the ideal parity of `0.0`.\n*   **Disparate Impact:** Improved by moving from `2.5128` to `0.9703` (a delta of `-1.5425`), bringing the ratio closer to the ideal parity target of `1.0`.\n*   **Equalized Odds Difference:** Degraded, increasing from `0.0000` to `0.5741` (a delta of `+0.5741`), moving further away from `0.0`.\n*   **Equal Opportunity Difference:** Remained unchanged at `0.0000` (a delta of `+0.0000`).\n*   **False Positive Rate Difference:** Increased from `0.0000` to `0.5741` (a delta of `+0.5741`).\n*   **False Negative Rate Difference:** Remained unchanged at `0.0000` (a delta of `+0.0000`).\n\n### Performance Changes\n*   **Accuracy:** Degraded, decreasing from `1.0000` to `0.7933` (a delta of `-0.2067`).\n*   **Precision:** Degraded, dropping from `1.0000` to `0.6946` (a delta of `-0.3054`).\n*   **F1 Score:** Degraded, dropping from `1.0000` to `0.8198` (a delta of `-0.1802`).\n*   **Recall:** Remained stable at `1.0000` (a delta of `+0.0000`).\n*   **ROC AUC:** Evaluated as undefined/N/A post-mitigation.\n\n---\n\n## 4. Feature Attribution and Explainability Analysis\nAnalysis using TreeExplainer SHAP values identifies the global feature importances, ranked by mean absolute SHAP value:\n\n1.  **decile_score:** `0.46415`\n2.  **priors_count:** `0.01075`\n3.  **age:** `0.00985`\n4.  **race_Caucasian:** `0.00416`\n5.  **race_African-American:** `0.00244`\n6.  **sex_Female:** `0.00136`\n7.  **sex_Male:** `0.00093`\n8.  **c_charge_degree_M:** `0.00084`\n9.  **c_charge_degree_F:** `0.00069`\n\n`decile_score` clearly dominates model decision-making by a wide margin, followed by historical and demographic covariates including `priors_count`, `age`, and explicitly encoded race features (`race_Caucasian` and `race_African-American`).\n\n---\n\n## 5. Summary of Audit Findings\n1.  **Trade-offs Between Fairness Objectives:** The post-processing threshold optimization successfully achieved its objective regarding demographic parity and disparate impact, correcting the baseline imbalances significantly. However, this adjustment introduced a trade-off, resulting in a degradation of the Equalized Odds Difference (increasing from `0.0000` to `0.5741`).\n2.  **Performance Cost:** Correcting the demographic parity discrepancies incurred a cost to predictive quality; model accuracy dropped from a flawless `1.0000` to `0.7933`, and precision fell from `1.0000` to `0.6946`, while recall was successfully preserved at `1.0000`.\n3.  **Attribution Context:** The feature importance hierarchy shows that the model relies overwhelmingly on the `decile_score` feature to make predictions, with race-specific indicator features (`race_Caucasian` and `race_African-American`) contributing lower down the importance spectrum.",
+  "timestamp_utc": "2026-09-17T10:33:50.255196+00:00",
+  "git_commit_hash": "43c5592a17a106129d0baf1d6cb9cac68370be61",
+  "metadata": {
+    "latency_seconds": 5.447,
+    "finish_reason": "1",
+    "prompt_tokens": 1607,
+    "completion_tokens": 1370,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "EXCLUDED_FROM_FINAL_CONFIRMATORY_ANALYSIS": true,
+  "exclusion_reason": "Generated using a different Gemini model version (Gemini Flash Lite)."
+}

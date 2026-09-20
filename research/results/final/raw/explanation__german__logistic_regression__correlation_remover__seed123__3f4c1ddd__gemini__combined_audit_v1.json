@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__logistic_regression__correlation_remover__seed123__3f4c1ddd",
+  "dataset_name": "german",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "60db39cd54745fdde51f0570dc488c589271317e3f1c8505c94ea0c6a8160eac",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `german` dataset. The protected attribute under examination is `age_group`, where `1` is designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `123`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities across fairness metrics, while demonstrating moderate predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.2859 (indicating a notable difference in positive outcome rates between groups, further from the ideal of 0.0).\n*   **Equalized Odds Difference:** 0.3144 (suggesting disparities in both false positive rates and false negative rates across groups, further from the ideal of 0.0).\n*   **Equal Opportunity Difference:** 0.3144 (indicating a significant difference in true positive rates between groups, further from the ideal of 0.0).\n*   **Disparate Impact:** 0.6602 (indicating that the unprivileged group receives positive outcomes at approximately 66% the rate of the privileged group, further from the ideal ratio of 1.0).\n*   **False Positive Rate Difference:** 0.1768 (indicating a difference in false positive rates between groups, further from the ideal of 0.0).\n*   **False Negative Rate Difference:** 0.3144 (indicating a difference in false negative rates between groups, further from the ideal of 0.0).\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.7300\n*   **Precision:** 0.7722\n*   **Recall:** 0.8714\n*   **F1 Score:** 0.8188\n*   **ROC-AUC:** 0.7608\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**",
+  "timestamp_utc": "2026-09-20T08:39:12.244191+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.132,
+    "finish_reason": "2",
+    "prompt_tokens": 1704,
+    "completion_tokens": 504,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

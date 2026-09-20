@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__random_forest__correlation_remover__seed123__817dbb0b",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "aeb2b9e50496fcf4ad268cb897e5a8589e128285bf2b52df680eac178ac55f40",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a machine learning model trained on the `adult` dataset, which is commonly used for income prediction tasks. The model architecture employed is a `random_forest`, initialized with a `random_seed` of `123`. The audit specifically focuses on fairness with respect to the `sex` attribute, where `1` is designated as the privileged group and `0` as the unprivileged group. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential biases.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to the application of any mitigation, the random forest model exhibited the following fairness and performance characteristics:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.1571. This indicates a difference of 0.1571 in positive prediction rates between the privileged and unprivileged groups, moving away from the ideal parity of 0.0.\n*   **Equalized Odds Difference:** 0.1058. This metric, which considers differences in true positive rates and false positive rates, shows a deviation of 0.1058 from ideal parity (0.0).\n*   **Equal Opportunity Difference:** 0.1058. Specifically focusing on the true positive rate, there is a difference of 0.1058 between groups, indicating a departure from ideal parity (0.0).\n*   **Disparate Impact:** 0.2666. This ratio of positive prediction rates between groups is 0.2666, which is significantly below the ideal parity ratio of 1.0, suggesting a disparate impact.\n*   **False Positive Rate Difference:** 0.0482. The difference in false positive rates between groups is 0.0482, indicating a deviation from ideal parity (0.0).\n*   **False Negative Rate Difference:** 0.1058. The difference in false negative rates between groups is 0.1058, indicating a deviation from ideal parity (0.0).\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8604\n*   **Precision:** 0.8074\n*   **Recall:** 0.5470\n*   **F1 Score:** 0.6522\n*   **ROC-AUC:** 0.9119\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:** Increased from 0.1571 to 0.1606, a delta of +0.0035. This represents a degradation, moving further from ideal parity (0.0).\n*   **Equalized Odds Difference:** Increased from 0.1058 to 0.1159, a delta of +0.0101. This represents a degradation, moving further from ideal parity (0.0).\n*   **Equal Opportunity Difference:** Increased from 0.1058 to 0.1159, a delta of +0.0101. This represents a degradation, moving further from ideal parity (0.0).\n*   **Disparate Impact:** Decreased from 0.2666 to 0.2623, a delta of -0.0043. This represents a degradation, moving further from ideal parity (1.0).\n*   **False Positive Rate Difference:** Increased from 0.0482 to 0.0509, a delta of +0.0027. This represents a degradation, moving further from ideal parity (0.0).\n*   **False Negative Rate Difference:** Increased from 0.1058 to 0.1159, a delta of +0.0101. This represents a degradation, moving further from ideal parity (0.0).\n\n**Overall Fairness Impact:** The `correlation_remover` mitigation strategy resulted in a degradation across all audited fairness metrics. All difference metrics (Demographic Parity Difference, Equalized Odds Difference, Equal Opportunity Difference, False Positive Rate Difference, False Negative Rate Difference) increased, moving further from their ideal parity value of 0.0. Disparate Impact decreased, moving further from its ideal parity ratio of 1.0.\n\n**Performance Metric Changes:**\n*   **Accuracy:** Decreased from",
+  "timestamp_utc": "2026-09-18T07:22:30.645252+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.595,
+    "finish_reason": "2",
+    "prompt_tokens": 1696,
+    "completion_tokens": 1010,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

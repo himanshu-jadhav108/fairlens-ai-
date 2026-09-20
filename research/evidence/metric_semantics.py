@@ -200,9 +200,41 @@ METRIC_REGISTRY: Dict[str, MetricSemantics] = {
         lower_is_better=None,
         distance_to_target_applies=True,
         aliases=[
-            "disparate impact", "disparate impact ratio", "adverse impact ratio"
+            "disparate impact", "disparate impact ratio", "adverse impact ratio", "disparate_impact_ratio"
         ],
         interpretation_rationale="A ratio of 1.0 indicates exact parity. Moving closer to 1.0 indicates improvement; moving further indicates worsening."
+    ),
+    "false_positive_rate_difference": MetricSemantics(
+        canonical_name="false_positive_rate_difference",
+        display_name="False Positive Rate Difference",
+        domain_type=MetricDomainType.FAIRNESS,
+        mathematical_definition="|FPR_privileged - FPR_unprivileged| across demographic groups",
+        valid_range=(0.0, 1.0),
+        ideal_target=0.0,
+        disparity_type=DisparityDirection.ZERO_PARITY,
+        higher_is_better=False,
+        lower_is_better=True,
+        distance_to_target_applies=True,
+        aliases=[
+            "false positive rate difference", "fpr difference", "fprd", "predictive equality difference"
+        ],
+        interpretation_rationale="Zero indicates identical False Positive Rates across groups. Values closer to 0 indicate greater fairness."
+    ),
+    "false_negative_rate_difference": MetricSemantics(
+        canonical_name="false_negative_rate_difference",
+        display_name="False Negative Rate Difference",
+        domain_type=MetricDomainType.FAIRNESS,
+        mathematical_definition="|FNR_privileged - FNR_unprivileged| across demographic groups",
+        valid_range=(0.0, 1.0),
+        ideal_target=0.0,
+        disparity_type=DisparityDirection.ZERO_PARITY,
+        higher_is_better=False,
+        lower_is_better=True,
+        distance_to_target_applies=True,
+        aliases=[
+            "false negative rate difference", "fnr difference", "fnrd"
+        ],
+        interpretation_rationale="Zero indicates identical False Negative Rates across groups. Values closer to 0 indicate greater fairness."
     ),
     "accuracy": MetricSemantics(
         canonical_name="accuracy",

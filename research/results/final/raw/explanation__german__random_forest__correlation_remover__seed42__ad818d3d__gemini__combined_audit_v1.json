@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+  "dataset_name": "german",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "cf2c57ae5b8af81b627db39d069979e1ad228af12ca57a9b753c8d83f0986e53",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` machine learning model trained on the `german` dataset. The protected attribute under consideration is `age_group`, where `1` is designated as the privileged group and `0` as the unprivileged group. The model was trained with a random seed of `42`. A `correlation_remover` preprocessing mitigation technique was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1021\n*   **Equalized Odds Difference:** 0.0683\n*   **Equal Opportunity Difference:** 0.0683\n*   **Disparate Impact:** 0.8781\n*   **False Positive Rate Difference:** 0.0341\n*   **False Negative Rate Difference:** 0.0683\n\n**Performance Metrics:**\n*   **Accuracy:** 0.7300\n*   **Precision:** 0.7622\n*   **Recall:** 0.8929\n*   **F1 Score:** 0.8224\n*   **ROC-AUC:** 0.7669\n\nAt baseline, the model showed disparities across all fairness metrics. For instance, a `demographic_parity_difference` of 0.1021 indicates a notable difference in positive prediction rates between the privileged and unprivileged `age_group`s. Similarly, a `disparate_impact` of 0.8781 is below the ideal parity ratio of 1.0, suggesting a potential disadvantage for the unprivileged group.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Fairness Metrics Impact:**\n\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.1021 | Mitigated: 0.0043 | Delta: -0.0978\n    *   Direction: Decrease | Domain Evaluation: Improvement\n    *   *Rationale:* The absolute Demographic Parity Difference significantly decreased, moving substantially closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.0683 | Mitigated: 0.0674 | Delta: -0.0009\n    *   Direction: Decrease | Domain Evaluation: Improvement\n    *   *Rationale:* The absolute Equalized Odds Difference slightly decreased, moving closer to the ideal parity of 0.0.\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.0683 | Mitigated: 0.0674 | Delta: -0.0009\n    *   Direction: Decrease | Domain Evaluation: Improvement\n    *   *Rationale:* The absolute Equal Opportunity Difference slightly decreased, moving closer to the ideal parity of 0.0.\n*   **Disparate Impact:**\n    *   Baseline: 0.8781 | Mitigated: 1.0052 | Delta: +0.1271\n    *   Direction: Increase | Domain Evaluation: Improvement\n    *   *Rationale:* Disparate Impact moved",
+  "timestamp_utc": "2026-09-20T08:40:14.385141+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 7.722,
+    "finish_reason": "2",
+    "prompt_tokens": 1712,
+    "completion_tokens": 761,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

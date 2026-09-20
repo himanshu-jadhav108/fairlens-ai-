@@ -1,0 +1,73 @@
+{
+  "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "timestamp_utc": "2026-09-20T08:40:12.796134+00:00",
+  "runtime_seconds": 1.65,
+  "dataset": {
+    "name": "german",
+    "official_title": "Statlog (German Credit Data) Data Set",
+    "source_url": "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data",
+    "version": "1.0 (UCI 1994 Release)",
+    "license": "Open Access / Academic Public Domain via UCI ML Repository",
+    "is_synthetic_benchmark": false,
+    "target_column": "credit_risk",
+    "sensitive_column": "age_group",
+    "split_id": "german__split_42_t60_v20_te20",
+    "train_samples": 600,
+    "val_samples": 200,
+    "test_samples": 200
+  },
+  "model": {
+    "family": "random_forest",
+    "parameters": {}
+  },
+  "mitigation": {
+    "name": "correlation_remover",
+    "strategy_type": "preprocessing",
+    "parameters": {},
+    "calibration_split": "train"
+  },
+  "random_seed": 42,
+  "train_val_test_strategy": {
+    "train_ratio": 0.6,
+    "val_ratio": 0.2,
+    "test_ratio": 0.2,
+    "stratified": true
+  },
+  "preprocessing_configuration": {
+    "preprocessor_type": "ResearchPreprocessor",
+    "transformed_features_count": 19,
+    "feature_names": [
+      "credit_amount",
+      "age",
+      "existing_credits",
+      "checking_status_0<=X<200",
+      "checking_status_<0",
+      "checking_status_>=200",
+      "checking_status_no checking",
+      "credit_history_all paid",
+      "credit_history_critical/other existing credit",
+      "credit_history_delayed previously",
+      "credit_history_existing paid",
+      "credit_history_no credits/all paid",
+      "savings_status_100<=X<500",
+      "savings_status_500<=X<1000",
+      "savings_status_<100",
+      "savings_status_>=1000",
+      "savings_status_no known savings",
+      "age_group_Adult",
+      "age_group_Young"
+    ]
+  },
+  "environment": {
+    "python_version": "3.14.6",
+    "scikit_learn_version": "1.8.0",
+    "fairlearn_version": "0.14.0",
+    "shap_version": "0.51.0",
+    "xgboost_version": "3.4.1",
+    "pandas_version": "3.0.3",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0"
+  },
+  "execution_mode": "FINAL_EMPIRICAL_RUN"
+}

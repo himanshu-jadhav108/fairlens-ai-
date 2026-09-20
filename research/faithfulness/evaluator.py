@@ -81,11 +81,13 @@ class FaithfulnessEvaluator:
         num_count = len(num_claims)
         num_matches = sum(1 for c in num_claims if c.classification == ClaimClassification.SUPPORTED)
         num_errors = sum(1 for c in num_claims if c.classification == ClaimClassification.UNSUPPORTED)
-        num_faithfulness = (num_matches / num_count) if num_count > 0 else 1.0
+        num_evaluable_count = num_matches + num_errors
+        num_evaluable = num_evaluable_count > 0
+        num_faithfulness = round(num_matches / num_evaluable_count, 4) if num_evaluable else None
 
         abs_diffs = [
             c.metadata.get("abs_diff") for c in num_claims
-            if c.metadata.get("abs_diff") is not None
+            if c.metadata.get("abs_diff") is not None and c.classification in (ClaimClassification.SUPPORTED, ClaimClassification.UNSUPPORTED)
         ]
         mean_abs_err = round(float(np.mean(abs_diffs)), 5) if abs_diffs else None
 
@@ -93,19 +95,23 @@ class FaithfulnessEvaluator:
         dir_count = len(dir_claims)
         dir_matches = sum(1 for c in dir_claims if c.classification == ClaimClassification.SUPPORTED)
         dir_errors = sum(1 for c in dir_claims if c.classification == ClaimClassification.UNSUPPORTED)
-        dir_faithfulness = (dir_matches / dir_count) if dir_count > 0 else 1.0
+        dir_evaluable_count = dir_matches + dir_errors
+        dir_evaluable = dir_evaluable_count > 0
+        dir_faithfulness = round(dir_matches / dir_evaluable_count, 4) if dir_evaluable else None
 
         # 4. Compute Attribution Metrics
         attr_count = len(attr_claims)
         attr_matches = sum(1 for c in attr_claims if c.classification == ClaimClassification.SUPPORTED)
         attr_errors = sum(1 for c in attr_claims if c.classification == ClaimClassification.UNSUPPORTED)
-        attr_faithfulness = (attr_matches / attr_count) if attr_count > 0 else 1.0
+        attr_evaluable_count = attr_matches + attr_errors
+        attr_evaluable = attr_evaluable_count > 0
+        attr_faithfulness = round(attr_matches / attr_evaluable_count, 4) if attr_evaluable else None
 
         # 5. Unsupported and Undeterminable Claims
         unsupported_count = sum(1 for c in all_claims if c.classification == ClaimClassification.UNSUPPORTED)
         undeterminable_count = sum(1 for c in all_claims if c.classification == ClaimClassification.UNDETERMINABLE)
         total_claims = len(all_claims)
-        unsupported_rate = (unsupported_count / total_claims) if total_claims > 0 else 0.0
+        unsupported_rate = round(unsupported_count / total_claims, 4) if total_claims > 0 else 0.0
 
         timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
@@ -115,10 +121,13 @@ class FaithfulnessEvaluator:
             prompt_id=prompt_id,
             timestamp_utc=timestamp,
             execution_mode=execution_mode,
-            numerical_faithfulness=round(num_faithfulness, 4),
-            directional_faithfulness=round(dir_faithfulness, 4),
-            attribution_faithfulness=round(attr_faithfulness, 4),
-            unsupported_claim_rate=round(unsupported_rate, 4),
+            numerical_faithfulness=num_faithfulness,
+            directional_faithfulness=dir_faithfulness,
+            attribution_faithfulness=attr_faithfulness,
+            numerical_evaluable=num_evaluable,
+            directional_evaluable=dir_evaluable,
+            attribution_evaluable=attr_evaluable,
+            unsupported_claim_rate=unsupported_rate,
             numeric_claim_count=num_count,
             numeric_match_count=num_matches,
             numeric_error_count=num_errors,

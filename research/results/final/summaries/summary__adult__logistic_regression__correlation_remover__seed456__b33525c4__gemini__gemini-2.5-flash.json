@@ -1,0 +1,1522 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+  "explanation_source": "gemini__gemini-2.5-flash",
+  "prompt_id": "combined_audit_v1",
+  "timestamp_utc": "2026-09-19T08:30:04.279632+00:00",
+  "execution_mode": "FINAL_EMPIRICAL_RUN",
+  "numerical_faithfulness": 0.875,
+  "directional_faithfulness": 0.0,
+  "attribution_faithfulness": null,
+  "unsupported_claim_rate": 0.1,
+  "numerical_evaluable": true,
+  "directional_evaluable": true,
+  "attribution_evaluable": false,
+  "numeric_claim_count": 28,
+  "numeric_match_count": 14,
+  "numeric_error_count": 2,
+  "directional_claim_count": 2,
+  "directional_match_count": 0,
+  "directional_error_count": 1,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 3,
+  "undeterminable_claim_count": 13,
+  "total_claims_count": 30,
+  "numerical_mean_absolute_error": 0.01286,
+  "claims": [
+    {
+      "claim_id": "num_1",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Demographic Parity Difference:** 0.1834",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1834,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.1834,
+          0.0981,
+          0.1834,
+          0.0981,
+          -0.0853,
+          -0.4651
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1834,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.1834",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1834 matches ground truth 0.1834 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.1834,
+        "raw_string": "0.1834",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1834,
+        "candidate_values": [
+          0.1834,
+          0.0981,
+          0.1834,
+          0.0981,
+          -0.0853,
+          -0.4651
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_2",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equalized Odds Difference:** 0.1142",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1142,
+          "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.1142,
+          0.0921,
+          0.1142,
+          0.0921,
+          -0.0221,
+          -0.1935
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1142,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.1142",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1142 matches ground truth 0.1142 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.1142,
+        "raw_string": "0.1142",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1142,
+        "candidate_values": [
+          0.1142,
+          0.0921,
+          0.1142,
+          0.0921,
+          -0.0221,
+          -0.1935
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_3",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.1142",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1142,
+          "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+        },
+        "all_candidates": [
+          0.1142,
+          0.0921,
+          0.1142,
+          0.0921,
+          -0.0221,
+          -0.1935
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1142,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.1142",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1142 matches ground truth 0.1142 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+      "extracted_values": {
+        "value": 0.1142,
+        "raw_string": "0.1142",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1142,
+        "candidate_values": [
+          0.1142,
+          0.0921,
+          0.1142,
+          0.0921,
+          -0.0221,
+          -0.1935
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_4",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Disparate Impact:** 0.2862",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.2862,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.2862,
+          0.5416,
+          0.2862,
+          0.5416,
+          0.2554,
+          0.8924
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2862,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.2862",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.2862 matches ground truth 0.2862 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.2862,
+        "raw_string": "0.2862",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.2862,
+        "candidate_values": [
+          0.2862,
+          0.5416,
+          0.2862,
+          0.5416,
+          0.2554,
+          0.8924
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_5",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Positive Rate Difference:** 0.0801",
+      "ground_truth": {
+        "canonical_metric": "false_positive_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0801,
+          "path": "baseline_state.fairness_metrics.false_positive_rate_difference.value"
+        },
+        "all_candidates": [
+          0.0801,
+          0.0182,
+          0.0801,
+          0.0182,
+          -0.0619,
+          -0.7728
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0801,
+        "metric_alias": "false positive rate difference",
+        "raw_string": "0.0801",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0801 matches ground truth 0.0801 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.false_positive_rate_difference.value",
+      "extracted_values": {
+        "value": 0.0801,
+        "raw_string": "0.0801",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0801,
+        "candidate_values": [
+          0.0801,
+          0.0182,
+          0.0801,
+          0.0182,
+          -0.0619,
+          -0.7728
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_6",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Negative Rate Difference:** 0.1142",
+      "ground_truth": {
+        "canonical_metric": "false_negative_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1142,
+          "path": "baseline_state.fairness_metrics.false_negative_rate_difference.value"
+        },
+        "all_candidates": [
+          0.1142,
+          0.0921,
+          0.1142,
+          0.0921,
+          -0.0221,
+          -0.1935
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1142,
+        "metric_alias": "false negative rate difference",
+        "raw_string": "0.1142",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1142 matches ground truth 0.1142 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.false_negative_rate_difference.value",
+      "extracted_values": {
+        "value": 0.1142,
+        "raw_string": "0.1142",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1142,
+        "candidate_values": [
+          0.1142,
+          0.0921,
+          0.1142,
+          0.0921,
+          -0.0221,
+          -0.1935
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_7",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "For instance, a Demographic Parity Difference of 0.1834 indicates a notable difference in positive prediction rates between the privileged and unprivileged groups",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": "absolute_change",
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.0853,
+          "path": "metric_comparisons.demographic_parity_difference.absolute_change"
+        },
+        "all_candidates": [
+          -0.0853
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1834,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.1834 ",
+        "inferred_target_state": "absolute_change"
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.1834 for state 'absolute_change' contradicts ground truth [-0.0853] for 'demographic_parity_difference' (min abs diff: 0.0981 > tol 0.015).",
+      "referenced_evidence": "metric_comparisons.demographic_parity_difference.absolute_change",
+      "extracted_values": {
+        "value": 0.1834,
+        "raw_string": "0.1834 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.0853,
+        "candidate_values": [
+          -0.0853
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0981,
+        "rel_diff": 1.15006,
+        "target_state": "absolute_change",
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_8",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "A Disparate Impact of 0.2862 is significantly below the ideal parity ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.2862,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.2862,
+          0.5416,
+          0.2862,
+          0.5416,
+          0.2554,
+          0.8924
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2862,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.2862 ",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.2862 matches ground truth 0.2862 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.2862,
+        "raw_string": "0.2862 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.2862,
+        "candidate_values": [
+          0.2862,
+          0.5416,
+          0.2862,
+          0.5416,
+          0.2554,
+          0.8924
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_9",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "A Disparate Impact of 0.2862 is significantly below the ideal parity ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "relative_change",
+          "value": 0.8924,
+          "path": "metric_comparisons.disparate_impact.relative_change"
+        },
+        "all_candidates": [
+          0.2862,
+          0.5416,
+          0.2862,
+          0.5416,
+          0.2554,
+          0.8924
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "disparate impact",
+        "raw_string": "1.0",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 1.0 contradicts ground truth [0.2862, 0.5416, 0.2862, 0.5416, 0.2554, 0.8924] for 'disparate_impact' (min abs diff: 0.1076 > tol 0.015).",
+      "referenced_evidence": "metric_comparisons.disparate_impact.relative_change",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8924,
+        "candidate_values": [
+          0.2862,
+          0.5416,
+          0.2862,
+          0.5416,
+          0.2554,
+          0.8924
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.1076,
+        "rel_diff": 0.12057,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_10",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Accuracy:** 0.8449",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.8449,
+          "path": "baseline_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          0.8449,
+          0.8399,
+          0.8449,
+          0.8399,
+          -0.005,
+          -0.0059
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8449,
+        "metric_alias": "accuracy",
+        "raw_string": "0.8449",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8449 matches ground truth 0.8449 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 0.8449,
+        "raw_string": "0.8449",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8449,
+        "candidate_values": [
+          0.8449,
+          0.8399,
+          0.8449,
+          0.8399,
+          -0.005,
+          -0.0059
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_11",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Precision:** 0.7156",
+      "ground_truth": {
+        "canonical_metric": "precision",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.7156,
+          "path": "baseline_state.performance_metrics.precision.value"
+        },
+        "all_candidates": [
+          0.7156,
+          0.7186,
+          0.7156,
+          0.7186,
+          0.003,
+          0.0042
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.7156,
+        "metric_alias": "precision",
+        "raw_string": "0.7156",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.7156 matches ground truth 0.7156 for 'precision' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+      "extracted_values": {
+        "value": 0.7156,
+        "raw_string": "0.7156",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.7156,
+        "candidate_values": [
+          0.7156,
+          0.7186,
+          0.7156,
+          0.7186,
+          0.003,
+          0.0042
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_12",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **Recall:** 0.5843",
+      "ground_truth": {
+        "canonical_metric": "recall",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.5843,
+          "path": "baseline_state.performance_metrics.recall.value"
+        },
+        "all_candidates": [
+          0.5843,
+          0.5441,
+          0.5843,
+          0.5441,
+          -0.0402,
+          -0.0688
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.5843,
+        "metric_alias": "recall",
+        "raw_string": "0.5843",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.5843 matches ground truth 0.5843 for 'recall' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+      "extracted_values": {
+        "value": 0.5843,
+        "raw_string": "0.5843",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.5843,
+        "candidate_values": [
+          0.5843,
+          0.5441,
+          0.5843,
+          0.5441,
+          -0.0402,
+          -0.0688
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_13",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **F1 Score:** 0.6433",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.6433,
+          "path": "baseline_state.performance_metrics.f1_score.value"
+        },
+        "all_candidates": [
+          0.6433,
+          0.6193,
+          0.6433,
+          0.6193,
+          -0.024,
+          -0.0373
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.6433,
+        "metric_alias": "f1 score",
+        "raw_string": "0.6433",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.6433 matches ground truth 0.6433 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+      "extracted_values": {
+        "value": 0.6433,
+        "raw_string": "0.6433",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.6433,
+        "candidate_values": [
+          0.6433,
+          0.6193,
+          0.6433,
+          0.6193,
+          -0.024,
+          -0.0373
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_14",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   **ROC-AUC:** 0.9041",
+      "ground_truth": {
+        "canonical_metric": "roc_auc",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9041,
+          "path": "baseline_state.performance_metrics.roc_auc.value"
+        },
+        "all_candidates": [
+          0.9041,
+          0.8815,
+          0.9041,
+          0.8815,
+          -0.0226,
+          -0.025
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9041,
+        "metric_alias": "roc-auc",
+        "raw_string": "0.9041",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9041 matches ground truth 0.9041 for 'roc_auc' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.roc_auc.value",
+      "extracted_values": {
+        "value": 0.9041,
+        "raw_string": "0.9041",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9041,
+        "candidate_values": [
+          0.9041,
+          0.8815,
+          0.9041,
+          0.8815,
+          -0.0226,
+          -0.025
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_15",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*Interpretation:* The baseline model demonstrated strong overall predictive performance, with an accuracy of 0.8449 and a high ROC-AUC of 0.9041",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "target_state": "baseline",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.8449,
+          "path": "baseline_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          0.8449,
+          0.8449
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8449,
+        "metric_alias": "accuracy",
+        "raw_string": "0.8449",
+        "inferred_target_state": "baseline"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8449 for state 'baseline' matches ground truth 0.8449 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 0.8449,
+        "raw_string": "0.8449",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8449,
+        "candidate_values": [
+          0.8449,
+          0.8449
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": "baseline",
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_16",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*Interpretation:* The baseline model demonstrated strong overall predictive performance, with an accuracy of 0.8449 and a high ROC-AUC of 0.9041",
+      "ground_truth": {
+        "canonical_metric": "roc_auc",
+        "target_state": "baseline",
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9041,
+          "path": "baseline_state.performance_metrics.roc_auc.value"
+        },
+        "all_candidates": [
+          0.9041,
+          0.9041
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9041,
+        "metric_alias": "roc-auc",
+        "raw_string": "0.9041",
+        "inferred_target_state": "baseline"
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9041 for state 'baseline' matches ground truth 0.9041 for 'roc_auc' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.roc_auc.value",
+      "extracted_values": {
+        "value": 0.9041,
+        "raw_string": "0.9041",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9041,
+        "candidate_values": [
+          0.9041,
+          0.9041
+        ]
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": "baseline",
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_17",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1834 | Mitigated: 0.0981 | Delta: -0.0853",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1834,
+        "raw_string": "0.1834 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1834 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.1834,
+        "raw_string": "0.1834 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_18",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1834 | Mitigated: 0.0981 | Delta: -0.0853",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0981,
+        "raw_string": "0.0981 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0981 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0981,
+        "raw_string": "0.0981 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_19",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1834 | Mitigated: 0.0981 | Delta: -0.0853",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0853,
+        "raw_string": "-0.0853",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '-0.0853' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": -0.0853,
+        "raw_string": "-0.0853",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_20",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "The absolute difference decreased, moving closer to ideal parity (0.0)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_21",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1142,
+        "raw_string": "0.1142 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1142 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.1142,
+        "raw_string": "0.1142 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_22",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0921,
+        "raw_string": "0.0921 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0921 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0921,
+        "raw_string": "0.0921 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_23",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0221,
+        "raw_string": "-0.0221",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '-0.0221' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": -0.0221,
+        "raw_string": "-0.0221",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_24",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "The absolute difference decreased, moving closer to ideal parity (0.0)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_25",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1142,
+        "raw_string": "0.1142 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1142 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.1142,
+        "raw_string": "0.1142 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_26",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0921,
+        "raw_string": "0.0921 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0921 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0921,
+        "raw_string": "0.0921 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_27",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1142 | Mitigated: 0.0921 | Delta: -0.0221",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0221,
+        "raw_string": "-0.0221",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '-0.0221' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": -0.0221,
+        "raw_string": "-0.0221",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_28",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "numerical",
+      "claim_text": "The absolute difference decreased, moving closer to ideal parity (0.0)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "dir_math_1",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "directional",
+      "claim_text": "A Disparate Impact of 0.2862 is significantly below the ideal parity ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group",
+      "ground_truth": {
+        "metric_name": "disparate_impact",
+        "direction": "increase",
+        "before": 0.2862,
+        "after": 0.5416,
+        "absolute_change": 0.2554
+      },
+      "predicted_claim": {
+        "direction": "decrease",
+        "term": "lower",
+        "metric_alias": "disparate impact"
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Claim that disparate_impact 'lower' contradicts ground truth direction: increase (delta: 0.2554).",
+      "referenced_evidence": "metric_comparisons.disparate_impact.direction",
+      "extracted_values": {
+        "direction": "decrease",
+        "term": "lower",
+        "metric": "disparate_impact"
+      },
+      "expected_values": {
+        "direction": "increase",
+        "absolute_change": 0.2554,
+        "before": 0.2862,
+        "after": 0.5416
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {}
+    },
+    {
+      "claim_id": "mag_2",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+      "claim_type": "magnitude",
+      "claim_text": "A Disparate Impact of 0.2862 is significantly below the ideal parity ratio of 1.0, suggesting a lower positive outcome rate for the unprivileged group relative to the privileged group",
+      "ground_truth": {
+        "metric_name": "disparate_impact",
+        "absolute_change": 0.2554,
+        "relative_change": 0.8924
+      },
+      "predicted_claim": {
+        "modifier": "significantly",
+        "metric_alias": "disparate impact"
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Claim uses qualitative magnitude modifier 'significantly' for 'disparate_impact' (actual delta: 0.2554). Subjective magnitude claims cannot be deterministically resolved without arbitrary thresholds and are routed to human annotation.",
+      "referenced_evidence": "metric_comparisons.disparate_impact.absolute_change",
+      "extracted_values": {
+        "modifier": "significantly",
+        "metric": "disparate_impact"
+      },
+      "expected_values": {
+        "absolute_change": 0.2554,
+        "relative_change": 0.8924
+      },
+      "evidence_hash": "4d69adbc0a73f52793bfe1ec587a68eb2bd3cefa60dd9094ecb24cbf64bdd63e",
+      "provenance": {
+        "experiment_id": "adult__logistic_regression__correlation_remover__seed456__b33525c4",
+        "dataset": "adult",
+        "model": "logistic_regression",
+        "mitigation": "correlation_remover"
+      },
+      "metadata": {}
+    }
+  ],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__random_forest__correlation_remover__seed123__ec4d3659",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "a8390e7599da09f0fd4f227dd42d789805f4f269435e76b726125afe047b7aa4",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a machine learning model trained on the `compas` dataset. The model architecture used was `random_forest`, initialized with a random seed of `123`. The primary protected attribute under examination is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities across fairness metrics and demonstrated a moderate level of predictive performance.\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.2898. This indicates a notable disparity in positive prediction rates between the privileged and unprivileged groups, being distant from the ideal parity of 0.0.\n*   **Equalized Odds Difference:** 0.3350. This metric, which considers disparities in both false positive rates and false negative rates, shows a significant difference from the ideal parity of 0.0.\n*   **Equal Opportunity Difference:** 0.3350. This metric, focusing on disparities in true positive rates, also indicates a substantial difference from the ideal parity of 0.0.\n*   **Disparate Impact:** 2.0363. This ratio, ideally 1.0, suggests that the privileged group is more than twice as likely to receive a positive outcome compared to the unprivileged group.\n*   **False Positive Rate Difference:** 0.1761. A difference in false positive rates between groups, distant from the ideal 0.0.\n*   **False Negative Rate Difference:** 0.3350. A difference in false negative rates between groups, distant from the ideal 0.0.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.6572\n*   **Precision:** 0.6409\n*   **Recall:** 0.6177\n*   **F1 Score:** 0.6291\n*   **ROC-AUC:** 0.7098\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Impact on Fairness Metrics:**\n*   **Demographic Parity Difference:** Remained unchanged at 0.2898 (Delta: +0.0000). The disparity in positive prediction rates was not affected by the mitigation.\n*   **Equalized Odds Difference:** Degraded, increasing from 0.3350 to 0.3453 (Delta: +0.0103). This metric moved further from ideal parity (0.0).\n*   **Equal Opportunity Difference:** Degraded, increasing from 0.3350 to 0.3453 (Delta: +0.0103). This metric also moved further from ideal parity (0.0).\n*   **Disparate Impact:** Degraded, increasing from 2.0363 to 2.0727 (Delta: +0.0364). The ratio moved further from the ideal parity of 1.0.\n*   **False Positive Rate Difference:** Improved, decreasing from 0.1761",
+  "timestamp_utc": "2026-09-19T08:36:02.902584+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.782,
+    "finish_reason": "2",
+    "prompt_tokens": 1648,
+    "completion_tokens": 754,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

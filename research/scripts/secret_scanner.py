@@ -2,12 +2,11 @@ import os
 import re
 import sys
 
-def scan():
-    # Detect Google API keys or exposed secret keys
+def scan_for_secrets(directory: str = "research"):
     gemini_key_pattern = re.compile(r'AIza[0-9A-Za-z-_]{35}')
     violations = []
-    
-    for root, dirs, files in os.walk('research'):
+
+    for root, dirs, files in os.walk(directory):
         for f in files:
             if f.endswith(('.py', '.md', '.json', '.yaml', '.csv')):
                 path = os.path.join(root, f)
@@ -19,6 +18,11 @@ def scan():
                             violations.append((path, m[:6] + "..." + m[-4:]))
                 except Exception:
                     pass
+    return violations
+
+
+def scan():
+    violations = scan_for_secrets("research")
                     
     if violations:
         print("[!] SECURITY ALERT: Real API key pattern found in:")

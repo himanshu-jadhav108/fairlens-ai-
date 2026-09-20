@@ -1,0 +1,1523 @@
+{
+  "experiment_id": "adult__random_forest__correlation_remover__seed123__817dbb0b",
+  "manifest_reference": "manifests/adult__random_forest__correlation_remover__seed123__817dbb0b.json",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "random_seed": 123,
+  "is_synthetic_benchmark": false,
+  "baseline_evaluation": {
+    "performance": {
+      "accuracy": {
+        "value": 0.8604,
+        "requires": "labels",
+        "defined": true
+      },
+      "precision": {
+        "value": 0.8074,
+        "requires": "labels",
+        "defined": true
+      },
+      "recall": {
+        "value": 0.547,
+        "requires": "labels",
+        "defined": true
+      },
+      "f1_score": {
+        "value": 0.6522,
+        "requires": "labels",
+        "defined": true
+      },
+      "roc_auc": {
+        "value": 0.9119,
+        "requires": "probabilities",
+        "defined": true,
+        "reason": null
+      }
+    },
+    "fairness": {
+      "sensitive_attribute": "sex",
+      "groups": [
+        "Female",
+        "Male"
+      ],
+      "privileged_group": "Male",
+      "unprivileged_group": "Female",
+      "demographic_parity_difference": {
+        "value": 0.1571,
+        "defined": true,
+        "reason": null
+      },
+      "equalized_odds_difference": {
+        "value": 0.1058,
+        "defined": true,
+        "reason": null
+      },
+      "equal_opportunity_difference": {
+        "value": 0.1058,
+        "defined": true,
+        "reason": null
+      },
+      "disparate_impact_ratio": {
+        "value": 0.2666,
+        "defined": true,
+        "reason": null
+      },
+      "false_positive_rate_difference": {
+        "value": 0.0482,
+        "defined": true,
+        "reason": null
+      },
+      "false_negative_rate_difference": {
+        "value": 0.1058,
+        "defined": true,
+        "reason": null
+      },
+      "subgroup_statistics": [
+        {
+          "group": "Female",
+          "count": 3239,
+          "base_rate": 0.1022,
+          "selection_rate": 0.0571,
+          "accuracy": 0.9339,
+          "tpr": 0.4562,
+          "fpr": 0.0117,
+          "confusion_matrix": {
+            "tp": 151,
+            "tn": 2874,
+            "fp": 34,
+            "fn": 180
+          }
+        },
+        {
+          "group": "Male",
+          "count": 6530,
+          "base_rate": 0.3074,
+          "selection_rate": 0.2142,
+          "accuracy": 0.8239,
+          "tpr": 0.562,
+          "fpr": 0.0599,
+          "confusion_matrix": {
+            "tp": 1128,
+            "tn": 4252,
+            "fp": 271,
+            "fn": 879
+          }
+        }
+      ]
+    },
+    "global_shap": [
+      {
+        "feature": "capital_gain",
+        "importance": 0.06333
+      },
+      {
+        "feature": "marital_status_Married-civ-spouse",
+        "importance": 0.052423
+      },
+      {
+        "feature": "relationship_Husband",
+        "importance": 0.050219
+      },
+      {
+        "feature": "education_num",
+        "importance": 0.034665
+      },
+      {
+        "feature": "marital_status_Never-married",
+        "importance": 0.024717
+      },
+      {
+        "feature": "age",
+        "importance": 0.024114
+      },
+      {
+        "feature": "hours_per_week",
+        "importance": 0.015534
+      },
+      {
+        "feature": "occupation_Exec-managerial",
+        "importance": 0.012218
+      },
+      {
+        "feature": "capital_loss",
+        "importance": 0.011218
+      },
+      {
+        "feature": "occupation_Other-service",
+        "importance": 0.010762
+      },
+      {
+        "feature": "sex_Male",
+        "importance": 0.005313
+      },
+      {
+        "feature": "relationship_Own-child",
+        "importance": 0.005244
+      },
+      {
+        "feature": "occupation_Prof-specialty",
+        "importance": 0.004299
+      },
+      {
+        "feature": "occupation_Machine-op-inspct",
+        "importance": 0.004062
+      },
+      {
+        "feature": "relationship_Not-in-family",
+        "importance": 0.003707
+      },
+      {
+        "feature": "sex_Female",
+        "importance": 0.003361
+      },
+      {
+        "feature": "relationship_Other-relative",
+        "importance": 0.003113
+      },
+      {
+        "feature": "relationship_Unmarried",
+        "importance": 0.002247
+      },
+      {
+        "feature": "occupation_Farming-fishing",
+        "importance": 0.002033
+      },
+      {
+        "feature": "occupation_Transport-moving",
+        "importance": 0.001947
+      },
+      {
+        "feature": "occupation_Tech-support",
+        "importance": 0.001883
+      },
+      {
+        "feature": "workclass_Private",
+        "importance": 0.001872
+      },
+      {
+        "feature": "marital_status_Divorced",
+        "importance": 0.001739
+      },
+      {
+        "feature": "occupation_Craft-repair",
+        "importance": 0.001609
+      },
+      {
+        "feature": "workclass_Self-emp-not-inc",
+        "importance": 0.001554
+      },
+      {
+        "feature": "relationship_Wife",
+        "importance": 0.001446
+      },
+      {
+        "feature": "race_White",
+        "importance": 0.000993
+      },
+      {
+        "feature": "race_Black",
+        "importance": 0.000933
+      },
+      {
+        "feature": "occupation_Sales",
+        "importance": 0.00073
+      },
+      {
+        "feature": "occupation_Adm-clerical",
+        "importance": 0.00064
+      },
+      {
+        "feature": "workclass_Federal-gov",
+        "importance": 0.000509
+      },
+      {
+        "feature": "occupation_Handlers-cleaners",
+        "importance": 0.00048
+      },
+      {
+        "feature": "workclass_State-gov",
+        "importance": 0.000398
+      },
+      {
+        "feature": "race_Asian-Pac-Islander",
+        "importance": 0.00038
+      },
+      {
+        "feature": "marital_status_Widowed",
+        "importance": 0.000316
+      },
+      {
+        "feature": "workclass_Local-gov",
+        "importance": 0.000154
+      },
+      {
+        "feature": "marital_status_Separated",
+        "importance": 0.000145
+      },
+      {
+        "feature": "occupation_Protective-serv",
+        "importance": 7.8e-05
+      },
+      {
+        "feature": "marital_status_Married-spouse-absent",
+        "importance": 6.9e-05
+      },
+      {
+        "feature": "workclass_Never-worked",
+        "importance": 0.0
+      },
+      {
+        "feature": "workclass_Self-emp-inc",
+        "importance": 0.0
+      },
+      {
+        "feature": "workclass_Without-pay",
+        "importance": 0.0
+      },
+      {
+        "feature": "marital_status_Married-AF-spouse",
+        "importance": 0.0
+      },
+      {
+        "feature": "occupation_Armed-Forces",
+        "importance": 0.0
+      },
+      {
+        "feature": "occupation_Priv-house-serv",
+        "importance": 0.0
+      },
+      {
+        "feature": "race_Amer-Indian-Eskimo",
+        "importance": 0.0
+      },
+      {
+        "feature": "race_Other",
+        "importance": 0.0
+      }
+    ],
+    "subgroup_shap": {
+      "Female": [
+        {
+          "feature": "marital_status_Married-civ-spouse",
+          "importance": 0.053727
+        },
+        {
+          "feature": "relationship_Husband",
+          "importance": 0.048324
+        },
+        {
+          "feature": "capital_gain",
+          "importance": 0.038839
+        },
+        {
+          "feature": "education_num",
+          "importance": 0.027714
+        },
+        {
+          "feature": "age",
+          "importance": 0.026158
+        },
+        {
+          "feature": "marital_status_Never-married",
+          "importance": 0.025766
+        },
+        {
+          "feature": "hours_per_week",
+          "importance": 0.011418
+        },
+        {
+          "feature": "occupation_Other-service",
+          "importance": 0.010508
+        },
+        {
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.007165
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.006921
+        },
+        {
+          "feature": "capital_loss",
+          "importance": 0.004798
+        },
+        {
+          "feature": "relationship_Other-relative",
+          "importance": 0.004576
+        },
+        {
+          "feature": "relationship_Own-child",
+          "importance": 0.004228
+        },
+        {
+          "feature": "relationship_Not-in-family",
+          "importance": 0.004155
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.004018
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.003802
+        },
+        {
+          "feature": "occupation_Machine-op-inspct",
+          "importance": 0.003216
+        },
+        {
+          "feature": "occupation_Tech-support",
+          "importance": 0.002686
+        },
+        {
+          "feature": "relationship_Unmarried",
+          "importance": 0.002172
+        },
+        {
+          "feature": "marital_status_Divorced",
+          "importance": 0.001941
+        },
+        {
+          "feature": "workclass_Private",
+          "importance": 0.001781
+        },
+        {
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.00163
+        },
+        {
+          "feature": "occupation_Craft-repair",
+          "importance": 0.001377
+        },
+        {
+          "feature": "occupation_Sales",
+          "importance": 0.000919
+        },
+        {
+          "feature": "occupation_Transport-moving",
+          "importance": 0.000913
+        },
+        {
+          "feature": "race_Black",
+          "importance": 0.000899
+        },
+        {
+          "feature": "occupation_Adm-clerical",
+          "importance": 0.000851
+        },
+        {
+          "feature": "race_White",
+          "importance": 0.000701
+        },
+        {
+          "feature": "workclass_State-gov",
+          "importance": 0.000408
+        },
+        {
+          "feature": "workclass_Federal-gov",
+          "importance": 0.000295
+        },
+        {
+          "feature": "race_Asian-Pac-Islander",
+          "importance": 0.000275
+        },
+        {
+          "feature": "marital_status_Widowed",
+          "importance": 0.000235
+        },
+        {
+          "feature": "workclass_Self-emp-not-inc",
+          "importance": 0.000212
+        },
+        {
+          "feature": "marital_status_Separated",
+          "importance": 0.000186
+        },
+        {
+          "feature": "occupation_Handlers-cleaners",
+          "importance": 0.00011
+        },
+        {
+          "feature": "workclass_Local-gov",
+          "importance": 8e-05
+        },
+        {
+          "feature": "occupation_Protective-serv",
+          "importance": 4.5e-05
+        },
+        {
+          "feature": "workclass_Never-worked",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Self-emp-inc",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Without-pay",
+          "importance": 0.0
+        },
+        {
+          "feature": "marital_status_Married-AF-spouse",
+          "importance": 0.0
+        },
+        {
+          "feature": "marital_status_Married-spouse-absent",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Armed-Forces",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Farming-fishing",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Priv-house-serv",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Amer-Indian-Eskimo",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Other",
+          "importance": 0.0
+        }
+      ],
+      "Male": [
+        {
+          "feature": "capital_gain",
+          "importance": 0.077107
+        },
+        {
+          "feature": "marital_status_Married-civ-spouse",
+          "importance": 0.051689
+        },
+        {
+          "feature": "relationship_Husband",
+          "importance": 0.051285
+        },
+        {
+          "feature": "education_num",
+          "importance": 0.038575
+        },
+        {
+          "feature": "marital_status_Never-married",
+          "importance": 0.024127
+        },
+        {
+          "feature": "age",
+          "importance": 0.022964
+        },
+        {
+          "feature": "hours_per_week",
+          "importance": 0.017849
+        },
+        {
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.01506
+        },
+        {
+          "feature": "capital_loss",
+          "importance": 0.014829
+        },
+        {
+          "feature": "occupation_Other-service",
+          "importance": 0.010905
+        },
+        {
+          "feature": "relationship_Own-child",
+          "importance": 0.005816
+        },
+        {
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.005801
+        },
+        {
+          "feature": "occupation_Machine-op-inspct",
+          "importance": 0.004538
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.004409
+        },
+        {
+          "feature": "relationship_Not-in-family",
+          "importance": 0.003454
+        },
+        {
+          "feature": "occupation_Farming-fishing",
+          "importance": 0.003177
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.003112
+        },
+        {
+          "feature": "occupation_Transport-moving",
+          "importance": 0.002528
+        },
+        {
+          "feature": "workclass_Self-emp-not-inc",
+          "importance": 0.002308
+        },
+        {
+          "feature": "relationship_Other-relative",
+          "importance": 0.00229
+        },
+        {
+          "feature": "relationship_Unmarried",
+          "importance": 0.002288
+        },
+        {
+          "feature": "workclass_Private",
+          "importance": 0.001923
+        },
+        {
+          "feature": "occupation_Craft-repair",
+          "importance": 0.00174
+        },
+        {
+          "feature": "marital_status_Divorced",
+          "importance": 0.001626
+        },
+        {
+          "feature": "occupation_Tech-support",
+          "importance": 0.001431
+        },
+        {
+          "feature": "race_White",
+          "importance": 0.001157
+        },
+        {
+          "feature": "race_Black",
+          "importance": 0.000952
+        },
+        {
+          "feature": "occupation_Handlers-cleaners",
+          "importance": 0.000688
+        },
+        {
+          "feature": "workclass_Federal-gov",
+          "importance": 0.000629
+        },
+        {
+          "feature": "occupation_Sales",
+          "importance": 0.000624
+        },
+        {
+          "feature": "occupation_Adm-clerical",
+          "importance": 0.000522
+        },
+        {
+          "feature": "race_Asian-Pac-Islander",
+          "importance": 0.000439
+        },
+        {
+          "feature": "workclass_State-gov",
+          "importance": 0.000392
+        },
+        {
+          "feature": "marital_status_Widowed",
+          "importance": 0.000362
+        },
+        {
+          "feature": "workclass_Local-gov",
+          "importance": 0.000195
+        },
+        {
+          "feature": "marital_status_Separated",
+          "importance": 0.000122
+        },
+        {
+          "feature": "marital_status_Married-spouse-absent",
+          "importance": 0.000107
+        },
+        {
+          "feature": "occupation_Protective-serv",
+          "importance": 9.7e-05
+        },
+        {
+          "feature": "workclass_Never-worked",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Self-emp-inc",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Without-pay",
+          "importance": 0.0
+        },
+        {
+          "feature": "marital_status_Married-AF-spouse",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Armed-Forces",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Priv-house-serv",
+          "importance": 0.0
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Amer-Indian-Eskimo",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Other",
+          "importance": 0.0
+        }
+      ]
+    },
+    "shap_provenance": {
+      "explainer_type": "TreeExplainer",
+      "explainer_selection_mode": "auto",
+      "shap_version": "0.51.0",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
+      "feature_representation_order": [
+        "age",
+        "education_num",
+        "capital_gain",
+        "capital_loss",
+        "hours_per_week",
+        "workclass_Federal-gov",
+        "workclass_Local-gov",
+        "workclass_Never-worked",
+        "workclass_Private",
+        "workclass_Self-emp-inc",
+        "workclass_Self-emp-not-inc",
+        "workclass_State-gov",
+        "workclass_Without-pay",
+        "marital_status_Divorced",
+        "marital_status_Married-AF-spouse",
+        "marital_status_Married-civ-spouse",
+        "marital_status_Married-spouse-absent",
+        "marital_status_Never-married",
+        "marital_status_Separated",
+        "marital_status_Widowed",
+        "occupation_Adm-clerical",
+        "occupation_Armed-Forces",
+        "occupation_Craft-repair",
+        "occupation_Exec-managerial",
+        "occupation_Farming-fishing",
+        "occupation_Handlers-cleaners",
+        "occupation_Machine-op-inspct",
+        "occupation_Other-service",
+        "occupation_Priv-house-serv",
+        "occupation_Prof-specialty",
+        "occupation_Protective-serv",
+        "occupation_Sales",
+        "occupation_Tech-support",
+        "occupation_Transport-moving",
+        "relationship_Husband",
+        "relationship_Not-in-family",
+        "relationship_Other-relative",
+        "relationship_Own-child",
+        "relationship_Unmarried",
+        "relationship_Wife",
+        "race_Amer-Indian-Eskimo",
+        "race_Asian-Pac-Islander",
+        "race_Black",
+        "race_Other",
+        "race_White",
+        "sex_Female",
+        "sex_Male"
+      ],
+      "number_of_features": 47,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
+      "random_seed": 123
+    }
+  },
+  "mitigated_evaluation": {
+    "performance": {
+      "accuracy": {
+        "value": 0.8592,
+        "requires": "labels",
+        "defined": true
+      },
+      "precision": {
+        "value": 0.7996,
+        "requires": "labels",
+        "defined": true
+      },
+      "recall": {
+        "value": 0.5496,
+        "requires": "labels",
+        "defined": true
+      },
+      "f1_score": {
+        "value": 0.6515,
+        "requires": "labels",
+        "defined": true
+      },
+      "roc_auc": {
+        "value": 0.9109,
+        "requires": "probabilities",
+        "defined": true,
+        "reason": null
+      }
+    },
+    "fairness": {
+      "sensitive_attribute": "sex",
+      "groups": [
+        "Female",
+        "Male"
+      ],
+      "privileged_group": "Male",
+      "unprivileged_group": "Female",
+      "demographic_parity_difference": {
+        "value": 0.1606,
+        "defined": true,
+        "reason": null
+      },
+      "equalized_odds_difference": {
+        "value": 0.1159,
+        "defined": true,
+        "reason": null
+      },
+      "equal_opportunity_difference": {
+        "value": 0.1159,
+        "defined": true,
+        "reason": null
+      },
+      "disparate_impact_ratio": {
+        "value": 0.2623,
+        "defined": true,
+        "reason": null
+      },
+      "false_positive_rate_difference": {
+        "value": 0.0509,
+        "defined": true,
+        "reason": null
+      },
+      "false_negative_rate_difference": {
+        "value": 0.1159,
+        "defined": true,
+        "reason": null
+      },
+      "subgroup_statistics": [
+        {
+          "group": "Female",
+          "count": 3239,
+          "base_rate": 0.1022,
+          "selection_rate": 0.0571,
+          "accuracy": 0.9327,
+          "tpr": 0.4502,
+          "fpr": 0.0124,
+          "confusion_matrix": {
+            "tp": 149,
+            "tn": 2872,
+            "fp": 36,
+            "fn": 182
+          }
+        },
+        {
+          "group": "Male",
+          "count": 6530,
+          "base_rate": 0.3074,
+          "selection_rate": 0.2178,
+          "accuracy": 0.8228,
+          "tpr": 0.566,
+          "fpr": 0.0632,
+          "confusion_matrix": {
+            "tp": 1136,
+            "tn": 4237,
+            "fp": 286,
+            "fn": 871
+          }
+        }
+      ]
+    },
+    "global_shap": [
+      {
+        "feature": "capital_gain",
+        "importance": 0.062428
+      },
+      {
+        "feature": "relationship_Husband",
+        "importance": 0.061205
+      },
+      {
+        "feature": "marital_status_Married-civ-spouse",
+        "importance": 0.050202
+      },
+      {
+        "feature": "education_num",
+        "importance": 0.039269
+      },
+      {
+        "feature": "age",
+        "importance": 0.027659
+      },
+      {
+        "feature": "marital_status_Never-married",
+        "importance": 0.024601
+      },
+      {
+        "feature": "hours_per_week",
+        "importance": 0.015172
+      },
+      {
+        "feature": "occupation_Exec-managerial",
+        "importance": 0.012728
+      },
+      {
+        "feature": "capital_loss",
+        "importance": 0.009442
+      },
+      {
+        "feature": "occupation_Other-service",
+        "importance": 0.007937
+      },
+      {
+        "feature": "relationship_Own-child",
+        "importance": 0.005288
+      },
+      {
+        "feature": "occupation_Prof-specialty",
+        "importance": 0.004128
+      },
+      {
+        "feature": "occupation_Machine-op-inspct",
+        "importance": 0.00359
+      },
+      {
+        "feature": "relationship_Not-in-family",
+        "importance": 0.003117
+      },
+      {
+        "feature": "occupation_Transport-moving",
+        "importance": 0.002956
+      },
+      {
+        "feature": "occupation_Tech-support",
+        "importance": 0.002851
+      },
+      {
+        "feature": "relationship_Other-relative",
+        "importance": 0.002674
+      },
+      {
+        "feature": "workclass_Self-emp-not-inc",
+        "importance": 0.00217
+      },
+      {
+        "feature": "occupation_Craft-repair",
+        "importance": 0.002156
+      },
+      {
+        "feature": "occupation_Farming-fishing",
+        "importance": 0.002119
+      },
+      {
+        "feature": "workclass_Private",
+        "importance": 0.00158
+      },
+      {
+        "feature": "occupation_Handlers-cleaners",
+        "importance": 0.001275
+      },
+      {
+        "feature": "marital_status_Divorced",
+        "importance": 0.001242
+      },
+      {
+        "feature": "race_White",
+        "importance": 0.001156
+      },
+      {
+        "feature": "race_Black",
+        "importance": 0.001139
+      },
+      {
+        "feature": "occupation_Sales",
+        "importance": 0.001083
+      },
+      {
+        "feature": "workclass_Federal-gov",
+        "importance": 0.001
+      },
+      {
+        "feature": "relationship_Unmarried",
+        "importance": 0.000898
+      },
+      {
+        "feature": "marital_status_Widowed",
+        "importance": 0.000752
+      },
+      {
+        "feature": "race_Asian-Pac-Islander",
+        "importance": 0.000682
+      },
+      {
+        "feature": "occupation_Adm-clerical",
+        "importance": 0.000475
+      },
+      {
+        "feature": "relationship_Wife",
+        "importance": 0.000384
+      },
+      {
+        "feature": "workclass_State-gov",
+        "importance": 0.000376
+      },
+      {
+        "feature": "workclass_Local-gov",
+        "importance": 0.000215
+      },
+      {
+        "feature": "marital_status_Married-spouse-absent",
+        "importance": 0.000184
+      },
+      {
+        "feature": "occupation_Protective-serv",
+        "importance": 0.000148
+      },
+      {
+        "feature": "marital_status_Separated",
+        "importance": 9.1e-05
+      },
+      {
+        "feature": "workclass_Never-worked",
+        "importance": 0.0
+      },
+      {
+        "feature": "workclass_Self-emp-inc",
+        "importance": 0.0
+      },
+      {
+        "feature": "workclass_Without-pay",
+        "importance": 0.0
+      },
+      {
+        "feature": "marital_status_Married-AF-spouse",
+        "importance": 0.0
+      },
+      {
+        "feature": "occupation_Armed-Forces",
+        "importance": 0.0
+      },
+      {
+        "feature": "occupation_Priv-house-serv",
+        "importance": 0.0
+      },
+      {
+        "feature": "race_Amer-Indian-Eskimo",
+        "importance": 0.0
+      },
+      {
+        "feature": "race_Other",
+        "importance": 0.0
+      },
+      {
+        "feature": "sex_Female",
+        "importance": 0.0
+      },
+      {
+        "feature": "sex_Male",
+        "importance": 0.0
+      }
+    ],
+    "subgroup_shap": {
+      "Female": [
+        {
+          "feature": "relationship_Husband",
+          "importance": 0.062811
+        },
+        {
+          "feature": "marital_status_Married-civ-spouse",
+          "importance": 0.050007
+        },
+        {
+          "feature": "capital_gain",
+          "importance": 0.040252
+        },
+        {
+          "feature": "age",
+          "importance": 0.031541
+        },
+        {
+          "feature": "education_num",
+          "importance": 0.030752
+        },
+        {
+          "feature": "marital_status_Never-married",
+          "importance": 0.028217
+        },
+        {
+          "feature": "hours_per_week",
+          "importance": 0.013319
+        },
+        {
+          "feature": "occupation_Other-service",
+          "importance": 0.007899
+        },
+        {
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.007741
+        },
+        {
+          "feature": "relationship_Own-child",
+          "importance": 0.004694
+        },
+        {
+          "feature": "capital_loss",
+          "importance": 0.004316
+        },
+        {
+          "feature": "occupation_Tech-support",
+          "importance": 0.004295
+        },
+        {
+          "feature": "relationship_Other-relative",
+          "importance": 0.00405
+        },
+        {
+          "feature": "occupation_Machine-op-inspct",
+          "importance": 0.003154
+        },
+        {
+          "feature": "relationship_Not-in-family",
+          "importance": 0.002887
+        },
+        {
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.002589
+        },
+        {
+          "feature": "occupation_Transport-moving",
+          "importance": 0.002001
+        },
+        {
+          "feature": "workclass_Private",
+          "importance": 0.00171
+        },
+        {
+          "feature": "marital_status_Divorced",
+          "importance": 0.001436
+        },
+        {
+          "feature": "occupation_Sales",
+          "importance": 0.001372
+        },
+        {
+          "feature": "occupation_Craft-repair",
+          "importance": 0.001295
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.001067
+        },
+        {
+          "feature": "race_White",
+          "importance": 0.000902
+        },
+        {
+          "feature": "race_Black",
+          "importance": 0.00087
+        },
+        {
+          "feature": "marital_status_Widowed",
+          "importance": 0.000862
+        },
+        {
+          "feature": "relationship_Unmarried",
+          "importance": 0.000802
+        },
+        {
+          "feature": "workclass_Federal-gov",
+          "importance": 0.000752
+        },
+        {
+          "feature": "workclass_Self-emp-not-inc",
+          "importance": 0.000665
+        },
+        {
+          "feature": "occupation_Handlers-cleaners",
+          "importance": 0.000621
+        },
+        {
+          "feature": "occupation_Adm-clerical",
+          "importance": 0.000537
+        },
+        {
+          "feature": "race_Asian-Pac-Islander",
+          "importance": 0.000416
+        },
+        {
+          "feature": "workclass_State-gov",
+          "importance": 0.000404
+        },
+        {
+          "feature": "workclass_Local-gov",
+          "importance": 0.000145
+        },
+        {
+          "feature": "occupation_Protective-serv",
+          "importance": 0.000133
+        },
+        {
+          "feature": "marital_status_Separated",
+          "importance": 4e-05
+        },
+        {
+          "feature": "workclass_Never-worked",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Self-emp-inc",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Without-pay",
+          "importance": 0.0
+        },
+        {
+          "feature": "marital_status_Married-AF-spouse",
+          "importance": 0.0
+        },
+        {
+          "feature": "marital_status_Married-spouse-absent",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Armed-Forces",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Farming-fishing",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Priv-house-serv",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Amer-Indian-Eskimo",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Other",
+          "importance": 0.0
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.0
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.0
+        }
+      ],
+      "Male": [
+        {
+          "feature": "capital_gain",
+          "importance": 0.074902
+        },
+        {
+          "feature": "relationship_Husband",
+          "importance": 0.060302
+        },
+        {
+          "feature": "marital_status_Married-civ-spouse",
+          "importance": 0.050313
+        },
+        {
+          "feature": "education_num",
+          "importance": 0.04406
+        },
+        {
+          "feature": "age",
+          "importance": 0.025475
+        },
+        {
+          "feature": "marital_status_Never-married",
+          "importance": 0.022568
+        },
+        {
+          "feature": "hours_per_week",
+          "importance": 0.016215
+        },
+        {
+          "feature": "occupation_Exec-managerial",
+          "importance": 0.015533
+        },
+        {
+          "feature": "capital_loss",
+          "importance": 0.012326
+        },
+        {
+          "feature": "occupation_Other-service",
+          "importance": 0.007958
+        },
+        {
+          "feature": "relationship_Own-child",
+          "importance": 0.005622
+        },
+        {
+          "feature": "occupation_Prof-specialty",
+          "importance": 0.004993
+        },
+        {
+          "feature": "occupation_Machine-op-inspct",
+          "importance": 0.003836
+        },
+        {
+          "feature": "occupation_Transport-moving",
+          "importance": 0.003494
+        },
+        {
+          "feature": "occupation_Farming-fishing",
+          "importance": 0.00331
+        },
+        {
+          "feature": "relationship_Not-in-family",
+          "importance": 0.003246
+        },
+        {
+          "feature": "workclass_Self-emp-not-inc",
+          "importance": 0.003017
+        },
+        {
+          "feature": "occupation_Craft-repair",
+          "importance": 0.002641
+        },
+        {
+          "feature": "occupation_Tech-support",
+          "importance": 0.002038
+        },
+        {
+          "feature": "relationship_Other-relative",
+          "importance": 0.0019
+        },
+        {
+          "feature": "occupation_Handlers-cleaners",
+          "importance": 0.001644
+        },
+        {
+          "feature": "workclass_Private",
+          "importance": 0.001506
+        },
+        {
+          "feature": "race_White",
+          "importance": 0.001299
+        },
+        {
+          "feature": "race_Black",
+          "importance": 0.001291
+        },
+        {
+          "feature": "workclass_Federal-gov",
+          "importance": 0.00114
+        },
+        {
+          "feature": "marital_status_Divorced",
+          "importance": 0.001133
+        },
+        {
+          "feature": "relationship_Unmarried",
+          "importance": 0.000953
+        },
+        {
+          "feature": "occupation_Sales",
+          "importance": 0.000921
+        },
+        {
+          "feature": "race_Asian-Pac-Islander",
+          "importance": 0.000831
+        },
+        {
+          "feature": "marital_status_Widowed",
+          "importance": 0.00069
+        },
+        {
+          "feature": "occupation_Adm-clerical",
+          "importance": 0.00044
+        },
+        {
+          "feature": "workclass_State-gov",
+          "importance": 0.00036
+        },
+        {
+          "feature": "marital_status_Married-spouse-absent",
+          "importance": 0.000288
+        },
+        {
+          "feature": "workclass_Local-gov",
+          "importance": 0.000254
+        },
+        {
+          "feature": "occupation_Protective-serv",
+          "importance": 0.000156
+        },
+        {
+          "feature": "marital_status_Separated",
+          "importance": 0.00012
+        },
+        {
+          "feature": "workclass_Never-worked",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Self-emp-inc",
+          "importance": 0.0
+        },
+        {
+          "feature": "workclass_Without-pay",
+          "importance": 0.0
+        },
+        {
+          "feature": "marital_status_Married-AF-spouse",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Armed-Forces",
+          "importance": 0.0
+        },
+        {
+          "feature": "occupation_Priv-house-serv",
+          "importance": 0.0
+        },
+        {
+          "feature": "relationship_Wife",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Amer-Indian-Eskimo",
+          "importance": 0.0
+        },
+        {
+          "feature": "race_Other",
+          "importance": 0.0
+        },
+        {
+          "feature": "sex_Female",
+          "importance": 0.0
+        },
+        {
+          "feature": "sex_Male",
+          "importance": 0.0
+        }
+      ]
+    },
+    "shap_provenance": {
+      "explainer_type": "TreeExplainer",
+      "explainer_selection_mode": "auto",
+      "shap_version": "0.51.0",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
+      "feature_representation_order": [
+        "age",
+        "education_num",
+        "capital_gain",
+        "capital_loss",
+        "hours_per_week",
+        "workclass_Federal-gov",
+        "workclass_Local-gov",
+        "workclass_Never-worked",
+        "workclass_Private",
+        "workclass_Self-emp-inc",
+        "workclass_Self-emp-not-inc",
+        "workclass_State-gov",
+        "workclass_Without-pay",
+        "marital_status_Divorced",
+        "marital_status_Married-AF-spouse",
+        "marital_status_Married-civ-spouse",
+        "marital_status_Married-spouse-absent",
+        "marital_status_Never-married",
+        "marital_status_Separated",
+        "marital_status_Widowed",
+        "occupation_Adm-clerical",
+        "occupation_Armed-Forces",
+        "occupation_Craft-repair",
+        "occupation_Exec-managerial",
+        "occupation_Farming-fishing",
+        "occupation_Handlers-cleaners",
+        "occupation_Machine-op-inspct",
+        "occupation_Other-service",
+        "occupation_Priv-house-serv",
+        "occupation_Prof-specialty",
+        "occupation_Protective-serv",
+        "occupation_Sales",
+        "occupation_Tech-support",
+        "occupation_Transport-moving",
+        "relationship_Husband",
+        "relationship_Not-in-family",
+        "relationship_Other-relative",
+        "relationship_Own-child",
+        "relationship_Unmarried",
+        "relationship_Wife",
+        "race_Amer-Indian-Eskimo",
+        "race_Asian-Pac-Islander",
+        "race_Black",
+        "race_Other",
+        "race_White",
+        "sex_Female",
+        "sex_Male"
+      ],
+      "number_of_features": 47,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
+      "random_seed": 123
+    }
+  },
+  "attribution_comparison": {
+    "provisional_status": "PROVISIONAL (pending literature review)",
+    "cosine_similarity": 0.992799,
+    "spearman_rank_correlation": 0.87232,
+    "spearman_pvalue": 0.0,
+    "l1_attribution_difference": 0.001019,
+    "l2_attribution_difference": 0.014812,
+    "features_evaluated": 47,
+    "top_rank_shifts": [
+      {
+        "feature": "capital_gain",
+        "baseline_rank": 1,
+        "mitigated_rank": 1,
+        "rank_shift": 0
+      },
+      {
+        "feature": "marital_status_Married-civ-spouse",
+        "baseline_rank": 2,
+        "mitigated_rank": 3,
+        "rank_shift": 1
+      },
+      {
+        "feature": "relationship_Husband",
+        "baseline_rank": 3,
+        "mitigated_rank": 2,
+        "rank_shift": -1
+      },
+      {
+        "feature": "education_num",
+        "baseline_rank": 4,
+        "mitigated_rank": 4,
+        "rank_shift": 0
+      },
+      {
+        "feature": "marital_status_Never-married",
+        "baseline_rank": 5,
+        "mitigated_rank": 6,
+        "rank_shift": 1
+      }
+    ]
+  },
+  "trade_off_deltas": {
+    "delta_accuracy": -0.0012,
+    "delta_f1_score": -0.0007,
+    "delta_demographic_parity_difference": 0.0035,
+    "delta_equalized_odds_difference": 0.0101
+  },
+  "execution_mode": "FINAL_EMPIRICAL_RUN"
+}

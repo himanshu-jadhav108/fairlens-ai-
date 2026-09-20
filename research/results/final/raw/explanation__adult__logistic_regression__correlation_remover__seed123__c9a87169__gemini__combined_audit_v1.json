@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed123__c9a87169",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "37c0b6f0b853348203d0df511149f8a6d5c171d268f641a21e2034ebcb5f22a7",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `adult` dataset, configured with a `random_seed` of `123`. The protected attribute under scrutiny is `sex`, where `1` represents the privileged group and `0` represents the unprivileged group. A `correlation_remover` preprocessing mitigation technique was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities across fairness metrics, alongside its general predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1895. This indicates a notable difference in positive prediction rates between the privileged and unprivileged groups, with the value being distant from the ideal of 0.0.\n*   **Equalized Odds Difference:** 0.1326. This metric, which considers differences in False Positive Rates and True Positive Rates, suggests a disparity in how accurately the model predicts positive outcomes across groups, deviating from the ideal of 0.0.\n*   **Equal Opportunity Difference:** 0.1326. Specifically focusing on the difference in True Positive Rates, this value indicates a disparity in the model's ability to correctly identify positive instances for the privileged versus unprivileged groups, also distant from 0.0.\n*   **Disparate Impact:** 0.2531. This ratio of positive prediction rates between groups is significantly below the ideal parity of 1.0, indicating a substantial disadvantage for the unprivileged group.\n*   **False Positive Rate Difference:** 0.0805. This shows a difference in the rate at which the model incorrectly predicts positive outcomes for the two groups, deviating from 0.0.\n*   **False Negative Rate Difference:** 0.1326. This indicates a difference in the rate at which the model incorrectly predicts negative outcomes (misses positive cases) for the two groups, deviating from 0.0.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.8498. The model correctly classified approximately 85% of instances.\n*   **Precision:** 0.7335. Of all positive predictions, about 73% were correct.\n*   **Recall:** 0.5851. The model identified about 58.5% of all actual positive instances.\n*   **F1 Score:** 0.6510. This harmonic mean of precision and recall provides a balanced measure of the model's performance.\n*   **ROC-AUC:** 0.9041. The model demonstrated a strong ability to distinguish between positive and negative classes.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, resulting in changes to both fairness and performance metrics.\n\n**Impact on Fairness Metrics:**\nThe mitigation generally led to improvements across all audited fairness metrics, moving them closer to their respective parity targets.\n*   **Demographic Parity Difference:** Decreased from 0.1895 to 0.1073 (Delta: -0.0822), representing an **improvement",
+  "timestamp_utc": "2026-09-19T08:29:36.210847+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.783,
+    "finish_reason": "2",
+    "prompt_tokens": 1693,
+    "completion_tokens": 707,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

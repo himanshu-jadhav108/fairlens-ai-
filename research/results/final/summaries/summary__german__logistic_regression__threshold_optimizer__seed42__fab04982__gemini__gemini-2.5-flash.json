@@ -1,0 +1,763 @@
+{
+  "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+  "explanation_source": "gemini__gemini-2.5-flash",
+  "prompt_id": "combined_audit_v1",
+  "timestamp_utc": "2026-09-20T08:39:48.509178+00:00",
+  "execution_mode": "FINAL_EMPIRICAL_RUN",
+  "numerical_faithfulness": 0.6364,
+  "directional_faithfulness": null,
+  "attribution_faithfulness": null,
+  "unsupported_claim_rate": 0.3333,
+  "numerical_evaluable": true,
+  "directional_evaluable": false,
+  "attribution_evaluable": false,
+  "numeric_claim_count": 12,
+  "numeric_match_count": 7,
+  "numeric_error_count": 4,
+  "directional_claim_count": 0,
+  "directional_match_count": 0,
+  "directional_error_count": 0,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 4,
+  "undeterminable_claim_count": 1,
+  "total_claims_count": 12,
+  "numerical_mean_absolute_error": 0.0115,
+  "claims": [
+    {
+      "claim_id": "num_1",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Demographic Parity Difference:** 0.0191, indicating a relatively small difference in positive prediction rates between groups, close to the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0191,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.0191,
+          0.0787,
+          0.0191,
+          0.0787,
+          0.0596,
+          3.1204
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0191,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.0191",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0191 matches ground truth 0.0191 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.0191,
+        "raw_string": "0.0191",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0191,
+        "candidate_values": [
+          0.0191,
+          0.0787,
+          0.0191,
+          0.0787,
+          0.0596,
+          3.1204
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_2",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Demographic Parity Difference:** 0.0191, indicating a relatively small difference in positive prediction rates between groups, close to the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0191,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.0191,
+          0.0787,
+          0.0191,
+          0.0787,
+          0.0596,
+          3.1204
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.0",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.0 contradicts ground truth [0.0191, 0.0787, 0.0191, 0.0787, 0.0596, 3.1204] for 'demographic_parity_difference' (min abs diff: 0.0191 > tol 0.015).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0191,
+        "candidate_values": [
+          0.0191,
+          0.0787,
+          0.0191,
+          0.0787,
+          0.0596,
+          3.1204
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0191,
+        "rel_diff": 1.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_3",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equalized Odds Difference:** 0.1818, suggesting a notable disparity in true positive rates and false positive rates across groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1818,
+          "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.1818,
+          0.0847,
+          0.1818,
+          0.0847,
+          -0.0971,
+          -0.5341
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1818,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.1818",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1818 matches ground truth 0.1818 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.1818,
+        "raw_string": "0.1818",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1818,
+        "candidate_values": [
+          0.1818,
+          0.0847,
+          0.1818,
+          0.0847,
+          -0.0971,
+          -0.5341
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_4",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equalized Odds Difference:** 0.1818, suggesting a notable disparity in true positive rates and false positive rates across groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_5",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.0683, indicating a moderate difference in true positive rates between groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0683,
+          "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+        },
+        "all_candidates": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.0683",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0683 matches ground truth 0.0683 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0683,
+        "candidate_values": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_6",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.0683, indicating a moderate difference in true positive rates between groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": 0.0164,
+          "path": "metric_comparisons.equal_opportunity_difference.absolute_change"
+        },
+        "all_candidates": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.0",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.0 contradicts ground truth [0.0683, 0.0847, 0.0683, 0.0847, 0.0164, 0.2401] for 'equal_opportunity_difference' (min abs diff: 0.0164 > tol 0.015).",
+      "referenced_evidence": "metric_comparisons.equal_opportunity_difference.absolute_change",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0164,
+        "candidate_values": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0164,
+        "rel_diff": 1.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_7",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Disparate Impact:** 0.9765, which is close to the ideal ratio of 1.0, suggesting near parity in the ratio of positive prediction rates",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9765,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.9765,
+          0.9067,
+          0.9765,
+          0.9067,
+          -0.0698,
+          -0.0715
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.9765,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.9765",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.9765 matches ground truth 0.9765 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.9765,
+        "raw_string": "0.9765",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9765,
+        "candidate_values": [
+          0.9765,
+          0.9067,
+          0.9765,
+          0.9067,
+          -0.0698,
+          -0.0715
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_8",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **Disparate Impact:** 0.9765, which is close to the ideal ratio of 1.0, suggesting near parity in the ratio of positive prediction rates",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.9765,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.9765,
+          0.9067,
+          0.9765,
+          0.9067,
+          -0.0698,
+          -0.0715
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "metric_alias": "disparate impact",
+        "raw_string": "1.0",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 1.0 matches ground truth 0.9765 for 'disparate_impact' within tolerance (abs diff: 0.0235).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.9765,
+        "candidate_values": [
+          0.9765,
+          0.9067,
+          0.9765,
+          0.9067,
+          -0.0698,
+          -0.0715
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0235,
+        "rel_diff": 0.02407,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_9",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Positive Rate Difference:** 0.1818, indicating a notable difference in false positive rates between groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "false_positive_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1818,
+          "path": "baseline_state.fairness_metrics.false_positive_rate_difference.value"
+        },
+        "all_candidates": [
+          0.1818,
+          0.0511,
+          0.1818,
+          0.0511,
+          -0.1307,
+          -0.7189
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1818,
+        "metric_alias": "false positive rate difference",
+        "raw_string": "0.1818",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1818 matches ground truth 0.1818 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.false_positive_rate_difference.value",
+      "extracted_values": {
+        "value": 0.1818,
+        "raw_string": "0.1818",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1818,
+        "candidate_values": [
+          0.1818,
+          0.0511,
+          0.1818,
+          0.0511,
+          -0.1307,
+          -0.7189
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_10",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Positive Rate Difference:** 0.1818, indicating a notable difference in false positive rates between groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "false_positive_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "mitigated",
+          "value": 0.0511,
+          "path": "mitigated_state.fairness_metrics.false_positive_rate_difference.value"
+        },
+        "all_candidates": [
+          0.1818,
+          0.0511,
+          0.1818,
+          0.0511,
+          -0.1307,
+          -0.7189
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "false positive rate difference",
+        "raw_string": "0.0",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.0 contradicts ground truth [0.1818, 0.0511, 0.1818, 0.0511, -0.1307, -0.7189] for 'false_positive_rate_difference' (min abs diff: 0.0511 > tol 0.015).",
+      "referenced_evidence": "mitigated_state.fairness_metrics.false_positive_rate_difference.value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0511,
+        "candidate_values": [
+          0.1818,
+          0.0511,
+          0.1818,
+          0.0511,
+          -0.1307,
+          -0.7189
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0511,
+        "rel_diff": 1.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_11",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Negative Rate Difference:** 0.0683, indicating a moderate difference in false negative rates between groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "false_negative_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0683,
+          "path": "baseline_state.fairness_metrics.false_negative_rate_difference.value"
+        },
+        "all_candidates": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "metric_alias": "false negative rate difference",
+        "raw_string": "0.0683",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0683 matches ground truth 0.0683 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.false_negative_rate_difference.value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0683,
+        "candidate_values": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_12",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Negative Rate Difference:** 0.0683, indicating a moderate difference in false negative rates between groups, further from the ideal of 0.0",
+      "ground_truth": {
+        "canonical_metric": "false_negative_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": 0.0164,
+          "path": "metric_comparisons.false_negative_rate_difference.absolute_change"
+        },
+        "all_candidates": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "false negative rate difference",
+        "raw_string": "0.0",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.0 contradicts ground truth [0.0683, 0.0847, 0.0683, 0.0847, 0.0164, 0.2401] for 'false_negative_rate_difference' (min abs diff: 0.0164 > tol 0.015).",
+      "referenced_evidence": "metric_comparisons.false_negative_rate_difference.absolute_change",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0164,
+        "candidate_values": [
+          0.0683,
+          0.0847,
+          0.0683,
+          0.0847,
+          0.0164,
+          0.2401
+        ]
+      },
+      "evidence_hash": "0cf16407a82091f4e1cf1c4aa13558a25fc7538f3b829eee775935c542eda253",
+      "provenance": {
+        "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982",
+        "dataset": "german",
+        "model": "logistic_regression",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0164,
+        "rel_diff": 1.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    }
+  ],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

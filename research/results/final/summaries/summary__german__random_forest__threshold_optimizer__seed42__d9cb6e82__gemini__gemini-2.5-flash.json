@@ -1,0 +1,1205 @@
+{
+  "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+  "explanation_source": "gemini__gemini-2.5-flash",
+  "prompt_id": "combined_audit_v1",
+  "timestamp_utc": "2026-09-20T08:41:07.469567+00:00",
+  "execution_mode": "FINAL_EMPIRICAL_RUN",
+  "numerical_faithfulness": 0.8462,
+  "directional_faithfulness": null,
+  "attribution_faithfulness": null,
+  "unsupported_claim_rate": 0.087,
+  "numerical_evaluable": true,
+  "directional_evaluable": false,
+  "attribution_evaluable": false,
+  "numeric_claim_count": 23,
+  "numeric_match_count": 11,
+  "numeric_error_count": 2,
+  "directional_claim_count": 0,
+  "directional_match_count": 0,
+  "directional_error_count": 0,
+  "attribution_claim_count": 0,
+  "attribution_match_count": 0,
+  "attribution_error_count": 0,
+  "unsupported_claim_count": 2,
+  "undeterminable_claim_count": 10,
+  "total_claims_count": 23,
+  "numerical_mean_absolute_error": 0.03852,
+  "claims": [
+    {
+      "claim_id": "num_1",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Demographic Parity Difference:** 0.1021",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.1021,
+          "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+        },
+        "all_candidates": [
+          0.1021,
+          0.0592,
+          0.1021,
+          0.0592,
+          -0.0429,
+          -0.4202
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1021,
+        "metric_alias": "demographic parity difference",
+        "raw_string": "0.1021",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.1021 matches ground truth 0.1021 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+      "extracted_values": {
+        "value": 0.1021,
+        "raw_string": "0.1021",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.1021,
+        "candidate_values": [
+          0.1021,
+          0.0592,
+          0.1021,
+          0.0592,
+          -0.0429,
+          -0.4202
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_2",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equalized Odds Difference:** 0.0683",
+      "ground_truth": {
+        "canonical_metric": "equalized_odds_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0683,
+          "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+        },
+        "all_candidates": [
+          0.0683,
+          0.2955,
+          0.0683,
+          0.2955,
+          0.2272,
+          3.3265
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "metric_alias": "equalized odds difference",
+        "raw_string": "0.0683",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0683 matches ground truth 0.0683 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0683,
+        "candidate_values": [
+          0.0683,
+          0.2955,
+          0.0683,
+          0.2955,
+          0.2272,
+          3.3265
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_3",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Equal Opportunity Difference:** 0.0683",
+      "ground_truth": {
+        "canonical_metric": "equal_opportunity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0683,
+          "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+        },
+        "all_candidates": [
+          0.0683,
+          0.0027,
+          0.0683,
+          0.0027,
+          -0.0656,
+          -0.9605
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "metric_alias": "equal opportunity difference",
+        "raw_string": "0.0683",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0683 matches ground truth 0.0683 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0683,
+        "candidate_values": [
+          0.0683,
+          0.0027,
+          0.0683,
+          0.0027,
+          -0.0656,
+          -0.9605
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_4",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Disparate Impact:** 0.8781",
+      "ground_truth": {
+        "canonical_metric": "disparate_impact",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.8781,
+          "path": "baseline_state.fairness_metrics.disparate_impact.value"
+        },
+        "all_candidates": [
+          0.8781,
+          1.0805,
+          0.8781,
+          1.0805,
+          0.2024,
+          0.2305
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8781,
+        "metric_alias": "disparate impact",
+        "raw_string": "0.8781",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8781 matches ground truth 0.8781 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+      "extracted_values": {
+        "value": 0.8781,
+        "raw_string": "0.8781",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8781,
+        "candidate_values": [
+          0.8781,
+          1.0805,
+          0.8781,
+          1.0805,
+          0.2024,
+          0.2305
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_5",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Positive Rate Difference:** 0.0341",
+      "ground_truth": {
+        "canonical_metric": "false_positive_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0341,
+          "path": "baseline_state.fairness_metrics.false_positive_rate_difference.value"
+        },
+        "all_candidates": [
+          0.0341,
+          0.2955,
+          0.0341,
+          0.2955,
+          0.2614,
+          7.6657
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0341,
+        "metric_alias": "false positive rate difference",
+        "raw_string": "0.0341",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0341 matches ground truth 0.0341 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.false_positive_rate_difference.value",
+      "extracted_values": {
+        "value": 0.0341,
+        "raw_string": "0.0341",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0341,
+        "candidate_values": [
+          0.0341,
+          0.2955,
+          0.0341,
+          0.2955,
+          0.2614,
+          7.6657
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_6",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **False Negative Rate Difference:** 0.0683",
+      "ground_truth": {
+        "canonical_metric": "false_negative_rate_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.0683,
+          "path": "baseline_state.fairness_metrics.false_negative_rate_difference.value"
+        },
+        "all_candidates": [
+          0.0683,
+          0.0027,
+          0.0683,
+          0.0027,
+          -0.0656,
+          -0.9605
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "metric_alias": "false negative rate difference",
+        "raw_string": "0.0683",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.0683 matches ground truth 0.0683 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.fairness_metrics.false_negative_rate_difference.value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.0683,
+        "candidate_values": [
+          0.0683,
+          0.0027,
+          0.0683,
+          0.0027,
+          -0.0656,
+          -0.9605
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_7",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Accuracy:** 0.7300",
+      "ground_truth": {
+        "canonical_metric": "accuracy",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.73,
+          "path": "baseline_state.performance_metrics.accuracy.value"
+        },
+        "all_candidates": [
+          0.73,
+          0.725,
+          0.73,
+          0.725,
+          -0.005,
+          -0.0068
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.73,
+        "metric_alias": "accuracy",
+        "raw_string": "0.7300",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.73 matches ground truth 0.73 for 'accuracy' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+      "extracted_values": {
+        "value": 0.73,
+        "raw_string": "0.7300",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.73,
+        "candidate_values": [
+          0.73,
+          0.725,
+          0.73,
+          0.725,
+          -0.005,
+          -0.0068
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_8",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Precision:** 0.7622",
+      "ground_truth": {
+        "canonical_metric": "precision",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.7622,
+          "path": "baseline_state.performance_metrics.precision.value"
+        },
+        "all_candidates": [
+          0.7622,
+          0.7852,
+          0.7622,
+          0.7852,
+          0.023,
+          0.0302
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.7622,
+        "metric_alias": "precision",
+        "raw_string": "0.7622",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.7622 matches ground truth 0.7622 for 'precision' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+      "extracted_values": {
+        "value": 0.7622,
+        "raw_string": "0.7622",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.7622,
+        "candidate_values": [
+          0.7622,
+          0.7852,
+          0.7622,
+          0.7852,
+          0.023,
+          0.0302
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_9",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **Recall:** 0.8929",
+      "ground_truth": {
+        "canonical_metric": "recall",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.8929,
+          "path": "baseline_state.performance_metrics.recall.value"
+        },
+        "all_candidates": [
+          0.8929,
+          0.8357,
+          0.8929,
+          0.8357,
+          -0.0572,
+          -0.0641
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8929,
+        "metric_alias": "recall",
+        "raw_string": "0.8929",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8929 matches ground truth 0.8929 for 'recall' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+      "extracted_values": {
+        "value": 0.8929,
+        "raw_string": "0.8929",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8929,
+        "candidate_values": [
+          0.8929,
+          0.8357,
+          0.8929,
+          0.8357,
+          -0.0572,
+          -0.0641
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_10",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **F1 Score:** 0.8224",
+      "ground_truth": {
+        "canonical_metric": "f1_score",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.8224,
+          "path": "baseline_state.performance_metrics.f1_score.value"
+        },
+        "all_candidates": [
+          0.8224,
+          0.8097,
+          0.8224,
+          0.8097,
+          -0.0127,
+          -0.0154
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8224,
+        "metric_alias": "f1 score",
+        "raw_string": "0.8224",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.8224 matches ground truth 0.8224 for 'f1_score' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+      "extracted_values": {
+        "value": 0.8224,
+        "raw_string": "0.8224",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.8224,
+        "candidate_values": [
+          0.8224,
+          0.8097,
+          0.8224,
+          0.8097,
+          -0.0127,
+          -0.0154
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_11",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   **ROC AUC:** 0.7669",
+      "ground_truth": {
+        "canonical_metric": "roc_auc",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "baseline",
+          "value": 0.7669,
+          "path": "baseline_state.performance_metrics.roc_auc.value"
+        },
+        "all_candidates": [
+          0.7669,
+          0.7669
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.7669,
+        "metric_alias": "roc auc",
+        "raw_string": "0.7669",
+        "inferred_target_state": null
+      },
+      "classification": "SUPPORTED",
+      "rationale": "Reported value 0.7669 matches ground truth 0.7669 for 'roc_auc' within tolerance (abs diff: 0.0).",
+      "referenced_evidence": "baseline_state.performance_metrics.roc_auc.value",
+      "extracted_values": {
+        "value": 0.7669,
+        "raw_string": "0.7669",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": 0.7669,
+        "candidate_values": [
+          0.7669,
+          0.7669
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_12",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "For instance, the `demographic_parity_difference` of 0.1021 and `disparate_impact` of 0.8781 indicate a deviation from demographic parity (ideal 0.0 and 1.0, respectively)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1021,
+        "raw_string": "0.1021",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1021' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.1021,
+        "raw_string": "0.1021",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_13",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "For instance, the `demographic_parity_difference` of 0.1021 and `disparate_impact` of 0.8781 indicate a deviation from demographic parity (ideal 0.0 and 1.0, respectively)",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "relative_change",
+          "value": -0.4202,
+          "path": "metric_comparisons.demographic_parity_difference.relative_change"
+        },
+        "all_candidates": [
+          0.1021,
+          0.0592,
+          0.1021,
+          0.0592,
+          -0.0429,
+          -0.4202
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.8781,
+        "metric_alias": "demographic parity",
+        "raw_string": "0.8781 ",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.8781 contradicts ground truth [0.1021, 0.0592, 0.1021, 0.0592, -0.0429, -0.4202] for 'demographic_parity_difference' (min abs diff: 0.4579 > tol 0.015).",
+      "referenced_evidence": "metric_comparisons.demographic_parity_difference.relative_change",
+      "extracted_values": {
+        "value": 0.8781,
+        "raw_string": "0.8781 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.4202,
+        "candidate_values": [
+          0.1021,
+          0.0592,
+          0.1021,
+          0.0592,
+          -0.0429,
+          -0.4202
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.4579,
+        "rel_diff": 1.08972,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_14",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "For instance, the `demographic_parity_difference` of 0.1021 and `disparate_impact` of 0.8781 indicate a deviation from demographic parity (ideal 0.0 and 1.0, respectively)",
+      "ground_truth": {
+        "canonical_metric": "demographic_parity_difference",
+        "target_state": null,
+        "matched_candidate": {
+          "state": "absolute_change",
+          "value": -0.0429,
+          "path": "metric_comparisons.demographic_parity_difference.absolute_change"
+        },
+        "all_candidates": [
+          0.1021,
+          0.0592,
+          0.1021,
+          0.0592,
+          -0.0429,
+          -0.4202
+        ]
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "metric_alias": "demographic parity",
+        "raw_string": "0.0",
+        "inferred_target_state": null
+      },
+      "classification": "UNSUPPORTED",
+      "rationale": "Reported value 0.0 contradicts ground truth [0.1021, 0.0592, 0.1021, 0.0592, -0.0429, -0.4202] for 'demographic_parity_difference' (min abs diff: 0.0429 > tol 0.015).",
+      "referenced_evidence": "metric_comparisons.demographic_parity_difference.absolute_change",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "matched_value": -0.0429,
+        "candidate_values": [
+          0.1021,
+          0.0592,
+          0.1021,
+          0.0592,
+          -0.0429,
+          -0.4202
+        ]
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "abs_diff": 0.0429,
+        "rel_diff": 1.0,
+        "target_state": null,
+        "absolute_tolerance": 0.015,
+        "relative_tolerance": 0.05,
+        "is_percentage_converted": false
+      }
+    },
+    {
+      "claim_id": "num_15",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "For instance, the `demographic_parity_difference` of 0.1021 and `disparate_impact` of 0.8781 indicate a deviation from demographic parity (ideal 0.0 and 1.0, respectively)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 1.0,
+        "raw_string": "1.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '1.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 1.0,
+        "raw_string": "1.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_16",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "Similarly, `equalized_odds_difference` and `equal_opportunity_difference` were 0.0683, suggesting differences in true positive and false positive rates between the protected groups",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "raw_string": "0.0683",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0683' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_17",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1021 | Mitigated: 0.0592 | Delta: -0.0429",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.1021,
+        "raw_string": "0.1021 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.1021 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.1021,
+        "raw_string": "0.1021 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_18",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1021 | Mitigated: 0.0592 | Delta: -0.0429",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0592,
+        "raw_string": "0.0592 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0592 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0592,
+        "raw_string": "0.0592 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_19",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.1021 | Mitigated: 0.0592 | Delta: -0.0429",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": -0.0429,
+        "raw_string": "-0.0429",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '-0.0429' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": -0.0429,
+        "raw_string": "-0.0429",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_20",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Direction: decrease | Domain Evaluation: improvement (moved closer to ideal parity of 0.0)",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0,
+        "raw_string": "0.0",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0,
+        "raw_string": "0.0",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_21",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.0683 | Mitigated: 0.2955 | Delta: +0.2272",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.0683,
+        "raw_string": "0.0683 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.0683 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.0683,
+        "raw_string": "0.0683 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_22",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.0683 | Mitigated: 0.2955 | Delta: +0.2272",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2955,
+        "raw_string": "0.2955 ",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '0.2955 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.2955,
+        "raw_string": "0.2955 ",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    },
+    {
+      "claim_id": "num_23",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+      "claim_type": "numerical",
+      "claim_text": "*   Baseline: 0.0683 | Mitigated: 0.2955 | Delta: +0.2272",
+      "ground_truth": {
+        "canonical_metric": null,
+        "reason": "no_associated_metric"
+      },
+      "predicted_claim": {
+        "extracted_value": 0.2272,
+        "raw_string": "+0.2272",
+        "metric_alias": null
+      },
+      "classification": "UNDETERMINABLE",
+      "rationale": "Numerical value '+0.2272' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+      "referenced_evidence": "unassociated_numerical_value",
+      "extracted_values": {
+        "value": 0.2272,
+        "raw_string": "+0.2272",
+        "is_percentage": false
+      },
+      "expected_values": {
+        "metric_associated": false
+      },
+      "evidence_hash": "8ca3e11c8165ffcd9998232620593f4de3059d2e4065addc0aee49176b23ca8e",
+      "provenance": {
+        "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82",
+        "dataset": "german",
+        "model": "random_forest",
+        "mitigation": "threshold_optimizer"
+      },
+      "metadata": {
+        "is_orphan_number": true
+      }
+    }
+  ],
+  "evaluation_config": {
+    "absolute_tolerance": 0.015,
+    "relative_tolerance": 0.05,
+    "top_k_features": 5
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed456__462a71d8",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "0872cff4bb2bf5baeb2a411c3673c9f9aad597ac80cedbda2333a355fa864e96",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `logistic_regression` model trained on the `adult` dataset. The protected attribute under examination is `sex`, where `1` is designated as the privileged group and `0` as the unprivileged group. A `correlation_remover` preprocessing mitigation technique was applied to address potential biases. The random seed used for reproducibility was `456`.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following fairness and performance characteristics:\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1834\n*   **Equalized Odds Difference:** 0.1142\n*   **Equal Opportunity Difference:** 0.1142\n*   **Disparate Impact:** 0.2862\n*   **False Positive Rate Difference:** 0.0801\n*   **False Negative Rate Difference:** 0.1142\n\n*Interpretation:* The baseline model showed notable disparities across all audited fairness metrics. For instance, a `demographic_parity_difference` of 0.1834 indicates a substantial difference in positive prediction rates between the privileged and unprivileged groups. A `disparate_impact` of 0.2862, significantly below 1.0, suggests that the unprivileged group receives positive outcomes at a much lower rate than the privileged group.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.84",
+  "timestamp_utc": "2026-09-18T07:20:21.736972+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.459,
+    "finish_reason": "2",
+    "prompt_tokens": 1694,
+    "completion_tokens": 347,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

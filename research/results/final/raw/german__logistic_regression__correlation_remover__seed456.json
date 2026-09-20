@@ -1,0 +1,795 @@
+{
+  "experiment_id": "german__logistic_regression__correlation_remover__seed456__e69a9374",
+  "manifest_reference": "manifests/german__logistic_regression__correlation_remover__seed456__e69a9374.json",
+  "dataset_name": "german",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "random_seed": 456,
+  "is_synthetic_benchmark": false,
+  "baseline_evaluation": {
+    "performance": {
+      "accuracy": {
+        "value": 0.725,
+        "requires": "labels",
+        "defined": true
+      },
+      "precision": {
+        "value": 0.7778,
+        "requires": "labels",
+        "defined": true
+      },
+      "recall": {
+        "value": 0.85,
+        "requires": "labels",
+        "defined": true
+      },
+      "f1_score": {
+        "value": 0.8123,
+        "requires": "labels",
+        "defined": true
+      },
+      "roc_auc": {
+        "value": 0.772,
+        "requires": "probabilities",
+        "defined": true,
+        "reason": null
+      }
+    },
+    "fairness": {
+      "sensitive_attribute": "age_group",
+      "groups": [
+        "Adult",
+        "Young"
+      ],
+      "privileged_group": "Adult",
+      "unprivileged_group": "Young",
+      "demographic_parity_difference": {
+        "value": 0.1005,
+        "defined": true,
+        "reason": null
+      },
+      "equalized_odds_difference": {
+        "value": 0.1307,
+        "defined": true,
+        "reason": null
+      },
+      "equal_opportunity_difference": {
+        "value": 0.1307,
+        "defined": true,
+        "reason": null
+      },
+      "disparate_impact_ratio": {
+        "value": 0.871,
+        "defined": true,
+        "reason": null
+      },
+      "false_positive_rate_difference": {
+        "value": 0.0622,
+        "defined": true,
+        "reason": null
+      },
+      "false_negative_rate_difference": {
+        "value": 0.1307,
+        "defined": true,
+        "reason": null
+      },
+      "subgroup_statistics": [
+        {
+          "group": "Adult",
+          "count": 172,
+          "base_rate": 0.7267,
+          "selection_rate": 0.7791,
+          "accuracy": 0.75,
+          "tpr": 0.864,
+          "fpr": 0.5532,
+          "confusion_matrix": {
+            "tp": 108,
+            "tn": 21,
+            "fp": 26,
+            "fn": 17
+          }
+        },
+        {
+          "group": "Young",
+          "count": 28,
+          "base_rate": 0.5357,
+          "selection_rate": 0.6786,
+          "accuracy": 0.5714,
+          "tpr": 0.7333,
+          "fpr": 0.6154,
+          "confusion_matrix": {
+            "tp": 11,
+            "tn": 5,
+            "fp": 8,
+            "fn": 4
+          }
+        }
+      ]
+    },
+    "global_shap": [
+      {
+        "feature": "checking_status_no checking",
+        "importance": 0.580048
+      },
+      {
+        "feature": "credit_history_critical/other existing credit",
+        "importance": 0.4106
+      },
+      {
+        "feature": "checking_status_<0",
+        "importance": 0.287819
+      },
+      {
+        "feature": "credit_amount",
+        "importance": 0.255598
+      },
+      {
+        "feature": "credit_history_existing paid",
+        "importance": 0.17655
+      },
+      {
+        "feature": "savings_status_no known savings",
+        "importance": 0.150485
+      },
+      {
+        "feature": "existing_credits",
+        "importance": 0.103401
+      },
+      {
+        "feature": "savings_status_<100",
+        "importance": 0.096306
+      },
+      {
+        "feature": "age",
+        "importance": 0.095757
+      },
+      {
+        "feature": "checking_status_0<=X<200",
+        "importance": 0.089655
+      },
+      {
+        "feature": "credit_history_all paid",
+        "importance": 0.061173
+      },
+      {
+        "feature": "age_group_Adult",
+        "importance": 0.0462
+      },
+      {
+        "feature": "age_group_Young",
+        "importance": 0.040692
+      },
+      {
+        "feature": "savings_status_100<=X<500",
+        "importance": 0.037198
+      },
+      {
+        "feature": "checking_status_>=200",
+        "importance": 0.033328
+      },
+      {
+        "feature": "credit_history_delayed previously",
+        "importance": 0.026663
+      },
+      {
+        "feature": "savings_status_>=1000",
+        "importance": 0.018018
+      },
+      {
+        "feature": "savings_status_500<=X<1000",
+        "importance": 0.010717
+      },
+      {
+        "feature": "credit_history_no credits/all paid",
+        "importance": 0.005641
+      }
+    ],
+    "subgroup_shap": {
+      "Adult": [
+        {
+          "feature": "checking_status_no checking",
+          "importance": 0.579945
+        },
+        {
+          "feature": "credit_history_critical/other existing credit",
+          "importance": 0.401968
+        },
+        {
+          "feature": "checking_status_<0",
+          "importance": 0.280371
+        },
+        {
+          "feature": "credit_amount",
+          "importance": 0.240426
+        },
+        {
+          "feature": "credit_history_existing paid",
+          "importance": 0.176769
+        },
+        {
+          "feature": "savings_status_no known savings",
+          "importance": 0.155335
+        },
+        {
+          "feature": "existing_credits",
+          "importance": 0.103647
+        },
+        {
+          "feature": "savings_status_<100",
+          "importance": 0.095943
+        },
+        {
+          "feature": "age",
+          "importance": 0.094543
+        },
+        {
+          "feature": "checking_status_0<=X<200",
+          "importance": 0.090954
+        },
+        {
+          "feature": "credit_history_all paid",
+          "importance": 0.06443
+        },
+        {
+          "feature": "savings_status_100<=X<500",
+          "importance": 0.036462
+        },
+        {
+          "feature": "age_group_Adult",
+          "importance": 0.035539
+        },
+        {
+          "feature": "checking_status_>=200",
+          "importance": 0.033745
+        },
+        {
+          "feature": "age_group_Young",
+          "importance": 0.031301
+        },
+        {
+          "feature": "credit_history_delayed previously",
+          "importance": 0.027812
+        },
+        {
+          "feature": "savings_status_>=1000",
+          "importance": 0.02002
+        },
+        {
+          "feature": "savings_status_500<=X<1000",
+          "importance": 0.00956
+        },
+        {
+          "feature": "credit_history_no credits/all paid",
+          "importance": 0.006268
+        }
+      ],
+      "Young": [
+        {
+          "feature": "checking_status_no checking",
+          "importance": 0.58097
+        },
+        {
+          "feature": "credit_history_critical/other existing credit",
+          "importance": 0.488281
+        },
+        {
+          "feature": "credit_amount",
+          "importance": 0.392149
+        },
+        {
+          "feature": "checking_status_<0",
+          "importance": 0.354845
+        },
+        {
+          "feature": "credit_history_existing paid",
+          "importance": 0.174579
+        },
+        {
+          "feature": "age_group_Adult",
+          "importance": 0.142155
+        },
+        {
+          "feature": "age_group_Young",
+          "importance": 0.125206
+        },
+        {
+          "feature": "savings_status_no known savings",
+          "importance": 0.106835
+        },
+        {
+          "feature": "age",
+          "importance": 0.106685
+        },
+        {
+          "feature": "existing_credits",
+          "importance": 0.101188
+        },
+        {
+          "feature": "savings_status_<100",
+          "importance": 0.099574
+        },
+        {
+          "feature": "checking_status_0<=X<200",
+          "importance": 0.077961
+        },
+        {
+          "feature": "savings_status_100<=X<500",
+          "importance": 0.043822
+        },
+        {
+          "feature": "credit_history_all paid",
+          "importance": 0.031861
+        },
+        {
+          "feature": "checking_status_>=200",
+          "importance": 0.029581
+        },
+        {
+          "feature": "savings_status_500<=X<1000",
+          "importance": 0.021132
+        },
+        {
+          "feature": "credit_history_delayed previously",
+          "importance": 0.016324
+        },
+        {
+          "feature": "credit_history_no credits/all paid",
+          "importance": 0.0
+        },
+        {
+          "feature": "savings_status_>=1000",
+          "importance": 0.0
+        }
+      ]
+    },
+    "shap_provenance": {
+      "explainer_type": "LinearExplainer",
+      "explainer_selection_mode": "auto",
+      "shap_version": "0.51.0",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
+      "feature_representation_order": [
+        "credit_amount",
+        "age",
+        "existing_credits",
+        "checking_status_0<=X<200",
+        "checking_status_<0",
+        "checking_status_>=200",
+        "checking_status_no checking",
+        "credit_history_all paid",
+        "credit_history_critical/other existing credit",
+        "credit_history_delayed previously",
+        "credit_history_existing paid",
+        "credit_history_no credits/all paid",
+        "savings_status_100<=X<500",
+        "savings_status_500<=X<1000",
+        "savings_status_<100",
+        "savings_status_>=1000",
+        "savings_status_no known savings",
+        "age_group_Adult",
+        "age_group_Young"
+      ],
+      "number_of_features": 19,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
+      "random_seed": 456
+    }
+  },
+  "mitigated_evaluation": {
+    "performance": {
+      "accuracy": {
+        "value": 0.735,
+        "requires": "labels",
+        "defined": true
+      },
+      "precision": {
+        "value": 0.7843,
+        "requires": "labels",
+        "defined": true
+      },
+      "recall": {
+        "value": 0.8571,
+        "requires": "labels",
+        "defined": true
+      },
+      "f1_score": {
+        "value": 0.8191,
+        "requires": "labels",
+        "defined": true
+      },
+      "roc_auc": {
+        "value": 0.755,
+        "requires": "probabilities",
+        "defined": true,
+        "reason": null
+      }
+    },
+    "fairness": {
+      "sensitive_attribute": "age_group",
+      "groups": [
+        "Adult",
+        "Young"
+      ],
+      "privileged_group": "Adult",
+      "unprivileged_group": "Young",
+      "demographic_parity_difference": {
+        "value": 0.1071,
+        "defined": true,
+        "reason": null
+      },
+      "equalized_odds_difference": {
+        "value": 0.3781,
+        "defined": true,
+        "reason": null
+      },
+      "equal_opportunity_difference": {
+        "value": 0.0107,
+        "defined": true,
+        "reason": null
+      },
+      "disparate_impact_ratio": {
+        "value": 1.1429,
+        "defined": true,
+        "reason": null
+      },
+      "false_positive_rate_difference": {
+        "value": 0.3781,
+        "defined": true,
+        "reason": null
+      },
+      "false_negative_rate_difference": {
+        "value": 0.0107,
+        "defined": true,
+        "reason": null
+      },
+      "subgroup_statistics": [
+        {
+          "group": "Adult",
+          "count": 172,
+          "base_rate": 0.7267,
+          "selection_rate": 0.75,
+          "accuracy": 0.7674,
+          "tpr": 0.856,
+          "fpr": 0.4681,
+          "confusion_matrix": {
+            "tp": 107,
+            "tn": 25,
+            "fp": 22,
+            "fn": 18
+          }
+        },
+        {
+          "group": "Young",
+          "count": 28,
+          "base_rate": 0.5357,
+          "selection_rate": 0.8571,
+          "accuracy": 0.5357,
+          "tpr": 0.8667,
+          "fpr": 0.8462,
+          "confusion_matrix": {
+            "tp": 13,
+            "tn": 2,
+            "fp": 11,
+            "fn": 2
+          }
+        }
+      ]
+    },
+    "global_shap": [
+      {
+        "feature": "checking_status_no checking",
+        "importance": 0.565802
+      },
+      {
+        "feature": "credit_history_critical/other existing credit",
+        "importance": 0.401226
+      },
+      {
+        "feature": "checking_status_<0",
+        "importance": 0.289925
+      },
+      {
+        "feature": "credit_amount",
+        "importance": 0.253924
+      },
+      {
+        "feature": "credit_history_existing paid",
+        "importance": 0.171785
+      },
+      {
+        "feature": "savings_status_no known savings",
+        "importance": 0.14473
+      },
+      {
+        "feature": "existing_credits",
+        "importance": 0.102715
+      },
+      {
+        "feature": "savings_status_<100",
+        "importance": 0.096878
+      },
+      {
+        "feature": "age",
+        "importance": 0.094246
+      },
+      {
+        "feature": "checking_status_0<=X<200",
+        "importance": 0.09032
+      },
+      {
+        "feature": "age_group_Adult",
+        "importance": 0.066039
+      },
+      {
+        "feature": "credit_history_all paid",
+        "importance": 0.061724
+      },
+      {
+        "feature": "savings_status_100<=X<500",
+        "importance": 0.037509
+      },
+      {
+        "feature": "checking_status_>=200",
+        "importance": 0.03335
+      },
+      {
+        "feature": "credit_history_delayed previously",
+        "importance": 0.027189
+      },
+      {
+        "feature": "savings_status_>=1000",
+        "importance": 0.016593
+      },
+      {
+        "feature": "age_group_Young",
+        "importance": 0.011502
+      },
+      {
+        "feature": "savings_status_500<=X<1000",
+        "importance": 0.01016
+      },
+      {
+        "feature": "credit_history_no credits/all paid",
+        "importance": 0.005659
+      }
+    ],
+    "subgroup_shap": {
+      "Adult": [
+        {
+          "feature": "checking_status_no checking",
+          "importance": 0.565702
+        },
+        {
+          "feature": "credit_history_critical/other existing credit",
+          "importance": 0.392792
+        },
+        {
+          "feature": "checking_status_<0",
+          "importance": 0.282423
+        },
+        {
+          "feature": "credit_amount",
+          "importance": 0.238851
+        },
+        {
+          "feature": "credit_history_existing paid",
+          "importance": 0.171998
+        },
+        {
+          "feature": "savings_status_no known savings",
+          "importance": 0.149394
+        },
+        {
+          "feature": "existing_credits",
+          "importance": 0.102959
+        },
+        {
+          "feature": "savings_status_<100",
+          "importance": 0.096513
+        },
+        {
+          "feature": "age",
+          "importance": 0.093051
+        },
+        {
+          "feature": "checking_status_0<=X<200",
+          "importance": 0.091629
+        },
+        {
+          "feature": "credit_history_all paid",
+          "importance": 0.06501
+        },
+        {
+          "feature": "age_group_Adult",
+          "importance": 0.050799
+        },
+        {
+          "feature": "savings_status_100<=X<500",
+          "importance": 0.036766
+        },
+        {
+          "feature": "checking_status_>=200",
+          "importance": 0.033767
+        },
+        {
+          "feature": "credit_history_delayed previously",
+          "importance": 0.028361
+        },
+        {
+          "feature": "savings_status_>=1000",
+          "importance": 0.018436
+        },
+        {
+          "feature": "savings_status_500<=X<1000",
+          "importance": 0.009063
+        },
+        {
+          "feature": "age_group_Young",
+          "importance": 0.008848
+        },
+        {
+          "feature": "credit_history_no credits/all paid",
+          "importance": 0.006287
+        }
+      ],
+      "Young": [
+        {
+          "feature": "checking_status_no checking",
+          "importance": 0.566701
+        },
+        {
+          "feature": "credit_history_critical/other existing credit",
+          "importance": 0.477134
+        },
+        {
+          "feature": "credit_amount",
+          "importance": 0.389581
+        },
+        {
+          "feature": "checking_status_<0",
+          "importance": 0.357442
+        },
+        {
+          "feature": "age_group_Adult",
+          "importance": 0.203197
+        },
+        {
+          "feature": "credit_history_existing paid",
+          "importance": 0.169867
+        },
+        {
+          "feature": "age",
+          "importance": 0.105002
+        },
+        {
+          "feature": "savings_status_no known savings",
+          "importance": 0.102749
+        },
+        {
+          "feature": "existing_credits",
+          "importance": 0.100516
+        },
+        {
+          "feature": "savings_status_<100",
+          "importance": 0.100165
+        },
+        {
+          "feature": "checking_status_0<=X<200",
+          "importance": 0.078539
+        },
+        {
+          "feature": "savings_status_100<=X<500",
+          "importance": 0.044188
+        },
+        {
+          "feature": "age_group_Young",
+          "importance": 0.03539
+        },
+        {
+          "feature": "credit_history_all paid",
+          "importance": 0.032148
+        },
+        {
+          "feature": "checking_status_>=200",
+          "importance": 0.029601
+        },
+        {
+          "feature": "savings_status_500<=X<1000",
+          "importance": 0.020033
+        },
+        {
+          "feature": "credit_history_delayed previously",
+          "importance": 0.016647
+        },
+        {
+          "feature": "credit_history_no credits/all paid",
+          "importance": 0.0
+        },
+        {
+          "feature": "savings_status_>=1000",
+          "importance": 0.0
+        }
+      ]
+    },
+    "shap_provenance": {
+      "explainer_type": "LinearExplainer",
+      "explainer_selection_mode": "auto",
+      "shap_version": "0.51.0",
+      "background_reference_description": "Random sample of 25 training instances.",
+      "evaluation_sample_description": "Random sample of 50 test instances.",
+      "feature_representation_order": [
+        "credit_amount",
+        "age",
+        "existing_credits",
+        "checking_status_0<=X<200",
+        "checking_status_<0",
+        "checking_status_>=200",
+        "checking_status_no checking",
+        "credit_history_all paid",
+        "credit_history_critical/other existing credit",
+        "credit_history_delayed previously",
+        "credit_history_existing paid",
+        "credit_history_no credits/all paid",
+        "savings_status_100<=X<500",
+        "savings_status_500<=X<1000",
+        "savings_status_<100",
+        "savings_status_>=1000",
+        "savings_status_no known savings",
+        "age_group_Adult",
+        "age_group_Young"
+      ],
+      "number_of_features": 19,
+      "n_eval_samples": 50,
+      "n_background_samples": 25,
+      "random_seed": 456
+    }
+  },
+  "attribution_comparison": {
+    "provisional_status": "PROVISIONAL (pending literature review)",
+    "cosine_similarity": 0.999076,
+    "spearman_rank_correlation": 0.980702,
+    "spearman_pvalue": 0.0,
+    "l1_attribution_difference": 0.004936,
+    "l2_attribution_difference": 0.040076,
+    "features_evaluated": 19,
+    "top_rank_shifts": [
+      {
+        "feature": "checking_status_no checking",
+        "baseline_rank": 1,
+        "mitigated_rank": 1,
+        "rank_shift": 0
+      },
+      {
+        "feature": "credit_history_critical/other existing credit",
+        "baseline_rank": 2,
+        "mitigated_rank": 2,
+        "rank_shift": 0
+      },
+      {
+        "feature": "checking_status_<0",
+        "baseline_rank": 3,
+        "mitigated_rank": 3,
+        "rank_shift": 0
+      },
+      {
+        "feature": "credit_amount",
+        "baseline_rank": 4,
+        "mitigated_rank": 4,
+        "rank_shift": 0
+      },
+      {
+        "feature": "credit_history_existing paid",
+        "baseline_rank": 5,
+        "mitigated_rank": 5,
+        "rank_shift": 0
+      }
+    ]
+  },
+  "trade_off_deltas": {
+    "delta_accuracy": 0.01,
+    "delta_f1_score": 0.0068,
+    "delta_demographic_parity_difference": 0.0066,
+    "delta_equalized_odds_difference": 0.2474
+  },
+  "execution_mode": "FINAL_EMPIRICAL_RUN"
+}

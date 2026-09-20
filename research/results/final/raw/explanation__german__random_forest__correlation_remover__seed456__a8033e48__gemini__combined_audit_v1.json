@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__random_forest__correlation_remover__seed456__a8033e48",
+  "dataset_name": "german",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "0b21e3783645108463dd275b006e88f58a89429d81f5be296d952f5e68ab2765",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates the fairness and performance of a machine learning model configured as a `random_forest` classifier. The model was trained on the `german` dataset with a `random_seed` of `456`. The protected attribute under examination is `age_group`, where `1` is designated as the privileged group and `0` as the unprivileged group. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential biases.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.2666\n*   **Equalized Odds Difference:** 0.2881\n*   **Equal Opportunity Difference:** 0.1467\n*   **Disparate Impact:** 0.6677\n*   **False Positive Rate Difference:** 0.2881\n*   **False Negative Rate Difference:** 0.1467\n\nThese baseline fairness metrics indicate notable disparities between the privileged and unprivileged `age_group`s. For instance, a Demographic Parity Difference of 0.2666 and an Equalized Odds Difference of 0.2881 suggest significant differences in positive prediction rates and true/false positive rates across groups, respectively. A Disparate Impact of 0.6677 is below the ideal ratio of 1.0, indicating potential adverse impact.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.7450\n*   **Precision:** 0.7908\n*   **Recall:** 0.8643\n*   **F1 Score:** 0.8259\n*   **ROC-AUC:** 0.7823\n\nThe baseline model demonstrated an accuracy of 74.50% and an F1 score of 82.59%, indicating a reasonably performing model in terms of overall predictive capability.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on fairness and performance metrics was evaluated against the baseline.\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:** Decreased from 0.2666 to 0.1537 (Delta: -0.1129). This represents an improvement, moving closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:** Decreased from 0.2881 to 0.1547 (Delta: -0.1334). This is an improvement, moving closer to the ideal parity of 0.0.\n*   **Equal Opportunity Difference:** Increased from 0.1467 to 0.1547 (Delta: +0.0080). This indicates a degradation, moving further from the ideal parity of 0.0.\n*   **Disparate Impact:** Increased from 0.6677 to 0.8071 (Delta: +0.1394). This is an improvement, moving closer to the ideal parity ratio of 1.0.\n*   **False Positive Rate Difference:** Decreased from 0.2881 to 0.0147 (Delta: -0.2734). This is a significant improvement, moving much closer to the ideal parity of 0.0.\n*   **False Negative Rate Difference:** Increased from 0.1467 to 0.1547 (Delta: +0.0080). This indicates a degradation, moving further from the ideal parity of 0.0.\n\nOverall, the `correlation_remover` mitigation led to improvements in several key fairness metrics, including Demographic Parity Difference, Equal",
+  "timestamp_utc": "2026-09-20T08:40:40.198547+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.352,
+    "finish_reason": "2",
+    "prompt_tokens": 1710,
+    "completion_tokens": 866,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

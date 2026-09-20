@@ -54,6 +54,8 @@ summarize.md
 
 # Datasets
 datasets/*.csv
+research/data/*.csv
+research/data/
 
 # Vercel
 .vercel/

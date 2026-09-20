@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062",
+  "dataset_name": "german",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "2ee6cd19f6af082e2ca024748daaae7c3a773fe83496a1a4f28d0eac968749fa",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `german` dataset. The protected attribute under consideration is `age_group`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `123`. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several fairness disparities and achieved specific performance levels:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.2859\n*   **Equalized Odds Difference:** 0.3144\n*   **Equal Opportunity Difference:** 0.3144\n*   **Disparate Impact:** 0.6602\n*   **False Positive Rate Difference:** 0.1768\n*   **False Negative Rate Difference:** 0.3144\n\nThese baseline fairness metrics indicate notable disparities across different fairness definitions. For instance, a Demographic Parity Difference of 0.2859 suggests a significant difference in positive prediction rates between the privileged and unprivileged groups. Similarly, an Equal Opportunity Difference of 0.3144 points to a substantial disparity in true positive rates. A Disparate Impact ratio of 0.6602, being below 1.0, indicates that the unprivileged group receives positive outcomes at a lower rate than the privileged group.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.7300\n*   **Precision:** 0.7722\n*   **Recall:** 0.8714\n*   **F1 Score:** 0.8188\n*   **ROC AUC:** 0.7608\n\nThe model's baseline performance shows an accuracy of 73.00% and a strong recall of 87.14%, indicating its ability to identify a high proportion of positive cases.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation technique was applied to address the identified fairness disparities. The following table summarizes the changes in fairness and performance metrics:\n\n| Metric                          | Type        | Baseline | Mitigated | Delta    | Direction | Domain Evaluation | Rationale                                                                                             |\n| :------------------------------ | :---------- | :------- | :-------- | :------- | :-------- | :---------------- | :---------------------------------------------------------------------------------------------------- |\n| demographic_parity_difference   | Fairness    | 0.2859   | 0.0467    | -0.2392  | decrease  | improvement       | Absolute Demographic Parity Difference decreased from 0.2859 to 0.0467, moving closer to ideal parity (0.0). |\n| equalized_odds_difference       | Fairness    | 0.3144   | 0.2586    | -0.0558  | decrease  | improvement       | Absolute Equalized Odds Difference decreased from 0.3144 to 0.2586, moving closer to ideal parity (0.0). |\n| equal_opportunity_difference    | Fairness    | 0.3144   | 0.0279    | -0.2865  | decrease  | improvement       | Absolute Equal Opportunity Difference decreased from 0.3144 to 0.0279, moving closer to ideal parity (0.0). |\n| disparate_impact                | Fairness    | 0.6602   | 1.0594    | +0.3992  | increase  | improvement       | Disparate Impact moved from 0.6602 to 1.0594, closer to ideal parity ratio (1.0).                     |\n| false_positive_rate_difference  | Fairness    | 0.1768   | 0.2586    | +0.0818  | increase  | degradation       | Absolute False Positive Rate Difference increased from 0.1768 to 0.2586, moving further from ideal parity (0.0). |\n| false_negative_rate_difference  | Fairness    | 0.3144   | 0.0279    | -0.2865  | decrease  | improvement       | Absolute False Negative Rate Difference decreased from 0.3144 to 0.0279, moving closer to ideal parity (0.0). |\n| accuracy                        | Performance | 0.7300   | 0.7550    | +0.0250  | increase  | improvement       | Accuracy",
+  "timestamp_utc": "2026-09-20T08:39:49.032031+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 7.665,
+    "finish_reason": "2",
+    "prompt_tokens": 1683,
+    "completion_tokens": 1093,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

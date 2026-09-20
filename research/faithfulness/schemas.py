@@ -18,11 +18,16 @@ class FaithfulnessReport:
     # Must be one of: SOFTWARE_VALIDATION_ONLY | PILOT_VALIDATION_RUN | FINAL_EMPIRICAL_RUN
     execution_mode: Optional[str] = None
 
-    # Primary Faithfulness Metrics (Rates in [0.0, 1.0])
-    numerical_faithfulness: float = 0.0
-    directional_faithfulness: float = 0.0
-    attribution_faithfulness: float = 0.0
+    # Primary Faithfulness Metrics (Rates in [0.0, 1.0], None if 0 evaluable claims)
+    numerical_faithfulness: Optional[float] = None
+    directional_faithfulness: Optional[float] = None
+    attribution_faithfulness: Optional[float] = None
     unsupported_claim_rate: float = 0.0
+
+    # Evaluability indicators (False when evaluable claims == 0, preventing vacuous truth)
+    numerical_evaluable: bool = False
+    directional_evaluable: bool = False
+    attribution_evaluable: bool = False
 
     # Raw counts
     numeric_claim_count: int = 0

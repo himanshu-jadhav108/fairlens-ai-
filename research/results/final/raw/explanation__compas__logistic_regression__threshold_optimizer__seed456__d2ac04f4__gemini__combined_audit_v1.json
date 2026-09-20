@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__d2ac04f4",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "5754f0f13007f9c3fbef7dd1c8feec6b7deb2dd6e42c04680a77eeed47be55b0",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a machine learning model trained on the `compas` dataset. The model architecture is a `logistic_regression` classifier, initialized with a `random_seed` of `456`. The protected attribute under examination is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to the application of any mitigation, the logistic regression model exhibited notable disparities across several fairness metrics, while achieving a moderate level of predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.3643. This indicates a substantial difference in positive prediction rates between the privileged and unprivileged groups, with an ideal value being 0.0 for parity.\n*   **Equalized Odds Difference:** 0.3339. This metric, which considers differences in False Positive Rates and True Positive Rates, shows a significant disparity, with an ideal value being 0.0.\n*   **Equal Opportunity Difference:** 0.3282. Focusing on the difference in True Positive Rates, this value suggests a considerable disparity in the model's ability to correctly identify positive outcomes across groups, with an ideal value being 0.0.\n*   **Disparate Impact:** 2.5848. This ratio indicates that the privileged group is approximately 2.58 times more likely to receive a positive outcome than the unprivileged group. An ideal value for parity is 1.0.\n*   **False Positive Rate Difference:** 0.3339. This shows a substantial difference in the rate at which the model incorrectly predicts positive outcomes for the unprivileged versus privileged groups, with an ideal value being 0.0.\n*   **False Negative Rate Difference:** 0.3282. This indicates a considerable difference in the rate at which the model incorrectly predicts negative outcomes across groups, with an ideal value being 0.0.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.6723. The model correctly classified approximately 67.23% of instances.\n*   **Precision:** 0.6610. Of all positive predictions, 66.10% were correct.\n*   **Recall:** 0.6237. The model correctly identified 62.37% of all actual positive instances.\n*   **F1 Score:** 0.6418. This is the harmonic mean of precision and recall.\n*   **ROC AUC:** 0.7090. This metric indicates the model's ability to distinguish between classes.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation was applied to the model. This intervention resulted in significant improvements across all audited fairness metrics, accompanied by a general degradation in predictive performance metrics.\n\n**Fairness Metric Changes (Baseline vs. Mitigated):**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.3643 | Mitigated: 0.0215 | Delta: -0.3428\n    *   Direction: Decrease | Domain Evaluation: Improvement. The metric moved substantially closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.333",
+  "timestamp_utc": "2026-09-19T08:41:02.101342+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.989,
+    "finish_reason": "2",
+    "prompt_tokens": 1635,
+    "completion_tokens": 774,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

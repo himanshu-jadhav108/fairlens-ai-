@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "b015e2eaa50f4f90d973f45dff010916aa5caf08c1bb23264b687c23fe7b75ea",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a machine learning model trained on the `adult` dataset, designed to predict an unspecified outcome. The model architecture employed is a `random_forest`, initialized with a `random_seed` of `456`. The audit specifically focuses on fairness with respect to the `sex` attribute, where `1` is designated as the privileged group and `0` as the unprivileged group. A preprocessing fairness mitigation technique, `correlation_remover`, was applied to the dataset to address potential biases.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to the application of any mitigation strategies, the model's fairness and performance were assessed using a suite of metrics.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1626\n*   **Equalized Odds Difference:** 0.1273\n*   **Equal Opportunity Difference:** 0.1273\n*   **Disparate Impact:** 0.2699\n*   **False Positive Rate Difference:** 0.0540\n*   **False Negative Rate Difference:** 0.1273\n\nAt baseline, the model exhibited disparities across several fairness metrics. For instance, a Demographic Parity Difference of 0.1626 indicates a notable difference in positive prediction rates between the privileged and unprivileged groups. Similarly, an Equalized Odds Difference and Equal Opportunity Difference of 0.1273 suggest disparities in true positive rates and false positive rates across groups. A Disparate Impact ratio of 0.2699, which is significantly below the ideal parity of 1.0, further highlights a substantial disparity in outcomes.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.8568\n*   **Precision:** 0.7858\n*   **Recall:** 0.5522\n*   **F1 Score:** 0.6486\n*   **ROC-AUC:** 0.9119\n\nThe baseline model demonstrated strong overall performance, with an accuracy of 0.8568 and a high ROC-AUC of 0.9119. Precision was 0.7858, while recall was lower at 0.5522, resulting in an F1 Score of 0.6486.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation technique was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Impact on Fairness Metrics:**\nThe mitigation generally led to improvements across fairness metrics, moving them closer to their respective ideal parity targets (0.0 for differences, 1.0 for ratios).\n*   **Demographic Parity Difference:** Decreased from 0.1626 to 0.1547 (Delta: -0.0079), indicating an improvement towards parity.\n*   **Equalized Odds Difference:** Decreased from 0.1273 to 0.0953 (Delta: -0.0320), indicating an improvement towards parity.\n*   **Equal Opportunity Difference:** Decreased from 0.1273 to 0.0953 (Delta: -0.0320), indicating an improvement towards parity.\n*   **Disparate Impact:** Increased from 0.2699 to 0.2979 (Delta: +0.02",
+  "timestamp_utc": "2026-09-18T07:23:01.192495+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.798,
+    "finish_reason": "2",
+    "prompt_tokens": 1699,
+    "completion_tokens": 774,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

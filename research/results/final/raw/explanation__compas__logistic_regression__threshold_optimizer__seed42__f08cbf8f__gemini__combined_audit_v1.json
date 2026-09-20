@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__f08cbf8f",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "7c9940daaca0384b8a43450c495c85043d9cdf99a7bcd585382df3feba37a3e7",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `logistic_regression` model trained on the `compas` dataset. The protected attribute under examination is `race`, where `1` is designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `42`. A post-processing mitigation strategy, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to the application of any mitigation, the model exhibited notable disparities across several fairness metrics, alongside its initial predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.2868\n*   **Equalized Odds Difference:** 0.3558\n*   **Equal Opportunity Difference:** 0.3558\n*   **Disparate Impact:** 2.2416\n*   **False Positive Rate Difference:** 0.1666\n*   **False Negative Rate Difference:** 0.3558\n\nThese baseline fairness metrics indicate significant disparities. For instance, a Demographic Parity Difference of 0.2868 suggests a substantial difference in positive prediction rates between the privileged and unprivileged groups. A Disparate Impact of 2.2416 indicates that the privileged group is more than twice as likely to receive a positive outcome compared to the unprivileged group, relative to the ideal parity ratio of 1.0. The Equalized Odds Difference and Equal Opportunity Difference also show considerable deviations from the ideal parity of 0.0.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.6733\n*   **Precision:** 0.6767\n*   **Recall:** 0.5855\n*   **F1 Score:** 0.6278\n*   **ROC AUC:** 0.7195\n\nThe model's baseline performance indicates moderate predictive capability, with an accuracy of 67.33% and an F1 score of 62.78%.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation was applied to address the identified fairness disparities. The comparison below details the changes in fairness and performance metrics.\n\n**Fairness Metrics - Pre- vs Post-Mitigation:**\n\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.2868 | Mitigated: 0.0214 | Delta: -0.2654\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* Absolute Demographic Parity Difference decreased from 0.2868 to 0.0214, moving closer to ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.3558 | Mitigated: 0.0550 | Delta: -0.3008\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* Absolute Equalized Odds Difference decreased from 0.3558 to 0.0550, moving closer to ideal parity (0.0).\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.3558 | Mitigated: 0.0359 | Delta: -0.3199\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* Absolute Equal Opportunity",
+  "timestamp_utc": "2026-09-18T07:25:32.196047+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.605,
+    "finish_reason": "2",
+    "prompt_tokens": 1634,
+    "completion_tokens": 785,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

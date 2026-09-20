@@ -50,7 +50,8 @@ def get_git_commit_hash() -> str:
 def run_single_experiment(
     config: ExperimentConfig,
     results_dir: str = "research/results",
-    save_artifacts: bool = True
+    save_artifacts: bool = True,
+    execution_mode: Optional[str] = None
 ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     """
     Executes a single end-to-end experiment with paired baseline and mitigated evaluations.
@@ -277,6 +278,10 @@ def run_single_experiment(
     }
 
     # 9. Persistence to File System
+    if execution_mode:
+        manifest["execution_mode"] = execution_mode
+        raw_result["execution_mode"] = execution_mode
+
     if save_artifacts:
         manifest_dir = os.path.join(results_dir, "manifests")
         raw_dir = os.path.join(results_dir, "raw")

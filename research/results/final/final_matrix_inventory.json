@@ -1,0 +1,369 @@
+{
+  "timestamp_utc": "2026-09-20T08:41:34.377392+00:00",
+  "total_planned": 36,
+  "completed_count": 36,
+  "failed_count": 0,
+  "inventory": [
+    {
+      "condition_id": "adult__logistic_regression__correlation_remover__seed42",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed42__3e772ca6"
+    },
+    {
+      "condition_id": "adult__logistic_regression__correlation_remover__seed123",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed123__6581c502"
+    },
+    {
+      "condition_id": "adult__logistic_regression__correlation_remover__seed456",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__logistic_regression__correlation_remover__seed456__462a71d8"
+    },
+    {
+      "condition_id": "adult__logistic_regression__threshold_optimizer__seed42",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__10ea6787"
+    },
+    {
+      "condition_id": "adult__logistic_regression__threshold_optimizer__seed123",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__021be82b"
+    },
+    {
+      "condition_id": "adult__logistic_regression__threshold_optimizer__seed456",
+      "dataset": "adult",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__logistic_regression__threshold_optimizer__seed456__cf630b0a"
+    },
+    {
+      "condition_id": "adult__random_forest__correlation_remover__seed42",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__random_forest__correlation_remover__seed42__96b67712"
+    },
+    {
+      "condition_id": "adult__random_forest__correlation_remover__seed123",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__random_forest__correlation_remover__seed123__817dbb0b"
+    },
+    {
+      "condition_id": "adult__random_forest__correlation_remover__seed456",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__random_forest__correlation_remover__seed456__03e61eb0"
+    },
+    {
+      "condition_id": "adult__random_forest__threshold_optimizer__seed42",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed42__c3711d22"
+    },
+    {
+      "condition_id": "adult__random_forest__threshold_optimizer__seed123",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed123__f2260c85"
+    },
+    {
+      "condition_id": "adult__random_forest__threshold_optimizer__seed456",
+      "dataset": "adult",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "adult__random_forest__threshold_optimizer__seed456__96b73ae1"
+    },
+    {
+      "condition_id": "compas__logistic_regression__correlation_remover__seed42",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed42__6a1a53f7"
+    },
+    {
+      "condition_id": "compas__logistic_regression__correlation_remover__seed123",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed123__551690cc"
+    },
+    {
+      "condition_id": "compas__logistic_regression__correlation_remover__seed456",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__logistic_regression__correlation_remover__seed456__58e2fdda"
+    },
+    {
+      "condition_id": "compas__logistic_regression__threshold_optimizer__seed42",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed42__f08cbf8f"
+    },
+    {
+      "condition_id": "compas__logistic_regression__threshold_optimizer__seed123",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed123__bc5d7475"
+    },
+    {
+      "condition_id": "compas__logistic_regression__threshold_optimizer__seed456",
+      "dataset": "compas",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__logistic_regression__threshold_optimizer__seed456__d2ac04f4"
+    },
+    {
+      "condition_id": "compas__random_forest__correlation_remover__seed42",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__random_forest__correlation_remover__seed42__bfbd0342"
+    },
+    {
+      "condition_id": "compas__random_forest__correlation_remover__seed123",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__random_forest__correlation_remover__seed123__ec4d3659"
+    },
+    {
+      "condition_id": "compas__random_forest__correlation_remover__seed456",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__random_forest__correlation_remover__seed456__c9644d7e"
+    },
+    {
+      "condition_id": "compas__random_forest__threshold_optimizer__seed42",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed42__ccfc4f9c"
+    },
+    {
+      "condition_id": "compas__random_forest__threshold_optimizer__seed123",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed123__1dfb0b80"
+    },
+    {
+      "condition_id": "compas__random_forest__threshold_optimizer__seed456",
+      "dataset": "compas",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SKIPPED_AS_ALREADY_COMPLETE",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "compas__random_forest__threshold_optimizer__seed456__7b502b89"
+    },
+    {
+      "condition_id": "german__logistic_regression__correlation_remover__seed42",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed42__b775fadd"
+    },
+    {
+      "condition_id": "german__logistic_regression__correlation_remover__seed123",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed123__3f4c1ddd"
+    },
+    {
+      "condition_id": "german__logistic_regression__correlation_remover__seed456",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__logistic_regression__correlation_remover__seed456__e69a9374"
+    },
+    {
+      "condition_id": "german__logistic_regression__threshold_optimizer__seed42",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed42__fab04982"
+    },
+    {
+      "condition_id": "german__logistic_regression__threshold_optimizer__seed123",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed123__fa833062"
+    },
+    {
+      "condition_id": "german__logistic_regression__threshold_optimizer__seed456",
+      "dataset": "german",
+      "model": "logistic_regression",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__logistic_regression__threshold_optimizer__seed456__37498e86"
+    },
+    {
+      "condition_id": "german__random_forest__correlation_remover__seed42",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 42,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__random_forest__correlation_remover__seed42__ad818d3d"
+    },
+    {
+      "condition_id": "german__random_forest__correlation_remover__seed123",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 123,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__random_forest__correlation_remover__seed123__9b5a5fb2"
+    },
+    {
+      "condition_id": "german__random_forest__correlation_remover__seed456",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "correlation_remover",
+      "seed": 456,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__random_forest__correlation_remover__seed456__a8033e48"
+    },
+    {
+      "condition_id": "german__random_forest__threshold_optimizer__seed42",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 42,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed42__d9cb6e82"
+    },
+    {
+      "condition_id": "german__random_forest__threshold_optimizer__seed123",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 123,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed123__54fb0237"
+    },
+    {
+      "condition_id": "german__random_forest__threshold_optimizer__seed456",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer",
+      "seed": 456,
+      "status": "SUCCESS",
+      "execution_mode": "FINAL_EMPIRICAL_RUN",
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c"
+    }
+  ],
+  "failures": []
+}

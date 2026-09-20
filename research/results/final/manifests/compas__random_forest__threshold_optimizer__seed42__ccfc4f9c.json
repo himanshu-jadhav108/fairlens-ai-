@@ -1,0 +1,62 @@
+{
+  "experiment_id": "compas__random_forest__threshold_optimizer__seed42__ccfc4f9c",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "timestamp_utc": "2026-09-19T08:36:31.425717+00:00",
+  "runtime_seconds": 2.25,
+  "dataset": {
+    "name": "compas",
+    "official_title": "ProPublica COMPAS Recidivism Risk Assessment Dataset",
+    "source_url": "https://github.com/propublica/compas-analysis",
+    "version": "2016 Broward County Release",
+    "license": "Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+    "is_synthetic_benchmark": false,
+    "target_column": "two_year_recid",
+    "sensitive_column": "race",
+    "split_id": "compas__split_42_t60_v20_te20",
+    "train_samples": 3166,
+    "val_samples": 1056,
+    "test_samples": 1056
+  },
+  "model": {
+    "family": "random_forest",
+    "parameters": {}
+  },
+  "mitigation": {
+    "name": "threshold_optimizer",
+    "strategy_type": "postprocessing",
+    "parameters": {},
+    "calibration_split": "validation"
+  },
+  "random_seed": 42,
+  "train_val_test_strategy": {
+    "train_ratio": 0.6,
+    "val_ratio": 0.2,
+    "test_ratio": 0.2,
+    "stratified": true
+  },
+  "preprocessing_configuration": {
+    "preprocessor_type": "ResearchPreprocessor",
+    "transformed_features_count": 8,
+    "feature_names": [
+      "age",
+      "priors_count",
+      "c_charge_degree_F",
+      "c_charge_degree_M",
+      "race_African-American",
+      "race_Caucasian",
+      "sex_Female",
+      "sex_Male"
+    ]
+  },
+  "environment": {
+    "python_version": "3.14.6",
+    "scikit_learn_version": "1.8.0",
+    "fairlearn_version": "0.14.0",
+    "shap_version": "0.51.0",
+    "xgboost_version": "3.4.1",
+    "pandas_version": "3.0.3",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0"
+  },
+  "execution_mode": "FINAL_EMPIRICAL_RUN"
+}

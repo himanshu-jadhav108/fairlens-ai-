@@ -1,0 +1,1070 @@
+[
+  {
+    "claim_id": "num_1",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Demographic Parity Difference:** 0.2666",
+    "ground_truth": {
+      "canonical_metric": "demographic_parity_difference",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.2666,
+        "path": "baseline_state.fairness_metrics.demographic_parity_difference.value"
+      },
+      "all_candidates": [
+        0.2666,
+        0.0324,
+        0.2666,
+        0.0324,
+        -0.2342,
+        -0.8785
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2666,
+      "metric_alias": "demographic parity difference",
+      "raw_string": "0.2666",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2666 matches ground truth 0.2666 for 'demographic_parity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.demographic_parity_difference.value",
+    "extracted_values": {
+      "value": 0.2666,
+      "raw_string": "0.2666",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2666,
+      "candidate_values": [
+        0.2666,
+        0.0324,
+        0.2666,
+        0.0324,
+        -0.2342,
+        -0.8785
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_2",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Equalized Odds Difference:** 0.2881",
+    "ground_truth": {
+      "canonical_metric": "equalized_odds_difference",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.2881,
+        "path": "baseline_state.fairness_metrics.equalized_odds_difference.value"
+      },
+      "all_candidates": [
+        0.2881,
+        0.1653,
+        0.2881,
+        0.1653,
+        -0.1228,
+        -0.4262
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2881,
+      "metric_alias": "equalized odds difference",
+      "raw_string": "0.2881",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2881 matches ground truth 0.2881 for 'equalized_odds_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equalized_odds_difference.value",
+    "extracted_values": {
+      "value": 0.2881,
+      "raw_string": "0.2881",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2881,
+      "candidate_values": [
+        0.2881,
+        0.1653,
+        0.2881,
+        0.1653,
+        -0.1228,
+        -0.4262
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_3",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Equal Opportunity Difference:** 0.1467",
+    "ground_truth": {
+      "canonical_metric": "equal_opportunity_difference",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.1467,
+        "path": "baseline_state.fairness_metrics.equal_opportunity_difference.value"
+      },
+      "all_candidates": [
+        0.1467,
+        0.0053,
+        0.1467,
+        0.0053,
+        -0.1414,
+        -0.9639
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1467,
+      "metric_alias": "equal opportunity difference",
+      "raw_string": "0.1467",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1467 matches ground truth 0.1467 for 'equal_opportunity_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.equal_opportunity_difference.value",
+    "extracted_values": {
+      "value": 0.1467,
+      "raw_string": "0.1467",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.1467,
+      "candidate_values": [
+        0.1467,
+        0.0053,
+        0.1467,
+        0.0053,
+        -0.1414,
+        -0.9639
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_4",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Disparate Impact:** 0.6677",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.6677,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        0.6677,
+        1.0376,
+        0.6677,
+        1.0376,
+        0.3699,
+        0.554
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6677,
+      "metric_alias": "disparate impact",
+      "raw_string": "0.6677",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6677 matches ground truth 0.6677 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 0.6677,
+      "raw_string": "0.6677",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6677,
+      "candidate_values": [
+        0.6677,
+        1.0376,
+        0.6677,
+        1.0376,
+        0.3699,
+        0.554
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_5",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **False Positive Rate Difference:** 0.2881",
+    "ground_truth": {
+      "canonical_metric": "false_positive_rate_difference",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.2881,
+        "path": "baseline_state.fairness_metrics.false_positive_rate_difference.value"
+      },
+      "all_candidates": [
+        0.2881,
+        0.1653,
+        0.2881,
+        0.1653,
+        -0.1228,
+        -0.4262
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2881,
+      "metric_alias": "false positive rate difference",
+      "raw_string": "0.2881",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.2881 matches ground truth 0.2881 for 'false_positive_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.false_positive_rate_difference.value",
+    "extracted_values": {
+      "value": 0.2881,
+      "raw_string": "0.2881",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.2881,
+      "candidate_values": [
+        0.2881,
+        0.1653,
+        0.2881,
+        0.1653,
+        -0.1228,
+        -0.4262
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_6",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **False Negative Rate Difference:** 0.1467",
+    "ground_truth": {
+      "canonical_metric": "false_negative_rate_difference",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.1467,
+        "path": "baseline_state.fairness_metrics.false_negative_rate_difference.value"
+      },
+      "all_candidates": [
+        0.1467,
+        0.0053,
+        0.1467,
+        0.0053,
+        -0.1414,
+        -0.9639
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1467,
+      "metric_alias": "false negative rate difference",
+      "raw_string": "0.1467",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.1467 matches ground truth 0.1467 for 'false_negative_rate_difference' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.false_negative_rate_difference.value",
+    "extracted_values": {
+      "value": 0.1467,
+      "raw_string": "0.1467",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.1467,
+      "candidate_values": [
+        0.1467,
+        0.0053,
+        0.1467,
+        0.0053,
+        -0.1414,
+        -0.9639
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_7",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "These baseline values indicate that the model's predictions and error rates were not uniformly distributed across the `age_group` categories, with differences ranging from 0.1467 to 0.2881 for difference metrics (where 0.0 is ideal parity) and a Disparate Impact ratio of 0.6677 (where 1.0 is ideal parity)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.1467,
+      "raw_string": "0.1467 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.1467 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.1467,
+      "raw_string": "0.1467 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_8",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "These baseline values indicate that the model's predictions and error rates were not uniformly distributed across the `age_group` categories, with differences ranging from 0.1467 to 0.2881 for difference metrics (where 0.0 is ideal parity) and a Disparate Impact ratio of 0.6677 (where 1.0 is ideal parity)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.2881,
+      "raw_string": "0.2881 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.2881 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.2881,
+      "raw_string": "0.2881 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_9",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "These baseline values indicate that the model's predictions and error rates were not uniformly distributed across the `age_group` categories, with differences ranging from 0.1467 to 0.2881 for difference metrics (where 0.0 is ideal parity) and a Disparate Impact ratio of 0.6677 (where 1.0 is ideal parity)",
+    "ground_truth": {
+      "canonical_metric": null,
+      "reason": "no_associated_metric"
+    },
+    "predicted_claim": {
+      "extracted_value": 0.0,
+      "raw_string": "0.0 ",
+      "metric_alias": null
+    },
+    "classification": "UNDETERMINABLE",
+    "rationale": "Numerical value '0.0 ' has no clear metric association in clause/sentence and cannot be deterministically evaluated against audit evidence.",
+    "referenced_evidence": "unassociated_numerical_value",
+    "extracted_values": {
+      "value": 0.0,
+      "raw_string": "0.0 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "metric_associated": false
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "is_orphan_number": true
+    }
+  },
+  {
+    "claim_id": "num_10",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "These baseline values indicate that the model's predictions and error rates were not uniformly distributed across the `age_group` categories, with differences ranging from 0.1467 to 0.2881 for difference metrics (where 0.0 is ideal parity) and a Disparate Impact ratio of 0.6677 (where 1.0 is ideal parity)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.6677,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        0.6677,
+        0.6677
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.6677,
+      "metric_alias": "disparate impact ratio",
+      "raw_string": "0.6677 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.6677 for state 'baseline' matches ground truth 0.6677 for 'disparate_impact' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 0.6677,
+      "raw_string": "0.6677 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6677,
+      "candidate_values": [
+        0.6677,
+        0.6677
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_11",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "These baseline values indicate that the model's predictions and error rates were not uniformly distributed across the `age_group` categories, with differences ranging from 0.1467 to 0.2881 for difference metrics (where 0.0 is ideal parity) and a Disparate Impact ratio of 0.6677 (where 1.0 is ideal parity)",
+    "ground_truth": {
+      "canonical_metric": "disparate_impact",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.6677,
+        "path": "baseline_state.fairness_metrics.disparate_impact.value"
+      },
+      "all_candidates": [
+        0.6677,
+        0.6677
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 1.0,
+      "metric_alias": "disparate impact ratio",
+      "raw_string": "1.0 ",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "UNSUPPORTED",
+    "rationale": "Reported value 1.0 for state 'baseline' contradicts ground truth [0.6677, 0.6677] for 'disparate_impact' (min abs diff: 0.3323 > tol 0.015).",
+    "referenced_evidence": "baseline_state.fairness_metrics.disparate_impact.value",
+    "extracted_values": {
+      "value": 1.0,
+      "raw_string": "1.0 ",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.6677,
+      "candidate_values": [
+        0.6677,
+        0.6677
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.3323,
+      "rel_diff": 0.49768,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_12",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Accuracy:** 0.7450",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.745,
+        "path": "baseline_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        0.745,
+        0.735,
+        0.745,
+        0.735,
+        -0.01,
+        -0.0134
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.745,
+      "metric_alias": "accuracy",
+      "raw_string": "0.7450",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.745 matches ground truth 0.745 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 0.745,
+      "raw_string": "0.7450",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.745,
+      "candidate_values": [
+        0.745,
+        0.735,
+        0.745,
+        0.735,
+        -0.01,
+        -0.0134
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_13",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Precision:** 0.7908",
+    "ground_truth": {
+      "canonical_metric": "precision",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.7908,
+        "path": "baseline_state.performance_metrics.precision.value"
+      },
+      "all_candidates": [
+        0.7908,
+        0.7514,
+        0.7908,
+        0.7514,
+        -0.0394,
+        -0.0498
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.7908,
+      "metric_alias": "precision",
+      "raw_string": "0.7908",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.7908 matches ground truth 0.7908 for 'precision' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.precision.value",
+    "extracted_values": {
+      "value": 0.7908,
+      "raw_string": "0.7908",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.7908,
+      "candidate_values": [
+        0.7908,
+        0.7514,
+        0.7908,
+        0.7514,
+        -0.0394,
+        -0.0498
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_14",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **Recall:** 0.8643",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8643,
+        "path": "baseline_state.performance_metrics.recall.value"
+      },
+      "all_candidates": [
+        0.8643,
+        0.9286,
+        0.8643,
+        0.9286,
+        0.0643,
+        0.0744
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8643,
+      "metric_alias": "recall",
+      "raw_string": "0.8643",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8643 matches ground truth 0.8643 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+    "extracted_values": {
+      "value": 0.8643,
+      "raw_string": "0.8643",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8643,
+      "candidate_values": [
+        0.8643,
+        0.9286,
+        0.8643,
+        0.9286,
+        0.0643,
+        0.0744
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_15",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **F1 Score:** 0.8259",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8259,
+        "path": "baseline_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        0.8259,
+        0.8307,
+        0.8259,
+        0.8307,
+        0.0048,
+        0.0058
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8259,
+      "metric_alias": "f1 score",
+      "raw_string": "0.8259",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8259 matches ground truth 0.8259 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 0.8259,
+      "raw_string": "0.8259",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.8259,
+      "candidate_values": [
+        0.8259,
+        0.8307,
+        0.8259,
+        0.8307,
+        0.0048,
+        0.0058
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_16",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "*   **ROC AUC:** 0.7823",
+    "ground_truth": {
+      "canonical_metric": "roc_auc",
+      "target_state": null,
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.7823,
+        "path": "baseline_state.performance_metrics.roc_auc.value"
+      },
+      "all_candidates": [
+        0.7823,
+        0.7823
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.7823,
+      "metric_alias": "roc auc",
+      "raw_string": "0.7823",
+      "inferred_target_state": null
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.7823 matches ground truth 0.7823 for 'roc_auc' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.roc_auc.value",
+    "extracted_values": {
+      "value": 0.7823,
+      "raw_string": "0.7823",
+      "is_percentage": false
+    },
+    "expected_values": {
+      "matched_value": 0.7823,
+      "candidate_values": [
+        0.7823,
+        0.7823
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": null,
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": false
+    }
+  },
+  {
+    "claim_id": "num_17",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "The model's baseline performance showed an accuracy of 74.50% and a strong recall of 86.43%, contributing to an F1 score of 82.59%",
+    "ground_truth": {
+      "canonical_metric": "accuracy",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.745,
+        "path": "baseline_state.performance_metrics.accuracy.value"
+      },
+      "all_candidates": [
+        0.745,
+        0.745
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.745,
+      "metric_alias": "accuracy",
+      "raw_string": "74.50%",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.745 (converted from 74.50% -> 0.745) for state 'baseline' matches ground truth 0.745 for 'accuracy' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.accuracy.value",
+    "extracted_values": {
+      "value": 0.745,
+      "raw_string": "74.50%",
+      "is_percentage": true
+    },
+    "expected_values": {
+      "matched_value": 0.745,
+      "candidate_values": [
+        0.745,
+        0.745
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": true
+    }
+  },
+  {
+    "claim_id": "num_18",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "The model's baseline performance showed an accuracy of 74.50% and a strong recall of 86.43%, contributing to an F1 score of 82.59%",
+    "ground_truth": {
+      "canonical_metric": "recall",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8643,
+        "path": "baseline_state.performance_metrics.recall.value"
+      },
+      "all_candidates": [
+        0.8643,
+        0.8643
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8643000000000001,
+      "metric_alias": "recall",
+      "raw_string": "86.43%",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8643000000000001 (converted from 86.43% -> 0.8643000000000001) for state 'baseline' matches ground truth 0.8643 for 'recall' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.recall.value",
+    "extracted_values": {
+      "value": 0.8643000000000001,
+      "raw_string": "86.43%",
+      "is_percentage": true
+    },
+    "expected_values": {
+      "matched_value": 0.8643,
+      "candidate_values": [
+        0.8643,
+        0.8643
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": true
+    }
+  },
+  {
+    "claim_id": "num_19",
+    "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+    "claim_type": "numerical",
+    "claim_text": "The model's baseline performance showed an accuracy of 74.50% and a strong recall of 86.43%, contributing to an F1 score of 82.59%",
+    "ground_truth": {
+      "canonical_metric": "f1_score",
+      "target_state": "baseline",
+      "matched_candidate": {
+        "state": "baseline",
+        "value": 0.8259,
+        "path": "baseline_state.performance_metrics.f1_score.value"
+      },
+      "all_candidates": [
+        0.8259,
+        0.8259
+      ]
+    },
+    "predicted_claim": {
+      "extracted_value": 0.8259000000000001,
+      "metric_alias": "f1 score",
+      "raw_string": "82.59%",
+      "inferred_target_state": "baseline"
+    },
+    "classification": "SUPPORTED",
+    "rationale": "Reported value 0.8259000000000001 (converted from 82.59% -> 0.8259000000000001) for state 'baseline' matches ground truth 0.8259 for 'f1_score' within tolerance (abs diff: 0.0).",
+    "referenced_evidence": "baseline_state.performance_metrics.f1_score.value",
+    "extracted_values": {
+      "value": 0.8259000000000001,
+      "raw_string": "82.59%",
+      "is_percentage": true
+    },
+    "expected_values": {
+      "matched_value": 0.8259,
+      "candidate_values": [
+        0.8259,
+        0.8259
+      ]
+    },
+    "evidence_hash": "35f78b53efb884b202af3b10eeebd4cdab02aa2a5323250c5cd6c097bfe52412",
+    "provenance": {
+      "experiment_id": "german__random_forest__threshold_optimizer__seed456__351a3b1c",
+      "dataset": "german",
+      "model": "random_forest",
+      "mitigation": "threshold_optimizer"
+    },
+    "metadata": {
+      "abs_diff": 0.0,
+      "rel_diff": 0.0,
+      "target_state": "baseline",
+      "absolute_tolerance": 0.015,
+      "relative_tolerance": 0.05,
+      "is_percentage_converted": true
+    }
+  }
+]

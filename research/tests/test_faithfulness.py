@@ -134,6 +134,43 @@ def test_numerical_exact_match_and_tolerance(sample_evidence):
     assert len(claims_wrong) == 1
     assert claims_wrong[0].classification == ClaimClassification.UNSUPPORTED
 
+    # 4. State mismatch: baseline claimed to have mitigated value (0.0800) -> UNSUPPORTED
+    text_state_mismatch = "The baseline demographic parity difference was 0.0800."
+    claims_mismatch = evaluator.evaluate(sample_evidence, text_state_mismatch)
+    assert len(claims_mismatch) == 1
+    assert claims_mismatch[0].classification == ClaimClassification.UNSUPPORTED
+
+    # 5. Mitigated state match: 0.0800 correctly attributed to mitigated -> SUPPORTED
+    text_mitigated_match = "After mitigation, demographic parity difference was 0.0800."
+    claims_mit_match = evaluator.evaluate(sample_evidence, text_mitigated_match)
+    assert len(claims_mit_match) == 1
+    assert claims_mit_match[0].classification == ClaimClassification.SUPPORTED
+
+    # 6. Change metric match: reduction of 0.3400 -> SUPPORTED
+    text_change_match = "Demographic parity difference showed a reduction of 0.3400."
+    claims_change = evaluator.evaluate(sample_evidence, text_change_match)
+    assert len(claims_change) == 1
+    assert claims_change[0].classification == ClaimClassification.SUPPORTED
+
+
+def test_vacuous_truth_handling_in_evaluator(sample_evidence):
+    """
+    Test that explanations with zero evaluable claims return None (not 1.0)
+    and set evaluable = False, preventing vacuous truth distortion.
+    """
+    evaluator = FaithfulnessEvaluator()
+    empty_text = "The machine learning experiment ran smoothly."
+    report = evaluator.evaluate(sample_evidence, empty_text, save_records=False)
+
+    assert report.numerical_faithfulness is None
+    assert report.numerical_evaluable is False
+    assert report.directional_faithfulness is None
+    assert report.directional_evaluable is False
+    assert report.attribution_faithfulness is None
+    assert report.attribution_evaluable is False
+    assert report.unsupported_claim_rate == 0.0
+    assert report.total_claims_count == 0
+
 
 def test_directional_faithfulness(sample_evidence):
     evaluator = DirectionalFaithfulnessEvaluator()

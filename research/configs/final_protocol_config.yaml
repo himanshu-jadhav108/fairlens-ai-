@@ -1,0 +1,43 @@
+# FairLens AI Research — Confirmatory Final Experiment Configuration
+# Formal Protocol: 3 Datasets x 2 Models x 2 Mitigations x 3 Seeds = 36 conditions
+# Strictly real benchmark datasets (use_synthetic: false)
+# Strictly gemini-2.5-flash with credential rotation
+
+experiment_metadata:
+  purpose: "Confirmatory empirical study on LLM faithfulness for ML fairness audits"
+  execution_mode: "FINAL_EMPIRICAL_RUN"
+  output_dir: "research/results/final"
+  use_synthetic: false
+
+matrix:
+  datasets:
+    - "adult"
+    - "compas"
+    - "german"
+
+  models:
+    - "logistic_regression"
+    - "random_forest"
+
+  mitigations:
+    - "correlation_remover"
+    - "threshold_optimizer"
+
+  seeds:
+    - 42
+    - 123
+    - 456
+
+llm_configuration:
+  provider: "gemini"
+  model: "gemini-2.5-flash"
+  temperature: 0.2
+  max_output_tokens: 1500
+  top_p: 0.95
+  prompts:
+    - "combined_audit_v1"
+
+evaluator_tolerances:
+  absolute_tolerance: 0.015
+  relative_tolerance: 0.05
+  top_k_features: 5

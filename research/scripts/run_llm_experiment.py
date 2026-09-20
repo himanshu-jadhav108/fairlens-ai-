@@ -73,7 +73,8 @@ def run_experiment(
     use_synthetic: bool = True,
     local_path: Optional[str] = None,
     is_smoke_test: bool = False,
-    execution_mode: Optional[str] = None
+    execution_mode: Optional[str] = None,
+    llm_model_name: Optional[str] = None
 ) -> Dict[str, Any]:
     """
     Executes the end-to-end fairness audit, explanation generation, and faithfulness evaluation.
@@ -113,7 +114,8 @@ def run_experiment(
     raw_result, manifest = run_single_experiment(
         config=config,
         results_dir=effective_output_dir,
-        save_artifacts=True
+        save_artifacts=True,
+        execution_mode=effective_mode
     )
     manifest["execution_mode"] = effective_mode
     print(f"-> Audit completed. Experiment ID: {config.experiment_id}")
@@ -134,7 +136,8 @@ def run_experiment(
     # 4. Generate LLM Explanation
     print(f"\n[Step 4/6] Generating explanation via LLM Provider ('{provider_name}')...")
     provider = get_llm_provider(provider_name)
-    gen_config = get_default_generation_config(temperature=temperature, seed=seed)
+    target_model = llm_model_name or "gemini-3.6-flash"
+    gen_config = get_default_generation_config(model_name=target_model, temperature=temperature, seed=seed)
     generator = ExplanationGenerator(provider=provider, config=gen_config)
     explanation_record = generator.generate_explanation(
         evidence=evidence,
@@ -192,12 +195,13 @@ def run_experiment(
     print("-" * 75)
     print(f"{'Metric':<35} | {'Template Baseline':<17} | {'LLM (' + provider_name + ')':<17}")
     print("-" * 75)
-    print(f"{'Numerical Faithfulness':<35} | {template_report.numerical_faithfulness * 100:>15.1f}% | {llm_report.numerical_faithfulness * 100:>15.1f}%")
-    print(f"{'Directional Faithfulness':<35} | {template_report.directional_faithfulness * 100:>15.1f}% | {llm_report.directional_faithfulness * 100:>15.1f}%")
-    print(f"{'Attribution Faithfulness':<35} | {template_report.attribution_faithfulness * 100:>15.1f}% | {llm_report.attribution_faithfulness * 100:>15.1f}%")
-    print(f"{'Unsupported Claim Rate':<35} | {template_report.unsupported_claim_rate * 100:>15.1f}% | {llm_report.unsupported_claim_rate * 100:>15.1f}%")
+    fmt_rate = lambda v: f"{v * 100:>15.1f}%" if v is not None else f"{'N/A':>16}"
+    print(f"{'Numerical Faithfulness':<35} | {fmt_rate(template_report.numerical_faithfulness)} | {fmt_rate(llm_report.numerical_faithfulness)}")
+    print(f"{'Directional Faithfulness':<35} | {fmt_rate(template_report.directional_faithfulness)} | {fmt_rate(llm_report.directional_faithfulness)}")
+    print(f"{'Attribution Faithfulness':<35} | {fmt_rate(template_report.attribution_faithfulness)} | {fmt_rate(llm_report.attribution_faithfulness)}")
+    print(f"{'Unsupported Claim Rate':<35} | {fmt_rate(template_report.unsupported_claim_rate)} | {fmt_rate(llm_report.unsupported_claim_rate)}")
     print(f"{'Total Extracted Claims':<35} | {template_report.total_claims_count:>16} | {llm_report.total_claims_count:>16}")
-    print(f"{'[Secondary] Evidence Coverage':<35} | {template_coverage.overall_coverage_rate * 100:>15.1f}% | {llm_coverage.overall_coverage_rate * 100:>15.1f}%")
+    print(f"{'[Secondary] Evidence Coverage':<35} | {fmt_rate(template_coverage.overall_coverage_rate)} | {fmt_rate(llm_coverage.overall_coverage_rate)}")
     print("-" * 75)
 
     return {

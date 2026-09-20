@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed42__f6158150",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "8d4df676f99a3f99173ea8971cf3025e59a39f8f86e62db73ac79fc5f22435d2",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `adult` dataset. The protected attribute under consideration is `sex`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `42`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nThe initial audit of the baseline model revealed several disparities and performance characteristics:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.1770. This indicates a notable difference in positive prediction rates between the privileged and unprivileged groups, deviating from the ideal parity of 0.0.\n*   **Equalized Odds Difference:** 0.1086. This suggests a disparity in both true positive rates and false positive rates across the protected groups, moving away from the ideal 0.0.\n*   **Equal Opportunity Difference:** 0.1086. This metric, identical to Equalized Odds Difference in this baseline, indicates a disparity in true positive rates between the groups, deviating from the ideal 0.0.\n*   **Disparate Impact:** 0.2955. This ratio is significantly below the ideal parity of 1.0, indicating that the unprivileged group is less likely to receive a positive outcome compared to the privileged group.\n*   **False Positive Rate Difference:** 0.0784. This shows a difference in the false positive rates between the groups, moving away from the ideal 0.0.\n*   **False Negative Rate Difference:** 0.1086. This indicates a difference in the false negative rates between the groups, moving away from the ideal 0.0.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8537\n*   **Precision:** 0.7409\n*   **Recall:** 0.5979\n*   **F1 Score:** 0.6618\n*   **ROC-AUC:** 0.9058\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated:\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:** Improved significantly, decreasing by 0.0941 from 0.1770 to 0.0829. This moves the model closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:** Degraded, increasing by 0.0552 from 0.1086 to 0.1638. This moves the model further from the ideal parity of 0.0.\n",
+  "timestamp_utc": "2026-09-18T07:19:39.842265+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.613,
+    "finish_reason": "2",
+    "prompt_tokens": 1693,
+    "completion_tokens": 643,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

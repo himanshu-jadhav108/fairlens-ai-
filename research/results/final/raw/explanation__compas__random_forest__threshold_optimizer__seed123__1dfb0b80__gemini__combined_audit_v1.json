@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__random_forest__threshold_optimizer__seed123__1dfb0b80",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "ab0d93bbbc095a95251be0eaaeb952ecc8550bbc84f6174d4a7e0252647c1f9c",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** [Current Date]\n**Auditor:** Independent Machine Learning Fairness Auditor\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` machine learning model trained on the `compas` dataset. The model's performance and fairness were evaluated with respect to the `race` protected attribute, where `1` represents the privileged group and `0` represents the unprivileged group. A random seed of `123` was used for reproducibility. Postprocessing mitigation, specifically `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nThe initial audit of the baseline `random_forest` model revealed significant disparities across several fairness metrics, alongside its predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.2898 (Target: 0.0 for parity)\n*   **Equalized Odds Difference:** 0.3350 (Target: 0.0 for parity)\n*   **Equal Opportunity Difference:** 0.3350 (Target: 0.0 for parity)\n*   **Disparate Impact:** 2.0363 (Target: 1.0 for parity)\n*   **False Positive Rate Difference:** 0.1761 (Target: 0.0 for parity)\n*   **False Negative Rate Difference:** 0.3350 (Target: 0.0 for parity)\n\nThe baseline model exhibited substantial deviations from parity across all fairness metrics. For instance, a Demographic Parity Difference of 0.2898 and a Disparate Impact of 2.0363 indicate that the model's positive prediction rates differed considerably between the protected groups. Similarly, Equalized Odds Difference, Equal Opportunity Difference, False Positive Rate Difference, and False Negative Rate Difference all showed non-zero values, suggesting disparities in error rates and true positive rates across groups.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.6572\n*   **Precision:** 0.6409\n*   **Recall:** 0.6177\n*   **F1 Score:** 0.6291\n*   **ROC AUC:** 0.7098\n\nThe baseline model achieved an accuracy of 0.6572 and an F1 score of 0.6291, with a ROC AUC of 0.7098, indicating its overall predictive capability prior to mitigation.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` postprocessing mitigation technique was applied to the model. The comparison of pre- and post-mitigation metrics reveals a significant improvement in fairness, accompanied by some trade-offs in performance.\n\n**Fairness Metric Changes (Pre- vs. Post-Mitigation):**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.2898 | Mitigated: 0.0460 | Delta: -0.2438\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale:* The absolute difference decreased, moving closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.3350 | Mitigated: 0.0620 | Delta: -0.2730\n    *   Direction: decrease | Domain Evaluation: improvement\n    *   *Rationale",
+  "timestamp_utc": "2026-09-19T08:36:47.733985+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.98,
+    "finish_reason": "2",
+    "prompt_tokens": 1635,
+    "completion_tokens": 758,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

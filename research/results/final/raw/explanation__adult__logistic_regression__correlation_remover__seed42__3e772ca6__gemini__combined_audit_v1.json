@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed42__3e772ca6",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "51dbf30a9ac45ea2ab26a44e99dddcca4fc58dad3c0e7af73d570a3b44b47ad3",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `adult` dataset. The protected attribute under consideration is `sex`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `42`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited the following characteristics:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.1770. This indicates a notable difference in the positive prediction rates between the privileged and unprivileged groups.\n*   **Equalized Odds Difference:** 0.1086. This suggests a disparity in both false positive rates and true positive rates across the groups.\n*   **Equal Opportunity Difference:** 0.1086. This specifically points to a difference in true positive rates between the groups.\n*   **Disparate Impact:** 0.2955. This ratio, being significantly below 1.0, indicates that the unprivileged group receives positive outcomes at a substantially lower rate compared to the privileged group.\n*   **False Positive Rate Difference:** 0.0784. There was a difference in the rate at which each group was incorrectly classified as positive.\n*   **False Negative Rate Difference:** 0.1086. There was a difference in the rate at which each group was incorrectly classified as negative.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8537\n*   **Precision:** 0.7409\n*   **Recall:** 0.5979\n*   **F1-Score:** 0.6618\n*   **ROC-AUC:** 0.9058\n\nThe baseline model demonstrated strong overall predictive performance, with an accuracy of 85.37% and an ROC-AUC of 90.58%. However, it also exhibited significant disparities across several fairness metrics, particularly Disparate Impact and Demographic Parity Difference, indicating a bias against the unprivileged group.\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation technique was applied, and its impact on fairness and performance metrics was evaluated:\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.1770 | Mitigated: 0.0829 | Delta: -0.0941\n    *   Direction: Decrease | Domain Evaluation: Improvement. The absolute difference decreased, moving closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.1086 | Mitigated: 0.1638 | Delta: +0.0552\n    *   Direction: Increase | Domain Evaluation: Degradation. The absolute difference increased, moving further from the ideal parity of 0.0.\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.1086 | Mitigated: 0.1638 | Delta: +0.0552\n    *   Direction: Increase | Domain Evaluation: Degradation. The absolute difference increased, moving further from the ideal parity of 0.0.\n*   **Disparate Impact:**\n    *   Baseline: 0.2955 | Mitigated: 0.5917 | Delta: +0.2962\n    *   Direction: Increase | Domain Evaluation: Improvement. The ratio moved closer to the ideal parity",
+  "timestamp_utc": "2026-09-19T08:29:21.747957+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.367,
+    "finish_reason": "2",
+    "prompt_tokens": 1693,
+    "completion_tokens": 828,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

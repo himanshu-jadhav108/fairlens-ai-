@@ -36,7 +36,7 @@ The original fairness, mitigation, and SHAP explainability infrastructure is **n
 | **DEC-007** | **LLM Provider Replaceability** | **`LOCKED`** | 2026-09-17 | Abstract `BaseLLMProvider` decouples the research from Gemini; Gemini is an experimental provider, not the subject of the paper. |
 | **DEC-008** | **Production Code Isolation** | **`LOCKED`** | 2026-09-17 | `backend/`, `frontend/`, and `main` remain completely untouched. All research lives isolated under `research/`. |
 | **DEC-009** | **Reproducibility & Security** | **`LOCKED`** | 2026-09-17 | `GEMINI_API_KEY` is never committed. Deterministic mock smoke-tests run offline without credentials. Raw outputs are cryptographically hashed and saved. |
-| **DEC-010** | **Exact Gemini Model & Versions** | `PROVISIONAL` | 2026-09-17 | Evaluated with `gemini-2.5-flash` and `gemini-1.5-flash`; final model version locked when full benchmark runs execute. |
+| **DEC-010** | **Exact Gemini Model & Versions** | **`LOCKED`** | 2026-09-17 | Strictly locked to `gemini-2.5-flash`. No silent fallbacks to Lite or other versions allowed. |
 | **DEC-011** | **Prompt Variants** | `PROVISIONAL` | 2026-09-17 | Four versioned templates implemented (`combined_audit_v1`, `fairness_audit_v1`, `fairness_comparison_v1`, `shap_explanation_v1`). Ablations may test variant phrasing. |
 | **DEC-012** | **Full Experiment Matrix** | `PROVISIONAL` | 2026-09-17 | Configurable matrix over datasets × models × mitigations × seeds × prompts. Computational scale will be calibrated for statistical power. |
 | **DEC-013** | **Statistical Analysis Details** | `PROVISIONAL` | 2026-09-17 | Hierarchical nesting (claims nested in explanations) enforced. Paired non-parametric tests and bootstrap CIs implemented. |

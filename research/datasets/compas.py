@@ -53,19 +53,20 @@ class COMPASDataset(BaseDataset):
         local_path: Optional[str] = None
     ) -> pd.DataFrame:
         """Loads COMPAS dataset from local file or generates deterministic benchmark."""
+        if use_synthetic_benchmark:
+            self.metadata.is_synthetic_benchmark = True
+            return self._generate_synthetic_benchmark()
+
         target_path = local_path or os.path.join("research", "data", f"{self.metadata.name}.csv")
         if target_path and os.path.exists(target_path):
             df = pd.read_csv(target_path)
             self.metadata.is_synthetic_benchmark = False
             return self._clean_compas(df)
 
-        if use_synthetic_benchmark or local_path is None:
-            self.metadata.is_synthetic_benchmark = True
-            return self._generate_synthetic_benchmark()
-
         raise FileNotFoundError(
-            f"COMPAS dataset file not found at '{local_path}'. "
-            "Pass use_synthetic_benchmark=True for unit/smoke tests."
+            f"FINAL EXPERIMENT BLOCKED: COMPAS dataset file not found at '{target_path}'. "
+            "Synthetic fallback is strictly prohibited in final confirmatory experiment mode. "
+            "Pass use_synthetic_benchmark=True strictly for unit/smoke tests."
         )
 
     def _clean_compas(self, df: pd.DataFrame) -> pd.DataFrame:

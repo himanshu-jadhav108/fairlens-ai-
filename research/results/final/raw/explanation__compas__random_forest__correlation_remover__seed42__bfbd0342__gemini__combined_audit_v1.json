@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__random_forest__correlation_remover__seed42__bfbd0342",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "6fb988486cf291640972fbfa1c20ce7ce6d8922d53aea39602a9827e981f1118",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\nThis report presents a comprehensive fairness audit of a machine learning model, based strictly on the provided quantitative evidence. The audit evaluates the model's fairness and performance both before and after the application of a fairness mitigation technique, and analyzes its feature attributions.\n\n---\n\n### 1. Model & Dataset Overview\n\nThe audited model is a **random_forest** classifier trained on the **compas** dataset. The audit focuses on fairness with respect to the **race** protected attribute, where '1' is designated as the privileged group and '0' as the unprivileged group. A random seed of **42** was used for reproducibility. To address potential fairness issues, the **correlation_remover** preprocessing mitigation technique was applied.\n\n---\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to any mitigation, the random forest model exhibited notable disparities across several fairness metrics, while achieving moderate predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference (DPD):** 0.2379. This indicates a substantial difference in the positive prediction rates between the privileged and unprivileged groups, with the value being far from the ideal of 0.0.\n*   **Equalized Odds Difference (EOD):** 0.2830. This metric, which considers differences in both true positive rates and false positive rates, shows a significant disparity, deviating considerably from the ideal 0.0.\n*   **Equal Opportunity Difference (EOD):** 0.2830. This metric, focusing on the difference in true positive rates, also indicates a substantial disparity, matching the Equalized Odds Difference.\n*   **Disparate Impact (DI):** 1.8646. This ratio of positive prediction rates between groups is significantly higher than the ideal parity of 1.0, suggesting that the unprivileged group is predicted positively at a rate 1.86 times that of the privileged group.\n*   **False Positive Rate Difference (FPRD):** 0.1462. There is a difference in false positive rates between the groups, moving away from the ideal 0.0.\n*   **False Negative Rate Difference (FNRD):** 0.2830. There is a substantial difference in false negative rates between the groups, also moving away from the ideal 0.0.\n\n**Baseline Performance",
+  "timestamp_utc": "2026-09-19T08:35:47.762532+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.507,
+    "finish_reason": "2",
+    "prompt_tokens": 1655,
+    "completion_tokens": 523,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

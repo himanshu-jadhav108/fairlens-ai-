@@ -1,0 +1,33 @@
+{
+  "experiment_id": "german__random_forest__threshold_optimizer__seed123__54fb0237",
+  "dataset_name": "german",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "35ca356386d81f25482fe74692791f6690824d1e87ceef768625bcf48ac91572",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** [Current Date]\n**Audited Model:** random_forest\n**Dataset:** german\n**Protected Attribute:** age_group (Privileged: 1, Unprivileged: 0)\n**Mitigation Strategy:** threshold_optimizer (postprocessing)\n**Random Seed:** 123\n\n---\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` model trained on the `german` dataset. The protected attribute under scrutiny is `age_group`, where `1` is designated as the privileged group and `0` as the unprivileged group. A `threshold_optimizer` postprocessing mitigation strategy was applied to address potential fairness issues.\n\n---\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to any mitigation, the model's fairness and performance were assessed using a suite of metrics:\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.2053\n*   **Equalized Odds Difference:** 0.2445\n*   **Equal Opportunity Difference:** 0.2445\n*   **Disparate Impact:** 0.7646\n*   **False Positive Rate Difference:** 0.0867\n*   **False Negative Rate Difference:** 0.2445\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.7250\n*   **Precision:** 0.7545\n*   **Recall:** 0.9000\n*   **F1 Score:** 0.8208\n*   **ROC AUC:** 0.7065\n\n---\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` postprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Impact on Fairness Metrics:**\n\n*   **Demographic Parity Difference:** Decreased from 0.2053 to 0.1972 (Delta: -0.0081). This represents an **improvement**, moving closer to the ideal parity of 0.0.\n*   **Equalized Odds Difference:** Increased from 0.2445 to 0.4337 (Delta: +0.1892). This indicates a **degradation**, moving further from the ideal parity of 0.0.\n*   **Equal Opportunity Difference:** Decreased from 0.2",
+  "timestamp_utc": "2026-09-20T08:41:09.049849+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.423,
+    "finish_reason": "2",
+    "prompt_tokens": 1684,
+    "completion_tokens": 530,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

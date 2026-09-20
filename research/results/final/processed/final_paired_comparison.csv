@@ -1,0 +1,5 @@
+metric,n_pairs,mean_template,mean_llm,mean_difference,std_difference,cohens_d,t_statistic,t_p_value,wilcoxon_w,wilcoxon_p_value
+numerical_faithfulness,43,1.0,0.886,-0.114,0.1042,-1.0941,-7.1744,0.0,0.0,0.0
+directional_faithfulness,29,1.0,0.8763,-0.1237,0.3087,-0.4008,-2.1585,0.0396,0.0,0.0171
+attribution_faithfulness,0,,,,,,,,,
+unsupported_claim_rate,43,0.0,0.0829,0.0829,0.0828,1.0001,6.5579,0.0,0.0,0.0

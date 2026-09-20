@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__random_forest__threshold_optimizer__seed42__c3711d22",
+  "dataset_name": "adult",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "60ba5b91c6a72bec34a8ebe0471231cde26f162300ba7bb0cde4be890b189eca",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `random_forest` machine learning model trained on the `adult` dataset. The audit specifically focused on fairness with respect to the protected attribute `sex`, where `1` represents the privileged group and `0` represents the unprivileged group. A random seed of `42` was used for reproducibility. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several fairness disparities and achieved a specific level of predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1538\n*   **Equalized Odds Difference:** 0.0826\n*   **Equal Opportunity Difference:** 0.0826\n*   **Disparate Impact:** 0.2987\n*   **False Positive Rate Difference:** 0.0569\n*   **False Negative Rate Difference:** 0.0826\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.8625\n*   **Precision:** 0.8017\n*   **Recall:** 0.5654\n*   **F1 Score:** 0.6632\n*   **ROC AUC:** 0.9139\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation technique was applied, resulting in changes to both fairness and performance metrics.\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:** Decreased from 0.1538 to 0.0041 (Delta: -0.1497). This represents an **improvement**, moving closer to ideal parity (0.0).\n*   **Equalized Odds Difference:** Increased from 0.0826 to 0.3033 (Delta: +0.2207). This represents a **degradation**, moving further from ideal parity (0.0).\n*   **Equal Opportunity Difference:** Increased from 0.0826 to 0.3033 (Delta: +0.2207). This represents a **degradation**, moving further from ideal parity (0.0).\n*   **Disparate Impact:** Increased from 0.2987 to 0.9753 (Delta: +0.6766). This represents an **improvement**, moving closer to ideal parity ratio (1.0).\n*   **False Positive Rate Difference:** Decreased from 0.0569 to 0.0478 (Delta: -0.0091). This represents an **improvement**, moving closer to ideal parity (0.0).\n*   **False Negative Rate Difference:** Increased from 0.0826 to 0.3033 (Delta: +0.2207). This represents a **degradation**, moving further from ideal parity (0.0).\n\n**Performance Metric Changes:**\n*   **Accuracy:** Decreased from 0.8625 to 0.8487 (Delta: -0.0138). This represents a **degradation**.\n*   **Precision:** Decreased from",
+  "timestamp_utc": "2026-09-18T07:23:32.760921+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.394,
+    "finish_reason": "2",
+    "prompt_tokens": 1675,
+    "completion_tokens": 746,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

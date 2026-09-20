@@ -63,20 +63,20 @@ class AdultDataset(BaseDataset):
         If local_path exists (or standard research/data/adult.csv exists), loads data.
         Otherwise, falls back to the deterministic benchmark-structured dataset.
         """
+        if use_synthetic_benchmark:
+            self.metadata.is_synthetic_benchmark = True
+            return self._generate_synthetic_benchmark()
+
         target_path = local_path or os.path.join("research", "data", f"{self.metadata.name}.csv")
         if target_path and os.path.exists(target_path):
             df = pd.read_csv(target_path)
             self.metadata.is_synthetic_benchmark = False
             return self._clean_adult(df)
 
-        if use_synthetic_benchmark or local_path is None:
-            self.metadata.is_synthetic_benchmark = True
-            return self._generate_synthetic_benchmark()
-
         raise FileNotFoundError(
-            f"Adult dataset file not found at '{local_path}'. "
-            "To run unit tests or smoke tests without external data downloads, "
-            "pass use_synthetic_benchmark=True."
+            f"FINAL EXPERIMENT BLOCKED: Adult dataset file not found at '{target_path}'. "
+            "Synthetic fallback is strictly prohibited in final confirmatory experiment mode. "
+            "Pass use_synthetic_benchmark=True strictly for unit/smoke tests."
         )
 
     def _clean_adult(self, df: pd.DataFrame) -> pd.DataFrame:

@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__logistic_regression__threshold_optimizer__seed123__bc5d7475",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "accbfd495d60be944f4bb69eaf27168a3db48ab7f9345f3d4f6718d2bfe7c782",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a logistic regression model trained on the `compas` dataset. The protected attribute under consideration is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a random seed of `123`. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to any mitigation, the model exhibited significant disparities across several fairness metrics, while demonstrating moderate predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.3617, indicating a substantial difference in positive prediction rates between groups.\n*   **Equalized Odds Difference:** 0.3786, suggesting disparities in both false positive rates and false negative rates across groups.\n*   **Equal Opportunity Difference:** 0.3786, specifically highlighting a difference in true positive rates between groups.\n*   **Disparate Impact:** 2.7543, which is considerably higher than the ideal parity ratio of 1.0, indicating the unprivileged group is predicted positive at a rate significantly lower than the privileged group.\n*   **False Positive Rate Difference:** 0.2572, showing a notable difference in false positive rates between groups.\n*   **False Negative Rate Difference:** 0.3786, indicating a substantial difference in false negative rates between groups.\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.6856\n*   **Precision:** 0.6846\n*   **Recall:** 0.6157\n*   **F1 Score:** 0.6483\n*   **ROC AUC:** 0.7480\n\n### 3. Mitigation Impact and Comparison\n\nThe application of the `threshold_optimizer` mitigation strategy resulted in substantial improvements across all audited fairness metrics, accompanied by a mixed impact on performance metrics.\n\n**Fairness Metric Changes (Pre- vs. Post-Mitigation):**\n*   **Demographic Parity Difference:** Decreased from 0.3617 to 0.0355 (Delta: -0.3262), representing a significant improvement towards parity (ideal 0.0).\n*   **Equalized Odds Difference:** Decreased from 0.3786 to 0.1234 (Delta: -0.2552), indicating an improvement towards parity (ideal 0.0).\n*   **Equal Opportunity Difference:** Decreased from 0.3786 to 0.0648 (Delta: -0.3138), showing an improvement towards parity (ideal 0.0).\n*   **Disparate Impact:** Moved from 2.7543 to 0.9313 (Delta: -1.8230), moving closer to the ideal parity ratio of 1.0, which is an improvement.\n*   **False Positive Rate Difference:** Decreased from 0.2572 to 0.1234 (Delta: -0.1338",
+  "timestamp_utc": "2026-09-18T07:25:47.005018+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.203,
+    "finish_reason": "2",
+    "prompt_tokens": 1635,
+    "completion_tokens": 713,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

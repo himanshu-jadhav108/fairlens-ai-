@@ -54,27 +54,32 @@ class GermanCreditDataset(BaseDataset):
         local_path: Optional[str] = None
     ) -> pd.DataFrame:
         """Loads German Credit dataset or generates deterministic benchmark."""
+        if use_synthetic_benchmark:
+            self.metadata.is_synthetic_benchmark = True
+            return self._generate_synthetic_benchmark()
+
         target_path = local_path or os.path.join("research", "data", f"{self.metadata.name}.csv")
         if target_path and os.path.exists(target_path):
             df = pd.read_csv(target_path)
             self.metadata.is_synthetic_benchmark = False
             return self._clean_german(df)
 
-        if use_synthetic_benchmark or local_path is None:
-            self.metadata.is_synthetic_benchmark = True
-            return self._generate_synthetic_benchmark()
-
         raise FileNotFoundError(
-            f"German credit dataset not found at '{local_path}'. "
-            "Pass use_synthetic_benchmark=True for unit/smoke tests."
+            f"FINAL EXPERIMENT BLOCKED: German credit dataset file not found at '{target_path}'. "
+            "Synthetic fallback is strictly prohibited in final confirmatory experiment mode. "
+            "Pass use_synthetic_benchmark=True strictly for unit/smoke tests."
         )
 
     def _clean_german(self, df: pd.DataFrame) -> pd.DataFrame:
         """Cleans and recodes German credit dataset."""
         df = df.copy()
-        # Recode target if raw format (1=Good, 2=Bad)
-        if "credit_risk" in df.columns and set(df["credit_risk"].unique()).issubset({1, 2}):
-            df["credit_risk"] = df["credit_risk"].replace({1: 1, 2: 0})
+        # Recode target if raw format (1=Good, 2=Bad or 'good'/'bad')
+        if "credit_risk" in df.columns:
+            if df["credit_risk"].dtype == object or isinstance(df["credit_risk"].iloc[0], str):
+                df["credit_risk"] = df["credit_risk"].astype(str).str.lower().map({"good": 1, "bad": 0}).fillna(df["credit_risk"])
+            elif set(df["credit_risk"].dropna().unique()).issubset({1, 2}):
+                df["credit_risk"] = df["credit_risk"].replace({1: 1, 2: 0})
+            df["credit_risk"] = df["credit_risk"].astype(int)
         
         # Ensure age_group exists
         if "age" in df.columns and "age_group" not in df.columns:

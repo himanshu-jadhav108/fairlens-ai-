@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__logistic_regression__correlation_remover__seed456__58e2fdda",
+  "dataset_name": "compas",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "3b9bb19a3395b8d8270d2dd0fb493da1384bd33e90e44d5472480d3a7f28ba79",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit was conducted on a `logistic_regression` model trained on the `compas` dataset. The protected attribute under examination is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was initialized with a `random_seed` of `456`. A `correlation_remover` preprocessing mitigation technique was applied to address observed fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited significant disparities across fairness metrics and achieved a moderate level of predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.3643 (Indicating a substantial difference in positive prediction rates between groups, deviating from the ideal of 0.0.)\n*   **Equalized Odds Difference:** 0.3339 (Suggesting disparities in both false positive rates and true positive rates between groups, deviating from the ideal of 0.0.)\n*   **Equal Opportunity Difference:** 0.3282 (Highlighting a notable difference in true positive rates between groups, deviating from the ideal of 0.0.)\n*   **Disparate Impact:** 2.5848 (Signifying that the unprivileged group is predicted positively at a rate 2.58 times higher than the privileged group, substantially deviating from the ideal ratio of 1.0.)\n*   **False Positive Rate Difference:** 0.3339 (Indicating a difference in false positive rates between groups, deviating from the ideal of 0.0.)\n*   **False Negative Rate Difference:** 0.3282 (Indicating a difference in false negative rates between groups, deviating from the ideal of 0.0.)\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.6723\n*   **Precision:** 0.6610\n*   **Recall:** 0.6237\n*   **F1 Score:** 0.6418\n*   **ROC AUC:** 0.7090\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, resulting in improvements across all audited fairness metrics, though accompanied by a degradation in predictive performance metrics.\n\n**Fairness Metric Changes (Pre- vs. Post-Mitigation):**\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.3643 | Mitigated: 0.1188 | Delta: -0.2455\n    *   Direction: decrease | Domain Evaluation: improvement (Moved closer to ideal parity of 0.0.)\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.3339 | Mitigated: 0.1772 | Delta: -0.1567\n    *   Direction: decrease | Domain Evaluation: improvement (Moved closer to ideal parity of 0.0.)\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.3282 | Mitigated: 0.1134 | Delta: -0.2148\n    *   Direction: decrease | Domain Evaluation: improvement (Moved closer to ideal parity of 0.0.)\n*   **Disparate Impact:**\n    *   Baseline: 2.5848 | Mitigated: 0.7618 | Delta: -1.8230\n    *   Direction: decrease | Domain Evaluation: improvement (Moved closer to ideal parity ratio of 1.0.)\n*   **False Positive Rate Difference:**\n    *   Baseline: 0.3339 | Mitigated: 0.1772 | Delta: -0.1567\n    *   Direction: decrease | Domain Evaluation: improvement (Moved closer to ideal parity of 0.0.)\n*   **False Negative Rate Difference:**\n    *   Baseline: 0.3282 | Mitigated: 0.1134 | Delta: -0.2148\n    *   Direction: decrease | Domain Evaluation: improvement (Moved closer to ideal parity of 0.0.)\n\n**Performance Metric Changes (Pre- vs. Post-Mitigation):**\n*   **Accuracy:**\n    *   Baseline: 0.6723 | Mitigated: 0.6326 | Delta: -0.0397\n    *   Direction: decrease | Domain Evaluation: degradation\n*   **Precision:**\n    *   Baseline: 0.6610 | Mitigated: 0.6203 | Delta: -0.0407\n    *   Direction: decrease | Domain Evaluation: degradation\n*   **Recall:**\n    *   Baseline: 0.6237 | Mitigated: 0.5654 | Delta: -0.0583\n    *   Direction: decrease | Domain Evaluation: degradation\n*   **F1 Score:**\n    *   Baseline: 0.6418 | Mitigated: 0.5916 | Delta: -0.0502\n    *   Direction: decrease | Domain Evaluation: degradation\n*   **ROC AUC:**\n    *   Baseline: 0.709",
+  "timestamp_utc": "2026-09-18T07:25:17.578585+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.202,
+    "finish_reason": "2",
+    "prompt_tokens": 1656,
+    "completion_tokens": 1188,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

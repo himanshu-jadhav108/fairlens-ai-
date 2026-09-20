@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__threshold_optimizer__seed42__10ea6787",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "input_evidence_hash": "ee171326b476e6290962f99922eb23174fc651492bde494f882b4a56c026875a",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit evaluates a `logistic_regression` model trained on the `adult` dataset. The protected attribute under consideration is `sex`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `42`. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several fairness disparities and achieved specific performance levels:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.1770. This indicates a notable difference in positive prediction rates between the privileged and unprivileged groups, with an ideal value being 0.0.\n*   **Equalized Odds Difference:** 0.1086. This metric, which considers disparities in both false positive rates and false negative rates, showed a difference from the ideal 0.0.\n*   **Equal Opportunity Difference:** 0.1086. This specific component of Equalized Odds, focusing on disparities in true positive rates, also showed a difference from the ideal 0.0.\n*   **Disparate Impact:** 0.2955. This ratio of positive prediction rates between groups was significantly below the ideal parity of 1.0, indicating the unprivileged group was less likely to receive a positive outcome.\n*   **False Positive Rate Difference:** 0.0784. There was a difference in the false positive rates between the groups, with an ideal value being 0.0.\n*   **False Negative Rate Difference:** 0.1086. There was a difference in the false negative rates between the groups, with an ideal value being 0.0.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8537\n*   **Precision:** 0.7409\n*   **Recall:** 0.5979\n*   **F1 Score:** 0.6618\n*   **ROC AUC:** 0.9058\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation was applied to the model. The comparison between baseline and mitigated metrics reveals a mixed impact on fairness and performance.\n\n**Fairness Impact:**\n*   **Demographic Parity Difference:** Improved significantly. The absolute difference decreased from 0.1770 to 0.0005 (Delta: -0.1765), moving very close to ideal parity (0.0).\n*   **Disparate Impact:** Improved significantly. The ratio increased from 0.2955 to 0.9967 (Delta: +0.7012), moving very close to ideal parity (1.0).\n*   **False Positive Rate Difference:** Improved. The absolute difference decreased from 0.0784 to 0.0337",
+  "timestamp_utc": "2026-09-18T07:20:42.004207+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.592,
+    "finish_reason": "2",
+    "prompt_tokens": 1676,
+    "completion_tokens": 675,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 42,
+    "credential_alias": "gemini_account_default"
+  }
+}

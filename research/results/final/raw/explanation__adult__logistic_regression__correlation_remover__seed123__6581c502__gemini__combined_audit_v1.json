@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__correlation_remover__seed123__6581c502",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "correlation_remover",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "3d6aa8f4735375a10d5f5ba7d8a23cdf239b23edc5cf67f6ef47f694705395e9",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `adult` dataset. The protected attribute under scrutiny is `sex`, with `1` designated as the privileged group and `0` as the unprivileged group. The model was trained with a `random_seed` of `123`. A preprocessing mitigation technique, `correlation_remover`, was applied to address potential fairness issues.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities across fairness metrics, alongside its predictive performance.\n\n**Baseline Fairness Metrics:**\n*   **Demographic Parity Difference:** 0.1895 (indicating a notable difference in positive prediction rates between groups)\n*   **Equalized Odds Difference:** 0.1326 (suggesting disparities in true positive and false positive rates across groups)\n*   **Equal Opportunity Difference:** 0.1326 (indicating disparities in true positive rates across groups)\n*   **Disparate Impact:** 0.2531 (significantly below the ideal ratio of 1.0, indicating a lower positive prediction rate for the unprivileged group)\n*   **False Positive Rate Difference:** 0.0805\n*   **False Negative Rate Difference:** 0.1326\n\n**Baseline Performance Metrics:**\n*   **Accuracy:** 0.8498\n*   **Precision:** 0.7335\n*   **Recall:** 0.5851\n*   **F1 Score:** 0.6510\n*   **ROC-AUC:** 0.9041\n\n### 3. Mitigation Impact and Comparison\n\nThe `correlation_remover` preprocessing mitigation was applied, and its impact on both fairness and performance metrics was evaluated.\n\n**Impact on Fairness Metrics:**\nThe mitigation generally led to improvements across all audited fairness metrics, moving them closer to their respective parity targets.\n*   **Demographic Parity Difference:** Decreased from 0.1895 to 0.1073 (Delta: -0.0822), an improvement towards 0.0.\n*   **Equalized Odds Difference:** Decreased from 0.1326 to 0.1148 (Delta: -0.0178), an improvement towards 0.0.\n*   **Equal Opportunity Difference:** Decreased from 0.1326 to 0.1148 (Delta: -0.0178), an improvement towards 0.0.\n*   **Disparate Impact:** Increased from 0.2531 to 0.4938 (Delta: +0.2407), an improvement towards 1.0.\n*   **False Positive Rate Difference:** Decreased from 0.0805 to 0.0291 (Delta: -0.0514), an improvement towards 0.0.\n*   **False Negative Rate Difference:** Decreased from 0.1326 to 0.1148 (Delta: -0.0178), an improvement towards 0.0.\n\n**Impact on Performance Metrics:**\nWhile fairness improved, the mitigation resulted in some degradation across most performance metrics.\n*   **Accuracy:** Decreased from 0.8498 to 0.843",
+  "timestamp_utc": "2026-09-18T07:19:59.984705+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 10.531,
+    "finish_reason": "2",
+    "prompt_tokens": 1693,
+    "completion_tokens": 763,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}

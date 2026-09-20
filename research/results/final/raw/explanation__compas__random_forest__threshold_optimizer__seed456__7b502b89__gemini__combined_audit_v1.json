@@ -1,0 +1,33 @@
+{
+  "experiment_id": "compas__random_forest__threshold_optimizer__seed456__7b502b89",
+  "dataset_name": "compas",
+  "model_name": "random_forest",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456
+  },
+  "input_evidence_hash": "51f0919d64facea5cdbb49f79bc23fbdefde4c66bf38ada95d31fe5b06ab6590",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `random_forest` machine learning model trained on the `compas` dataset. The model was configured with a `random_seed` of `456`. The protected attribute under investigation is `race`, with `1` designated as the privileged group and `0` as the unprivileged group. A post-processing mitigation technique, `threshold_optimizer`, was applied to address observed fairness disparities.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several fairness disparities and achieved specific performance levels:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.2289 (Target: 0.0 for parity)\n*   **Equalized Odds Difference:** 0.2105 (Target: 0.0 for parity)\n*   **Equal Opportunity Difference:** 0.2105 (Target: 0.0 for parity)\n*   **Disparate Impact:** 1.7486 (Target: 1.0 for parity)\n*   **False Positive Rate Difference:** 0.1932 (Target: 0.0 for parity)\n*   **False Negative Rate Difference:** 0.2105 (Target: 0.0 for parity)\n\nThese baseline fairness metrics indicate that the model's predictions were not achieving parity across the protected attribute `race`. For instance, a Demographic Parity Difference of 0.2289 suggests a notable difference in positive prediction rates between the privileged and unprivileged groups. A Disparate Impact of 1.7486 indicates that the privileged group was approximately 1.75 times more likely to receive a positive outcome than the unprivileged group.\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.6420\n*   **Precision:** 0.6280\n*   **Recall:** 0.5875\n*   **F1 Score:** 0.6071\n*   **ROC AUC:** 0.6656\n\nThe baseline model achieved an accuracy of 64.20% and an F1 score of 60.71%, providing a starting point for evaluating the impact of fairness mitigation on overall model utility.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` post-processing mitigation was applied to the model. The comparison below details the changes in fairness and performance metrics from baseline to mitigated states.\n\n**Fairness Metrics (Pre- vs Post-Mitigation):**\n\n*   **Demographic Parity Difference:**\n    *   Baseline: 0.2289 | Mitigated: 0.0044 | Delta: -0.2245\n    *   Direction: decrease | Domain Evaluation: **improvement**\n    *   *Rationale:* The absolute Demographic Parity Difference significantly decreased, moving very close to ideal parity (0.0).\n*   **Equalized Odds Difference:**\n    *   Baseline: 0.2105 | Mitigated: 0.0432 | Delta: -0.1673\n    *   Direction: decrease | Domain Evaluation: **improvement**\n    *   *Rationale:* The absolute Equalized Odds Difference decreased, moving closer to ideal parity (0.0).\n*   **Equal Opportunity Difference:**\n    *   Baseline: 0.2105 | Mitigated: 0.0046 | Delta: -0.2059\n    *   Direction: decrease | Domain Evaluation: **improvement**\n    *   *Rationale:* The absolute Equal Opportunity Difference significantly decreased, moving very close to ideal parity (0.0).\n*   **Disparate Impact:**\n    *   Baseline: 1.7486 | Mitigated: 1.0113 | Delta: -0.7",
+  "timestamp_utc": "2026-09-19T08:37:01.972867+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 8.829,
+    "finish_reason": "2",
+    "prompt_tokens": 1635,
+    "completion_tokens": 869,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 456,
+    "credential_alias": "gemini_account_default"
+  }
+}

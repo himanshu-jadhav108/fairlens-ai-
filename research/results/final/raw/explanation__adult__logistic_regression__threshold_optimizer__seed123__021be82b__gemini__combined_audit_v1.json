@@ -1,0 +1,33 @@
+{
+  "experiment_id": "adult__logistic_regression__threshold_optimizer__seed123__021be82b",
+  "dataset_name": "adult",
+  "model_name": "logistic_regression",
+  "mitigation_name": "threshold_optimizer",
+  "audit_state": "comparison",
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "sdk_version": "google-generativeai-0.8.6",
+  "prompt_id": "combined_audit_v1",
+  "prompt_version": "v1",
+  "generation_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123
+  },
+  "input_evidence_hash": "7b93663cdc99f789b8017a12686837c920a5687495051426cb7e2e5f3f547bdc",
+  "output_text": "## Machine Learning Fairness Audit Report\n\n**Date:** October 26, 2023\n\n### 1. Model & Dataset Overview\n\nThis audit examines a `logistic_regression` model trained on the `adult` dataset. The protected attribute under consideration is `sex`, where `1` represents the privileged group and `0` represents the unprivileged group. The model was trained with a random seed of `123`. A postprocessing mitigation strategy, `threshold_optimizer`, was applied to address potential fairness concerns.\n\n### 2. Baseline Fairness and Performance Audit\n\nPrior to mitigation, the model exhibited several disparities and achieved specific performance levels:\n\n**Fairness Metrics (Baseline):**\n*   **Demographic Parity Difference:** 0.1895 (deviation from ideal 0.0)\n*   **Equalized Odds Difference:** 0.1326 (deviation from ideal 0.0)\n*   **Equal Opportunity Difference:** 0.1326 (deviation from ideal 0.0)\n*   **Disparate Impact:** 0.2531 (deviation from ideal 1.0)\n*   **False Positive Rate Difference:** 0.0805 (deviation from ideal 0.0)\n*   **False Negative Rate Difference:** 0.1326 (deviation from ideal 0.0)\n\n**Performance Metrics (Baseline):**\n*   **Accuracy:** 0.8498\n*   **Precision:** 0.7335\n*   **Recall:** 0.5851\n*   **F1 Score:** 0.6510\n*   **ROC AUC:** 0.9041\n\nAt baseline, the model showed notable disparities across various fairness metrics. For instance, `demographic_parity_difference` was 0.1895, and `disparate_impact` was 0.2531, indicating a significant departure from parity.\n\n### 3. Mitigation Impact and Comparison\n\nThe `threshold_optimizer` postprocessing mitigation was applied, resulting in changes to both fairness and performance metrics:\n\n**Fairness Metric Changes:**\n*   **Demographic Parity Difference:** Decreased from 0.1895 to 0.0205 (Delta: -0.1690). This represents an **improvement**, moving closer to ideal parity (0.0).\n*   **Equalized Odds Difference:** Increased from 0.1326 to 0.3201 (Delta: +0.1875). This",
+  "timestamp_utc": "2026-09-19T08:30:20.378158+00:00",
+  "git_commit_hash": "0675924e487e49d8dac833509afb9fce98026211",
+  "metadata": {
+    "latency_seconds": 9.18,
+    "finish_reason": "2",
+    "prompt_tokens": 1675,
+    "completion_tokens": 559,
+    "temperature": 0.2,
+    "max_output_tokens": 1500,
+    "top_p": 0.95,
+    "seed": 123,
+    "credential_alias": "gemini_account_default"
+  }
+}
