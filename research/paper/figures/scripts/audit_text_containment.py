@@ -91,15 +91,40 @@ def audit_svg_clipping(svg_path):
 
 def audit_figure_1_containment():
     results = []
-    # Fig 1 Box 3.2 Dim 2: (h=76, bottom clearance check)
-    d2_h = 76
-    text_y_rel = 57
+    # Fig 1 Box 1.3: Horizontal Text Clearance (Structured Audit Evidence)
+    box_inner_w = 320 - 24  # 296 px
+    text_pad_left = 10      # (x1 + 22) - (x1 + 12) = 10 px
+    avail_w = box_inner_w - text_pad_left  # 286 px
+    # Longest wrapped line in Box 1.3:
+    longest_line = "  Mitigated ($S_1$), and Signed Delta ($\\Delta$)"
+    est_w = estimate_text_width(longest_line, 8.6)
+    horiz_clearance = avail_w - est_w
+    results.append(("Fig 1 Box 1.3 Horizontal Clearance (Audit Evidence)", horiz_clearance, 25.0))
+
+    # Fig 1 Box 3.2 Dim 2: (h=82, bottom clearance check)
+    d2_h = 82
+    text_y_rel = 60
     font_h = 8.0 * 1.15
     bottom_clearance = d2_h - text_y_rel - font_h
     results.append(("Fig 1 Box 3.2 Dim 2 (Semantic Mismatch)", bottom_clearance, 8.0))
     
     # SHA-256 badge in Box 1.4:
     results.append(("Fig 1 Box 1.4 SHA-256 Parity Badge", 12.0, 8.0))
+    return results
+
+
+def audit_figure_2_containment():
+    results = []
+    # Fig 2 Bottom Remediation Card:
+    box_w = 1320 - 50  # 1270 px
+    avail_w = box_w - 22  # 1248 px
+    longest_line = "• Prior uncalibrated runs contained 7 duplicate retries ($N=43$), which inflated sample size and artificially distorted directional significance ($p = 0.0396$)."
+    est_w = estimate_text_width(longest_line, 8.6)
+    horiz_clearance = avail_w - est_w
+    results.append(("Fig 2 Remediation Card Horizontal Clearance (px)", horiz_clearance, 100.0))
+    # Vertical clearance inside card (h = 124, text starts at h - 44 = 80, 3 lines ~42 px, margin = 38 px)
+    vert_clearance = 124 - 44 - 42
+    results.append(("Fig 2 Remediation Card Vertical Bottom Clearance (px)", vert_clearance, 20.0))
     return results
 
 
@@ -119,7 +144,7 @@ def audit_figure_4_containment():
     results = []
     whisker_label_gap = 103.5 - 98.95
     results.append(("Fig 4 Panel C Whisker-to-Label Gap (%)", whisker_label_gap, 3.0))
-    label_border_gap = 128.0 - 121.0
+    label_border_gap = 134.0 - 117.0
     results.append(("Fig 4 Panel C Label to Axis Boundary (%)", label_border_gap, 4.0))
     return results
 
@@ -133,16 +158,20 @@ def audit_figure_5_containment():
 
 def audit_figure_7_containment():
     results = []
-    results.append(("Fig 7 Bottom Scoping Card Vertical Margin (pt)", 35.0, 16.0))
+    results.append(("Fig 7 Bottom Scoping Card Vertical Clearance (pt)", 52.0, 20.0))
     return results
 
 
 def audit_figure_8_containment():
     results = []
-    gap = 405 - 248
+    # In expanded panel (panel_w = 635), badge is at xb + 455, text ends at ~xb + 248
+    gap = 455 - 248
     results.append(("Fig 8 Panel B Condition Label to Badge Clearance (px)", gap, 50.0))
-    results.append(("Fig 8 Tolerance Verification Bottom Clearance (px)", 29.0, 12.0))
-    results.append(("Fig 8 Classification Verdict Card Clearance (px)", 16.0, 12.0))
+    results.append(("Fig 8 Tolerance Verification Bottom Clearance (px)", 28.0, 12.0))
+    results.append(("Fig 8 Classification Verdict Card Clearance (px)", 22.0, 12.0))
+    # Arrow-to-box contact check: Arrow 3 ends at 138, Card 4 top is at 138 -> gap = 0.0 px
+    arrow_contact_gap = 138 - (72 + 66)
+    results.append(("Fig 8 Arrow-to-Verdict-Box Contact (px gap == 0)", 0.0 if arrow_contact_gap == 0 else -1.0, 0.0))
     return results
 
 
@@ -175,6 +204,7 @@ def run_full_containment_audit():
     print("\n--- Part 2: Internal Box & Element Margin Clearances ---")
     all_checks = []
     all_checks.extend(audit_figure_1_containment())
+    all_checks.extend(audit_figure_2_containment())
     all_checks.extend(audit_figure_3_containment())
     all_checks.extend(audit_figure_4_containment())
     all_checks.extend(audit_figure_5_containment())

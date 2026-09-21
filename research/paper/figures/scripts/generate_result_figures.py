@@ -52,6 +52,25 @@ REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..', '..'))
 os.makedirs(FIGURES_DIR, exist_ok=True)
 
 
+def save_result_figure(fig, filename_base):
+    """Saves result figure cleanly as both SVG and 300 DPI PNG with verified deletion of stale files."""
+    svg_path = os.path.join(FIGURES_DIR, f"{filename_base}.svg")
+    png_path = os.path.join(FIGURES_DIR, f"{filename_base}.png")
+    
+    # Remove stale files first to ensure fresh timestamps and avoid any caching
+    for path in (svg_path, png_path):
+        if os.path.exists(path):
+            try:
+                os.remove(path)
+            except OSError:
+                pass
+                
+    fig.savefig(svg_path, format='svg', bbox_inches='tight')
+    fig.savefig(png_path, format='png', dpi=300, bbox_inches='tight')
+    plt.close(fig)
+    print(f"Generated Figure: {svg_path} ({os.path.getsize(svg_path):,} B) and {png_path} ({os.path.getsize(png_path):,} B)")
+
+
 def load_canonical_data():
     """Loads all 36 canonical paired conditions from final summaries."""
     inv_path = os.path.join(REPO_ROOT, 'research', 'results', 'final', 'final_matrix_inventory.json')
@@ -223,7 +242,7 @@ def generate_figure_4(df):
         ax_c.text(103.5, y_pos[i] - offset, f"{g_means[i]:.1f}% ± {g_stds[i]:.1f}%", 
                   ha='left', va='center', color=C_PURPLE, fontweight='bold', fontsize=8.2)
         
-    ax_c.set_xlim(52, 128)
+    ax_c.set_xlim(50, 134)
     ax_c.set_ylim(-1.0, 3.8)
     ax_c.set_yticks(y_pos)
     ax_c.set_yticklabels(ds_names_plot, fontsize=9.0, fontweight='bold')
@@ -234,12 +253,7 @@ def generate_figure_4(df):
     ax_c.legend(loc='lower left', bbox_to_anchor=(0.02, 0.02), fontsize=8.2, framealpha=0.95)
     
     plt.tight_layout()
-    svg_path = os.path.join(FIGURES_DIR, 'fig04_numerical_faithfulness.svg')
-    png_path = os.path.join(FIGURES_DIR, 'fig04_numerical_faithfulness.png')
-    plt.savefig(svg_path, format='svg', bbox_inches='tight')
-    plt.savefig(png_path, format='png', dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"Generated Figure 4: {svg_path}")
+    save_result_figure(fig, 'fig04_numerical_faithfulness')
 
 
 def generate_figure_5(df):
@@ -340,12 +354,7 @@ def generate_figure_5(df):
               linespacing=1.35, bbox=dict(boxstyle='round,pad=0.55', facecolor='#F7FAFC', edgecolor=C_GRAY, linewidth=1.1, alpha=0.95))
     
     plt.tight_layout()
-    svg_path = os.path.join(FIGURES_DIR, 'fig05_unsupported_claims.svg')
-    png_path = os.path.join(FIGURES_DIR, 'fig05_unsupported_claims.png')
-    plt.savefig(svg_path, format='svg', bbox_inches='tight')
-    plt.savefig(png_path, format='png', dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"Generated Figure 5: {svg_path}")
+    save_result_figure(fig, 'fig05_unsupported_claims')
 
 
 def generate_figure_6(df):
@@ -436,19 +445,14 @@ def generate_figure_6(df):
     ax_b.grid(axis='y', linestyle='--', alpha=0.4)
     
     plt.tight_layout()
-    svg_path = os.path.join(FIGURES_DIR, 'fig06_directional_faithfulness.svg')
-    png_path = os.path.join(FIGURES_DIR, 'fig06_directional_faithfulness.png')
-    plt.savefig(svg_path, format='svg', bbox_inches='tight')
-    plt.savefig(png_path, format='png', dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"Generated Figure 6: {svg_path}")
+    save_result_figure(fig, 'fig06_directional_faithfulness')
 
 
 def generate_figure_7():
     """Figure 7: Secondary LLM Claim Adjudication Sensitivity Analysis (Llama 3 8B)."""
-    fig = plt.figure(figsize=(13.6, 7.2), facecolor='white', dpi=100)
+    fig = plt.figure(figsize=(13.6, 7.6), facecolor='white', dpi=100)
     # Balanced vertical ratio with generous space for panels and the bottom methodological note
-    gs = fig.add_gridspec(2, 2, height_ratios=[3.6, 1.5], width_ratios=[1.0, 1.0], wspace=0.46, hspace=0.40)
+    gs = fig.add_gridspec(2, 2, height_ratios=[3.2, 1.35], width_ratios=[1.0, 1.0], wspace=0.42, hspace=0.42)
     
     # --- Panel A: Category Agreement Rates ---
     ax_a = fig.add_subplot(gs[0, 0])
@@ -511,8 +515,8 @@ def generate_figure_7():
     ax_b.set_ylabel('Deterministic Evaluator Verdict', fontsize=9.8, fontweight='bold', labelpad=8)
     ax_b.tick_params(axis='y', pad=6)
     ax_b.set_title('(B) Collapsed Sensitivity Confusion Matrix\n& Inter-Method Alignment ($N=100$)', fontsize=11, fontweight='bold', pad=10)
-    ax_b.set_xlabel('Secondary LLM Adjudicator (Llama 3 8B)\n[Note: Adjudicator UNDETERMINABLE = 0 cases;\nomitted from displayed 3×2 matrix]',
-                    fontsize=8.2, fontweight='bold', labelpad=8, color='#2D3748')
+    ax_b.set_xlabel('Secondary LLM Adjudicator (Llama 3 8B)\n[Adjudicator UNDETERMINABLE = 0 cases; omitted from displayed matrix]',
+                    fontsize=8.4, fontweight='bold', labelpad=6, color='#2D3748')
     
     # --- Bottom Note: Methodological Scoping & Kappa Paradox Card ---
     ax_note = fig.add_subplot(gs[1, :])
@@ -523,18 +527,14 @@ def generate_figure_7():
         "• Observed Raw Concordance: Po = 77.0% (77/100 claims) | 100% agreement on Directional, Fairness, & Performance categories.\n"
         "• Agreement Metrics: Ternary Cohen's κ = 0.063 | Binary Collapsed κ = 0.045.\n"
         "• Collapsed Matrix Representation: 3×2 space (Adjudicator UNDETERMINABLE = 0 cases; omitted from displayed matrix).\n"
-        "• Kappa Paradox Mechanism: Extreme marginal imbalance (98% adjudicator supported vs. 2% contradicted) inflates expected\n"
-        "  chance agreement to Pe = 75.5%, drastically deflating chance-corrected κ despite high raw empirical agreement (Po = 77.0%)."
+        "• Kappa Paradox Mechanism: Extreme marginal imbalance (98% adjudicator supported vs. 2% contradicted)\n"
+        "  inflates expected chance agreement to Pe = 75.5%, drastically deflating chance-corrected κ despite high raw empirical agreement (Po = 77.0%)."
     )
-    ax_note.text(0.5, 0.5, kappa_text, ha='center', va='center', fontsize=8.8, linespacing=1.4,
-                 bbox=dict(boxstyle='round,pad=0.7', facecolor='#F7FAFC', edgecolor=C_DARK_BLUE, linewidth=1.2, alpha=0.95))
+    ax_note.text(0.5, 0.45, kappa_text, transform=ax_note.transAxes, ha='center', va='center',
+                 fontsize=8.5, linespacing=1.35,
+                 bbox=dict(boxstyle='round,pad=0.65', facecolor='#F7FAFC', edgecolor=C_DARK_BLUE, linewidth=1.2, alpha=0.95))
     
-    svg_path = os.path.join(FIGURES_DIR, 'fig07_llama_adjudication.svg')
-    png_path = os.path.join(FIGURES_DIR, 'fig07_llama_adjudication.png')
-    plt.savefig(svg_path, format='svg', bbox_inches='tight')
-    plt.savefig(png_path, format='png', dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"Generated Figure 7: {svg_path}")
+    save_result_figure(fig, 'fig07_llama_adjudication')
 
 
 if __name__ == '__main__':

@@ -48,13 +48,22 @@ C_DARK = '#1A202C'       # Headings / text
 
 
 def save_figure(fig, filename_base):
-    """Saves figure cleanly as both SVG and 300 DPI PNG."""
+    """Saves figure cleanly as both SVG and 300 DPI PNG with verified deletion of stale files."""
     svg_path = os.path.join(FIGURES_DIR, f"{filename_base}.svg")
     png_path = os.path.join(FIGURES_DIR, f"{filename_base}.png")
+    
+    # Remove stale files first to ensure fresh timestamps and avoid any caching
+    for path in (svg_path, png_path):
+        if os.path.exists(path):
+            try:
+                os.remove(path)
+            except OSError:
+                pass
+                
     fig.savefig(svg_path, format='svg', bbox_inches='tight')
     fig.savefig(png_path, format='png', dpi=300, bbox_inches='tight')
     plt.close(fig)
-    print(f"Generated Figure: {svg_path} and {png_path}")
+    print(f"Generated Figure: {svg_path} ({os.path.getsize(svg_path):,} B) and {png_path} ({os.path.getsize(png_path):,} B)")
 
 
 def draw_box(ax, x, y, w, h, bg_color, border_color, border_width=1.2, radius=8, zorder=1):
@@ -71,6 +80,7 @@ def draw_arrow(ax, p1, p2, color='#718096', lw=1.6):
     """Draws a connecting arrow between two coordinate pairs."""
     arrow = patches.FancyArrowPatch(p1, p2,
                                    arrowstyle='->,head_width=5,head_length=6',
+                                   shrinkA=0, shrinkB=0,
                                    color=color, linewidth=lw, zorder=3)
     ax.add_patch(arrow)
     return arrow
@@ -81,19 +91,20 @@ def draw_arrow(ax, p1, p2, color='#718096', lw=1.6):
 # ==============================================================================
 def generate_figure_1():
     """Generates Figure 1: Research Framework."""
-    W, H = 1360, 640
-    fig, ax = plt.subplots(figsize=(17.0, 8.0), dpi=100, facecolor='white')
+    W, H = 1440, 680
+    fig, ax = plt.subplots(figsize=(18.0, 8.5), dpi=100, facecolor='white')
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis('off')
 
-    col_w = 300
-    top_y = 600
-    card_h = 560
+    col_w = 320
+    gap = 35
+    top_y = 640
+    card_h = 600
     y_base = top_y - card_h  # 40
 
     # ------------------ STAGE 1: ALGORITHMIC AUDITING ------------------
-    x1 = 35
+    x1 = 30
     draw_box(ax, x1, y_base, col_w, card_h, C_BLUE_LIGHT, C_BLUE_BORDER, 1.5, 10)
     # Header bar
     draw_box(ax, x1, top_y - 40, col_w, 40, C_BLUE, C_BLUE, 0, 8)
@@ -102,7 +113,7 @@ def generate_figure_1():
 
     # Box 1.1: Benchmark Data
     b1_h = 95
-    b1_y = top_y - 40 - 15 - b1_h  # 450
+    b1_y = top_y - 40 - 14 - b1_h  # 491
     draw_box(ax, x1 + 12, b1_y, col_w - 24, b1_h, 'white', C_BLUE_BORDER, 1.0, 6)
     ax.text(x1 + col_w/2, b1_y + b1_h - 12, "Benchmark Data ($N=57,056$)", ha='center', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.2)
@@ -114,7 +125,7 @@ def generate_figure_1():
 
     # Box 1.2: Model Matrix
     b2_h = 115
-    b2_y = b1_y - 14 - b2_h  # 321
+    b2_y = b1_y - 12 - b2_h  # 364
     draw_box(ax, x1 + 12, b2_y, col_w - 24, b2_h, 'white', C_BLUE_BORDER, 1.0, 6)
     ax.text(x1 + col_w/2, b2_y + b2_h - 12, "Model & Mitigation Matrix", ha='center', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.2)
@@ -125,9 +136,9 @@ def generate_figure_1():
             "• 36 full-factorial audit conditions",
             ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.35)
 
-    # Box 1.3: Audit Evidence
-    b3_h = 115
-    b3_y = b2_y - 14 - b3_h  # 192
+    # Box 1.3: Audit Evidence (Generously sized with multi-line wrapping)
+    b3_h = 135
+    b3_y = b2_y - 12 - b3_h  # 217
     draw_box(ax, x1 + 12, b3_y, col_w - 24, b3_h, 'white', C_BLUE_BORDER, 1.0, 6)
     ax.text(x1 + col_w/2, b3_y + b3_h - 12, "Structured Audit Evidence", ha='center', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.2)
@@ -135,12 +146,13 @@ def generate_figure_1():
             "• Fairness: DPD, EOD, Disparate Impact\n"
             "• Performance: Accuracy, Selection Rate\n"
             "• Attribution: Top-5 SHAP values\n"
-            "• Metric states: Baseline ($S_0$), Mitigated ($S_1$), $\\Delta$",
+            "• Metric states: Baseline ($S_0$),\n"
+            "  Mitigated ($S_1$), and Signed Delta ($\\Delta$)",
             ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.35)
 
     # Box 1.4: Evidence Hash Parity
-    b4_h = 110
-    b4_y = b3_y - 14 - b4_h  # 68
+    b4_h = 115
+    b4_y = b3_y - 12 - b4_h  # 90
     draw_box(ax, x1 + 12, b4_y, col_w - 24, b4_h, 'white', C_BLUE_BORDER, 1.0, 6)
     ax.text(x1 + col_w/2, b4_y + b4_h - 12, "Evidence Hash Verification", ha='center', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.2)
@@ -149,23 +161,23 @@ def generate_figure_1():
             "• SHA-256 evidence parity verifies\n"
             "  identical inputs for controlled comparison",
             ha='left', va='top', color=C_DARK, fontsize=8.4, linespacing=1.3)
-    draw_box(ax, x1 + 20, b4_y + 10, col_w - 40, 24, C_GREEN_LIGHT, C_GREEN_BORDER, 0.8, 4)
-    ax.text(x1 + col_w/2, b4_y + 22, "SHA-256(Input) == SHA-256(Exp)", ha='center', va='center',
-            color=C_GREEN, fontweight='bold', fontsize=8.0, family='monospace')
+    draw_box(ax, x1 + 20, b4_y + 12, col_w - 40, 26, C_GREEN_LIGHT, C_GREEN_BORDER, 0.8, 4)
+    ax.text(x1 + col_w/2, b4_y + 25, "SHA-256(Input) == SHA-256(Exp)", ha='center', va='center',
+            color=C_GREEN, fontweight='bold', fontsize=8.2, family='monospace')
 
     # Arrow 1 -> 2
-    draw_arrow(ax, (x1 + col_w, top_y - 280), (x1 + col_w + 35, top_y - 280), lw=2.0)
+    draw_arrow(ax, (x1 + col_w, top_y - 300), (x1 + col_w + gap, top_y - 300), lw=2.0)
 
     # ------------------ STAGE 2: DUAL EXPLANATIONS ------------------
-    x2 = x1 + col_w + 35  # 370
+    x2 = x1 + col_w + gap  # 385
     draw_box(ax, x2, y_base, col_w, card_h, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.5, 10)
     draw_box(ax, x2, top_y - 40, col_w, 40, C_PURPLE, C_PURPLE, 0, 8)
     ax.text(x2 + col_w/2, top_y - 20, "2. DUAL EXPLANATIONS", ha='center', va='center',
             color='white', fontweight='bold', fontsize=11.5)
 
     # Branch A: Template Explainer (Control)
-    ba_h = 215
-    ba_y = top_y - 40 - 15 - ba_h  # 330
+    ba_h = 230
+    ba_y = top_y - 40 - 14 - ba_h  # 356
     draw_box(ax, x2 + 12, ba_y, col_w - 24, ba_h, C_GREEN_LIGHT, C_GREEN_BORDER, 1.2, 8)
     ax.text(x2 + col_w/2, ba_y + ba_h - 14, "Deterministic Reference Control", ha='center', va='top',
             color=C_GREEN, fontweight='bold', fontsize=10.5)
@@ -178,13 +190,13 @@ def generate_figure_1():
             "• Evidence-grounded baseline anchor",
             ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.35)
     # Badge inside control
-    draw_box(ax, x2 + 24, ba_y + 14, col_w - 48, 32, 'white', C_GREEN_BORDER, 1.0, 5)
-    ax.text(x2 + col_w/2, ba_y + 30, "Faithfulness: 100.00% ± 0.00%", ha='center', va='center',
+    draw_box(ax, x2 + 24, ba_y + 14, col_w - 48, 34, 'white', C_GREEN_BORDER, 1.0, 5)
+    ax.text(x2 + col_w/2, ba_y + 31, "Faithfulness: 100.00% ± 0.00%", ha='center', va='center',
             color=C_GREEN, fontweight='bold', fontsize=9.2)
 
     # Branch B: Generative LLM
-    bb_h = 250
-    bb_y = ba_y - 15 - bb_h  # 65
+    bb_h = 270
+    bb_y = ba_y - 12 - bb_h  # 74
     draw_box(ax, x2 + 12, bb_y, col_w - 24, bb_h, 'white', C_PURPLE_BORDER, 1.2, 8)
     ax.text(x2 + col_w/2, bb_y + bb_h - 14, "Generative Language Model", ha='center', va='top',
             color=C_PURPLE, fontweight='bold', fontsize=10.5)
@@ -196,10 +208,10 @@ def generate_figure_1():
             "• Multi-metric synthesis narrative",
             ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.35)
     # Observed stats subcard
-    draw_box(ax, x2 + 18, bb_y + 12, col_w - 36, 96, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.0, 5)
-    ax.text(x2 + col_w/2, bb_y + 94, "Empirical Performance (N=36):", ha='center', va='top',
+    draw_box(ax, x2 + 18, bb_y + 14, col_w - 36, 106, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.0, 5)
+    ax.text(x2 + col_w/2, bb_y + 104, "Empirical Performance (N=36):", ha='center', va='top',
             color=C_PURPLE, fontweight='bold', fontsize=8.8)
-    ax.text(x2 + 26, bb_y + 76,
+    ax.text(x2 + 26, bb_y + 86,
             "• Numerical: 88.13% ± 10.82%\n"
             "• Directional: 94.18% ± 21.02%\n"
             "• Unsupported: 8.51% ± 8.72%\n"
@@ -207,18 +219,18 @@ def generate_figure_1():
             ha='left', va='top', color=C_DARK, fontsize=8.2, linespacing=1.3)
 
     # Arrow 2 -> 3
-    draw_arrow(ax, (x2 + col_w, top_y - 280), (x2 + col_w + 35, top_y - 280), lw=2.0)
+    draw_arrow(ax, (x2 + col_w, top_y - 300), (x2 + col_w + gap, top_y - 300), lw=2.0)
 
     # ------------------ STAGE 3: CLAIM-LEVEL EVALUATION ------------------
-    x3 = x2 + col_w + 35  # 705
+    x3 = x2 + col_w + gap  # 740
     draw_box(ax, x3, y_base, col_w, card_h, C_GREEN_LIGHT, C_GREEN_BORDER, 1.5, 10)
     draw_box(ax, x3, top_y - 40, col_w, 40, C_GREEN, C_GREEN, 0, 8)
     ax.text(x3 + col_w/2, top_y - 20, "3. CLAIM-LEVEL EVALUATION", ha='center', va='center',
             color='white', fontweight='bold', fontsize=11.5)
 
     # Box 3.1: Clause Segmentation
-    b31_h = 82
-    b31_y = top_y - 40 - 14 - b31_h  # 464
+    b31_h = 85
+    b31_y = top_y - 40 - 14 - b31_h  # 501
     draw_box(ax, x3 + 12, b31_y, col_w - 24, b31_h, 'white', C_GREEN_BORDER, 1.0, 6)
     ax.text(x3 + col_w/2, b31_y + b31_h - 12, "Boundary Isolation & Extraction", ha='center', va='top',
             color=C_GREEN, fontweight='bold', fontsize=10.2)
@@ -229,66 +241,66 @@ def generate_figure_1():
             ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.35)
 
     # Box 3.2: 5 Dimensions of Decision Engine
-    b32_h = 396
-    b32_y = b31_y - 14 - b32_h  # 54
+    b32_h = 425
+    b32_y = b31_y - 12 - b32_h  # 64
     draw_box(ax, x3 + 12, b32_y, col_w - 24, b32_h, 'white', C_GREEN_BORDER, 1.0, 6)
     ax.text(x3 + col_w/2, b32_y + b32_h - 12, "Deterministic Decision Engine", ha='center', va='top',
             color=C_GREEN, fontweight='bold', fontsize=10.5)
 
     # Dim 1: Numerical
-    d_h = 62
-    d1_y = b32_y + b32_h - 32 - d_h  # 356
+    d_h = 66
+    d1_y = b32_y + b32_h - 30 - d_h  # 393
     draw_box(ax, x3 + 18, d1_y, col_w - 36, d_h, '#F7FAFC', C_BLUE_BORDER, 0.8, 4)
     ax.text(x3 + 24, d1_y + d_h - 8, "1. Numerical Verification", ha='left', va='top', color=C_BLUE, fontweight='bold', fontsize=8.8)
     ax.text(x3 + 24, d1_y + d_h - 24, "|v_claim - v_truth| ≤ 0.015 or rel ≤ 5%", ha='left', va='top', color=C_DARK, fontsize=7.8, family='monospace')
-    ax.text(x3 + 24, d1_y + d_h - 41, "109/1,125 unsupported (9.69%)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.0)
+    ax.text(x3 + 24, d1_y + d_h - 43, "109/1,125 unsupported (9.69%)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.0)
 
     # Dim 2: Directional
-    d2_h = 76
-    d2_y = d1_y - 8 - d2_h  # 272
+    d2_h = 82
+    d2_y = d1_y - 8 - d2_h  # 303
     draw_box(ax, x3 + 18, d2_y, col_w - 36, d2_h, '#F7FAFC', C_PURPLE_BORDER, 0.8, 4)
     ax.text(x3 + 24, d2_y + d2_h - 8, "2. Directional Consistency", ha='left', va='top', color=C_PURPLE, fontweight='bold', fontsize=8.8)
     ax.text(x3 + 24, d2_y + d2_h - 24, "sign(asserted_dir) == sign(S₁ - S₀)", ha='left', va='top', color=C_DARK, fontsize=7.8, family='monospace')
-    ax.text(x3 + 24, d2_y + d2_h - 41, "4/118 unsupported ratio-transition", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.0)
-    ax.text(x3 + 24, d2_y + d2_h - 57, "semantic mismatches (3.39%)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.0)
+    ax.text(x3 + 24, d2_y + d2_h - 43, "4/118 unsupported ratio-transition", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.0)
+    ax.text(x3 + 24, d2_y + d2_h - 60, "semantic mismatches (3.39%)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.0)
 
     # Dim 3: Fairness & Perf
-    d3_h = 58
-    d3_y = d2_y - 8 - d3_h  # 206
+    d3_h = 62
+    d3_y = d2_y - 8 - d3_h  # 233
     draw_box(ax, x3 + 18, d3_y, col_w - 36, d3_h, '#F7FAFC', C_GREEN_BORDER, 0.8, 4)
     ax.text(x3 + 24, d3_y + d3_h - 7, "3. Fairness & Performance", ha='left', va='top', color=C_GREEN, fontweight='bold', fontsize=8.6)
-    ax.text(x3 + 24, d3_y + d3_h - 22, "Disparity narrative & accuracy assertions", ha='left', va='top', color=C_DARK, fontsize=7.8)
-    ax.text(x3 + 24, d3_y + d3_h - 39, "48/48 supported (100.0%)", ha='left', va='top', color=C_GREEN, fontweight='bold', fontsize=7.8)
+    ax.text(x3 + 24, d3_y + d3_h - 23, "Disparity narrative & accuracy assertions", ha='left', va='top', color=C_DARK, fontsize=7.8)
+    ax.text(x3 + 24, d3_y + d3_h - 41, "48/48 supported (100.0%)", ha='left', va='top', color=C_GREEN, fontweight='bold', fontsize=7.8)
 
     # Dim 4: Magnitude
-    d4_h = 58
-    d4_y = d3_y - 8 - d4_h  # 140
+    d4_h = 62
+    d4_y = d3_y - 8 - d4_h  # 163
     draw_box(ax, x3 + 18, d4_y, col_w - 36, d4_h, '#F7FAFC', C_GRAY_BORDER, 0.8, 4)
     ax.text(x3 + 24, d4_y + d4_h - 7, "4. Subjective Magnitude", ha='left', va='top', color=C_GRAY, fontweight='bold', fontsize=8.6)
-    ax.text(x3 + 24, d4_y + d4_h - 22, "Unanchored modifiers ('substantially')", ha='left', va='top', color=C_DARK, fontsize=7.8)
-    ax.text(x3 + 24, d4_y + d4_h - 39, "15/15 routed to UNDETERMINABLE", ha='left', va='top', color=C_GRAY, fontweight='bold', fontsize=7.8)
+    ax.text(x3 + 24, d4_y + d4_h - 23, "Unanchored modifiers ('substantially')", ha='left', va='top', color=C_DARK, fontsize=7.8)
+    ax.text(x3 + 24, d4_y + d4_h - 41, "15/15 routed to UNDETERMINABLE", ha='left', va='top', color=C_GRAY, fontweight='bold', fontsize=7.8)
 
     # Dim 5: Unsupported
-    d5_h = 58
-    d5_y = d4_y - 8 - d5_h  # 74
+    d5_h = 64
+    d5_y = d4_y - 8 - d5_h  # 91
     draw_box(ax, x3 + 18, d5_y, col_w - 36, d5_h, C_RED_LIGHT, C_RED_BORDER, 0.8, 4)
     ax.text(x3 + 24, d5_y + d5_h - 7, "5. Unsupported Claims Rate", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=8.6)
-    ax.text(x3 + 24, d5_y + d5_h - 22, "Condition Mean: 8.51% ± 8.72%", ha='left', va='top', color=C_DARK, fontsize=7.8)
-    ax.text(x3 + 24, d5_y + d5_h - 39, "Pooled: 113/1,306 unsupported (8.65%)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=7.8)
+    ax.text(x3 + 24, d5_y + d5_h - 23, "Condition Mean: 8.51% ± 8.72%", ha='left', va='top', color=C_DARK, fontsize=7.8)
+    ax.text(x3 + 24, d5_y + d5_h - 42, "Pooled: 113/1,306 unsupported (8.65%)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=7.8)
 
     # Arrow 3 -> 4
-    draw_arrow(ax, (x3 + col_w, top_y - 280), (x3 + col_w + 35, top_y - 280), lw=2.0)
+    draw_arrow(ax, (x3 + col_w, top_y - 300), (x3 + col_w + gap, top_y - 300), lw=2.0)
 
     # ------------------ STAGE 4: BENCHMARK GOVERNANCE ------------------
-    x4 = x3 + col_w + 35  # 1040
+    x4 = x3 + col_w + gap  # 1095
     draw_box(ax, x4, y_base, col_w, card_h, '#F7FAFC', C_GRAY_BORDER, 1.5, 10)
     draw_box(ax, x4, top_y - 40, col_w, 40, C_DARK, C_DARK, 0, 8)
     ax.text(x4 + col_w/2, top_y - 20, "4. BENCHMARK GOVERNANCE", ha='center', va='center',
             color='white', fontweight='bold', fontsize=11.5)
 
     # Box 4.1: Empirical Findings
-    b41_h = 230
-    b41_y = top_y - 40 - 15 - b41_h  # 315
+    b41_h = 240
+    b41_y = top_y - 40 - 14 - b41_h  # 346
     draw_box(ax, x4 + 12, b41_y, col_w - 24, b41_h, 'white', C_GRAY_BORDER, 1.0, 6)
     ax.text(x4 + col_w/2, b41_y + b41_h - 12, "Primary Empirical Findings", ha='center', va='top',
             color=C_DARK, fontweight='bold', fontsize=10.5)
@@ -296,20 +308,20 @@ def generate_figure_1():
     # Clean non-overlapping layout for the 3 RQs
     # RQ1
     ax.text(x4 + 20, b41_y + b41_h - 34, "RQ1 (Numerical Faithfulness):", ha='left', va='top', color=C_DARK, fontweight='bold', fontsize=8.6)
-    ax.text(x4 + 20, b41_y + b41_h - 50, "• -11.87 pp degradation (p = 1.34e-7)\n• Cohen's d = -1.097 (Large effect)",
+    ax.text(x4 + 20, b41_y + b41_h - 52, "• -11.87 pp degradation (p = 1.34e-7)\n• Cohen's d = -1.097 (Large effect)",
             ha='left', va='top', color=C_RED, fontsize=8.0, linespacing=1.25)
     # RQ2
-    ax.text(x4 + 20, b41_y + b41_h - 96, "RQ2 (Directional Faithfulness):", ha='left', va='top', color=C_DARK, fontweight='bold', fontsize=8.6)
-    ax.text(x4 + 20, b41_y + b41_h - 112, "• 94.18% vs. 100% control (N=23 pairs)\n• Diff: -5.82 pp (p = 0.1979, n.s.)",
+    ax.text(x4 + 20, b41_y + b41_h - 100, "RQ2 (Directional Faithfulness):", ha='left', va='top', color=C_DARK, fontweight='bold', fontsize=8.6)
+    ax.text(x4 + 20, b41_y + b41_h - 118, "• 94.18% vs. 100% control (N=23 pairs)\n• Diff: -5.82 pp (p = 0.1979, n.s.)",
             ha='left', va='top', color=C_GREEN, fontsize=8.0, linespacing=1.25)
     # RQ3
-    ax.text(x4 + 20, b41_y + b41_h - 158, "RQ3 (Unsupported Claims):", ha='left', va='top', color=C_DARK, fontweight='bold', fontsize=8.6)
-    ax.text(x4 + 20, b41_y + b41_h - 174, "• 8.51% condition mean (p = 1.20e-6)\n• 8.65% pooled claim-level rate",
+    ax.text(x4 + 20, b41_y + b41_h - 166, "RQ3 (Unsupported Claims):", ha='left', va='top', color=C_DARK, fontweight='bold', fontsize=8.6)
+    ax.text(x4 + 20, b41_y + b41_h - 184, "• 8.51% condition mean (p = 1.20e-6)\n• 8.65% pooled claim-level rate",
             ha='left', va='top', color=C_RED, fontsize=8.0, linespacing=1.25)
 
     # Box 4.2: Secondary Adjudication
-    b42_h = 240
-    b42_y = b41_y - 14 - b42_h  # 61
+    b42_h = 265
+    b42_y = b41_y - 12 - b42_h  # 69
     draw_box(ax, x4 + 12, b42_y, col_w - 24, b42_h, C_BLUE_LIGHT, C_BLUE_BORDER, 1.0, 6)
     ax.text(x4 + col_w/2, b42_y + b42_h - 12, "Secondary LLM Sensitivity Study", ha='center', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.2)
@@ -325,12 +337,12 @@ def generate_figure_1():
             ha='left', va='top', color=C_DARK, fontsize=8.2, linespacing=1.35)
 
     # Methodological boundary badge
-    draw_box(ax, x4 + 18, b42_y + 12, col_w - 36, 52, 'white', C_BLUE_BORDER, 1.2, 5)
-    ax.text(x4 + col_w/2, b42_y + 54, "Methodological Scoping:", ha='center', va='top',
+    draw_box(ax, x4 + 18, b42_y + 14, col_w - 36, 56, 'white', C_BLUE_BORDER, 1.2, 5)
+    ax.text(x4 + col_w/2, b42_y + 56, "Methodological Scoping:", ha='center', va='top',
             color=C_DARK, fontweight='bold', fontsize=8.4)
-    ax.text(x4 + col_w/2, b42_y + 38, "Sensitivity Analysis Only", ha='center', va='top',
+    ax.text(x4 + col_w/2, b42_y + 40, "Sensitivity Analysis Only", ha='center', va='top',
             color='#4A5568', fontsize=8.0)
-    ax.text(x4 + col_w/2, b42_y + 24, "Explicitly NOT Human Validation", ha='center', va='top',
+    ax.text(x4 + col_w/2, b42_y + 26, "Explicitly NOT Human Validation", ha='center', va='top',
             color=C_RED, fontweight='bold', fontsize=8.2)
 
     save_figure(fig, 'fig01_research_framework')
@@ -341,19 +353,19 @@ def generate_figure_1():
 # ==============================================================================
 def generate_figure_2():
     """Generates Figure 2: Full-Factorial Experimental Matrix."""
-    W, H = 1260, 620
-    fig, ax = plt.subplots(figsize=(16.2, 7.8), dpi=100, facecolor='white')
+    W, H = 1320, 640
+    fig, ax = plt.subplots(figsize=(17.0, 8.2), dpi=100, facecolor='white')
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis('off')
 
     # Main factors y range
-    y_card = 135
-    h_card = 455
-    top_y = y_card + h_card  # 590
+    y_card = 148
+    h_card = 465
+    top_y = y_card + h_card  # 613
 
     # Factor 1: Datasets
-    x1, w1 = 25, 235
+    x1, w1 = 25, 250
     draw_box(ax, x1, y_card, w1, h_card, C_BLUE_LIGHT, C_BLUE_BORDER, 1.5, 10)
     draw_box(ax, x1, top_y - 38, w1, 38, C_BLUE, C_BLUE, 0, 8)
     ax.text(x1 + w1/2, top_y - 19, "FACTOR 1: DATASETS (3)", ha='center', va='center',
@@ -361,20 +373,20 @@ def generate_figure_2():
 
     # 3 Dataset cards
     d_cards = [
-        ("Adult Census Income", "• N = 48,842 instances\n• Sensitive: Sex (binary)\n• Target: Income > $50K", 442),
-        ("COMPAS Recidivism", "• N = 7,214 instances\n• Sensitive: Race (binary)\n• Target: 2-yr Recidivism", 336),
-        ("German Credit", "• N = 1,000 instances\n• Sensitive: Age (binary)\n• Target: Credit Risk", 230)
+        ("Adult Census Income", "• N = 48,842 instances\n• Sensitive: Sex (binary)\n• Target: Income > $50K", 450),
+        ("COMPAS Recidivism", "• N = 7,214 instances\n• Sensitive: Race (binary)\n• Target: 2-yr Recidivism", 342),
+        ("German Credit", "• N = 1,000 instances\n• Sensitive: Age (binary)\n• Target: Credit Risk", 234)
     ]
     for title, desc, yc in d_cards:
-        draw_box(ax, x1 + 12, yc, w1 - 24, 94, 'white', C_BLUE_BORDER, 1.0, 6, zorder=2)
-        ax.text(x1 + 20, yc + 94 - 12, title, ha='left', va='top', color=C_BLUE, fontweight='bold', fontsize=9.6, zorder=3)
-        ax.text(x1 + 20, yc + 94 - 32, desc, ha='left', va='top', color=C_DARK, fontsize=8.5, linespacing=1.35, zorder=3)
+        draw_box(ax, x1 + 12, yc, w1 - 24, 96, 'white', C_BLUE_BORDER, 1.0, 6, zorder=2)
+        ax.text(x1 + 20, yc + 96 - 14, title, ha='left', va='top', color=C_BLUE, fontweight='bold', fontsize=9.6, zorder=3)
+        ax.text(x1 + 20, yc + 96 - 34, desc, ha='left', va='top', color=C_DARK, fontsize=8.5, linespacing=1.35, zorder=3)
 
     # Balanced 2-line population badge with generous margins
-    draw_box(ax, x1 + 14, 160, w1 - 28, 50, 'white', C_BLUE_BORDER, 1.2, 6, zorder=2)
-    ax.text(x1 + w1/2, 160 + 34, "Total Benchmark Instances", ha='center', va='center',
+    draw_box(ax, x1 + 14, 165, w1 - 28, 52, 'white', C_BLUE_BORDER, 1.2, 6, zorder=2)
+    ax.text(x1 + w1/2, 165 + 35, "Total Benchmark Instances", ha='center', va='center',
             color=C_BLUE, fontweight='bold', fontsize=8.6, zorder=3)
-    ax.text(x1 + w1/2, 160 + 15, "N = 57,056 Audited Records", ha='center', va='center',
+    ax.text(x1 + w1/2, 165 + 16, "N = 57,056 Audited Records", ha='center', va='center',
             color=C_DARK, fontweight='bold', fontsize=9.2, zorder=3)
 
     # Multiply 1
@@ -382,7 +394,7 @@ def generate_figure_2():
             fontsize=26, fontweight='bold', color=C_DARK)
 
     # Factor 2: Models
-    x2, w2 = x1 + w1 + 32, 215
+    x2, w2 = x1 + w1 + 32, 225
     draw_box(ax, x2, y_card, w2, h_card, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.5, 10)
     draw_box(ax, x2, top_y - 38, w2, 38, C_PURPLE, C_PURPLE, 0, 8)
     ax.text(x2 + w2/2, top_y - 19, "FACTOR 2: MODELS (2)", ha='center', va='center',
@@ -402,7 +414,7 @@ def generate_figure_2():
             fontsize=26, fontweight='bold', color=C_DARK)
 
     # Factor 3: Mitigations
-    x3, w3 = x2 + w2 + 32, 225
+    x3, w3 = x2 + w2 + 32, 235
     draw_box(ax, x3, y_card, w3, h_card, C_GREEN_LIGHT, C_GREEN_BORDER, 1.5, 10)
     draw_box(ax, x3, top_y - 38, w3, 38, C_GREEN, C_GREEN, 0, 8)
     ax.text(x3 + w3/2, top_y - 19, "FACTOR 3: MITIGATION (2)", ha='center', va='center',
@@ -422,28 +434,28 @@ def generate_figure_2():
             fontsize=26, fontweight='bold', color=C_DARK)
 
     # Factor 4: Seeds (evenly spaced to align gracefully with bottom cards)
-    x4, w4 = x3 + w3 + 32, 145
+    x4, w4 = x3 + w3 + 32, 150
     draw_box(ax, x4, y_card, w4, h_card, '#EDF2F7', C_GRAY_BORDER, 1.5, 10)
     draw_box(ax, x4, top_y - 38, w4, 38, C_GRAY, C_GRAY, 0, 8)
     ax.text(x4 + w4/2, top_y - 19, "SEEDS (3)", ha='center', va='center',
             color='white', fontweight='bold', fontsize=10.5)
 
     s_cards = [
-        ("Seed 42", "Split / Train 1", 427),
-        ("Seed 123", "Split / Train 2", 302),
-        ("Seed 456", "Split / Train 3", 177)
+        ("Seed 42", "Split / Train 1", 435),
+        ("Seed 123", "Split / Train 2", 305),
+        ("Seed 456", "Split / Train 3", 175)
     ]
     for title, desc, yc in s_cards:
-        draw_box(ax, x4 + 12, yc, w4 - 24, 95, 'white', C_GRAY_BORDER, 1.0, 6)
-        ax.text(x4 + w4/2, yc + 95 - 20, title, ha='center', va='top', color=C_DARK, fontweight='bold', fontsize=10.0)
-        ax.text(x4 + w4/2, yc + 95 - 50, desc, ha='center', va='top', color='#4A5568', fontsize=8.8)
+        draw_box(ax, x4 + 12, yc, w4 - 24, 98, 'white', C_GRAY_BORDER, 1.0, 6)
+        ax.text(x4 + w4/2, yc + 98 - 22, title, ha='center', va='top', color=C_DARK, fontweight='bold', fontsize=10.0)
+        ax.text(x4 + w4/2, yc + 98 - 52, desc, ha='center', va='top', color='#4A5568', fontsize=8.8)
 
     # Equals
     ax.text(x4 + w4 + 18, y_card + h_card/2, "=", ha='center', va='center',
             fontsize=30, fontweight='bold', color=C_DARK)
 
     # Output: Canonical Matrix
-    x5, w5 = x4 + w4 + 36, 215
+    x5, w5 = x4 + w4 + 36, 235
     draw_box(ax, x5, y_card, w5, h_card, C_RED_LIGHT, C_RED_BORDER, 1.5, 10)
     draw_box(ax, x5, top_y - 38, w5, 38, C_RED, C_RED, 0, 8)
     ax.text(x5 + w5/2, top_y - 19, "CANONICAL MATRIX", ha='center', va='center',
@@ -459,9 +471,9 @@ def generate_figure_2():
             color='#4A5568', fontsize=8.4, linespacing=1.2)
 
     # Subgroups card 2
-    draw_box(ax, x5 + 12, y_card + 10, w5 - 24, 170, 'white', C_GRAY_BORDER, 1.0, 6)
-    ax.text(x5 + w5/2, y_card + 170 - 12, "Subgroup Stratification", ha='center', va='top', color=C_DARK, fontweight='bold', fontsize=9.5)
-    ax.text(x5 + 20, y_card + 170 - 36,
+    draw_box(ax, x5 + 12, y_card + 12, w5 - 24, 172, 'white', C_GRAY_BORDER, 1.0, 6)
+    ax.text(x5 + w5/2, y_card + 172 - 12, "Subgroup Stratification", ha='center', va='top', color=C_DARK, fontweight='bold', fontsize=9.5)
+    ax.text(x5 + 20, y_card + 172 - 36,
             "• Adult Census: 12 conditions\n"
             "• COMPAS: 12 conditions\n"
             "• German Credit: 12 conditions\n"
@@ -470,15 +482,20 @@ def generate_figure_2():
             ha='left', va='top', color=C_DARK, fontsize=8.4, linespacing=1.35)
 
     # ------------------ BOTTOM REMEDIATION CARD ------------------
-    draw_box(ax, x1, 15, W - 50, 100, '#FFFBF0', '#DD6B20', 1.5, 8)
-    ax.text(x1 + 22, 15 + 100 - 14,
+    # Expanded height (124 px) with generous vertical & horizontal clearance
+    b_y = 12
+    b_h = 124
+    draw_box(ax, x1, b_y, W - 50, b_h, '#FFFBF0', '#DD6B20', 1.5, 8)
+    ax.text(x1 + 22, b_y + b_h - 18,
             "Methodological Integrity: Quarantine of Legacy Retry Artifacts ($N=43 \\to N=36$)",
             ha='left', va='top', color='#C05621', fontweight='bold', fontsize=10.5)
-    ax.text(x1 + 22, 15 + 100 - 38,
-            "• Prior uncalibrated runs contained 7 duplicate retries ($N=43$), which inflated sample size and artificially distorted directional significance ($p = 0.0396$).\n"
-            "• Remediation quarantined all 7 retry artifacts into research/results/legacy_retries/, restoring strict 100% full-factorial balance ($N=36$ conditions).\n"
-            "• On the true canonical matrix ($N=23$ evaluable pairs), directional difference is non-significant ($p = 0.1979$), preventing false scientific claims.",
-            ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.4)
+    remediation_text = (
+        "• Prior uncalibrated runs contained 7 duplicate retries ($N=43$), which inflated sample size and artificially distorted directional significance ($p = 0.0396$).\n"
+        "• Remediation quarantined all 7 retry artifacts into research/results/legacy_retries/, restoring strict 100% full-factorial balance ($N=36$ conditions).\n"
+        "• On the true canonical matrix ($N=23$ evaluable pairs), directional difference is non-significant ($p = 0.1979$), preventing false scientific claims."
+    )
+    ax.text(x1 + 22, b_y + b_h - 44, remediation_text,
+            ha='left', va='top', color=C_DARK, fontsize=8.6, linespacing=1.45)
 
     save_figure(fig, 'fig02_experimental_matrix')
 
@@ -488,19 +505,20 @@ def generate_figure_2():
 # ==============================================================================
 def generate_figure_3():
     """Generates Figure 3: Claim-Level Evaluation Framework."""
-    W, H = 1360, 680
-    fig, ax = plt.subplots(figsize=(17.0, 8.5), dpi=100, facecolor='white')
+    W, H = 1440, 680
+    fig, ax = plt.subplots(figsize=(18.0, 8.5), dpi=100, facecolor='white')
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis('off')
 
-    col_w = 300
+    col_w = 320
+    gap = 35
     top_y = 640
     card_h = 600
     y_base = top_y - card_h  # 40
 
     # ------------------ STEP 1: Input Narrative ------------------
-    x1 = 35
+    x1 = 30
     draw_box(ax, x1, y_base, col_w, card_h, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.5, 10)
     draw_box(ax, x1, top_y - 40, col_w, 40, C_PURPLE, C_PURPLE, 0, 8)
     ax.text(x1 + col_w/2, top_y - 20, "1. EXPLANATION INPUT", ha='center', va='center',
@@ -556,10 +574,10 @@ def generate_figure_3():
             "• 1,306 Extracted Atomic Claims",
             ha='left', va='top', color=C_DARK, fontweight='bold', fontsize=8.4, linespacing=1.35)
 
-    draw_arrow(ax, (x1 + col_w, top_y - 295), (x1 + col_w + 35, top_y - 295), lw=2.0)
+    draw_arrow(ax, (x1 + col_w, top_y - 300), (x1 + col_w + gap, top_y - 300), lw=2.0)
 
     # ------------------ STEP 2: Taxonomy Classification ------------------
-    x2 = x1 + col_w + 35  # 370
+    x2 = x1 + col_w + gap  # 385
     draw_box(ax, x2, y_base, col_w, card_h, C_BLUE_LIGHT, C_BLUE_BORDER, 1.5, 10)
     draw_box(ax, x2, top_y - 40, col_w, 40, C_BLUE, C_BLUE, 0, 8)
     ax.text(x2 + col_w/2, top_y - 20, "2. CLAIM TAXONOMY", ha='center', va='center',
@@ -577,10 +595,10 @@ def generate_figure_3():
         ax.text(x2 + 20, yc + hc - 12, title, ha='left', va='top', color=col, fontweight='bold', fontsize=9.6)
         ax.text(x2 + 20, yc + hc - 34, desc, ha='left', va='top', color=C_DARK, fontsize=8.4, linespacing=1.3)
 
-    draw_arrow(ax, (x2 + col_w, top_y - 295), (x2 + col_w + 35, top_y - 295), lw=2.0)
+    draw_arrow(ax, (x2 + col_w, top_y - 300), (x2 + col_w + gap, top_y - 300), lw=2.0)
 
     # ------------------ STEP 3: State-Aware Matching ------------------
-    x3 = x2 + col_w + 35  # 705
+    x3 = x2 + col_w + gap  # 740
     draw_box(ax, x3, y_base, col_w, card_h, C_GREEN_LIGHT, C_GREEN_BORDER, 1.5, 10)
     draw_box(ax, x3, top_y - 40, col_w, 40, C_GREEN, C_GREEN, 0, 8)
     ax.text(x3 + col_w/2, top_y - 20, "3. EVIDENCE MATCHING", ha='center', va='center',
@@ -629,10 +647,10 @@ def generate_figure_3():
     ax.text(x3 + col_w/2, u_y + 28, "Flags 113 Unsupported Assertions", ha='center', va='center',
             color=C_RED, fontweight='bold', fontsize=8.8)
 
-    draw_arrow(ax, (x3 + col_w, top_y - 295), (x3 + col_w + 35, top_y - 295), lw=2.0)
+    draw_arrow(ax, (x3 + col_w, top_y - 300), (x3 + col_w + gap, top_y - 300), lw=2.0)
 
     # ------------------ STEP 4: Verification Rules & Verdicts ------------------
-    x4 = x3 + col_w + 35  # 1040
+    x4 = x3 + col_w + gap  # 1095
     draw_box(ax, x4, y_base, col_w, card_h, '#F7FAFC', C_GRAY_BORDER, 1.5, 10)
     draw_box(ax, x4, top_y - 40, col_w, 40, C_DARK, C_DARK, 0, 8)
     ax.text(x4 + col_w/2, top_y - 20, "4. DETERMINISTIC RULES", ha='center', va='center',
@@ -704,16 +722,16 @@ def generate_figure_3():
 # ==============================================================================
 def generate_figure_8():
     """Generates Figure 8: Evidence-to-Claim Verification Examples."""
-    W, H = 1260, 640
-    fig, ax = plt.subplots(figsize=(16.2, 8.2), dpi=100, facecolor='white')
+    W, H = 1360, 640
+    fig, ax = plt.subplots(figsize=(17.2, 8.2), dpi=100, facecolor='white')
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis('off')
 
-    panel_w = 585
+    panel_w = 635
     top_y = 600
-    panel_h = 560
-    y_base = top_y - panel_h  # 40
+    panel_h = 550
+    y_base = top_y - panel_h  # 50
 
     # ================== PANEL A: ROUNDING EXAMPLE (SUPPORTED) ==================
     xa = 25
@@ -723,8 +741,8 @@ def generate_figure_8():
             ha='center', va='center', color='white', fontweight='bold', fontsize=11.5)
 
     # Card A1: Ground Truth
-    a1_h = 95
-    a1_y = top_y - 40 - 15 - a1_h  # 450
+    a1_h = 96
+    a1_y = top_y - 40 - 16 - a1_h  # 448
     draw_box(ax, xa + 18, a1_y, panel_w - 36, a1_h, 'white', C_BLUE_BORDER, 1.2, 6)
     ax.text(xa + 30, a1_y + a1_h - 14, "Canonical Audit Ground Truth Evidence", ha='left', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.5)
@@ -732,7 +750,7 @@ def generate_figure_8():
             "• Metric: Demographic Parity Difference (DPD)\n"
             "• State: Baseline Disparity (unmitigated model)",
             ha='left', va='top', color=C_DARK, fontsize=8.8, linespacing=1.35)
-    draw_box(ax, xa + panel_w - 185, a1_y + 16, 165, 62, C_BLUE_LIGHT, C_BLUE_BORDER, 1.0, 5)
+    draw_box(ax, xa + panel_w - 185, a1_y + 16, 165, 64, C_BLUE_LIGHT, C_BLUE_BORDER, 1.0, 5)
     ax.text(xa + panel_w - 102, a1_y + 53, "Canonical Truth", ha='center', va='center', color=C_BLUE, fontsize=8.2, fontweight='bold')
     ax.text(xa + panel_w - 102, a1_y + 31, "v_truth = 0.1895", ha='center', va='center',
             color=C_BLUE, fontweight='bold', fontsize=9.8, family='monospace')
@@ -740,15 +758,15 @@ def generate_figure_8():
     draw_arrow(ax, (xa + panel_w/2, a1_y), (xa + panel_w/2, a1_y - 22), color='#718096', lw=1.8)
 
     # Card A2: Generated Text
-    a2_h = 95
-    a2_y = a1_y - 22 - a2_h  # 333
+    a2_h = 98
+    a2_y = a1_y - 22 - a2_h  # 328
     draw_box(ax, xa + 18, a2_y, panel_w - 36, a2_h, 'white', C_PURPLE_BORDER, 1.2, 6)
     ax.text(xa + 30, a2_y + a2_h - 14, "Generative LLM Narrative Assertion", ha='left', va='top',
             color=C_PURPLE, fontweight='bold', fontsize=10.5)
     ax.text(xa + 30, a2_y + a2_h - 38,
             '"Baseline demographic parity difference was 0.190..."\n(Atomic assertion parsed as claim num_02)',
             ha='left', va='top', color=C_DARK, fontstyle='italic', fontsize=8.5, linespacing=1.3)
-    draw_box(ax, xa + panel_w - 185, a2_y + 16, 165, 62, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.0, 5)
+    draw_box(ax, xa + panel_w - 185, a2_y + 16, 165, 64, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.0, 5)
     ax.text(xa + panel_w - 102, a2_y + 53, "Extracted Value", ha='center', va='center', color=C_PURPLE, fontsize=8.2, fontweight='bold')
     ax.text(xa + panel_w - 102, a2_y + 31, "v_claim = 0.190", ha='center', va='center',
             color=C_PURPLE, fontweight='bold', fontsize=9.8, family='monospace')
@@ -756,8 +774,8 @@ def generate_figure_8():
     draw_arrow(ax, (xa + panel_w/2, a2_y), (xa + panel_w/2, a2_y - 22), color='#718096', lw=1.8)
 
     # Card A3: Tolerance Verification
-    a3_h = 145
-    a3_y = a2_y - 22 - a3_h  # 166
+    a3_h = 146
+    a3_y = a2_y - 22 - a3_h  # 160
     draw_box(ax, xa + 18, a3_y, panel_w - 36, a3_h, 'white', C_GREEN_BORDER, 1.2, 6)
     ax.text(xa + 30, a3_y + a3_h - 14, "Deterministic Tolerance Verification", ha='left', va='top',
             color=C_GREEN, fontweight='bold', fontsize=10.5)
@@ -766,27 +784,28 @@ def generate_figure_8():
     ax.text(xa + 30, a3_y + a3_h - 84, "Relative Error: 0.0005 / 0.1895 = 0.26%", ha='left', va='top', color=C_DARK, fontsize=9.2, family='monospace')
     ax.text(xa + 30, a3_y + a3_h - 106, "✔ 0.26% ≤ 5.0% (Relative Error Threshold Satisfied)", ha='left', va='top', color=C_GREEN, fontweight='bold', fontsize=9.0)
 
-    draw_arrow(ax, (xa + panel_w/2, a3_y), (xa + panel_w/2, a3_y - 20), color='#718096', lw=1.8)
-
-    # Card A4: Verdict
-    a4_h = 58
-    a4_y = 54
+    # Card A4: Verdict (directly touched by Arrow 3 at y = 138)
+    a4_h = 66
+    a4_y = a3_y - 22 - a4_h  # 72
     draw_box(ax, xa + 18, a4_y, panel_w - 36, a4_h, C_GREEN, C_GREEN, 0, 6)
-    ax.text(xa + panel_w/2, a4_y + 36, "CLASSIFICATION: SUPPORTED", ha='center', va='center',
-            color='white', fontweight='bold', fontsize=12.0)
-    ax.text(xa + panel_w/2, a4_y + 16, "Standard scientific rounding accepted under pre-defined tolerances.",
-            ha='center', va='center', color='white', fontsize=8.8)
+    ax.text(xa + panel_w/2, a4_y + 42, "CLASSIFICATION: SUPPORTED", ha='center', va='center',
+            color='white', fontweight='bold', fontsize=11.8)
+    ax.text(xa + panel_w/2, a4_y + 18, "Standard scientific rounding accepted under pre-defined tolerances.",
+            ha='center', va='center', color='white', fontsize=8.6)
+
+    # Arrow A3 -> A4 connecting directly to top edge of Card A4 (y = 138)
+    draw_arrow(ax, (xa + panel_w/2, a3_y), (xa + panel_w/2, a4_y + a4_h), color='#718096', lw=1.8)
 
     # ================== PANEL B: FAILURE EXAMPLE (UNSUPPORTED) ==================
-    xb = xa + panel_w + 40  # 650
+    xb = xa + panel_w + 40  # 700
     draw_box(ax, xb, y_base, panel_w, panel_h, C_RED_LIGHT, C_RED_BORDER, 1.5, 10)
     draw_box(ax, xb, top_y - 40, panel_w, 40, C_RED, C_RED, 0, 8)
     ax.text(xb + panel_w/2, top_y - 20, "(B) CANONICAL FAILURE EXAMPLE (UNSUPPORTED)",
             ha='center', va='center', color='white', fontweight='bold', fontsize=11.5)
 
     # Card B1: Ground Truth
-    b1_h = 98
-    b1_y = top_y - 40 - 15 - b1_h  # 447
+    b1_h = 96
+    b1_y = top_y - 40 - 16 - b1_h  # 448
     draw_box(ax, xb + 18, b1_y, panel_w - 36, b1_h, 'white', C_BLUE_BORDER, 1.2, 6)
     ax.text(xb + 28, b1_y + b1_h - 14, "Canonical Audit Ground Truth Evidence", ha='left', va='top',
             color=C_BLUE, fontweight='bold', fontsize=10.5)
@@ -803,15 +822,15 @@ def generate_figure_8():
     draw_arrow(ax, (xb + panel_w/2, b1_y), (xb + panel_w/2, b1_y - 22), color='#718096', lw=1.8)
 
     # Card B2: Generated Text
-    b2_h = 95
-    b2_y = b1_y - 22 - b2_h  # 333
+    b2_h = 98
+    b2_y = b1_y - 22 - b2_h  # 328
     draw_box(ax, xb + 18, b2_y, panel_w - 36, b2_h, 'white', C_PURPLE_BORDER, 1.2, 6)
     ax.text(xb + 30, b2_y + b2_h - 14, "Generative LLM Narrative Assertion", ha='left', va='top',
             color=C_PURPLE, fontweight='bold', fontsize=10.5)
     ax.text(xb + 30, b2_y + b2_h - 38,
             '"Equal Opportunity Difference: Decreased from 0.2..."\n(Atomic assertion parsed as claim num_20)',
             ha='left', va='top', color=C_DARK, fontstyle='italic', fontsize=8.5, linespacing=1.3)
-    draw_box(ax, xb + panel_w - 185, b2_y + 16, 165, 62, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.0, 5)
+    draw_box(ax, xb + panel_w - 185, b2_y + 16, 165, 64, C_PURPLE_LIGHT, C_PURPLE_BORDER, 1.0, 5)
     ax.text(xb + panel_w - 102, b2_y + 53, "Extracted Value", ha='center', va='center', color=C_PURPLE, fontsize=8.2, fontweight='bold')
     ax.text(xb + panel_w - 102, b2_y + 31, "v_claim = 0.2", ha='center', va='center',
             color=C_PURPLE, fontweight='bold', fontsize=9.8, family='monospace')
@@ -819,8 +838,8 @@ def generate_figure_8():
     draw_arrow(ax, (xb + panel_w/2, b2_y), (xb + panel_w/2, b2_y - 22), color='#718096', lw=1.8)
 
     # Card B3: Tolerance Verification
-    b3_h = 145
-    b3_y = b2_y - 22 - b3_h  # 166
+    b3_h = 146
+    b3_y = b2_y - 22 - b3_h  # 160
     draw_box(ax, xb + 18, b3_y, panel_w - 36, b3_h, 'white', C_RED_BORDER, 1.2, 6)
     ax.text(xb + 30, b3_y + b3_h - 14, "Deterministic Tolerance Verification", ha='left', va='top',
             color=C_RED, fontweight='bold', fontsize=10.5)
@@ -829,16 +848,17 @@ def generate_figure_8():
     ax.text(xb + 30, b3_y + b3_h - 84, "Relative Error: 0.0445 / 0.2445 = 18.20%", ha='left', va='top', color=C_DARK, fontsize=9.2, family='monospace')
     ax.text(xb + 30, b3_y + b3_h - 106, "✘ 18.20% > 5.0% (Exceeds Relative Error Threshold)", ha='left', va='top', color=C_RED, fontweight='bold', fontsize=9.0)
 
-    draw_arrow(ax, (xb + panel_w/2, b3_y), (xb + panel_w/2, b3_y - 20), color='#718096', lw=1.8)
-
-    # Card B4: Verdict
-    b4_h = 58
-    b4_y = 54
+    # Card B4: Verdict (directly touched by Arrow 3 at y = 138)
+    b4_h = 66
+    b4_y = b3_y - 22 - b4_h  # 72
     draw_box(ax, xb + 18, b4_y, panel_w - 36, b4_h, C_RED, C_RED, 0, 6)
-    ax.text(xb + panel_w/2, b4_y + 36, "CLASSIFICATION: UNSUPPORTED", ha='center', va='center',
-            color='white', fontweight='bold', fontsize=12.0)
-    ax.text(xb + panel_w/2, b4_y + 16, "Excessive truncation distorts metric fidelity beyond scientific bounds.",
-            ha='center', va='center', color='white', fontsize=8.8)
+    ax.text(xb + panel_w/2, b4_y + 42, "CLASSIFICATION: UNSUPPORTED", ha='center', va='center',
+            color='white', fontweight='bold', fontsize=11.8)
+    ax.text(xb + panel_w/2, b4_y + 18, "Excessive truncation distorts metric fidelity beyond scientific bounds.",
+            ha='center', va='center', color='white', fontsize=8.6)
+
+    # Arrow B3 -> B4 connecting directly to top edge of Card B4 (y = 138)
+    draw_arrow(ax, (xb + panel_w/2, b3_y), (xb + panel_w/2, b4_y + b4_h), color='#718096', lw=1.8)
 
     save_figure(fig, 'fig08_evidence_claim_example')
 

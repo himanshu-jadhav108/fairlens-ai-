@@ -169,11 +169,45 @@ def validate_figures():
         sys.exit(1)
 
 
+def audit_png_svg_sync():
+    print("\n--- Auditing PNG and SVG Synchronization & Timestamps ---")
+    all_synced = True
+    for svg_name, title in EXPECTED_FIGURES:
+        png_name = svg_name.replace('.svg', '.png')
+        svg_path = os.path.join(FIGURES_DIR, svg_name)
+        png_path = os.path.join(FIGURES_DIR, png_name)
+        
+        if not os.path.exists(svg_path) or not os.path.exists(png_path):
+            print(f"FAIL: Missing pair for {svg_name}")
+            all_synced = False
+            continue
+            
+        svg_mtime = os.path.getmtime(svg_path)
+        png_mtime = os.path.getmtime(png_path)
+        time_diff = abs(svg_mtime - png_mtime)
+        
+        # Check both files were generated together (mtimes within 10 seconds of each other)
+        if time_diff > 10.0:
+            print(f"FAIL [{svg_name} vs {png_name}]: Timestamp desynchronization ({time_diff:.1f}s difference)")
+            all_synced = False
+        else:
+            print(f"PASS [{svg_name} & {png_name}]: Synchronized (diff: {time_diff:.2f}s)")
+            
+    if not all_synced:
+        print("Synchronization audit failed!")
+        sys.exit(1)
+    else:
+        print("All SVG and PNG figures are freshly generated and 100% in sync!")
+
+
 if __name__ == '__main__':
     run_script("generate_diagram_figures.py")
     run_script("generate_result_figures.py")
     validate_figures()
+    audit_png_svg_sync()
     audit_terminology()
     audit_numerical_integrity()
     run_script("audit_text_containment.py")
+    run_script("create_contact_sheet.py")
+
 
