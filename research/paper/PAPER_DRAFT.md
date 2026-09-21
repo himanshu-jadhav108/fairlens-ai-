@@ -30,7 +30,10 @@ Despite these critical risks, prior research on explanation faithfulness has pri
 ### Core Research Question:
 > **How faithfully do LLM-generated natural-language explanations represent quantitative evidence produced by machine-learning fairness audits?**
 
-To answer this question, we formalize a claim-level extraction and verification framework, pair generative LLM explanations against deterministic rule-based template controls under cryptographically identical input evidence hashes, and execute a controlled full factorial benchmark study ($N=36$ conditions, 72 paired runs) across three authentic benchmark datasets.
+To answer this question, we formalize a claim-level extraction and verification framework, pair generative LLM explanations against deterministic rule-based template controls under cryptographically identical input evidence hashes, and execute a controlled full factorial benchmark study ($N=36$ conditions, 72 paired runs) across three authentic benchmark datasets. As illustrated in Figure 1, the research framework encompasses structured fairness auditing, SHA-256 evidence hashing, dual explanation generation (deterministic template control vs. generative LLM), regex-isolated claim extraction, and multi-dimensional deterministic verification.
+
+![Figure 1: Overall Research Framework and Claim-Level Evaluation Pipeline](figures/fig01_research_framework.svg)  
+*Figure 1: End-to-end research framework and evaluation methodology. Algorithmic fairness audit evidence is cryptographically verified via SHA-256 hashes to ensure input parity between the deterministic reference control (`TemplateExplainer`, 100% faithful reference condition) and the generative model (Gemini 2.5 Flash). Generated narratives are decomposed via boundary segmentation into atomic claims and evaluated across numerical precision, directional consistency, qualitative fairness interpretations, subjective magnitude, and unsupported causal/compliance extrapolations ($N=36$ canonical conditions, 72 paired runs).*
 
 ---
 
@@ -89,52 +92,10 @@ The controlled benchmark executes a $3 \times 2 \times 2 \times 3$ balanced full
 
 $$\text{3 Benchmark Datasets} \times \text{2 Predictive Models} \times \text{2 Mitigation Algorithms} \times \text{3 Random Seeds} = 36\text{ Conditions}$$
 
-```
-                +-------------------------------------------------------------+
-                |                    BENCHMARK DATASETS (3)                   |
-                |   Adult Census (48,842) | COMPAS (7,214) | German (1,000)   |
-                +-------------------------------------------------------------+
-                                              |
-                                              v
-                +-------------------------------------------------------------+
-                |                    PREDICTIVE MODELS (2)                    |
-                |           Logistic Regression   |   Random Forest           |
-                +-------------------------------------------------------------+
-                                              |
-                                              v
-                +-------------------------------------------------------------+
-                |                  FAIRNESS MITIGATIONS (2)                   |
-                |       Correlation Remover       |    Threshold Optimizer    |
-                +-------------------------------------------------------------+
-                                              |
-                                              v
-                +-------------------------------------------------------------+
-                |                       RANDOM SEEDS (3)                      |
-                |                 Seed 42  |  Seed 123  |  Seed 456           |
-                +-------------------------------------------------------------+
-                                              |
-                                              v
-                             36 Canonical Audit Conditions
-                                              |
-                     +------------------------+------------------------+
-                     |                                                 |
-                     v                                                 v
-        [Template Explainer Control]                      [Primary LLM Explainer]
-           Deterministic Rules                               Gemini 2.5 Flash
-           36 Control Explanations                           36 LLM Explanations
-                     |                                                 |
-                     +------------------------+------------------------+
-                                              |
-                                              v
-                                72 Total Explanation Runs
-                                              |
-                                              v
-                        [Automated Deterministic Evaluator]
-                       Claims Extraction & Tolerance Matching
-                                              |
-                                              v
-                     [Secondary Blind Adjudication (Llama 3 8B)]
-```
+Figure 2 illustrates the full-factorial experimental design matrix ($3 \text{ Datasets} \times 2 \text{ Models} \times 2 \text{ Mitigations} \times 3 \text{ Seeds} = 36$ canonical conditions; 72 paired runs) and the methodological quarantine of legacy retry artifacts.
+
+![Figure 2: Full-Factorial Experimental Matrix and Design Architecture](figures/fig02_experimental_matrix.svg)  
+*Figure 2: Full-factorial experimental design matrix and audit remediation architecture ($3 \text{ Datasets} \times 2 \text{ Models} \times 2 \text{ Mitigations} \times 3 \text{ Seeds} = 36$ canonical conditions; 72 paired explanation runs under 100% SHA-256 evidence parity). Seven legacy retry runs were quarantined into `research/results/legacy_retries/` to eliminate sample inflation ($N=43 \to N=36$), restoring balanced factorial orthogonality and correcting directional significance ($p = 0.0396 \to p = 0.1979$).*
 
 ### 5.2 Authentic Benchmark Datasets
 Zero synthetic data was admitted to the final canonical empirical matrix. All evidence is derived from verified tabular benchmarks:
@@ -163,7 +124,10 @@ All 36 experimental explanations were generated using `gemini-2.5-flash` via the
 
 ## 6. Evaluation Framework & Methodology
 
-The automated evaluation framework in `research/faithfulness/` operates through a multi-stage decomposition pipeline designed to eliminate metric conflation and boundary bleed.
+The automated evaluation framework in `research/faithfulness/` operates through a multi-stage decomposition pipeline designed to eliminate metric conflation and boundary bleed. Figure 3 illustrates the multi-stage claim extraction and deterministic verification architecture.
+
+![Figure 3: Multi-Stage Claim Extraction and Deterministic Evaluation Framework](figures/fig03_claim_evaluation_framework.svg)  
+*Figure 3: Multi-stage claim-level evaluation framework. Generated narrative explanations undergo regex boundary segmentation (`CLAUSE_DELIMITER_PATTERN`) to isolate compound sentences into atomic clauses. Extracted assertions are classified into a 5-type taxonomy (Numerical, Directional, Fairness Interpretation, Performance, Subjective Magnitude), matched against state-aware audit evidence pools (Baseline $S_0$, Mitigated $S_1$, Absolute Delta $\Delta$, Relative Delta), and evaluated against deterministic verification rules.*
 
 ### 6.1 Clause Splitting & Boundary Isolation
 Natural language explanations often blend multiple distinct claims within a single compound sentence (e.g., *"The model achieved 82.4% accuracy, but demographic parity difference widened to 0.189."*). The evaluator applies regex boundary segmentation (`CLAUSE_DELIMITER_PATTERN`) to isolate independent clauses before claim extraction.
@@ -176,7 +140,10 @@ To distinguish reasonable mathematical rounding from hallucinations or quantitat
 
 $$\text{Match}(v_{\text{extracted}}, v_{\text{true}}) \iff |v_{\text{extracted}} - v_{\text{true}}| \le 0.015 \quad\lor\quad \frac{|v_{\text{extracted}} - v_{\text{true}}|}{|v_{\text{true}}|} \le 0.05$$
 
-This formulation accepts legitimate roundings (e.g., $0.1895 \to 0.190$ or $18.9\% \to 19.0\%$) while strictly penalizing numerical distortions exceeding $1.5$ percentage points or $5\%$ relative variance.
+This formulation accepts legitimate roundings (e.g., $0.1895 \to 0.190$ or $18.9\% \to 19.0\%$) while strictly penalizing numerical distortions exceeding $1.5$ percentage points or $5\%$ relative variance. Figure 8 contrasts this accepted rounding formulation against authentic canonical failure cases.
+
+![Figure 8: Authentic Evidence-to-Claim Verification Examples](figures/fig08_evidence_claim_example.svg)  
+*Figure 8: Authentic evidence-to-claim verification examples from canonical benchmark data. (A) Accepted rounding: an extracted baseline difference of $0.190$ deviates from canonical ground truth $0.1895$ by $0.0005$, falling within both the absolute ($\pm 0.015$) and relative ($5\%$) tolerance thresholds (`SUPPORTED`). (B) Canonical failure: in condition `german__random_forest__threshold_optimizer__seed123` (claim `num_20`), truncating $0.2445$ to $0.2$ results in an absolute error of $0.0445$ and relative error of $18.20\%$, exceeding both scientific tolerance bounds and correctly receiving an `UNSUPPORTED` verdict.*
 
 ### 6.4 Directional & Semantic Classification
 Mathematical direction is decoupled from fairness interpretation:
@@ -215,28 +182,20 @@ Table 1 summarizes the primary paired comparisons between the deterministic temp
 
 *Note on Denominators:* The reported 8.51% value in Table 1 is the unweighted mean of the 36 condition-level unsupported-claim rates ($8.51\% \pm 8.72\%$), whereas the pooled claim-level taxonomy across all 36 Gemini explanation files yields $113 / 1,306 = 8.65\%$; the two values reflect condition-level versus pooled claim-level denominators.
 
-```
-                       FAITHFULNESS COMPARISON (N=36)
-  100% +-------------------------------------------------------------+
-       | [Template: 100.0%]                       [Template: 100.0%]  |
-   90% |                       [Gemini: 94.2%]                       |
-       |                                                             |
-   80% |   [Gemini: 88.1%]                                           |
-       |                                                             |
-   10% |                                              [Gemini: 8.5%] |
-    0% +-------------------------------------------------------------+
-           Numerical Faithfulness  Directional Faithfulness   Unsupported Claims
-           (p = 1.34e-7, d=-1.10)   (p = 0.198, d=-0.28)      (p = 1.20e-6)
-```
-
 ### 7.2 Findings on $RQ_1$: Numerical Faithfulness Degradation
-Under the evaluated conditions, Gemini 2.5 Flash exhibited a statistically significant degradation in numerical faithfulness relative to the deterministic template control (Mean difference: $-11.87$ percentage points, $t = -6.581, p = 1.34 \times 10^{-7}$, Cohen's $d = -1.097$). The non-parametric Wilcoxon signed-rank test yields a concordant result ($W = 0.0, p = 8.28 \times 10^{-6}$). This represents a large standardized effect under conventional Cohen's-$d$ interpretation within this benchmark ($d = -1.097$, where $|d| > 0.8$), indicating consistent numerical faithfulness degradation across the evaluated conditions rather than isolated anomalies.
+Under the evaluated conditions, Gemini 2.5 Flash exhibited a statistically significant degradation in numerical faithfulness relative to the deterministic template control (Mean difference: $-11.87$ percentage points, $t = -6.581, p = 1.34 \times 10^{-7}$, Cohen's $d = -1.097$). The non-parametric Wilcoxon signed-rank test yields a concordant result ($W = 0.0, p = 8.28 \times 10^{-6}$). This represents a large standardized effect under conventional Cohen's-$d$ interpretation within this benchmark ($d = -1.097$, where $|d| > 0.8$), indicating consistent numerical faithfulness degradation across the evaluated conditions rather than isolated anomalies. As shown in Figure 4, condition-level trajectories reveal consistent degradation across all three benchmark datasets.
+
+![Figure 4: Numerical Faithfulness Comparison](figures/fig04_numerical_faithfulness.svg)  
+*Figure 4: Primary numerical faithfulness comparison across the $N=36$ canonical conditions (72 paired runs). (A) Paired condition trajectories connecting deterministic template reference controls ($100.00\% \pm 0.00\%$) and Gemini 2.5 Flash ($88.13\% \pm 10.82\%$). (B) Condition distribution boxplot and inferential effect size (mean difference $-11.87$ percentage points, paired $t = -6.581, p = 1.34 \times 10^{-7}$, Wilcoxon $W = 0.0, p = 8.28 \times 10^{-6}$, Cohen's $d = -1.097$, large effect). (C) Subgroup breakdown across benchmark datasets (Adult: $92.57\% \pm 6.84\%$, COMPAS: $87.62\% \pm 11.20\%$, German Credit: $84.21\% \pm 12.65\%$).*
 
 ### 7.3 Findings on $RQ_2$: Directional Faithfulness Robustness
-Across the 23 experimental conditions where directional claims were generated, Gemini achieved a mean directional faithfulness of $94.18\% \pm 21.02\%$ compared to $100.00\% \pm 0.00\%$ for templates. The paired difference of $-5.82$ percentage points is **not statistically significant** ($t = -1.328, p = 0.1979$; Wilcoxon $W = 0.0, p = 0.0679$). In this benchmark, Gemini 2.5 Flash exhibited higher observed directional faithfulness than numerical faithfulness; however, the directional difference relative to the deterministic control was not statistically significant.
+Across the 23 experimental conditions where directional claims were generated, Gemini achieved a mean directional faithfulness of $94.18\% \pm 21.02\%$ compared to $100.00\% \pm 0.00\%$ for templates. The paired difference of $-5.82$ percentage points is **not statistically significant** ($t = -1.328, p = 0.1979$; Wilcoxon $W = 0.0, p = 0.0679$). In this benchmark, Gemini 2.5 Flash exhibited higher observed directional faithfulness than numerical faithfulness; however, the directional difference relative to the deterministic control was not statistically significant. Figure 6 illustrates the directional faithfulness trajectories and distribution across the 23 evaluable condition pairs.
+
+![Figure 6: Directional Faithfulness Robustness Comparison](figures/fig06_directional_faithfulness.svg)  
+*Figure 6: Directional faithfulness comparison across $N=23$ evaluable canonical condition pairs (13 conditions generated zero directional assertions and were excluded from directional pairing). (A) Paired condition trajectories between deterministic template controls ($100.00\% \pm 0.00\%$) and Gemini 2.5 Flash ($94.18\% \pm 21.02\%$). (B) Distribution comparison demonstrating that the directional difference is not statistically significant (mean difference $-5.82$ percentage points, paired $t = -1.328, p = 0.1979$, Wilcoxon $W = 0.0, p = 0.0679$, Cohen's $d = -0.277$).*
 
 > [!NOTE]
-> Methodological Note on Directional Significance: The preliminary statistical analysis reported prior to audit remediation indicated $p = 0.0396$ on $N = 29$. That result was artificially distorted by duplicate retry artifacts. On the true canonical 36 matrix ($N = 23$ evaluable pairs), directional degradation is non-significant.
+> Methodological Note on Directional Significance: The preliminary statistical analysis reported prior to audit remediation indicated $p = 0.0396$ on $N = 29$. That result was artificially distorted by duplicate retry artifacts. On the true canonical 36 matrix ($N = 23$ evaluable pairs), the directional difference is non-significant.
 
 ### 7.4 Findings on $RQ_3$: Unsupported & Causal Assertions
 Gemini generated unsupported claims at an average rate of $8.51\% \pm 8.72\%$ across the 36 canonical conditions, whereas deterministic templates generated zero unsupported claims ($t = 5.854, p = 1.20 \times 10^{-6}$). The reported 8.51% value is the unweighted mean of the 36 condition-level unsupported-claim rates, whereas the pooled claim-level taxonomy yields 113/1,306 = 8.65%; the two values use different aggregation denominators. These claims predominantly consisted of unevidenced causal assertions regarding the mechanisms of mitigation or unhedged declarations that models had achieved complete fairness.
@@ -268,22 +227,10 @@ To explore heterogeneity across experimental factors, Table 2 provides descripti
 
 Across the 36 canonical Gemini explanation runs, our deterministic evaluator parsed a total of 1,306 atomic claims across five functional categories: 1,125 numerical, 118 directional, 29 fairness interpretation, 19 performance, and 15 magnitude claims. The evaluator identified exactly 113 unsupported claims (109 numerical and 4 directional). Across the 36 conditions, this corresponds to an unweighted condition-level mean unsupported rate of $8.51\% \pm 8.72\%$, whereas the pooled claim-level rate is $113 / 1,306 = 8.65\%$; the two values reflect different aggregation denominators. Below, we distinguish between quantitatively measured claim categories and recurring qualitative error mechanisms identified through claim-level analysis:
 
-```
-                            ERROR TAXONOMY & EMPIRICAL FREQUENCIES
-  +-----------------------------------------------------------------------------+
-  | Quantitatively Measured Categories:                                         |
-  |   - Numerical Claims:             109 unsupported / 1,125 claims (9.69%)    |
-  |   - Directional Claims:           4 unsupported / 118 claims (3.39%)        |
-  |   - Subjective Magnitude Terms:   15 claims routed to UNDETERMINABLE (100%) |
-  |   - Fairness Interpretations:     0 unsupported / 29 claims (0.00%)         |
-  |   - Performance Metrics:          0 unsupported / 19 claims (0.00%)         |
-  | Qualitative Mechanisms Identified:                                          |
-  |   - Temporal State Misattribution (conflating baseline vs. mitigated states)|
-  |   - Numerical Invention           (unevidenced values absent from data)     |
-  |   - Ratio-Transition Mismatches   (static disparity vs. temporal delta)     |
-  |   - Causal & Regulatory Overreach (unhedged non-discrimination assertions)  |
-  +-----------------------------------------------------------------------------+
-```
+Figure 5 displays the quantitative distribution of the 1,306 parsed claims across the five taxonomy categories and details the aggregation denominator distinction between condition-level mean and pooled claim-level rates.
+
+![Figure 5: Claim Taxonomy and Unsupported Claims Analysis](figures/fig05_unsupported_claims.svg)  
+*Figure 5: Comprehensive claim taxonomy and unsupported claims breakdown across 36 Gemini explanation artifacts ($N=1,306$ claims). (A) Claim distribution across the five taxonomy categories: Numerical ($1,125$ claims, $109$ unsupported, $9.69\%$), Directional ($118$ claims, $4$ unsupported, $3.39\%$), Fairness Interpretation ($29$ claims, $0$ unsupported), Performance ($19$ claims, $0$ unsupported), and Subjective Magnitude ($15$ claims, all $15$ routed to `UNDETERMINABLE` to preserve evaluator precision). (B) Aggregation denominator comparison contrasting the condition-level mean unsupported rate ($8.51\% \pm 8.72\%$, $N=36$) against the pooled claim-level rate ($113 / 1,306 = 8.65\%$).*
 
 ### Part A: Quantitatively Measured Claim Categories
 
@@ -365,7 +312,10 @@ Table 4 displays the classification confusion matrix (Automated Evaluator rows v
 | **Total Adjudicator** | 98 | 2 | 0 | 100 |
 
 *Observed Agreement:* $P_o = \frac{77 + 0 + 0}{100} = 0.7700$ (77.0%).  
-*Note on Chance-Corrected Concordance & the Kappa Paradox:* Across the three nominal categories (`SUPPORTED`, `UNSUPPORTED`, `UNDETERMINABLE`), expected agreement by chance is $P_e = (0.77 \times 0.98) + (0.00 \times 0.02) + (0.23 \times 0.00) = 0.7546$, yielding Cohen's $\kappa = \frac{0.7700 - 0.7546}{1.0000 - 0.7546} \approx 0.063$. If non-supported categories (`UNDETERMINABLE` and `UNSUPPORTED`) are collapsed into a binary class, expected agreement rises to $P_e = (0.77 \times 0.98) + (0.23 \times 0.02) = 0.7592$, yielding binary $\kappa \approx 0.045$. Both values are strongly suppressed by the classic **Kappa Paradox** (Feinstein & Cicchetti, 1990; Byrt et al., 1993), which occurs when marginal prevalence is heavily skewed ($98\%$ vs $2\%$ for the adjudicator; $77\%$ vs $23\%$ for the evaluator). High chance-expected agreement ($P_e \approx 0.755$) drastically deflates $\kappa$ despite high raw agreement ($77.0\%$). Furthermore, because the generative adjudicator resolves subjective expressions semantically rather than outputting `UNDETERMINABLE`, raw category concordance and confusion matrix breakdowns provide the most transparent characterization of inter-method alignment.
+*Note on Chance-Corrected Concordance & the Kappa Paradox:* Across the three nominal categories (`SUPPORTED`, `UNSUPPORTED`, `UNDETERMINABLE`), expected agreement by chance is $P_e = (0.77 \times 0.98) + (0.00 \times 0.02) + (0.23 \times 0.00) = 0.7546$, yielding Cohen's $\kappa = \frac{0.7700 - 0.7546}{1.0000 - 0.7546} \approx 0.063$. If non-supported categories (`UNDETERMINABLE` and `UNSUPPORTED`) are collapsed into a binary class, expected agreement rises to $P_e = (0.77 \times 0.98) + (0.23 \times 0.02) = 0.7592$, yielding binary $\kappa \approx 0.045$. Both values are strongly suppressed by the classic **Kappa Paradox** (Feinstein & Cicchetti, 1990; Byrt et al., 1993), which occurs when marginal prevalence is heavily skewed ($98\%$ vs $2\%$ for the adjudicator; $77\%$ vs $23\%$ for the evaluator). High chance-expected agreement ($P_e \approx 0.755$) drastically deflates $\kappa$ despite high raw agreement ($77.0\%$). Furthermore, because the generative adjudicator resolves subjective expressions semantically rather than outputting `UNDETERMINABLE`, raw category concordance and confusion matrix breakdowns provide the most transparent characterization of inter-method alignment. Figure 7 illustrates these concordance rates, the confusion matrix, and the prevalence distribution.
+
+![Figure 7: Secondary LLM Claim Adjudication Sensitivity Analysis](figures/fig07_llama_adjudication.svg)  
+*Figure 7: Secondary LLM claim adjudication sensitivity analysis using a locally hosted 8B model (`llama3:latest`, $N=100$ stratified claims). (A) Concordance rates by claim category: Directional ($100.0\%$, $21/21$), Fairness Interpretation ($100.0\%$, $20/20$), Performance ($100.0\%$, $20/20$), Numerical ($80.0\%$, $16/20$), Magnitude ($0.0\%$, $0/19$, reflecting evaluator conservative routing to `UNDETERMINABLE`), and Overall Concordance ($77.0\%$, $77/100$). (B) Confusion matrix heatmap detailing inter-method classification alignment and the Kappa Paradox ($\kappa = 0.063$, binary $\kappa = 0.045$, suppressed by skewed 98% vs 2% marginal prevalence). Methodological note: this secondary model sensitivity analysis does not constitute human validation.*
 
 ### 10.4 Disagreement Analysis & Scientific Takeaways
 1. **Perfect Qualitative Concordance (100%):** On Directional, Fairness Interpretation, and Performance claims, the independent adjudicator and the automated evaluator agreed on 100% of cases (61/61).
