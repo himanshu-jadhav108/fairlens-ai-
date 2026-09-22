@@ -3,6 +3,16 @@
 > **LOCKED RESEARCH TOPIC:**  
 > **Quantitative Faithfulness of LLM-Generated Natural-Language Explanations for Machine Learning Fairness Audits: An Empirical Study**
 
+> [!IMPORTANT]
+> **ARCHIVAL / PROPOSAL DOCUMENT:** This infrastructure README reflects an early exploratory research planning phase (which outlined provisional concepts such as XGBoost, SHAP feature attribution, and a 5-RQ structure).
+> 
+> **AUTHORITATIVE FROZEN BENCHMARK:** The finalized, frozen empirical study is documented exclusively in [`research/paper/PAPER_DRAFT.md`](./paper/PAPER_DRAFT.md) and [`research/results/final/`](./results/final/):
+> - **Factorial Design:** 3 Datasets (Adult, COMPAS, German Credit) × 2 Models (Logistic Regression, Random Forest) × 2 Mitigations (Correlation Remover, Threshold Optimizer) × 3 Seeds (42, 123, 456) = **36 canonical conditions** (72 paired runs with deterministic template reference controls).
+> - **Generative Model:** Google Gemini 2.5 Flash ($T=0.2$, $top\_p=0.95$, max output tokens = 1500, SHA-256 evidence input parity).
+> - **Research Questions:** Consolidated to 3 core RQs ($RQ_1$: Numerical Faithfulness, $RQ_2$: Directional Robustness, $RQ_3$: Unsupported/Causal Assertions).
+> - **Claim Taxonomy:** 5 categories (Numerical, Directional, Fairness Interpretation, Performance, Subjective Magnitude).
+> - **Human Annotation:** Not performed; sensitivity evaluated via secondary automated adjudication (`llama3:latest`, 8B parameters).
+
 ---
 
 ## 1. Core Scientific Direction & Contribution

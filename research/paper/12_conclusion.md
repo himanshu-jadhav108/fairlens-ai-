@@ -1,3 +1,6 @@
+> [!NOTE]
+> **SUPERSEDED ARCHIVAL FRAGMENT:** This file is an early scaffold fragment retained for historical reference. The sole active, frozen, authoritative manuscript is [PAPER_DRAFT.md](./PAPER_DRAFT.md).
+
 # 12. Conclusion
 
 This empirical study evaluated the quantitative faithfulness of LLM-generated natural-language explanations for machine learning fairness audits against authoritative structured evidence.

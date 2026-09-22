@@ -1,7 +1,9 @@
 # Fine-Grained Error Taxonomy & Hallucination Analysis
 
-**Scope:** Categorization of Hallucinated, Contradicted, and Unsupported Claims across 36 Canonical Gemini 2.5 Flash Explanations  
-**Total Conditions Audited:** 36 paired runs (72 explanation artifacts)  
+> **STATUS:** Synchronized Canonical Error Analysis Artifact  
+> **Authoritative Manuscript Cross-Reference:** [`research/paper/PAPER_DRAFT.md`](../paper/PAPER_DRAFT.md) Section 9  
+> **Scope:** Categorization of Hallucinated, Contradicted, and Unsupported Claims across 36 Canonical Gemini 2.5 Flash Explanations  
+> **Total Conditions Audited:** 36 paired runs (72 explanation artifacts; $N=1,306$ claims evaluated)  
 
 ---
 
@@ -9,12 +11,12 @@
 
 | Error Category | Mechanism Description | Concrete Manifestation | Observed Frequency | Severity |
 |---|---|---|---|---|
-| **Numerical Rounding / Truncation** | Model arbitrarily rounds 4-decimal precision values to 2 decimals or whole integers without qualifying language | Expressing $0.4215$ as $0.42$ or $42\\%$ | Frequent | Low |
+| **Numerical Rounding / Truncation** | Model arbitrarily rounds 4-decimal precision values beyond scientific tolerances ($\pm 0.015$ / $5\%$) | Truncating $0.2445 \to 0.2$ (18.2% relative error) | 109 unsupported claims ($9.69\%$) | Low to Medium |
 | **Numerical Hallucination** | Generation of quantitative percentages or figures not present in the input structured audit evidence | Fabricating an *"8.4% improvement"* when true delta was $0.051$ | Moderate | High |
 | **State Misattribution** | Conflating pre-mitigation baseline metrics with post-mitigation outcomes | Attributing baseline demographic parity difference ($0.1895$) to the mitigated model | Moderate | High |
-| **Directional Inversion (Sign Flip)** | Stating that disparity widened or performance decreased when the audit indicates the opposite | Reporting disparity increased when mitigation reduced DPD | Rare (observed in 2 conditions) | Critical |
+| **Ratio-Transition Semantic Mismatch** | Model uses comparative terms (*"lower"*, *"higher"*) to describe static demographic selection ratios relative to ideal parity, which conflicts with longitudinal transition delta matching (not genuine trajectory inversions) | Matching *"lower positive prediction rate"* against positive mitigation delta $+0.2407$ | 4 claims across 4 conditions ($3.39\%$) | Medium |
 | **Metric Conflation** | Conflating distinct mathematical fairness criteria (e.g. Equalized Odds with Demographic Parity) | Calling an Equalized Odds Difference value *"demographic parity"* | Low | High |
-| **Ungrounded Extrapolation / Causal Overreach** | Asserting compliance guarantees or unwarranted causal claims | Stating the model *"is now completely fair and non-discriminatory"* | Frequent (mean $8.51\\%$) | Medium |
+| **Ungrounded Extrapolation / Causal Overreach** | Asserting compliance guarantees or unwarranted causal claims lacking empirical proof in audit data | Stating the model *"is now completely fair and non-discriminatory"* | Condition mean $8.51\% \pm 8.72\%$ ($113/1,306 = 8.65\%$ pooled) | Medium |
 
 ---
 

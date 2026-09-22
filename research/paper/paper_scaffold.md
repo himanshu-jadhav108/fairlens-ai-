@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> **ARCHIVAL SCAFFOLD ARTIFACT — SUPERSEDED BY [`PAPER_DRAFT.md`](./PAPER_DRAFT.md)**  
+> This file is an early project outline retained purely for historical reference. The sole active, authoritative manuscript is [`PAPER_DRAFT.md`](./PAPER_DRAFT.md).
+
 # Quantitative Faithfulness of LLM-Generated Natural-Language Explanations for Machine Learning Fairness Audits: An Empirical Study
 
 **Author(s):** FairLens AI Research Initiative  

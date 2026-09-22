@@ -1,3 +1,6 @@
+> [!NOTE]
+> **SUPERSEDED ARCHIVAL FRAGMENT:** This file is an early scaffold fragment retained for historical reference. The sole active, frozen, authoritative manuscript is [PAPER_DRAFT.md](./PAPER_DRAFT.md).
+
 # 9. Error Analysis
 
 <!-- MANDATORY DIRECTIVE: To be populated strictly from extracted claims artifacts in research/results/claims/ -->

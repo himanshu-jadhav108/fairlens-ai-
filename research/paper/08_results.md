@@ -1,3 +1,6 @@
+> [!NOTE]
+> **SUPERSEDED ARCHIVAL FRAGMENT:** This file is an early scaffold fragment retained for historical reference. The sole active, frozen, authoritative manuscript is [PAPER_DRAFT.md](./PAPER_DRAFT.md).
+
 # 8. Empirical Results
 
 <!-- MANDATORY RESEARCH INTEGRITY DIRECTIVE:

@@ -1,18 +1,28 @@
-# Research Paper Scaffold — Academic Guidelines & Constraints
+# FairLens AI — Research Manuscript Directory
 
-> **LOCKED RESEARCH TOPIC:**  
-> **Quantitative Faithfulness of LLM-Generated Natural-Language Explanations for Machine Learning Fairness Audits: An Empirical Study**
+> **AUTHORITATIVE MASTER MANUSCRIPT:**  
+> The single active, frozen, canonical research paper manuscript is:  
+> [`PAPER_DRAFT.md`](./PAPER_DRAFT.md)
+>
+> **Title:** *Quantitative Faithfulness of LLM-Generated Natural-Language Explanations for Machine Learning Fairness Audits: An Empirical Study*  
+> **Audited Git HEAD:** `e80c314`  
+> **Status:** Frozen Controlled Benchmark ($N=36$ conditions, 72 paired runs)  
 
 ---
 
-## Guidelines for Authoring
+## Directory Inventory & Provenance
 
-1. **No Fabricated Claims:**  
-   Do NOT populate chapters with fabricated numbers, unverified statistical significance, or premature claims of novelty. Use explicit placeholders until empirical benchmark runs conclude.
-2. **Locked Scientific Topic:**  
-   The core research topic is permanently locked to evaluating the quantitative faithfulness of LLM-generated natural language explanations for machine learning fairness audits against authoritative structured evidence.
-3. **Traceability:**  
-   Every table, figure, and quantitative claim in the Results section must directly link back to an experiment ID, explanation record, and machine-readable manifest under `research/results/manifests/`, `research/results/raw/`, `research/results/claims/`, and `research/results/summaries/`.
-4. **Primary Paper Scaffold Document:**  
-   The complete 12-section master paper structure is codified in:  
-   [`paper_scaffold.md`](./paper_scaffold.md).
+1. **Master Manuscript:**
+   - [`PAPER_DRAFT.md`](./PAPER_DRAFT.md): Complete 15-chapter publication manuscript with embedded figures, canonical statistics, and full literature citations.
+
+2. **Figures & Visual Assets:**
+   - [`figures/`](./figures/): Contains publication-quality Figures 1–8 in synchronized Vector SVG and 300 DPI raster PNG formats, alongside reproducible generation scripts in `figures/scripts/`.
+
+3. **Bibliography:**
+   - [`references.md`](./references.md): Verified 23-entry bibliography matching Section 15 of `PAPER_DRAFT.md` 1-to-1.
+
+4. **Evidence Traceability Ledger:**
+   - [`PAPER_EVIDENCE_TRACEABILITY.md`](./PAPER_EVIDENCE_TRACEABILITY.md): Machine-readable mapping linking all reported numbers, sample sizes, and statistics to canonical JSON evidence.
+
+5. **Archival / Superseded Scaffolds:**
+   - Files `01_introduction.md` through `12_conclusion.md` and `paper_scaffold.md` represent early project planning scaffolds from prior development stages. They are retained purely for archival history and are completely superseded by `PAPER_DRAFT.md`.

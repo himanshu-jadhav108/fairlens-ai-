@@ -105,7 +105,7 @@ Every empirical number, statistical comparison, and metric cited in the research
 
 ## 3. Provenance of Quarantined Artifacts
 
-Total quarantined artifacts: **44 files** located in `research/results/legacy_retries/`.
+Total quarantined artifacts: **44 files** located in `research/results/legacy_retries/`. *(Clarification on Units: The '7 legacy retries' referenced in Figure 2 and the manuscript text denote 7 retried experimental conditions; these 7 conditions produced 44 distinct files across the pipeline stages detailed below).*
 Complete inventory and exclusion justifications are cataloged in `research/results/legacy_retries/QUARANTINE_PROVENANCE.json`.
 - `manifests/`: 11 quarantined files (7 duplicate retries + 4 orphan pilot manifests)
 - `raw/`: 5 quarantined explanation files
