@@ -96,3 +96,4 @@ research/paper/arxiv/*.blg
 research/paper/arxiv/*.log
 research/paper/arxiv/*.out
 .mpl_cache/
+.scratch/
