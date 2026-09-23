@@ -85,3 +85,14 @@ logs.txt
 
 research/fairlens_paper_review_bundle.zip
 fairlens_paper_review_bundle.zip
+research/paper/publication_review_bundle.zip
+
+# Publication preview renders and LaTeX build intermediates
+research/paper/**/page_previews/
+research/paper/**/qa_pages/
+research/paper/arxiv/*.aux
+research/paper/arxiv/*.bbl
+research/paper/arxiv/*.blg
+research/paper/arxiv/*.log
+research/paper/arxiv/*.out
+.mpl_cache/
